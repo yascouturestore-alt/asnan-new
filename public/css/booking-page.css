@@ -1,0 +1,460 @@
+/* --------------------------------------
+   Book Appointment Page General Styling
+-------------------------------------- */
+#book-home {
+    padding-bottom: 0vw !important;
+    min-height: 60.698vw !important;
+}
+
+.hero-title.book {
+    font-size: 4.8vw !important;
+    letter-spacing: -0.48vw;
+}
+
+.hero-title.subtitle.book {
+    font-size: 2.3vw !important;
+    line-height: 1.27;
+    letter-spacing: -0.2vw;
+    font-weight: 500 !important;
+}
+
+#book-title {
+    margin-top: -5vw;
+}
+
+#book-location-title {
+    font-size: 2vw !important;
+    letter-spacing: -0.29vw;
+}
+
+#book-location-address {
+    font-size: 2.92vw !important;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.29vw;
+}
+
+#book-location-btn {
+    font-size: 2.4vw !important;
+    font-weight: bold;
+    margin-top: 1.8vw;
+    width: 37.9vw;
+    padding: 1vw 2.3vw;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -4.55px;
+    border: 1px solid transparent;
+    color: white;
+    background-color: var(--color-secondary);
+    transition: box-shadow 0.3s ease;
+    border-radius: 2.5vw !important;
+}
+
+.review-btn-container,
+.review-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-btn-container {
+    margin: 1vw 2.6vw !important;
+}
+
+.review-btn {
+    width: 13vw;
+    height: 3.1vw;
+    padding: 0 1.19vw;
+    border: solid transparent 1px;
+    border-radius: 1.56vw;
+    color: white;
+    font-weight: 500;
+    font-size: 1vw;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -1.98px;
+    background-color: var(--color-secondary);
+    z-index: 999;
+    transition: box-shadow 0.3s ease;
+}
+
+.review-btn:hover,
+#book-location-btn:hover,
+.sticky-call-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 5.2px;
+    color: white;
+}
+
+.hero-title.subtitle {
+    font-size: 2.04375vw !important;
+    font-weight: 400;
+}
+
+/* --------------------------------------
+   Call Buttons Styling
+-------------------------------------- */
+.call-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.call-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 2vw;
+    padding: 0.5vw 2vw;
+    transition: box-shadow 0.4s ease-in-out;
+    background-color: #F0F0F0;
+    color: black;
+    cursor: pointer;
+    width: 18vw;
+}
+
+.call-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 5.2px;
+}
+
+/* WhatsApp Button Styling */
+.whatsapp-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 2vw;
+    padding: 0.5vw 2vw;
+    background-color: #F0F0F0;
+    color: black;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease-in-out;
+    width: 18vw;
+}
+
+.whatsapp-btn {
+    display:none
+}
+
+.whatsapp-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 5.2px;
+}
+
+.call-btn-icon {
+    margin-right: 0.5vw;
+}
+
+.call-desc {
+    font-size: 0.8vw;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: -3px !important;
+    padding: 0;
+}
+
+.phone-link {
+    font-size: 1.25vw;
+    font-weight: bold;
+    color: var(--color-primary);
+    white-space: nowrap;
+}
+
+.phone-link span {
+    color: var(--color-secondary);
+}
+
+/* --------------------------------------
+   Sticky Call Button Styling
+-------------------------------------- */
+.sticky-call-btn {
+    min-width: 21vw;
+    height: 4.11vw;
+    position: fixed;
+    bottom: 30px;
+    right: 40%;
+    z-index: 999;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    border-bottom-left-radius: 100px;
+    padding: 0.6vw 1vw;
+    transition: box-shadow 0.4s ease-in-out;
+    background-image: radial-gradient(circle at 17% 83%, #00c4ff, #2c8eff 248%);
+}
+
+.sticky-call-btn-icon .phone {
+    margin: 0 0.75vw;
+}
+
+.sticky-call-btn-txt p {
+    margin: 0;
+    text-align: left;
+}
+
+.sticky-call-desc {
+    font-size: 0.5vw !important;
+    margin-bottom: -3px !important;
+    padding: 0;
+    color: white;
+}
+
+.sticky-call-btn .phone-link {
+    font-size: 1.7vw !important;
+    font-weight: bold;
+    color: white;
+}
+
+.sticky-call-btn .phone-link span {
+    color: var(--color-secondary);
+}
+
+/* --------------------------------------
+   Mobile View Adjustments
+-------------------------------------- */
+@media screen and (max-width: 768px) {
+    .call-btn-container {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .call-btn {
+        width: 45%;
+        padding: 0.5rem;
+    }
+
+    .whatsapp-btn {
+        width: 45%;
+        padding: 0.5rem;
+    }
+    .whatsapp-btn {
+        display:flex
+    }
+}
+
+@media screen and (max-width: 951px) {
+    #book-phone {
+        position: absolute;
+        bottom: 28px;
+        left: 40px;
+        font-size: 28px;
+        z-index: 2;
+    }
+
+    #book-title {
+        font-size: 64px !important;
+    }
+
+    .hero-title.subtitle.book {
+        font-size: 36px;
+    }
+
+    .call-btn {
+        padding: 15px 30px;
+        border-radius: 30px;
+    }
+
+    .phone-link {
+        font-size: 32px;
+    }
+
+    .call-desc {
+        font-size: 12px !important;
+        letter-spacing: -0.5px;
+    }
+
+    #phone-icon {
+        height: 40px;
+    }
+
+    .review-btn {
+        width: 211px;
+        height: 57px;
+        padding: 1px 0 0 1px;
+        border-radius: 28.5px;
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: -1.98px;
+        background-color: var(--color-secondary);
+        z-index: 999;
+        transition: box-shadow 0.3s ease;
+    }
+
+    #book-location-title {
+        font-size: 23px !important;
+        letter-spacing: -0.29vw;
+    }
+
+    #book-location-address {
+        font-size: 29px !important;
+        letter-spacing: -0.29vw;
+    }
+
+    #book-location-btn {
+        height: 60px;
+        width: 320px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 18px !important;
+        font-weight: semibold;
+        border: 1px solid transparent;
+        border-radius: 25px !important;
+        letter-spacing: -1px;
+    }
+
+
+    #book-address {
+        margin-bottom: -500px;
+        z-index: 990;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .whatsapp-btn {
+        display:flex
+    }
+    #book-phone {
+        position: absolute;
+        bottom: 28px;
+        left: 40px;
+        font-size: 18px !important;
+        z-index: 2;
+    }
+
+    #book-title {
+        font-size: 32px !important;
+    }
+
+    .hero-title.subtitle.book {
+        font-size: 26px !important;
+    }
+
+    .call-btn {
+        padding: 10px 20px;
+        border-radius: 25px !important;
+    }
+
+    #phone-icon,#whatsapp-icon {
+        height:25px;
+    }
+
+
+    .phone-link {
+        font-size: 12px !important;
+    }
+
+    .call-desc {
+        font-size: 8px !important;
+        letter-spacing: -0.4px;
+    }
+
+    .sticky-call-btn {
+        display: flex !important;
+        width: 320px;
+        height: 61.3px;
+        padding: 8px 20px 8px 20px;
+        border-radius: 42.2px;
+        bottom: 130px;
+        right: 9vw;
+        transition: box-shadow 0.4s ease-in-out;
+        border-bottom-left-radius: 100px;
+        background-image: radial-gradient(circle at 17% 83%, #00c4ff, #2c8eff 248%);
+    
+    }
+    
+    .sticky-call-btn-icon .phone {
+        margin: 0 0.75vw;
+        height: 30px;
+    }
+    
+    .sticky-call-btn-icon .logo {
+        height: 30px;
+    }
+    
+    .sticky-call-btn-txt p {
+        margin: 0;
+        text-align: left;
+    }
+    
+    .sticky-call-desc {
+        font-size: 7px !important;
+        margin-bottom: 0.5px !important;
+        padding: 0;
+        color: white;
+    }
+    
+    .sticky-call-btn .phone-link {
+        font-size: 23px !important;
+        font-weight: bold;
+        color: white;
+    }
+    
+    .sticky-call-btn .phone-link span {
+        color: var(--color-secondary);
+    }
+    
+    .navbar.scrolled .top-content .phone-link {
+        top: 27px;
+    }
+
+    .review-btn {
+        width: 211px;
+        height: 57px;
+        padding: 1px 0 0 1px;
+        border-radius: 28.5px;
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: -1.98px;
+        background-color: var(--color-secondary);
+        z-index: 999;
+        transition: box-shadow 0.3s ease;
+    }
+
+    #book-location-title {
+        font-size: 19px !important;
+        letter-spacing: -0.29vw;
+    }
+
+    #book-location-address {
+        font-size: 29px !important;
+        letter-spacing: -0.29vw;
+    }
+
+    #book-location-btn {
+        height: 50px;
+        width: 310px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 16px !important;
+        font-weight: semibold;
+        border: 1px solid transparent;
+        border-radius: 25px !important;
+        letter-spacing: -1px;
+    }
+
+
+    #book-address {
+        margin-bottom: -600px;
+        z-index: 990;
+    }
+
+}
+
+
+
+
+

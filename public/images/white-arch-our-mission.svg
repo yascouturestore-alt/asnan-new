@@ -1,0 +1,9 @@
+<svg id="white-arch-our-mission" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="695.391" height="302.084" viewBox="0 0 695.391 302.084">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.975" y1="0.88" x2="-2.632" y2="-2.019" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path id="Path_497" data-name="Path 497" d="M-24,104.154s532.834,11.835,694.028,99.654c1.819.991,1.826-303.15-.031-302.079C509.178-5.554-24,7.154-24,7.154Z" transform="translate(24 98.274)" fill="url(#linear-gradient)"/>
+</svg>

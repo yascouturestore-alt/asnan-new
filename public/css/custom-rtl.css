@@ -1,0 +1,405 @@
+.intl-tel-input.separate-dial-code .selected-dial-code {
+
+    padding-left: 30px !important;
+}
+
+.intl-tel-input .selected-flag .iti-arrow {
+    left: -10px !important;
+}
+
+.intl-tel-input.allow-dropdown input {
+    padding-right: 100px !important;
+    letter-spacing: 0px !important;
+}
+
+.intl-tel-input .country-list .country {
+    direction: ltr;
+    text-align: right;
+}
+
+body {
+    direction: rtl;
+    font-family: 'URWGeometricArabic', 'Tajawal', 'Spartan', 'Spartan MB', Arial, sans-serif;
+    letter-spacing: 0 !important;
+    word-spacing: 1px !important;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+li,
+div {
+    letter-spacing: 0 !important;
+}
+
+.teeth-before-after:before {
+    right: auto;
+    left: 1.5625vw
+        /* 30/19.2 */
+    ;
+}
+
+.doctor-description ul li,
+.doctor-description ol li {
+    padding-left: 0;
+    padding-right: 1.5625vw
+        /* 30/19.2 */
+    ;
+}
+
+.doctor-description ul li:before {
+    left: auto;
+    right: 0;
+}
+
+.asnanopedia .article-title:before {
+    left: auto;
+    right: 0;
+}
+
+.asnanopedia-article .title:before {
+    left: auto;
+    right: 0;
+}
+
+.asnanopedia-article ul li,
+.asnanopedia-article ol li,
+.instruction-text ul li,
+.instruction-text ol li {
+    padding-left: 0;
+    padding-right: 1.5625vw
+        /* 30/19.2 */
+    ;
+}
+
+.asnanopedia-article ul li:before,
+.instruction-text ul li:before {
+    left: auto;
+    right: 0;
+}
+
+.specialities-wrapper .category-icon {
+    margin-right: 0;
+}
+
+.speciality-services-article .title:before {
+    left: auto;
+    right: 0;
+}
+
+.speciality-services-article ul li:before {
+    left: auto;
+    right: 0;
+}
+
+.speciality-services-article .article-img {
+    border-radius: 5.208vw 5.208vw 10.9375vw
+        /* 210/19.2 */
+        5.208vw
+        /* 100/19.2 */
+    ;
+}
+
+.news-article .title:before {
+    left: auto;
+    right: 0;
+}
+
+.news-article ul li:before {
+    left: auto;
+    right: 0;
+}
+
+.hero-wrapper .hero-title {
+    letter-spacing: 0;
+}
+
+.navbar .navbar-nav .nav-link {
+    font-size: 1.25vw
+        /* 18/20.2 */
+    ;
+    letter-spacing: 0.5px;
+}
+
+.navbar .dropdown.dropdown-mega .dropdown-menu .services-menu .service-item .service-info .service-title,
+.side-wrapper .services-menu .service-item .service-info .service-title {
+    letter-spacing: 0;
+}
+
+.navbar .navbar-brand img {
+    margin: 0 auto 0 -30px;
+}
+
+.welcome-wrapper .welcome-text {
+    font-size: 1.25vw
+        /* 19/19.2 */
+    ;
+    line-height: 1.75vw
+        /* 27/19.2 */
+    ;
+    letter-spacing: 0;
+}
+
+.gallery-row .gallery-column .gallery-item .gallery-title {
+    font-size: 1.5vw;
+    letter-spacing: 0;
+}
+
+.gallery-row .gallery-column:nth-of-type(2) .gallery-item:nth-of-type(1):before,
+.gallery-row .gallery-column:nth-of-type(2) .gallery-item:nth-of-type(2):before,
+.gallery-row .gallery-column:nth-of-type(1) .gallery-item:nth-of-type(1):before,
+.gallery-row .gallery-column:nth-of-type(1) .gallery-item:nth-of-type(2):before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
+    opacity: 0.5;
+}
+
+.more-smiles-block .more-smiles-arrow {
+    transform: rotateY(180deg);
+}
+
+.section-title,
+.mission-block .mission-title,
+.gallery-row .gallery-column .gallery-item .change-block .change-smile,
+footer .working-hours {
+    letter-spacing: 0;
+}
+
+
+
+footer .working-hours {
+    font-family: 'URWGeometricArabic', 'Tajawal', Arial, sans-serif;
+}
+
+
+.google-rating .rating-text .rating-num {
+    letter-spacing: 0;
+}
+
+.google-rating-block .google-rating-title img {
+    margin-left: 0;
+    margin-right: 2.083vw
+        /* 40/19.2 */
+    ;
+}
+
+.google-rating-block .google-rating-title {
+    margin-left: 0;
+    margin-right: 5.729vw
+        /* 110/19.2 */
+    ;
+    direction: ltr;
+}
+
+.gallery-row .gallery-column .gallery-item img {
+    object-position: center;
+}
+
+.trending-wrapper .trending-title {
+    letter-spacing: 0;
+}
+
+
+.intl-tel-input.allow-dropdown .flag-container,
+.intl-tel-input.separate-dial-code .flag-container {
+    left: 0;
+    right: initial;
+}
+
+.intl-tel-input .selected-flag .iti-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+
+    left: inherit;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid #555;
+}
+
+.intl-tel-input .selected-flag .iti-flag {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 5px;
+}
+
+.intl-tel-input .selected-flag {
+    padding: 0 8px 0 0px;
+}
+
+.intl-tel-input.allow-dropdown input,
+.intl-tel-input.allow-dropdown input[type=tel] {
+    padding-right: 10px;
+    padding-left: 65px;
+    margin-left: 0;
+
+}
+
+.doctor-item .doctor-info .doctor-name {
+    font-size: 1.5vw;
+
+}
+
+.doctor-item .doctor-info .doctor-title {
+    font-size: 1vw
+        /* 12/19.2 */
+    ;
+}
+
+.doctor-item .doctor-info .doctor-university {
+    font-size: 0.75vw
+}
+
+.more-smiles-block .more-smiles-text {
+    font-size: 2vw;
+    letter-spacing: 0;
+    line-height: 2.25vw;
+    margin: 2.5vw
+}
+
+ul.why-asnan .service-description ul li {
+
+    padding-right: 1.5625vw
+        /* 30/19.2 */
+    ;
+    padding-left: initial;
+
+}
+
+ul.why-asnan .service-description ul li:before {
+
+    right: 0;
+
+}
+
+.departments-floors-list .department-item .department-title {
+    line-height: 0.75vw;
+}
+
+.speciality-services-article ul li,
+.asnanopedia-article ol li {
+    padding-right: 1.5625vw
+        /* 30/19.2;; */
+    ;
+    padding-left: 0;
+}
+
+.career-form-container {
+   
+    font-family: 'URWGeometricArabic', 'Tajawal', 'Spartan', 'Spartan MB', Arial, sans-serif;
+}
+
+
+/* Hide the WhatsApp link by default */
+#footer-phone-call-btn {
+    display: none;
+}
+
+/* Show the WhatsApp link only in phone view */
+@media screen and (max-width: 768px) {
+
+
+
+    #footer-phone-call-btn {
+        display: block;
+        max-width: 200px;
+    }
+
+    #footer-whatsapp-call-btn {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+
+    .departments-floors-list .department-item .department-title {
+        line-height: 3vw;
+    }
+
+    .navbar.scrolled {
+        padding: 0;
+    }
+
+    .doctor-item .doctor-info .doctor-name {
+        font-size: 13px;
+    }
+
+    .doctor-item .doctor-info .doctor-title {
+        font-size: 10px;
+    }
+
+    .doctor-item .doctor-info .doctor-university {
+        font-size: 9px;
+    }
+
+
+    .testimonials-block .testimonial-img {
+        height: 400px;
+    }
+
+    .gallery-row .gallery-column .gallery-item .gallery-title {
+        font-size: 12px;
+    }
+
+    .side-wrapper .phone-link {
+        direction: ltr;
+    }
+
+    .doctor-description ul li,
+    .doctor-description ol li {
+        padding-left: 0;
+        padding-right: 20px;
+    }
+
+    .specialities-wrapper .category-icon {
+        margin-right: 0;
+    }
+
+    .speciality-services-article ul li,
+    .asnanopedia-article ol li {
+        padding-left: 0;
+        padding-right: 20px;
+    }
+
+    .speciality-services-article .article-img {
+        border-radius: 50px 50px 100px 50px;
+    }
+
+    .news-article ul li,
+    .news-article ol li {
+        padding-left: 0;
+        padding-right: 20px;
+    }
+
+    .side-wrapper .services-menu .service-item .service-arrow img {
+        transform: rotateY(180deg);
+    }
+
+
+
+    .welcome-wrapper .welcome-text {
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+
+
+}

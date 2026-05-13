@@ -1,0 +1,535 @@
+.iti__flag {background-image: url("../img/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .iti__flag {background-image: url("../img/flags.png");}
+}
+
+.caption-wrapper .made-by-wrapper .doctor-small .doctor-name{
+    width:50px;
+}
+
+.filter-yellow {
+    filter: invert(62%) sepia(94%) saturate(4546%) hue-rotate(195deg) brightness(101%) contrast(102%);
+
+
+}
+
+.doctor-description p {
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-size: 1.35vw /* 31/19.2 */;
+    letter-spacing: -0.08em;
+    color: #50595c;
+    word-spacing: 3px;
+}
+
+.service-item .service-info p {
+    display: block;
+    font-weight: 300;
+    font-size: 1.615vw /* 31/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 2.24vw /* 43/19.2 */;
+    color: #50595c;
+}
+
+ul.services-list li.service-item .service-img {
+    max-height:750px;
+}
+
+.article-img img {
+    width:100%;
+}
+
+.category-header {
+    z-index:20;
+}
+
+ul.top-news-list li.top-news-item .post-info .post-footer .post-date {
+    letter-spacing:0px;
+    font-size:10px;
+}
+
+.gallery-row .gallery-column .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    padding: 2px;
+}
+
+
+.teeth-before-after:before {
+    content: '';
+    position: absolute;
+    top: 1.5625vw /* 30/19.2 */;
+    right: 1.5625vw /* 30/19.2 */;
+    background: url(../images/Asnan-logo.svg) center no-repeat;
+    background-size: contain;
+    width: 3vw /* 57.6/19.2 */;
+    height: 2.115vw /* 40.6/19.2 */;
+    z-index: 2;
+}
+
+.ba-slider img {
+    display: block;
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*OUR TEAM*/
+
+.doctor-description ul {
+    list-style: initial;
+    margin: revert;
+    padding: revert;
+}
+
+.doctor-description ul li,.doctor-description ol li {
+    position: relative;
+    display: block;
+    font-weight: 300;
+    font-size: 1.25vw /* 24/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 1.771vw /* 34/19.2 */;
+    color: #50595c;
+    padding-left: 1.5625vw /* 30/19.2 */;
+    margin-bottom: 0.521vw /* 10/19.2 */;
+}
+
+.doctor-description ul li:before {
+    content: '';
+    position: absolute;
+    top: 0.365vw /* 7/19.2 */;
+    left: 0;
+    background: url(../images/Bullets.svg) center no-repeat;
+    background-size: contain;
+    width: 0.729vw /* 14/19.2 */;
+    height: 0.833vw /* 16/19.2 */;
+}
+
+
+
+/*END OUR TEAM*/
+
+
+.asnanopedia .article-title {
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 2.083vw /* 40/19.2 */;
+    letter-spacing: -0.05em;
+    line-height: 1.667vw /* 32/19.2 */;
+    color: #50595c;
+    padding-bottom: 1.042vw /* 20/19.2 */;
+    margin-bottom: 2.083vw /* 40/19.2 */;
+}
+
+.asnanopedia .article-title:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10.417vw /* 200/19.2 */;
+    height: 0.208vw /* 4/19.2 */;
+    border-radius: 0.104vw /* 2/19.2 */;
+    background: var(--color-secondary);
+}
+
+.floor-wrapper .bg-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+ul.instructions-list li.instruction-item .instruction-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.navbar .dropdown.dropdown-mega .dropdown-menu .services-menu .service-item .service-info .service-text,.navbar .dropdown.dropdown-mega .dropdown-menu .services-menu .service-item .service-info .service-text2 {
+    display: block;
+    font-weight: 500;
+    font-size: 0.625vw /* 12/19.2 */;
+    letter-spacing: -0.1em;
+    color:white;
+    width: 8vw;
+    line-height: 1.25;
+}
+
+.article-wrapper p,.service-text {
+    font-weight: 300;
+    font-size: 1.615vw /* 31/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 2.24vw /* 43/19.2 */;
+    color: #50595c;
+    word-spacing: 3px;
+}
+
+.asnanopedia-article .title {
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 2.083vw /* 40/19.2 */;
+    letter-spacing: -0.05em;
+    line-height: 1.667vw /* 32/19.2 */;
+    color: #50595c;
+    padding-bottom: 1.042vw /* 20/19.2 */;
+    margin-bottom: 2.083vw /* 40/19.2 */;
+}
+
+.asnanopedia-article .title:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10.417vw /* 200/19.2 */;
+    height: 0.208vw /* 4/19.2 */;
+    border-radius: 0.104vw /* 2/19.2 */;
+    background: var(--color-secondary);
+}
+
+
+.asnanopedia-article .brief {
+    font-weight: 300;
+    font-size: 1.8vw /* 31/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 2.5vw /* 43/19.2 */;
+    color: #50595c;
+    word-spacing: 3px;
+}
+
+
+
+.asnanopedia-article p {
+    font-weight: 300;
+    font-size: 1.35vw /* 31/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 2.24vw /* 43/19.2 */;
+    color: #50595c;
+    word-spacing: 3px;
+}
+
+.asnanopedia-article h4 {
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 2.083vw /* 40/19.2 */;
+    letter-spacing: -0.05em;
+    line-height: 3vw /* 32/19.2 */;
+    color: #50595c;
+    padding-bottom: 1.042vw /* 20/19.2 */;
+    margin-bottom: 2.083vw /* 40/19.2 */;
+    margin-top: 2.083vw /* 40/19.2 */;
+}
+
+.asnanopedia-article ul {
+    list-style: initial;
+    margin: revert;
+    padding: revert;
+}
+
+.asnanopedia-article ul li,.asnanopedia-article ol li {
+    position: relative;
+    display: block;
+    font-weight: 300;
+    font-size: 1.25vw /* 24/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 1.771vw /* 34/19.2 */;
+    color: #50595c;
+    padding-left: 1.5625vw /* 30/19.2 */;
+    margin-bottom: 0.521vw /* 10/19.2 */;
+}
+
+.asnanopedia-article ul li:before {
+    content: '';
+    position: absolute;
+    top: 0.365vw /* 7/19.2 */;
+    left: 0;
+    background: url(../images/Bullets.svg) center no-repeat;
+    background-size: contain;
+    width: 0.729vw /* 14/19.2 */;
+    height: 0.833vw /* 16/19.2 */;
+}
+
+/*Department */
+.department-info-wrapper {
+    top:-10vw;
+    margin:0px;
+    padding-bottom:200px;
+}
+
+.department-info {
+    margin-top:40vw;
+}
+
+
+/*Department */
+
+/*Specialities */
+
+.specialities-wrapper  {
+    margin-top:10vw;
+}
+
+.category-header .speciality-block {
+    display: block;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.category-header .speciality-block .category-icon img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.specialities .category-title {
+    font-size: 2.5vw !important;
+    font-weight: bold;
+    letter-spacing: -0.05em;
+    line-height: 4vw /* 32/19.2 */;
+    color: #50595c;
+}
+
+.specialities-wrapper .category-icon {
+
+    min-width: 7.5vw !important;
+    width: 7.5vw !important;
+    display: inline-block;
+    min-width: 13.177vw /* 253/19.2 */;
+    width: 13.177vw /* 253/19.2 */;
+    margin-right: 3.125vw /* 60/19.2 */;
+
+}
+
+/* END Specialities*/
+
+
+/*Speciality Services*/
+.speciality-services-article .title {
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 2.083vw /* 40/19.2 */;
+    letter-spacing: -0.05em;
+    line-height: 1.667vw /* 32/19.2 */;
+    color: #50595c;
+    padding-bottom: 1.042vw /* 20/19.2 */;
+    margin-bottom: 2.083vw /* 40/19.2 */;
+}
+
+.speciality-services-article .title:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10.417vw /* 200/19.2 */;
+    height: 0.208vw /* 4/19.2 */;
+    border-radius: 0.104vw /* 2/19.2 */;
+    background: var(--color-secondary);
+}
+
+
+.speciality-services-article .brief {
+    font-weight: 300;
+    font-size: 1.8vw /* 31/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 2.5vw /* 43/19.2 */;
+    color: #50595c;
+    word-spacing: 3px;
+}
+
+
+
+.speciality-services-article p {
+    font-weight: 300;
+    font-size: 1.35vw /* 31/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 2.24vw /* 43/19.2 */;
+    color: #50595c;
+    word-spacing: 3px;
+}
+
+.speciality-services-article h4 {
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 2.083vw /* 40/19.2 */;
+    letter-spacing: -0.05em;
+    line-height: 3vw /* 32/19.2 */;
+    color: #50595c;
+    padding-bottom: 1.042vw /* 20/19.2 */;
+    margin-bottom: 2.083vw /* 40/19.2 */;
+    margin-top: 2.083vw /* 40/19.2 */;
+}
+
+.speciality-services-article ul {
+    list-style: initial;
+    margin: revert;
+    padding: revert;
+}
+
+.speciality-services-article ul li,.asnanopedia-article ol li {
+    position: relative;
+    display: block;
+    font-weight: 300;
+    font-size: 1.25vw /* 24/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 1.771vw /* 34/19.2 */;
+    color: #50595c;
+    padding-left: 1.5625vw /* 30/19.2 */;
+    margin-bottom: 0.521vw /* 10/19.2 */;
+}
+
+.speciality-services-article ul li:before {
+    content: '';
+    position: absolute;
+    top: 0.365vw /* 7/19.2 */;
+    left: 0;
+    background: url(../images/Bullets.svg) center no-repeat;
+    background-size: contain;
+    width: 0.729vw /* 14/19.2 */;
+    height: 0.833vw /* 16/19.2 */;
+}
+
+.speciality-services-article .article-img {
+    display: block;
+    width: 36.40625vw /* 699/19.2 */;
+    max-width: 100%;
+    border-radius: 5.208vw 5.208vw 5.208vw /* 100/19.2 */ 10.9375vw /* 210/19.2 */;
+    height: auto;
+    overflow: hidden;
+}
+
+.speciality-services-article .article-img img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    min-height:400px;
+    object-fit: cover;
+}
+
+/* END Speciality Services*/
+
+
+.caption-wrapper .made-by-wrapper .doctor-small {
+    min-height:100px;
+    min-width:100px;
+}
+
+.carousel-control-prev {
+    left:-100px;
+}
+
+.carousel-control-next {
+    right: -100px;
+}
+
+.news-row .news-column .news-item .post-item {
+    height: auto;
+    min-height: 250px;
+}
+
+
+.news-article .title {
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 2.083vw /* 40/19.2 */;
+    letter-spacing: -0.05em;
+    line-height: 1.667vw /* 32/19.2 */;
+    color: #50595c;
+    padding-bottom: 1.042vw /* 20/19.2 */;
+    margin-bottom: 2.083vw /* 40/19.2 */;
+}
+
+.news-article .title:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10.417vw /* 200/19.2 */;
+    height: 0.208vw /* 4/19.2 */;
+    border-radius: 0.104vw /* 2/19.2 */;
+    background: var(--color-secondary);
+}
+
+
+.news-article .brief {
+    font-weight: 300;
+    font-size: 1.8vw /* 31/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 2.5vw /* 43/19.2 */;
+    color: #50595c;
+    word-spacing: 3px;
+}
+
+
+
+.news-article p {
+    font-weight: 300;
+    font-size: 1.35vw /* 31/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 2.24vw /* 43/19.2 */;
+    color: #50595c;
+    word-spacing: 3px;
+}
+
+.news-article h4 {
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 2.083vw /* 40/19.2 */;
+    letter-spacing: -0.05em;
+    line-height: 3vw /* 32/19.2 */;
+    color: #50595c;
+    padding-bottom: 1.042vw /* 20/19.2 */;
+    margin-bottom: 2.083vw /* 40/19.2 */;
+    margin-top: 2.083vw /* 40/19.2 */;
+}
+
+.news-article ul {
+    list-style: initial;
+    margin: revert;
+    padding: revert;
+}
+
+.news-article ul li,.news-article ol li {
+    position: relative;
+    display: block;
+    font-weight: 300;
+    font-size: 1.25vw /* 24/19.2 */;
+    letter-spacing: -0.08em;
+    line-height: 1.771vw /* 34/19.2 */;
+    color: #50595c;
+    padding-left: 1.5625vw /* 30/19.2 */;
+    margin-bottom: 0.521vw /* 10/19.2 */;
+}
+
+.news-article ul li:before {
+    content: '';
+    position: absolute;
+    top: 0.365vw /* 7/19.2 */;
+    left: 0;
+    background: url(../images/Bullets.svg) center no-repeat;
+    background-size: contain;
+    width: 0.729vw /* 14/19.2 */;
+    height: 0.833vw /* 16/19.2 */;
+}
+
+/*NAVBAR MEGA MENU*/
+
+.navbar{
+    transition: none;
+}
+
+.navbar.activeMegaMenu:before,
+.navbar.activeMegaMenu:after {
+    transition: none;
+}
+
+
+
+
+
