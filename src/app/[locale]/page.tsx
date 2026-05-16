@@ -1,15 +1,35 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Script from "next/script";
 import { useParams } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
+import FigmaOurTeam from "@/components/home/FigmaOurTeam";
+import FigmaTestimonials from "@/components/home/FigmaTestimonials";
+import AppointmentSection from "@/components/home/AppointmentSection";
 
 export default function Home() {
   const params = useParams();
   const locale = (params?.locale as string) || "en";
   const t = getDictionary(locale);
+  const isAr = locale === "ar";
+  const showOldMissionFooter = false;
+  const galleryCopy = {
+    title: isAr ? "راح نغير حياتك" : "We Change Lives",
+    celebrities: isAr ? "مشاهير أسنان" : "Celebrities",
+    testimonials: isAr ? "آراء المراجعين" : "Testimonials",
+    ctaSmall: isAr ? "حلمنا مو بس نغير اسنانك.." : "We don’t just change smiles ..",
+    ctaMain: isAr ? "راح نغير حياتك" : "We Change Lives",
+    names: {
+      yagoob: isAr ? "يعقوب بوشهري" : "Yagoob Boushehri",
+      huda: isAr ? "هدى حسين" : "Huda Hussain",
+      ghadeer: isAr ? "غدير سلطان" : "Ghadeer Sultan",
+      zainab: isAr ? "زينب خفيف" : "Zainab Khaff",
+      salman: isAr ? "سلمان النجادي" : "Salman Alnajadi",
+      maya: isAr ? "ميار مودل" : "Maya Model",
+      halima: isAr ? "حليمة بولند" : "Halima Boland",
+    },
+  };
 
   useEffect(() => {
     // Run jQuery dependent logic after mount
@@ -75,13 +95,6 @@ export default function Home() {
             }
         }
         
-        // Ensure Bootstrap Carousel for Our Team is initialized
-        if ($.fn.carousel) {
-            $('#ourTeam').carousel({
-                interval: 5000,
-                pause: "hover"
-            });
-        }
       }
     };
 
@@ -106,6 +119,366 @@ export default function Home() {
             object-fit: cover;
             object-position: top;
             padding: 2px;
+        }
+        .home-figma-gallery {
+            position: relative;
+            padding-top: 7vw;
+            overflow: visible;
+            z-index: 1;
+            background: transparent;
+        }
+        .home-figma-gallery:before {
+            display: block;
+            top: -7vw;
+            background: url("/images/Mask Group 140.png") center no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 34vw;
+            z-index: 0;
+        }
+        .home-figma-gallery .change-lives {
+            color: #043f84;
+            font-size: clamp(26px, 2.2vw, 42px);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: 0 !important;
+            margin: 0;
+            padding-top: 0.9vw;
+            z-index: 3;
+        }
+        .home-figma-gallery .nav-tabs {
+            margin: 1.5vw auto 1.25vw;
+        }
+        .home-figma-gallery .nav-tabs .nav-link {
+            color: rgba(255, 255, 255, 0.96);
+            font-size: clamp(14px, 0.98vw, 19px);
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: 0 !important;
+            padding: 0 0 0.48vw;
+            margin: 0 1.55vw;
+        }
+        .home-figma-gallery .nav-tabs .nav-link.active,
+        .home-figma-gallery .nav-tabs.show .nav-link {
+            color: #243746;
+        }
+        .home-figma-gallery .nav-tabs .nav-link:after {
+            bottom: 0;
+            height: 0.22vw;
+            min-height: 2px;
+            border-radius: 999px;
+            background: var(--color-secondary);
+        }
+        .home-figma-gallery .nav-tabs .nav-link.active:after,
+        .home-figma-gallery .nav-tabs.show .nav-link:after {
+            width: 112%;
+        }
+        .home-figma-gallery .figma-celeb-gallery {
+            position: relative;
+            display: grid;
+            grid-template-columns: 45.55% 54.45%;
+            width: 100%;
+            direction: ltr;
+            z-index: 3;
+        }
+        .home-figma-gallery-ltr .figma-celeb-gallery {
+            grid-template-columns: 54.45% 45.55%;
+        }
+        .home-figma-gallery .tab-content {
+            position: relative;
+            z-index: 3;
+        }
+        .home-figma-gallery .figma-celeb-left,
+        .home-figma-gallery .figma-celeb-right {
+            display: flex;
+            flex-direction: column;
+        }
+        .home-figma-gallery-ltr .figma-celeb-left {
+            order: 2;
+        }
+        .home-figma-gallery-ltr .figma-celeb-right {
+            order: 1;
+        }
+        .home-figma-gallery .figma-split-row {
+            display: grid;
+            grid-template-columns: 36.8% 63.2%;
+            width: 100%;
+        }
+        .home-figma-gallery .figma-gallery-tile {
+            position: relative;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid #fff;
+            background: #0c1824;
+            z-index: 1;
+        }
+        .home-figma-gallery .figma-gallery-tile:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.62) 100%);
+            z-index: 1;
+        }
+        .home-figma-gallery .figma-gallery-tile img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            padding: 0 !important;
+        }
+        .home-figma-gallery .figma-gallery-title {
+            position: absolute;
+            right: clamp(22px, 3.2vw, 62px);
+            bottom: clamp(18px, 2.2vw, 42px);
+            display: inline-block;
+            color: #fff;
+            font-size: clamp(13px, 1.05vw, 20px);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0 !important;
+            text-align: right;
+            direction: rtl;
+            z-index: 2;
+        }
+        .home-figma-gallery .figma-gallery-title:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -0.5vw;
+            width: clamp(22px, 2.4vw, 40px);
+            height: 0.18vw;
+            min-height: 2px;
+            border-radius: 999px;
+            background: var(--color-secondary);
+        }
+        .home-figma-gallery-ltr .figma-gallery-title {
+            left: clamp(22px, 3.2vw, 62px);
+            right: auto;
+            direction: ltr;
+            text-align: left;
+        }
+        .home-figma-gallery-ltr .figma-gallery-title:after {
+            left: 0;
+            right: auto;
+        }
+        .home-figma-gallery .figma-tile-yagoob,
+        .home-figma-gallery .figma-tile-huda {
+            height: 25.72vw;
+        }
+        .home-figma-gallery .figma-left-portraits {
+            height: 31.03vw;
+        }
+        .home-figma-gallery .figma-left-bottom {
+            height: 16.05vw;
+        }
+        .home-figma-gallery .figma-tile-maya {
+            height: 36.36vw;
+        }
+        .home-figma-gallery .figma-tile-halima {
+            height: 31.17vw;
+        }
+        .home-figma-gallery .figma-tile-maya img,
+        .home-figma-gallery .figma-tile-ghadeer img,
+        .home-figma-gallery .figma-tile-zainab img {
+            object-position: center top;
+        }
+        .home-figma-gallery .figma-gallery-cta {
+            position: relative;
+            height: 41.6vw;
+            overflow: hidden;
+            border: 1px solid #fff;
+            background: #fff;
+        }
+        .home-figma-gallery .figma-gallery-cta-bg {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            padding: 0 !important;
+            z-index: 0;
+        }
+        .home-figma-gallery-ltr .figma-gallery-cta-bg {
+            transform: scaleX(-1);
+        }
+        .home-figma-gallery .figma-gallery-cta-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2vw 3vw 8vw;
+            color: #fff;
+            text-align: center;
+            direction: rtl;
+            transform: translateY(-2%);
+        }
+        .home-figma-gallery-ltr .figma-gallery-cta-content {
+            direction: ltr;
+        }
+        .home-figma-gallery .figma-cta-small {
+            display: block;
+            font-size: clamp(22px, 2.1vw, 40px);
+            font-weight: 700;
+            line-height: 1.35;
+            letter-spacing: 0 !important;
+            margin-bottom: 1.25vw;
+        }
+        .home-figma-gallery .figma-cta-large {
+            display: block;
+            font-size: clamp(40px, 5vw, 88px);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: 0 !important;
+        }
+        @media screen and (max-width: 991px) {
+            .home-figma-gallery {
+                padding-top: 65px;
+            }
+            .home-figma-gallery:before {
+                top: 0;
+                height: 220px;
+                background-size: cover;
+                background-position: top;
+            }
+            .home-figma-gallery .change-lives {
+                padding-top: 48px;
+            }
+            .home-figma-gallery .nav-tabs {
+                margin: 18px auto 36px;
+            }
+            .home-figma-gallery .nav-tabs .nav-link {
+                padding-bottom: 8px;
+                margin: 0 14px;
+            }
+            .home-figma-gallery .nav-tabs .nav-link:after {
+                height: 3px;
+            }
+            .home-figma-gallery .figma-celeb-gallery {
+                grid-template-columns: 1fr;
+            }
+            .home-figma-gallery .figma-tile-yagoob,
+            .home-figma-gallery .figma-tile-huda,
+            .home-figma-gallery .figma-tile-maya,
+            .home-figma-gallery .figma-tile-halima {
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+            .home-figma-gallery .figma-left-portraits {
+                height: 260px;
+            }
+            .home-figma-gallery .figma-left-bottom {
+                height: 190px;
+            }
+            .home-figma-gallery .figma-gallery-cta {
+                height: 360px;
+            }
+            .home-figma-gallery .figma-gallery-title {
+                right: 24px;
+                bottom: 24px;
+            }
+            .home-figma-gallery .figma-gallery-title:after {
+                bottom: -8px;
+                height: 2px;
+            }
+        }
+        @media screen and (max-width: 575px) {
+            .home-figma-gallery {
+                padding-top: 50px;
+            }
+            .home-figma-gallery:before {
+                height: 233px;
+                background-position: top center;
+            }
+            .home-figma-gallery .change-lives {
+                font-size: 30px;
+                padding-top: 38px;
+            }
+            .home-figma-gallery .nav-tabs {
+                margin: 18px auto 26px;
+            }
+            .home-figma-gallery .nav-tabs .nav-link {
+                font-size: 17px;
+                padding-bottom: 10px;
+                margin: 0 11px;
+            }
+            .home-figma-gallery .figma-celeb-gallery {
+                display: grid;
+                grid-template-columns: 45.5% 54.5%;
+                grid-template-rows: 220px 220px 235px 245px 170px 360px;
+                grid-template-areas:
+                    "yagoob maya"
+                    "huda maya"
+                    "ghadeer halima"
+                    "zainab salman"
+                    "logo logo"
+                    "cta cta";
+                align-items: stretch;
+                width: 100%;
+            }
+            .home-figma-gallery .figma-celeb-left,
+            .home-figma-gallery .figma-celeb-right,
+            .home-figma-gallery .figma-left-portraits,
+            .home-figma-gallery .figma-left-bottom {
+                display: contents;
+            }
+            .home-figma-gallery .figma-tile-yagoob { grid-area: yagoob; }
+            .home-figma-gallery .figma-tile-huda { grid-area: huda; }
+            .home-figma-gallery .figma-tile-ghadeer { grid-area: ghadeer; }
+            .home-figma-gallery .figma-tile-zainab { grid-area: zainab; }
+            .home-figma-gallery .figma-tile-salman { grid-area: salman; }
+            .home-figma-gallery .figma-tile-maya { grid-area: maya; }
+            .home-figma-gallery .figma-tile-halima { grid-area: halima; }
+            .home-figma-gallery .figma-logo-tile { grid-area: logo; }
+            .home-figma-gallery .figma-gallery-cta { grid-area: cta; }
+            .home-figma-gallery .figma-gallery-tile,
+            .home-figma-gallery .figma-gallery-cta,
+            .home-figma-gallery .figma-left-portraits .figma-gallery-tile,
+            .home-figma-gallery .figma-left-bottom .figma-gallery-tile {
+                height: 100% !important;
+                aspect-ratio: auto;
+            }
+            .home-figma-gallery .figma-gallery-title {
+                right: 22px;
+                bottom: 28px;
+                font-size: 14px;
+            }
+            .home-figma-gallery-ltr .figma-gallery-title {
+                left: 22px;
+                right: auto;
+            }
+            .home-figma-gallery .figma-gallery-title:after {
+                bottom: -7px;
+            }
+            .home-figma-gallery .figma-tile-yagoob img,
+            .home-figma-gallery .figma-tile-huda img,
+            .home-figma-gallery .figma-tile-salman img {
+                object-position: center;
+            }
+            .home-figma-gallery .figma-tile-ghadeer img,
+            .home-figma-gallery .figma-tile-zainab img,
+            .home-figma-gallery .figma-tile-maya img,
+            .home-figma-gallery .figma-tile-halima img {
+                object-position: center top;
+            }
+            .home-figma-gallery .figma-gallery-cta-content {
+                padding: 34px 24px 78px;
+                transform: none;
+            }
+            .home-figma-gallery .figma-cta-small {
+                font-size: 22px;
+                margin-bottom: 14px;
+            }
+            .home-figma-gallery .figma-cta-large {
+                font-size: 46px;
+                line-height: 1.15;
+            }
         }
       `}} />
       
@@ -160,79 +533,68 @@ export default function Home() {
       </div>
 
       {/* Gallery */}
-      <div className="gallery-wrapper">
-        <div className="change-lives">{t.we_change_lives}</div>
+      <div className={`gallery-wrapper home-figma-gallery ${isAr ? "home-figma-gallery-rtl" : "home-figma-gallery-ltr"}`}>
+        <div className="change-lives">{galleryCopy.title}</div>
         <ul className="nav nav-tabs" id="myTab" role="tablist">
           <li className="nav-item" role="presentation">
             <button className="nav-link active" data-toggle="tab" data-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="true">
-              {t.celebrities}
+              {galleryCopy.celebrities}
             </button>
           </li>
           <li className="nav-item" role="presentation">
             <button className="nav-link" data-toggle="tab" data-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">
-              {t.testimonials}
+              {galleryCopy.testimonials}
             </button>
           </li>
         </ul>
         
         <div className="tab-content" id="myTabContent">
           <div className="tab-pane fade show active" id="tab2" role="tabpanel">
-            <div className="gallery-row">
-              <div className="gallery-column">
-                <a href="/images/mu-1.png" className="gallery-item image-popup">
-                  <img src="/images/mu-1.png" alt={`${t.celebrity} 1`} />
-                  <div className="gallery-title">{t.celebrity} 1</div>
+            <div className="figma-celeb-gallery">
+              <div className="figma-celeb-left">
+                <a href="/images/Celebs/yagoob-boushehri.png" className="gallery-item figma-gallery-tile figma-tile-yagoob image-popup">
+                  <img src="/images/Celebs/yagoob-boushehri.png" alt={galleryCopy.names.yagoob} />
+                  <div className="figma-gallery-title">{galleryCopy.names.yagoob}</div>
                 </a>
-                <a href="/images/mu-2.png" className="gallery-item image-popup">
-                  <img src="/images/mu-2.png" alt={`${t.celebrity} 2`} />
-                  <div className="gallery-title">{t.celebrity} 2</div>
+                <a href="/images/Celebs/huda-hussain.png" className="gallery-item figma-gallery-tile figma-tile-huda image-popup">
+                  <img src="/images/Celebs/huda-hussain.png" alt={galleryCopy.names.huda} />
+                  <div className="figma-gallery-title">{galleryCopy.names.huda}</div>
                 </a>
-                <a href="#" className="gallery-item no-after">
-                  <img src="/images/orthodontist%201.png" alt="" />
-                  <div className="change-block">
-                    <div className="change-smile">{t.we_dont}</div>
-                    <div className="change-life">{t.we_change_lives}</div>
-                  </div>
-                </a>
-              </div>
-              
-              <div className="gallery-column">
-                <a href="/images/mu-3.png" className="gallery-item image-popup">
-                  <img src="/images/mu-3.png" alt={`${t.celebrity} 3`} />
-                  <div className="gallery-title">{t.celebrity} 3</div>
-                </a>
-                <a href="/images/mu-4.png" className="gallery-item image-popup">
-                  <img src="/images/mu-4.png" alt={`${t.celebrity} 4`} />
-                  <div className="gallery-title">{t.celebrity} 4</div>
-                </a>
-                
-                <div className="gallery-row">
-                  <div className="gallery-column">
-                    <a href="/images/mu-5.png" className="gallery-item image-popup">
-                        <img src="/images/mu-5.png" alt={`${t.celebrity} 5`} />
-                        <div className="gallery-title">{t.celebrity} 5</div>
-                    </a>
-                  </div>
-                  <div className="gallery-column">
-                    <a href="/images/mu-6.png" className="gallery-item image-popup">
-                        <img src="/images/mu-6.png" alt={`${t.celebrity} 6`} />
-                        <div className="gallery-title">{t.celebrity} 6</div>
-                    </a>
-                  </div>
+                <div className="figma-split-row figma-left-portraits">
+                  <a href="/images/Celebs/ghadeer-sultan.png" className="gallery-item figma-gallery-tile figma-tile-ghadeer image-popup">
+                    <img src="/images/Celebs/ghadeer-sultan.png" alt={galleryCopy.names.ghadeer} />
+                    <div className="figma-gallery-title">{galleryCopy.names.ghadeer}</div>
+                  </a>
+                  <a href="/images/Celebs/zainab-khafif.png" className="gallery-item figma-gallery-tile figma-tile-zainab image-popup">
+                    <img src="/images/Celebs/zainab-khafif.png" alt={galleryCopy.names.zainab} />
+                    <div className="figma-gallery-title">{galleryCopy.names.zainab}</div>
+                  </a>
                 </div>
-                
-                <div className="gallery-row">
-                  <div className="gallery-column">
-                    <a href="/images/mu-7.png" className="gallery-item image-popup">
-                        <img src="/images/mu-7.png" alt={`${t.celebrity} 7`} />
-                        <div className="gallery-title">{t.celebrity} 7</div>
-                    </a>
+                <div className="figma-split-row figma-left-bottom">
+                  <div className="gallery-item figma-gallery-tile figma-logo-tile">
+                    <img src="/images/Group%2035316.png" alt="" />
                   </div>
-                  <div className="gallery-column">
-                    <div className="gallery-item">
-                        <img src="/images/Group%2035316.png" alt="" />
-                        <div className="gallery-title"></div>
-                    </div>
+                  <a href="/images/Celebs/salman-alnajadi.png" className="gallery-item figma-gallery-tile figma-tile-salman image-popup">
+                    <img src="/images/Celebs/salman-alnajadi.png" alt={galleryCopy.names.salman} />
+                    <div className="figma-gallery-title">{galleryCopy.names.salman}</div>
+                  </a>
+                </div>
+              </div>
+
+              <div className="figma-celeb-right">
+                <a href="/images/Celebs/maya-model.png" className="gallery-item figma-gallery-tile figma-tile-maya image-popup">
+                  <img src="/images/Celebs/maya-model.png" alt={galleryCopy.names.maya} />
+                  <div className="figma-gallery-title">{galleryCopy.names.maya}</div>
+                </a>
+                <a href="/images/Celebs/halima-boland.png" className="gallery-item figma-gallery-tile figma-tile-halima image-popup">
+                  <img src="/images/Celebs/halima-boland.png" alt={galleryCopy.names.halima} />
+                  <div className="figma-gallery-title">{galleryCopy.names.halima}</div>
+                </a>
+                <div className="figma-gallery-cta">
+                  <img className="figma-gallery-cta-bg" src="/images/orthodontist%201.png" alt="" aria-hidden="true" />
+                  <div className="figma-gallery-cta-content">
+                    <span className="figma-cta-small">{galleryCopy.ctaSmall}</span>
+                    <span className="figma-cta-large">{galleryCopy.ctaMain}</span>
                   </div>
                 </div>
               </div>
@@ -343,11 +705,11 @@ export default function Home() {
                       </div>
                       <div className="doctor-small">
                         <div className="doctor-img">
-                            <img src="/images/Dr.-Hmoud.png" alt="" />
+                            <img src="/images/dr-img-teeth-show.png" alt="" />
                         </div>
                       </div>
                       <div className="doctor-info">
-                        <div className="doctor-name">Dr. Hmoud</div>
+                        <div className="doctor-name">{t.dr_border_img}</div>
                         <div className="doctor-title">{t.prosthodontist}</div>
                         <div className="doctor-title">{t.kuwait_university}</div>
                       </div>
@@ -399,8 +761,8 @@ export default function Home() {
             <div className="col-12 col-lg-4">
               <div className="before-after-wrapper">
                 <div className="before-after-img">
-                  <img className="image-before" src="/images/teeth-img-before.png" alt="Before" />
-                  <img className="image-after" src="/images/teeth-img-after.png" alt="After" />
+                  <img className="image-before" src="/images/teeth-img-before-3-1.png" alt="Before" />
+                  <img className="image-after" src="/images/teeth-img-after-3-1.png" alt="After" />
                 </div>
                 <div className="before-text">{t.before}</div>
                 <div className="after-text">{t.after}</div>
@@ -443,158 +805,16 @@ export default function Home() {
       </div>
 
       {/* Team */}
-      <div className="team-wrapper">
-        <div className="container-fluid">
-          <div className="team-title">
-            <img src="/images/Group%2035340.png" alt="" />
-            <div className="we-selective">{t.we_are_selective}</div>
-          </div>
-          <div id="ourTeam" className="carousel slide" data-ride="carousel">
-             <div className="carousel-inner">
-                <div className="carousel-item active">
-                   <div className="row">
-                      <div className="col-6 col-lg-4">
-                          <a href={`/${locale}/our-team`}>
-                              <div className="doctor-item">
-                                  <div className="doctor-img">
-                                      <img src="/images/Dr.-Hmoud.png" alt="Doctor" />
-                                  </div>
-                                  <div className="doctor-info">
-                                      <div>
-                                          <div className="doctor-name">Dr. Hmoud</div>
-                                          <div className="doctor-title">{t.prosthodontist}</div>
-                                          <div className="doctor-university">{t.kuwait_university}</div>
-                                      </div>
-                                      <div className="arrow-icon">
-                                          <img src="/images/arrow-next1.svg" alt="" />
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-                      <div className="col-6 col-lg-4">
-                          <a href={`/${locale}/our-team`}>
-                              <div className="doctor-item">
-                                  <div className="doctor-img">
-                                      <img src="/images/Dr.-Amnah-(1).png" alt="Doctor" />
-                                  </div>
-                                  <div className="doctor-info">
-                                      <div>
-                                          <div className="doctor-name">Dr. Amnah</div>
-                                          <div className="doctor-title">{t.orthodontist}</div>
-                                          <div className="doctor-university">{t.kuwait_university}</div>
-                                      </div>
-                                      <div className="arrow-icon">
-                                          <img src="/images/arrow-next1.svg" alt="" />
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-                      <div className="col-6 col-lg-4">
-                          <a href={`/${locale}/our-team`}>
-                              <div className="doctor-item">
-                                  <div className="doctor-img">
-                                      <img src="/images/Dr.%20Essa%20Al%20Essa.png" alt="Doctor" />
-                                  </div>
-                                  <div className="doctor-info">
-                                      <div>
-                                          <div className="doctor-name">Dr. Essa Al Essa</div>
-                                          <div className="doctor-title">{t.prosthodontist}</div>
-                                          <div className="doctor-university">{t.kuwait_university}</div>
-                                      </div>
-                                      <div className="arrow-icon">
-                                          <img src="/images/arrow-next1.svg" alt="" />
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-                   </div>
-                </div>
-                
-                <div className="carousel-item">
-                   <div className="row">
-                      <div className="col-6 col-lg-4">
-                          <a href={`/${locale}/our-team`}>
-                              <div className="doctor-item">
-                                  <div className="doctor-img">
-                                      <img src="/images/Dr.-Hmoud.png" alt="Doctor" />
-                                  </div>
-                                  <div className="doctor-info">
-                                      <div>
-                                          <div className="doctor-name">Dr. Hmoud</div>
-                                          <div className="doctor-title">{t.prosthodontist}</div>
-                                          <div className="doctor-university">{t.kuwait_university}</div>
-                                      </div>
-                                      <div className="arrow-icon">
-                                          <img src="/images/arrow-next1.svg" alt="" />
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <a className="carousel-control-prev" href="#ourTeam" role="button" data-slide="prev">
-                <img src="/images/prev-arrow.svg" width="20" alt="Previous" />
-            </a>
-            <a className="carousel-control-next" href="#ourTeam" role="button" data-slide="next">
-                <img src="/images/next-arrow.svg" width="20" alt="Next" />
-            </a>
-          </div>
-          
-          <ul className="departments-list">
-             <li>
-                 <div className="department-item">
-                     <div className="department-icon">
-                         <img src="/images/Prosthodontist,%20Implant%20&%20Cosmetic%20Dentistry.svg" alt="Specialty" />
-                     </div>
-                     <div className="department-title">{t.prosthodontist}</div>
-                 </div>
-             </li>
-             <li>
-                 <div className="department-item">
-                     <div className="department-icon">
-                         <img src="/images/Dental-icon.svg" alt="Specialty" />
-                     </div>
-                     <div className="department-title">{t.orthodontist}</div>
-                 </div>
-             </li>
-             <li>
-                 <div className="department-item">
-                     <div className="department-icon">
-                         <img src="/images/Dental-emergencies-icon.svg" alt="Specialty" />
-                     </div>
-                     <div className="department-title">{t.endodontist}</div>
-                 </div>
-             </li>
-             <li>
-                 <div className="department-item">
-                     <div className="department-icon">
-                         <img src="/images/Prevention-icon.svg" alt="Specialty" />
-                     </div>
-                     <div className="department-title">{t.periodontist}</div>
-                 </div>
-             </li>
-             <li>
-                 <div className="department-item">
-                     <div className="department-icon">
-                         <img src="/images/Dental-Problems-icon.svg" alt="Specialty" />
-                     </div>
-                     <div className="department-title">{t.oral_surgeon}</div>
-                 </div>
-             </li>
-          </ul>
-          
-          <div className="view-all-doctors">
-            <Link href={`/${locale}/our-team`} className="btn btn-secondary">{t.view_all_doctors}</Link>
-          </div>
-        </div>
-      </div>
+      <FigmaOurTeam locale={locale} />
 
-      {/* Our Mission */}
+      {/* Testimonials */}
+      <FigmaTestimonials locale={locale} />
+
+      {/* Appointment */}
+      <AppointmentSection locale={locale} />
+
+      {/* Old mission/footer-style block disabled temporarily for Figma footer replacement */}
+      {showOldMissionFooter && (
       <div className="mission-wrapper">
         <div className="container-fluid">
           <div className="mission-block">
@@ -621,6 +841,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      )}
     </>
   );
 }

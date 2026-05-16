@@ -1,0 +1,478 @@
+.footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: clamp(300px, 16.6vw, 357px) 0 clamp(46px, 4vw, 78px);
+  background: linear-gradient(123deg, #051a53 0%, #143d83 50%, #3262b9 100%);
+  color: #fff;
+}
+
+/*
+  Figma-style white top cut.
+  Do NOT use top:-320px or height:100%; that creates the white box inside the footer.
+*/
+.footer::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(255px, 23vw, 430px);
+  content: "";
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='1920' height='430' viewBox='0 0 1920 430' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H1920V166C1655 68 1354 12 1020 10C687 8 368 65 0 140V0Z' fill='%23fbfbfb'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(1170px, calc(100% - 72px));
+  margin: 0 auto;
+}
+
+.topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  direction: ltr;
+}
+
+.ltr .topRow {
+  flex-direction: row-reverse;
+}
+
+.contactNav {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(24px, 3vw, 54px);
+  direction: ltr;
+}
+
+.contactItem {
+  display: inline-flex;
+  min-width: 62px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(11px, 0.72vw, 14px);
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contactItem:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contactIcon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffc936;
+}
+
+.contactIcon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.logo {
+  width: clamp(78px, 5.2vw, 99px);
+  height: auto;
+  object-fit: contain;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: clamp(54px, 4.8vw, 82px) 0 0;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 451px);
+  gap: clamp(60px, 7vw, 132px);
+  align-items: start;
+  padding: clamp(62px, 4.7vw, 86px) 0 clamp(54px, 3.8vw, 72px);
+  direction: ltr;
+}
+
+.ltr .mainGrid {
+  grid-template-columns: minmax(320px, 451px) minmax(0, 1fr);
+}
+
+.ltr .phoneArea {
+  order: 1;
+}
+
+.ltr .linksArea {
+  order: 2;
+}
+
+.rtl .linksArea {
+  order: 1;
+}
+
+.rtl .phoneArea {
+  order: 2;
+}
+
+.linksArea {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(180px, 0.78fr);
+  gap: clamp(40px, 5vw, 86px);
+  align-items: start;
+}
+
+.stackedLinks {
+  display: grid;
+  gap: clamp(58px, 5.4vw, 92px);
+}
+
+.linkGroup {
+  color: #fff;
+}
+
+.rtl .linkGroup {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr .linkGroup {
+  direction: ltr;
+  text-align: left;
+}
+
+.linkGroup h3 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: clamp(15px, 0.9vw, 18px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.linkGroup ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linkGroup a {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(14px, 0.9vw, 17px);
+  font-weight: 400;
+  line-height: 1.22;
+  text-decoration: none;
+}
+
+.linkGroup a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.phoneArea {
+  display: grid;
+  justify-items: end;
+  color: #fff;
+}
+
+.ltr .phoneArea {
+  justify-items: start;
+  text-align: left;
+}
+
+.rtl .phoneArea {
+  justify-items: start;
+  text-align: right;
+  direction: rtl;
+}
+
+.phoneNumber {
+  display: inline-block;
+  margin: 0 0 clamp(36px, 3vw, 56px);
+  color: #2c8fff;
+  font-family: Spartan, "Plus Jakarta Sans", Arial, sans-serif;
+  font-size: clamp(42px, 2.7vw, 56px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.phoneNumber:hover {
+  color: #2c8fff;
+  text-decoration: none;
+}
+
+.phoneNumber span {
+  color: #ffc936;
+}
+
+.hours {
+  margin: 0 0 clamp(34px, 3.2vw, 58px);
+}
+
+.hours p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(15px, 1.05vw, 20px);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.storeBadges {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  direction: ltr;
+}
+
+.ltr .storeBadges {
+  justify-content: flex-start;
+}
+
+.storeBadges a {
+  display: inline-flex;
+}
+
+.storeBadges img {
+  width: clamp(118px, 6.7vw, 128px);
+  height: auto;
+  object-fit: contain;
+}
+
+.bottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  padding-top: clamp(52px, 4.6vw, 82px);
+  direction: ltr;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  direction: ltr;
+}
+
+.socials a {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials img {
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: contain;
+}
+
+.copyright {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.rtl .copyright {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr .copyright {
+  direction: ltr;
+  text-align: left;
+}
+
+@media (max-width: 1180px) {
+  .inner {
+    width: min(980px, calc(100% - 56px));
+  }
+
+  .mainGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.78fr);
+    gap: 56px;
+  }
+
+  .ltr .mainGrid {
+    grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1fr);
+  }
+
+  .linksArea {
+    grid-template-columns: minmax(210px, 1fr) minmax(160px, 0.72fr);
+    gap: 44px;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding-top: 220px;
+  }
+
+  .footer::before {
+    height: 285px;
+  }
+
+  .topRow,
+  .ltr .topRow {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 34px;
+  }
+
+  .contactNav {
+    justify-content: center;
+    gap: 26px;
+  }
+
+  .divider {
+    margin-top: 42px;
+  }
+
+  .mainGrid,
+  .ltr .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 58px;
+    padding: 64px 0 70px;
+  }
+
+  .ltr .phoneArea,
+  .rtl .phoneArea,
+  .ltr .linksArea,
+  .rtl .linksArea {
+    order: initial;
+  }
+
+  .phoneArea,
+  .ltr .phoneArea,
+  .rtl .phoneArea {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .linksArea {
+    grid-template-columns: 1fr 1fr;
+    order: 2;
+  }
+
+  .phoneArea {
+    order: 1;
+  }
+
+  .ltr .linkGroup,
+  .rtl .linkGroup {
+    text-align: center;
+  }
+
+  .storeBadges,
+  .ltr .storeBadges {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .footer {
+    padding: 170px 0 42px;
+  }
+
+  .footer::before {
+    height: 225px;
+  }
+
+  .inner {
+    width: calc(100% - 32px);
+  }
+
+  .contactNav {
+    width: 100%;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .contactItem {
+    min-width: 0;
+    flex: 1 1 0;
+    gap: 9px;
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  .contactIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo {
+    width: 82px;
+  }
+
+  .mainGrid,
+  .ltr .mainGrid {
+    padding: 52px 0 58px;
+  }
+
+  .linksArea {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+
+  .stackedLinks {
+    gap: 46px;
+  }
+
+  .phoneNumber {
+    font-size: 42px;
+  }
+
+  .hours p {
+    font-size: 15px;
+  }
+
+  .storeBadges {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .storeBadges img {
+    width: 126px;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    gap: 26px;
+    padding-top: 42px;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .copyright,
+  .rtl .copyright,
+  .ltr .copyright {
+    text-align: center;
+  }
+}

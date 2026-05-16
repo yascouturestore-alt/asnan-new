@@ -4,61 +4,9 @@ import { getDictionary } from '@/dictionaries';
 
 export default function Footer({ locale = 'en' }: { locale?: string }) {
   const t = getDictionary(locale);
-  const isAr = locale === 'ar';
 
   return (
     <>
-      {/* Request an Appointment */}
-      <div className="request-appointment-wrapper" id="requestAppointment">
-          <div className="container-fluid">
-              <div className="row justify-content-center">
-                  <div className="col-12 col-lg-10">
-                      <div className="row align-items-end">
-                          <div className="col-1"></div>
-                          <div className="col-12 col-lg-5">
-                              <div className="location-title">{t.footer_our_location}</div>
-                              <div className="location-address">
-                                  {t.footer_address.split(', ')[0]}<br/>
-                                  {t.footer_address.split(', ').slice(1).join(', ')}
-                              </div>
-                              <a href="https://goo.gl/maps/tAkP2nQGtYx67U7d9"
-                                  className="btn btn-secondary">{t.footer_get_directions}</a>
-                          </div>
-                          <div className="col-12 col-lg-6">
-                              <div className="request-appointment-title">
-                                  {t.footer_request_appointment_title}
-                              </div>
-                              <form id="requestAppointmentForm" className="request-appointment-form">
-                                  <div className="form-group">
-                                      <input type="text" className="form-control" name="fullname" required placeholder={t.footer_full_name} />
-                                  </div>
-                                  <div className="form-group">
-                                      <input type="tel" id="phone" className="form-control" name="phone" required placeholder={t.footer_phone_number} />
-                                  </div>
-                                  <div className="form-group">
-                                      <input type="email" className="form-control" name="email" required placeholder={isAr ? "البريد الإلكتروني" : "Email Address"} />
-                                  </div>
-                                  <div className="form-group">
-                                      <textarea className="form-control" name="message" rows={5} required placeholder={t.footer_reason_for_visit}></textarea>
-                                  </div>
-                                  <div className="d-flex justify-content-between align-items-center">
-                                      <div className="accepting-terms">
-                                          {t.footer_terms_agreement}
-                                      </div>
-                                      <button type="submit" className="btn btn-secondary">{t.footer_send_request}</button>
-                                  </div>
-                              </form>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div className="bg-img">
-              <img src={isAr ? "/images/asnan_tower_map_icon_rtl_bg.webp" : "/images/asnan_tower_map_icon_bg.webp"} alt="background image" />
-              <img src="/images/asnan_tower_mobile_bg.webp" alt="background image" />
-          </div>
-      </div>
-
       {/* Footer */}
       <footer id="contactUs">
           <div className="container-fluid">

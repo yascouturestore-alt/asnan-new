@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import FigmaFooter from "@/components/layout/FigmaFooter";
+// import Footer from "@/components/layout/Footer";
 import Script from "next/script";
 import "../globals.css";
 
@@ -92,7 +93,9 @@ export default async function RootLayout({
       <body dir={isAr ? "rtl" : "ltr"}>
         <Header />
         {children}
-        <Footer locale={locale} />
+        {/* Old footer disabled temporarily for Figma footer replacement */}
+        {/* <Footer locale={locale} /> */}
+        <FigmaFooter locale={locale} />
         {/* Scripts */}
         <Script src="/js/jquery.min.js" strategy="beforeInteractive" />
         <Script src="/js/bootstrap.bundle.min.js" strategy="lazyOnload" />

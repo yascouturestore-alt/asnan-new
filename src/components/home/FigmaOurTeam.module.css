@@ -1,0 +1,501 @@
+.section {
+  position: relative;
+  width: 100%;
+  min-height: clamp(660px, 66vw, 1269px);
+  overflow: hidden;
+  background: #fff;
+  color: #fff;
+  isolation: isolate;
+}
+
+.bgMain,
+.bgPattern,
+.bgOverlay {
+  position: absolute;
+  pointer-events: none;
+}
+
+.bgMain {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  z-index: 0;
+}
+
+.bgOverlay {
+  inset: 0;
+  background: linear-gradient(180deg, rgba(1, 13, 54, 0.16), rgba(1, 17, 66, 0.24));
+  z-index: 1;
+}
+
+.bgPattern {
+  top: 13%;
+  right: -4%;
+  width: min(54vw, 980px);
+  opacity: 0.22;
+  z-index: 2;
+}
+
+.inner {
+  position: relative;
+  z-index: 3;
+  width: min(1180px, 78vw);
+  min-height: clamp(660px, 66vw, 1269px);
+  margin: 0 auto;
+  padding-top: clamp(78px, 7.4vw, 142px);
+  padding-bottom: clamp(62px, 5vw, 96px);
+}
+
+.headline {
+  position: absolute;
+  top: clamp(80px, 6.95vw, 134px);
+  left: clamp(250px, 21.5vw, 414px);
+  z-index: 8;
+  margin: 0;
+  color: #ffc936;
+  font-size: clamp(27px, 2.08vw, 40px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: start;
+  letter-spacing: 0;
+}
+
+.watermark {
+  position: absolute;
+  top: clamp(88px, 7.55vw, 145px);
+  left: 50%;
+  z-index: 3;
+  width: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.33) 0%, rgba(255, 255, 255, 0.18) 54%, rgba(255, 255, 255, 0.03) 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: blur(0.25px);
+  font-size: clamp(124px, 11vw, 212px);
+  font-weight: 800;
+  line-height: 0.9;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
+.doctorsCurveMask {
+  position: absolute;
+  top: clamp(420px, 40.7vw, 782px);
+  left: 50%;
+  z-index: 5;
+  display: block;
+  width: 100vw;
+  height: clamp(280px, 26.8vw, 515px);
+  max-width: none;
+  transform: translateX(-50%);
+  object-fit: cover;
+  object-position: center top;
+  pointer-events: none;
+}
+
+.doctorsStage {
+  position: relative;
+  z-index: auto;
+  height: clamp(360px, 33vw, 635px);
+  margin-top: clamp(120px, 8.35vw, 160px);
+}
+
+.doctor {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 31%;
+  min-width: 250px;
+}
+
+.hashem {
+  left: 1%;
+}
+
+.khalid {
+  left: 50%;
+  width: 34%;
+  transform: translateX(-50%);
+}
+
+.amna {
+  right: 1%;
+}
+
+.doctorPhoto {
+  position: relative;
+  z-index: 4;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: clamp(330px, 33vw, 635px);
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.doctorInfo {
+  position: relative;
+  z-index: 7;
+  display: flex;
+  flex-direction: row;
+  gap: clamp(9px, 0.85vw, 16px);
+  align-items: center;
+  width: clamp(230px, 18.5vw, 355px);
+  margin-top: clamp(-78px, -4vw, -58px);
+  direction: ltr;
+}
+
+.doctorText {
+  min-width: 0;
+  flex: 1 1 auto;
+  order: 1;
+}
+
+.doctorText h3 {
+  margin: 0 0 4px;
+  color: #fff;
+  font-size: clamp(15px, 1.03vw, 20px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.subtitle,
+.education {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(9px, 0.57vw, 11px);
+  font-weight: 500;
+  line-height: 1.32;
+  letter-spacing: 0;
+}
+
+.education {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.arrowLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 clamp(42px, 3vw, 58px);
+  order: 0;
+  width: clamp(42px, 3vw, 58px);
+  height: clamp(50px, 3.65vw, 70px);
+  text-decoration: none;
+  transition: transform 180ms ease;
+}
+
+.arrowLink:hover {
+  transform: translateY(-2px);
+}
+
+.arrowLink img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ltr .doctorInfo {
+  direction: ltr;
+  text-align: left;
+}
+
+.ltr .arrowLink img {
+  transform: scaleX(-1);
+}
+
+.rtl .doctorInfo {
+  direction: ltr;
+}
+
+.rtl .doctorText {
+  direction: rtl;
+  text-align: right;
+}
+
+.specialties {
+  position: relative;
+  z-index: 7;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: clamp(8px, 1.1vw, 22px);
+  align-items: center;
+  margin: clamp(24px, 2.5vw, 48px) auto 0;
+  padding: 0;
+  list-style: none;
+  direction: ltr;
+}
+
+.specialty {
+  display: flex;
+  min-width: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(5px, 0.45vw, 9px);
+  color: #fff;
+  text-align: start;
+}
+
+.specialty img {
+  flex: 0 0 clamp(22px, 1.55vw, 30px);
+  width: clamp(22px, 1.55vw, 30px);
+  height: clamp(22px, 1.55vw, 30px);
+  object-fit: contain;
+}
+
+.specialty span {
+  display: block;
+  font-size: clamp(8px, 0.56vw, 11px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.rtl .specialty {
+  direction: rtl;
+}
+
+.ctaWrap {
+  position: relative;
+  z-index: 7;
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(30px, 2.25vw, 43px);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: clamp(160px, 10.6vw, 204px);
+  min-height: clamp(38px, 2.5vw, 48px);
+  border-radius: 999px;
+  background: #ffc936;
+  color: #06245c;
+  font-size: clamp(12px, 0.72vw, 14px);
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 28px;
+}
+
+@media (max-width: 1180px) {
+  .inner {
+    width: min(1060px, 88vw);
+  }
+
+  .doctor {
+    width: 32%;
+    min-width: 220px;
+  }
+
+  .doctorInfo {
+    width: clamp(220px, 23vw, 300px);
+    margin-top: -62px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    min-height: auto;
+  }
+
+  .inner {
+    width: min(760px, 92vw);
+    min-height: auto;
+    padding-top: 96px;
+  }
+
+  .bgMain {
+    object-position: top center;
+  }
+
+  .bgPattern {
+    top: 9%;
+    right: -25%;
+    width: 92vw;
+  }
+
+  .watermark {
+    top: 102px;
+    font-size: clamp(70px, 17vw, 132px);
+  }
+
+  .headline {
+    top: 98px;
+    left: 50%;
+    width: max-content;
+    max-width: 92vw;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .doctorsCurveMask {
+    display: none;
+  }
+
+  .doctorsStage {
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 18px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 50px 8px 12px;
+    margin: 0 -8px;
+  }
+
+  .doctor,
+  .hashem,
+  .khalid,
+  .amna {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    min-width: 220px;
+    transform: none;
+  }
+
+  .doctorPhoto {
+    max-height: 330px;
+    margin: 0 auto;
+  }
+
+  .doctorInfo,
+  .ltr .doctorInfo {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: -42px;
+    text-align: start;
+  }
+
+  .ltr .arrowLink {
+    order: 0;
+  }
+
+  .doctorText {
+    flex: 1 1 auto;
+  }
+
+  .arrowLink {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .doctorText h3 {
+    white-space: normal;
+  }
+
+  .specialties {
+    grid-template-columns: repeat(4, minmax(96px, 1fr));
+    gap: 20px 14px;
+    margin-top: 34px;
+  }
+}
+
+@media (max-width: 520px) {
+  .section {
+    background: #061d5b;
+  }
+
+  .inner {
+    width: min(390px, 92vw);
+    padding-top: 76px;
+    padding-bottom: 54px;
+  }
+
+  .bgMain {
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .bgPattern {
+    top: 145px;
+    right: -62%;
+    width: 160vw;
+    opacity: 0.16;
+  }
+
+  .headline {
+    font-size: 25px;
+    top: 76px;
+  }
+
+  .watermark {
+    top: 104px;
+    font-size: 58px;
+  }
+
+  .doctorsStage {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    overflow: visible;
+    padding: 58px 0 0;
+    margin: 0;
+  }
+
+  .doctor {
+    min-width: 0;
+  }
+
+  .doctorPhoto {
+    width: min(270px, 78vw);
+    max-height: none;
+  }
+
+  .doctorInfo,
+  .ltr .doctorInfo {
+    display: flex;
+    align-items: center;
+    width: min(330px, 92vw);
+    margin: -34px auto 0;
+  }
+
+  .doctorText h3 {
+    font-size: 17px;
+  }
+
+  .doctorText {
+    flex: 1 1 auto;
+  }
+
+  .subtitle,
+  .education {
+    font-size: 11px;
+  }
+
+  .specialties {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 12px;
+    margin-top: 38px;
+  }
+
+  .specialty img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .specialty span {
+    font-size: 12px;
+  }
+
+  .ctaWrap {
+    margin-top: 34px;
+  }
+}
