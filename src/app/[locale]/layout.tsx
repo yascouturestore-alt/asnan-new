@@ -69,6 +69,7 @@ export default async function RootLayout({
         <link rel="stylesheet" type="text/css" href="/css/custom.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/css/countrySelect.min.css" />
         <link rel="stylesheet" type="text/css" href="/css/booking-page.css" />
+        <link rel="stylesheet" type="text/css" href="/css/kids-specialties.css" />
 
         {isAr && (
           <>
