@@ -334,6 +334,32 @@ html[dir="ltr"] .ks-treatments-header {
 }
 
 @media screen and (max-width: 767px) {
+  .ks-tabs-list {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 12px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ks-tab-item {
+    flex: 0 0 auto;
+  }
+   .ks-tab-item img {
+    display: none;
+   }
+
+  .ks-tab-btn {
+    padding: 10px 15px;
+    border-radius: 10px 10px 0 0;
+  }
+  .ks-tab-label {
+    font-size: 14px;
+  }
+
   .ks-treatment-info h4 {
     font-size: 32px;
     line-height: 40px;
