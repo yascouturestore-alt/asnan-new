@@ -282,7 +282,7 @@ export default function KidsSpecialtiesPage() {
                 key={item.id}
                 className={`ks-treatment-card ${isAr ? "rtl" : ""}`}
               >
-                <div className="row gx-4 align-items-center">
+                <div className="row gx-4 gy-3 align-items-center">
                   <div className="col-md-6">
                     <div className="ks-treatment-info">
                       <h4>{isAr ? "التخدير العام" : "General Anesthesia"}</h4>
@@ -317,13 +317,13 @@ export default function KidsSpecialtiesPage() {
         <div className="ks-treatments-section">
           <div className="container-fluid">
             <article className={`ks-treatment-card ${isAr ? "rtl" : ""}`}>
-              <div className="row gx-5 align-items-center">
+              <div className="row gx-5align-items-center">
                 <div className="col-md-6">
                   <div className="ks-treatment-img-wrap">
                     <img src="../images/frame2.png" alt="laughing gas" />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 mt-3 mt-md-0">
                   <div className="ks-treatment-info">
                     <h4>{isAr ? "الغاز الضاحك" : "Laughing Gas"}</h4>
                     <p>
@@ -346,7 +346,7 @@ export default function KidsSpecialtiesPage() {
         <div className="ks-treatments">
           <div className="container-fluid">
             <article className={`ks-treatment-card ${isAr ? "rtl" : ""}`}>
-              <div className="row gx-4 align-items-center">
+              <div className="row gx-4 gy-3 align-items-center">
                 <div className="col-md-6">
                   <div className="ks-treatment-info">
                     <h4>
@@ -384,13 +384,13 @@ export default function KidsSpecialtiesPage() {
         <div className="ks-treatments-section">
           <div className="container-fluid">
             <article className={`ks-treatment-card ${isAr ? "rtl" : ""}`}>
-              <div className="row gx-5 align-items-center">
+              <div className="row gx-5  align-items-center">
                 <div className="col-md-6">
                   <div className="ks-treatment-img-wrap">
                     <img src="../images/frame4.png" alt="preventive fillings" />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 mt-3 mt-md-0">
                   <div className="ks-treatment-info">
                     <h4>{isAr ? "الحشوات الوقائية" : "Preventive Fillings"}</h4>
                     <p>
@@ -408,7 +408,7 @@ export default function KidsSpecialtiesPage() {
         <div className="ks-treatments">
           <div className="container-fluid">
             <article className={`ks-treatment-card ${isAr ? "rtl" : ""}`}>
-              <div className="row gx-4 align-items-center">
+              <div className="row gx-4 gy-3 align-items-center">
                 <div className="col-md-6">
                   <div className="ks-treatment-info">
                     <h4>
@@ -445,7 +445,7 @@ export default function KidsSpecialtiesPage() {
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 mt-3 mt-md-0">
                   <div className="ks-treatment-info">
                     <h4>
                       {isAr
@@ -467,7 +467,7 @@ export default function KidsSpecialtiesPage() {
         <div className="ks-treatments">
           <div className="container-fluid">
             <article className={`ks-treatment-card ${isAr ? "rtl" : ""}`}>
-              <div className="row gx-4 align-items-center">
+              <div className="row gx-4 gy-3 align-items-center">
                 <div className="col-md-6">
                   <div className="ks-treatment-info">
                     <h4>
@@ -507,7 +507,7 @@ export default function KidsSpecialtiesPage() {
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 mt-3 mt-md-0">
                   <div className="ks-treatment-info">
                     <h4>
                       {isAr
@@ -544,7 +544,7 @@ export default function KidsSpecialtiesPage() {
         <div className="ks-treatments">
           <div className="container-fluid">
             <article className={`ks-treatment-card ${isAr ? "rtl" : ""}`}>
-              <div className="row gx-4 align-items-center">
+              <div className="row gx-4 gy-3 align-items-center">
                 <div className="col-md-6">
                   <div className="ks-treatment-info">
                     <h4>{isAr ? "التقويم المبكر" : "Early Orthodontics"}</h4>
@@ -598,7 +598,7 @@ export default function KidsSpecialtiesPage() {
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 mt-3 mt-md-0">
                   <div className="ks-treatment-info">
                     <h4>
                       {isAr
@@ -646,7 +646,7 @@ export default function KidsSpecialtiesPage() {
          <div className="ks-treatments">
           <div className="container-fluid">
             <article className={`ks-treatment-card ${isAr ? "rtl" : ""}`}>
-              <div className="row gx-4 align-items-center">
+              <div className="row gx-4 gy-3 align-items-center">
                 <div className="col-md-6">
                   <div className="ks-treatment-info">
                     <h4>{isAr ? "حافظ المسافة" : "Space Maintainer"}</h4>

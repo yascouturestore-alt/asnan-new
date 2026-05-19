@@ -180,6 +180,10 @@ html[dir="ltr"] .ks-characters > * {
   gap: 2vw;
   margin-bottom: 3vw;
 }
+html[dir="ltr"] .ks-treatments-header {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
 
 .ks-treatments-header.rtl {
   flex-direction: row-reverse;
@@ -262,60 +266,87 @@ html[dir="ltr"] .ks-characters > * {
 }
 
 /* Responsive */
-@media (max-width: 991px) {
-  .ks-welcome {
-    padding: 50px 0 40px;
-  }
-
-  .ks-welcome-img-wrap img {
-    max-width: 240px;
-  }
-
-  .ks-characters {
-    padding: 55px 0 55px;
-  }
-
-  .ks-tabs-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-  }
-
+@media screen and (max-width: 1650px) {
   .ks-tab-btn {
-    border-radius: 24px;
-    padding: 6px 8px 12px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 35px 45px;
   }
-
-  .ks-tab-btn.active {
-    background: #fff;
+  .ks-tab-label {
+    font-size: 28px;
   }
+}
 
+@media screen and (max-width: 1300px) {
+  .ks-characters {
+    top: -180px;
+    height: 1200px;
+  }
+  .ks-tab-btn {
+    padding: 25px 35px;
+  }
+  .ks-tab-label {
+    font-size: 24px;
+  }
+  .ks-tab-item img {
+    max-width: 200px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ks-characters {
+    top: -120px;
+  }
+  .ks-tab-btn {
+    border-radius: 30px 30px 0 0;
+  }
+  .ks-tab-label {
+    font-size: 20px;
+  }
   .ks-tab-content {
-    margin-top: 14px;
-    border-radius: 24px;
-    padding: 16px;
+    padding: 35px 20px 40px 20px;
   }
-
-  .ks-treatments {
-    padding: 55px 0 50px;
+  .ks-tab-content p {
+    font-size: 16px;
   }
-
-  .ks-treatments-header,
-  .ks-treatments-header.rtl,
-  .ks-treatment-card,
-  .ks-treatment-card.rtl {
-    flex-direction: column;
-    align-items: flex-start;
+}
+@media screen and (max-width: 991px) {
+  .ks-characters {
+    top: -30px;
   }
-
-  .ks-treatment-img-wrap {
-    flex: 0 0 auto;
-    width: 100%;
+  .ks-welcome-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 20px;
   }
+  .ks-welcome-text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .ks-welcome-text:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .ks-characters-header {
+    margin-bottom: 50px;
+  }
+  .treatment-container {
+    top: -100px;
+  }
+}
 
-  .ks-treatment-card {
-    border-radius: 24px;
-    padding: 16px;
-    gap: 18px;
+@media screen and (max-width: 767px) {
+  .ks-treatment-info h4 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 20px;
+  }
+  .ks-treatment-info p, .ks-treatment-info strong {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .ks-treatments-header {
+    flex-direction: column-reverse !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+
   }
 }
