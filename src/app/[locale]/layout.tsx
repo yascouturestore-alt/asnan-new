@@ -36,7 +36,7 @@ export default async function RootLayout({
     <html key={locale} lang={locale} dir={isAr ? "rtl" : "ltr"} className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
         {isAr && (
-            <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet" />
         )}
         <style dangerouslySetInnerHTML={{__html: `
           html[dir="rtl"] body {

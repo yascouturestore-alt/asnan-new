@@ -1,0 +1,279 @@
+/* ── SECTION ─────────────────────────────────────────────── */
+
+.section {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(-410px, -16vw, -180px);
+  padding: clamp(300px, 18vw, 360px) 0 clamp(170px, 10vw, 220px);
+  background: transparent;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  left: 0;
+  right: 0;
+  bottom: -80px;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image: var(--faq-bg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: min(1540px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* ── HEADER ──────────────────────────────────────────────── */
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1;
+  color: #051a53;
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #50595c;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── GRID ────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 383px));
+  gap: 24px;
+  justify-content: center;
+  direction: ltr;
+}
+
+/* ── CARD ────────────────────────────────────────────────── */
+
+.card {
+  width: 100%;
+  min-height: 450px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 40px 1px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardImageWrap {
+  position: relative;
+  width: 100%;
+  height: 249px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.cardImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.cardBody {
+  position: relative;
+  flex: 1;
+  min-height: 201px;
+  padding: 24px 24px 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardTitle {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  color: #051a53;
+  text-align: center;
+  margin: 0 0 28px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.button {
+  min-width: 142px;
+  height: 48px;
+  padding: 8px 24px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(90deg, #042970 0%, #197ad9 100%);
+  color: #ffffff;
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.button:hover {
+  opacity: 0.88;
+}
+
+.countRow {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #838f91;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 27px;
+  direction: ltr;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 1280px) {
+  .inner {
+    width: calc(100% - 48px);
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .card {
+    min-height: 390px;
+  }
+
+  .cardImageWrap {
+    height: 190px;
+  }
+
+  .cardTitle {
+    font-size: 22px;
+  }
+
+  .button {
+    min-width: 112px;
+    height: 38px;
+    font-size: 15px;
+    padding: 7px 18px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    margin-top: -160px;
+    padding: 230px 0 120px;
+  }
+
+  .section::before {
+    top: -80px;
+    bottom: -60px;
+    background-size: cover;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 360px));
+    gap: 22px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .card {
+    min-height: 410px;
+  }
+
+  .cardImageWrap {
+    height: 220px;
+  }
+
+  .cardTitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    margin-top: -90px;
+    padding: 150px 0 80px;
+  }
+
+  .inner {
+    width: calc(100% - 32px);
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .title {
+    font-size: 27px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    line-height: 21px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .card {
+    min-height: 390px;
+  }
+
+  .cardImageWrap {
+    height: 210px;
+  }
+
+  .cardTitle {
+    font-size: 22px;
+  }
+
+  .button {
+    min-width: 108px;
+    height: 38px;
+    font-size: 15px;
+  }
+}

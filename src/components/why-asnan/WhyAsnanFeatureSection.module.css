@@ -1,0 +1,297 @@
+.section {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  padding: clamp(80px, 5.5vw, 116px) 0 clamp(88px, 6vw, 124px);
+  background: #fff;
+  isolation: isolate;
+}
+
+.section::before {
+  position: absolute;
+  inset: -8% -5%;
+  z-index: -1;
+  background-image: url("/images/Mask%20Group%20163.svg");
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: clamp(520px, 48vw, 960px) auto;
+  content: "";
+  opacity: 0.045;
+}
+
+.inner {
+  position: relative;
+  display: grid;
+  width: min(1560px, calc(100% - 64px));
+  grid-template-columns: minmax(320px, 55.3fr) minmax(260px, 44.7fr);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(60px, 5.5vw, 106px);
+  margin: 0 auto;
+  direction: ltr;
+}
+
+.imageRight .inner {
+  grid-template-columns: minmax(260px, 44.7fr) minmax(320px, 55.3fr);
+}
+
+/* ── image wrapper (holds panel + badge, no clipping) ── */
+
+.imagePanelWrap {
+  position: relative;
+  width: 100%;
+  max-width: 806px;
+}
+
+.imageLeft .imagePanelWrap {
+  grid-column: 1;
+}
+
+.imageRight .imagePanelWrap {
+  grid-column: 2;
+}
+
+/* ── image panel (clipped for border-radius) ── */
+
+.imagePanel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 806 / 786;
+  overflow: hidden;
+  border-radius: 0 88px 28px 88px;
+  /* background: #dfe5e8; */
+}
+
+.imagePanel img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── badge — positioned at the right edge of the image panel ── */
+
+.iconBadge {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 4;
+  display: grid;
+  width: clamp(148px, 10.4vw, 200px);
+  height: clamp(148px, 10.4vw, 200px);
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(4, 63, 132, 0.14), 0 2px 8px rgba(4, 63, 132, 0.08);
+  transform: translate(50%, -50%);
+}
+
+.imageRight .iconBadge {
+  right: auto;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.iconBadge img {
+  width: clamp(104px, 7.5vw, 144px);
+  height: auto;
+}
+
+/* ── content ── */
+
+.content {
+  max-width: 652px;
+}
+
+.imageLeft .content {
+  grid-column: 2;
+}
+
+.imageRight .content {
+  grid-column: 1;
+}
+
+.rtl .content {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr .content {
+  direction: ltr;
+  text-align: left;
+}
+
+.content h2 {
+  margin: 0 0 clamp(32px, 2.4vw, 48px);
+  color: #051a53;
+  font-size: clamp(36px, 3.2vw, 60px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.content ul {
+  display: grid;
+  gap: clamp(14px, 1.1vw, 20px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.content li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: #5f696d;
+  font-size: clamp(18px, 1.45vw, 26px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.rtl .content li,
+.ltr .content li {
+  flex-direction: row;
+}
+
+.marker {
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  margin-top: 0.2em;
+  flex: 0 0 auto;
+}
+
+.marker img {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+/* ── tablet (1180px) ── */
+
+@media (max-width: 1180px) {
+  .inner,
+  .imageRight .inner {
+    gap: clamp(48px, 4.5vw, 84px);
+  }
+
+  .content h2 {
+    font-size: clamp(30px, 3.8vw, 50px);
+  }
+
+  .content li {
+    font-size: clamp(16px, 1.9vw, 22px);
+  }
+}
+
+/* ── mobile (860px) ── */
+
+@media (max-width: 860px) {
+  .section {
+    padding: 60px 0 72px;
+  }
+
+  .inner,
+  .imageRight .inner {
+    display: flex;
+    width: min(620px, calc(100% - 32px));
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .imagePanelWrap,
+  .imageLeft .imagePanelWrap,
+  .imageRight .imagePanelWrap {
+    order: 1;
+    max-width: none;
+    width: 100%;
+  }
+
+  .imagePanel,
+  .imageLeft .imagePanel,
+  .imageRight .imagePanel {
+    aspect-ratio: 806 / 650;
+    border-radius: 0 58px 20px 58px;
+  }
+
+  .iconBadge,
+  .imageRight .iconBadge {
+    right: 50%;
+    left: auto;
+    top: 100%;
+    transform: translate(50%, -50%);
+    width: 120px;
+    height: 120px;
+  }
+
+  .iconBadge img {
+    width: 86px;
+  }
+
+  .content,
+  .imageLeft .content,
+  .imageRight .content {
+    order: 2;
+    max-width: none;
+    width: 100%;
+    padding-top: 72px;
+  }
+
+  .content h2 {
+    margin-bottom: 24px;
+    font-size: clamp(28px, 7vw, 38px);
+    text-align: inherit;
+  }
+
+  .content li {
+    gap: 10px;
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.55;
+  }
+
+  .marker,
+  .marker img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* ── small mobile (460px) ── */
+
+@media (max-width: 460px) {
+  .section {
+    padding: 50px 0 64px;
+  }
+
+  .inner,
+  .imageRight .inner {
+    width: calc(100% - 24px);
+  }
+
+  .imagePanel,
+  .imageLeft .imagePanel,
+  .imageRight .imagePanel {
+    aspect-ratio: 1 / 0.88;
+    border-radius: 0 42px 16px 42px;
+  }
+
+  .iconBadge,
+  .imageRight .iconBadge {
+    width: 100px;
+    height: 100px;
+  }
+
+  .iconBadge img {
+    width: 72px;
+  }
+
+  .content,
+  .imageLeft .content,
+  .imageRight .content {
+    padding-top: 60px;
+  }
+
+  .content h2 {
+    font-size: clamp(26px, 8vw, 34px);
+  }
+}

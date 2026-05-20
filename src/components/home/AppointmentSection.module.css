@@ -2,31 +2,26 @@
   position: relative;
   z-index: 5;
   width: 100%;
+  min-height: calc(100vw * 1500 / 3260);
   overflow: hidden;
   margin-bottom: 0;
   scroll-margin-top: 118px;
-  background: #fbfbfb;
   color: #051a53;
   isolation: isolate;
+  background: transparent;
 }
 
-.pattern {
-  position: absolute;
-  inset: -7% -4% -6%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.pattern::before {
+.section::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/images/team/team-bg-pattern.png");
-  background-repeat: repeat;
-  background-position: center;
-  background-size: clamp(520px, 50vw, 960px) auto;
-  content: "";
-  filter: grayscale(1) brightness(1.62);
-  opacity: 0.048;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image: var(--appointment-bg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
 }
 
 .inner {
@@ -294,7 +289,13 @@
 
 @media (max-width: 991px) {
   .section {
+    min-height: auto;
     scroll-margin-top: 84px;
+  }
+
+  .section::before {
+    background-size: cover;
+    background-position: center top;
   }
 
   .inner {
@@ -315,6 +316,11 @@
 }
 
 @media (max-width: 560px) {
+  .section::before {
+    background-size: cover;
+    background-position: center top;
+  }
+
   .inner {
     width: calc(100% - 28px);
     row-gap: 38px;

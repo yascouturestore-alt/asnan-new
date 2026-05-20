@@ -1,0 +1,499 @@
+/* ── SECTION ─────────────────────────────────────────────── */
+
+.section {
+  position: relative;
+  z-index: 2; /* stay above FAQ grey background */
+  background-color: transparent;
+  background-image: var(--popular-categories-bg);
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  /* image ko distort/squeeze nahi karega */
+  background-size: 100% auto;
+
+  /* tumhari image ka original ratio approx 1292x1218 hai */
+  min-height: calc(100vw * 1218 / 1292);
+
+  /* content ko top white curve se neeche laane ke liye */
+  padding: clamp(250px, 15vw, 300px) 0 clamp(180px, 12vw, 240px);
+
+  overflow: hidden;
+}
+
+.topWave {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bottomWave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: min(1580px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* ── HEADER ──────────────────────────────────────────────── */
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.sectionTitle {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.sectionSubtitle {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ── TABS ────────────────────────────────────────────────── */
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.tab:focus-visible {
+  outline: 2px solid rgba(255, 201, 54, 0.6);
+  outline-offset: 4px;
+}
+
+.tabActive {
+  color: #ffc936;
+}
+
+.tabIconWrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 32px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.tabIconImg {
+  height: 147px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  /* default: white */
+  filter: brightness(0) invert(1);
+  transition: filter 0.2s;
+}
+
+.tabActive .tabIconImg {
+  /* yellow #FFC936 */
+  filter: brightness(0) saturate(100%) invert(93%) sepia(34%) saturate(3128%) hue-rotate(318deg) brightness(93%) contrast(123%);;
+}
+
+.tabLabelWrap {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 79px 79px 0 0;
+  transition: background 0.25s;
+}
+
+.tabActive .tabLabelWrap {
+  background: #ffffff;
+}
+
+.tabLabel {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-size: clamp(18px, 2.4vw, 36px);
+  font-weight: 700;
+  color: currentColor;
+  line-height: 1;
+  text-align: center;
+  padding: 0 8px;
+  transition: color 0.2s;
+}
+
+/* ── CONTENT TRAY ────────────────────────────────────────── */
+
+.tray {
+  background: #ffffff;
+  border-radius: 0 0 78px 78px;
+  display: grid;
+  grid-template-columns: 90px 1fr 355px;
+  gap: 40px;
+  align-items: center;
+  padding: 32px 56px;
+  min-height: 327px;
+  direction: ltr; /* fixed column order regardless of locale */
+}
+
+/* ── VIEW ALL BUTTON ─────────────────────────────────────── */
+
+.viewAllBtn {
+  width: 90px;
+  height: 308px;
+  border-radius: 36px;
+  border: none;
+  background: linear-gradient(180deg, #00c4ff 0%, #2c8eff 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.viewAllBtn:hover {
+  opacity: 0.88;
+}
+
+.viewAllArrow {
+  width: 26px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.viewAllText {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+/* ── ARTICLE CARDS ───────────────────────────────────────── */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 33px 99px 0 rgba(82, 89, 92, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 308px;
+}
+
+.cardImageWrap {
+  position: relative;
+  width: 100%;
+  height: 172px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 30px 30px 0 0;
+}
+
+.cardBody {
+  flex: 1;
+  padding: 16px 15px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex: 1;
+}
+
+.cardTitle {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #50595c;
+  margin: 0;
+  flex: 1;
+}
+
+[dir="rtl"] .cardTitle {
+  text-align: right;
+}
+
+[dir="ltr"] .cardTitle {
+  text-align: left;
+}
+
+.learnMoreBtn {
+  width: 92px;
+  min-width: 92px;
+  height: 36px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(90deg, #042970 0%, #197ad9 100%);
+  color: #ffffff;
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.learnMoreBtn:hover {
+  opacity: 0.85;
+}
+
+.countRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #838f91;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 27px;
+  margin-top: 10px;
+  flex-shrink: 0;
+}
+
+/* ── SIDE BOX ────────────────────────────────────────────── */
+
+.sideBox {
+  height: 308px;
+  border-radius: 34px;
+  background: rgba(214, 222, 224, 0.35);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.sideBoxItem {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #50595c;
+  margin: 0;
+}
+
+[dir="rtl"] .sideBoxItem {
+  text-align: right;
+}
+
+[dir="ltr"] .sideBoxItem {
+  text-align: left;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 1280px) {
+  .inner {
+    width: calc(100% - 48px);
+  }
+
+  .tray {
+    grid-template-columns: 80px 1fr 300px;
+    gap: 24px;
+    padding: 24px 32px;
+  }
+
+  .sideBox {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    min-height: 850px;
+    padding: 180px 0 140px;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .header {
+    margin-bottom: 48px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .tabLabel {
+    font-size: 16px;
+    padding: 0 4px;
+  }
+
+  .tabIconWrap {
+    height: 140px;
+    padding-bottom: 20px;
+  }
+
+  .tabIconImg {
+    height: 90px;
+  }
+
+  .tabLabelWrap {
+    height: 110px;
+    border-radius: 44px 44px 0 0;
+  }
+
+  /* Tray goes vertical */
+  .tray {
+    grid-template-columns: 1fr;
+    border-radius: 0 0 40px 40px;
+    padding: 24px 24px 32px;
+    gap: 20px;
+    min-height: unset;
+  }
+
+  .viewAllBtn {
+    width: 100%;
+    height: 52px;
+    flex-direction: row;
+    border-radius: 30px;
+    gap: 12px;
+    order: 3;
+  }
+
+  .viewAllText {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .viewAllArrow {
+    width: 20px;
+    height: 20px;
+    transform: none;
+  }
+
+  .cards {
+    order: 1;
+  }
+
+  .sideBox {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tabLabelWrap {
+    border-radius: 32px 32px 0 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    min-height: 720px;
+    /* padding: 130px 0 100px; */
+    background-size: cover;
+    background-position: center top;
+    padding: 185px 0 285px;
+  }
+
+  .inner {
+    width: calc(100% - 32px);
+  }
+
+  .sectionTitle {
+    font-size: 26px;
+  }
+
+  .sectionSubtitle {
+    font-size: 13px;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .tabIconWrap {
+    height: 100px;
+    padding-bottom: 12px;
+  }
+
+  .tabIconImg {
+    height: 60px;
+  }
+
+  .tabLabelWrap {
+    height: 80px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .tabLabel {
+    font-size: 13px;
+  }
+
+  .tray {
+    padding: 20px 16px 24px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: unset;
+  }
+}

@@ -1,5 +1,7 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import styles from "./AppointmentSection.module.css";
+import appointmentBg from "../../../public/images/appointment_home/booking-section-bg.png";
 
 type AppointmentSectionProps = {
   locale: string;
@@ -42,9 +44,12 @@ export default function AppointmentSection({ locale }: AppointmentSectionProps) 
       className={`${styles.section} ${isAr ? styles.rtl : styles.ltr}`}
       dir={isAr ? "rtl" : "ltr"}
       aria-labelledby="appointment-title"
+      style={
+        {
+          "--appointment-bg": `url(${appointmentBg.src})`,
+        } as CSSProperties
+      }
     >
-      <div className={styles.pattern} aria-hidden="true" />
-
       <div className={styles.inner}>
         <div className={styles.formColumn}>
           <h2 id="appointment-title" className={styles.title}>
@@ -54,22 +59,51 @@ export default function AppointmentSection({ locale }: AppointmentSectionProps) 
           <form id="requestAppointmentForm" className={styles.formCard}>
             <label className={styles.field}>
               <span className={styles.srOnly}>{t.fullName}</span>
-              <input type="text" name="fullname" required placeholder={t.fullName} autoComplete="name" />
+              <input
+                type="text"
+                name="fullname"
+                required
+                placeholder={t.fullName}
+                autoComplete="name"
+              />
             </label>
 
             <label className={`${styles.field} ${styles.phoneField}`}>
               <span className={styles.srOnly}>{t.phone}</span>
+
               <span className={styles.countrySelector} aria-hidden="true">
-                <Image src="/images/appointment_home/kuwait-flag.svg" alt="" width={20} height={10} />
+                <Image
+                  src="/images/appointment_home/kuwait-flag.svg"
+                  alt=""
+                  width={20}
+                  height={10}
+                />
                 <span>+965</span>
-                <Image src="/images/appointment_home/down-arrow.svg" alt="" width={6} height={4} />
+                <Image
+                  src="/images/appointment_home/down-arrow.svg"
+                  alt=""
+                  width={6}
+                  height={4}
+                />
               </span>
-              <input type="tel" name="phone" required placeholder={t.phone} autoComplete="tel" />
+
+              <input
+                type="tel"
+                name="phone"
+                required
+                placeholder={t.phone}
+                autoComplete="tel"
+              />
             </label>
 
             <label className={`${styles.field} ${styles.textareaField}`}>
               <span className={styles.srOnly}>{t.reason}</span>
-              <textarea name="message" required placeholder={t.reason} rows={4} />
+              <textarea
+                name="message"
+                required
+                placeholder={t.reason}
+                rows={4}
+              />
             </label>
 
             <div className={styles.formFooter}>
@@ -83,12 +117,19 @@ export default function AppointmentSection({ locale }: AppointmentSectionProps) 
 
         <div className={styles.locationColumn}>
           <p className={styles.locationLabel}>{t.locationLabel}</p>
+
           <address className={styles.address}>
             {t.addressLine1}
             <br />
             {t.addressLine2}
           </address>
-          <a className={styles.directionsButton} href="https://goo.gl/maps/tAkP2nQGtYx67U7d9" target="_blank" rel="noreferrer">
+
+          <a
+            className={styles.directionsButton}
+            href="https://goo.gl/maps/tAkP2nQGtYx67U7d9"
+            target="_blank"
+            rel="noreferrer"
+          >
             {t.directions}
           </a>
         </div>

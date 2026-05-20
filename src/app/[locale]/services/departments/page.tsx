@@ -9,11 +9,15 @@ export default function DepartmentsPage() {
   const t = getDictionary(locale);
 
   const departments = [
-    { id: 1, floor: "1", title: locale === 'ar' ? "الاستقبال والتشخيص" : "Reception & Diagnostics", slug: "reception", image: "/images/mu-1.png" },
-    { id: 2, floor: "2", title: locale === 'ar' ? "تقويم الأسنان" : "Orthodontics", slug: "orthodontics", image: "/images/mu-2.png" },
-    { id: 3, floor: "3", title: locale === 'ar' ? "أسنان الأطفال" : "Pedodontics", slug: "pedodontics", image: "/images/mu-3.png" },
-    { id: 4, floor: "4", title: locale === 'ar' ? "علاج العصب واللثة" : "Endodontics & Periodontics", slug: "endodontics", image: "/images/mu-4.png" },
-    { id: 5, floor: "5", title: locale === 'ar' ? "الجراحة والزراعة" : "Surgery & Implants", slug: "surgery", image: "/images/mu-5.png" }
+    { id: 1, floor: "1", title: locale === 'ar' ? "الاستقبال" : "Reception & Diagnostics", slug: "reception", image: "/images/departments/orthodontics.png" },
+    { id: 2, floor: "2", title: locale === 'ar' ? "مختبر اسنان" : "Orthodontics", slug: "orthodontics", image: "/images/departments/kids-dentistry.png" },
+    { id: 3, floor: "3", title: locale === 'ar' ? "اسنان كيدز (طب اسنان الأطفال)" : "Pedodontics", slug: "pedodontics", image: "/images/departments/dental-lab.png" },
+    { id: 4, floor: "4", title: locale === 'ar' ? "تقويم الاسنان" : "Endodontics & Periodontics", slug: "endodontics", image: "/images/departments/reception.png" },
+    { id: 5, floor: "5", title: locale === 'ar' ? "التجميل و طب الاسنان الشامل" : "Surgery & Implants", slug: "surgery", image: "/images/departments/root-canal-treatment.png" },
+    { id: 6, floor: "6", title: locale === 'ar' ? "جراحه اللثه و زراعه الاسنان" : "Surgery & Implants", slug: "surgery", image: "/images/departments/oral-dental-health.png" },
+    { id: 7, floor: "7", title: locale === 'ar' ? "صحه الفم و الاسنان" : "Surgery & Implants", slug: "surgery", image: "/images/departments/gum-surgery-implants.png" },
+    { id: 8, floor: "8", title: locale === 'ar' ? "علاج أقنيه جذور الاسنان و جراحة ( علاج عصب )" : "Surgery & Implants", slug: "surgery", image: "/images/departments/cosmetic-comprehensive-dentistry.png" },
+    { id: 9, floor: "9", title: locale === 'ar' ? "التركيبات وطب الاسنان الشامل" : "Surgery & Implants", slug: "surgery", image: "/images/departments/prosthodontics-comprehensive-dentistry.png" }
   ];
 
   return (
@@ -26,7 +30,7 @@ export default function DepartmentsPage() {
               <h1 className="hero-title">
                 {locale === 'ar' ? "الأقسام" : "Departments"}
               </h1>
-              <ul className="departments-floors-list">
+              {/* <ul className="departments-floors-list">
                 {departments.map((dept) => (
                   <li key={dept.id}>
                     <a href={`/${locale}/services/departments/${dept.slug}`} className="department-item">
@@ -38,7 +42,7 @@ export default function DepartmentsPage() {
                     </a>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>
@@ -51,7 +55,7 @@ export default function DepartmentsPage() {
       {/* Tower Info */}
       <div className="container-fluid">
         <div className="departments-tower">
-          <img src="/images/Asnan-3D-tower-footer.png" alt="Asnan-3D-tower" />
+          <img src="/images/departments/Asnan-3D-tower.png" alt="Asnan-3D-tower" />
           <div className="departments-tower-text">
             <div>{locale === 'ar' ? "أول عيادة أسنان" : "The First Dental"}</div>
             <div className="divider"></div>
@@ -88,14 +92,14 @@ export default function DepartmentsPage() {
             </div>
           </div>
           
-          <div className="row row-cols-1 row-cols-md-3 row-cols-lg-5 mt-5">
+          <div className="row row-cols-1 row-cols-md-3 row-cols-lg-5 mt-5 justify-content-center">
             {departments.map((dept) => (
-              <div key={dept.id} className="col mb-4">
+              <div key={dept.id} className="col-md-3 col-lg-3 mb-4">
                 <a href={`/${locale}/services/departments/${dept.slug}`} className="department-item text-center">
                   <div className="floor-img mb-3">
-                    <img src={dept.image} alt={dept.title} className="img-fluid rounded" />
+                    <img src={dept.image} alt={dept.title} className="img-fluid" />
                   </div>
-                  <p className="floor-number text-secondary mb-1">{locale === 'ar' ? "الطابق" : "Floor"} {dept.floor}</p>
+                  {/* <p className="floor-number text-secondary mb-1">{locale === 'ar' ? "الطابق" : "Floor"} {dept.floor}</p> */}
                   <h4 className="department-title">{dept.title}</h4>
                 </a>
               </div>
@@ -103,7 +107,7 @@ export default function DepartmentsPage() {
           </div>
         </div>
         <div className="bg-img">
-          <img src="/images/asnan-curve.svg" alt="background image" />
+          <img src="/images/departments/asnan-curve.png" alt="background image" />
         </div>
       </div>
     </>
