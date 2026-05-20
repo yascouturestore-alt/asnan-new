@@ -1,0 +1,378 @@
+/* Kids Specialties Page */
+
+.kids-specialties-page {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ks-welcome {
+  position: relative;
+}
+
+.ks-welcome-img-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.ks-welcome-img-wrap img {
+  width: 100%;
+  max-width: 792px;
+  height: auto;
+  object-fit: contain;
+}
+
+.ks-welcome-content {
+  max-width: 620px;
+}
+
+.ks-welcome-title {
+  margin: 0px 0px 30px;
+  color: #051a53;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 60px;
+}
+
+.ks-welcome-title span {
+  color: #ffc936;
+}
+
+.ks-welcome-text {
+  margin: 0;
+  color: #50595c;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+}
+.ks-welcome-text:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* Characters Section */
+.ks-characters {
+  position: relative;
+  top: -250px;
+  z-index: -1;
+  color: #fff;
+  background-image: url("../images/bluebg.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+html[dir="ltr"] .ks-characters {
+  transform: scaleX(-1);
+}
+
+html[dir="ltr"] .ks-characters > * {
+  transform: scaleX(-1);
+}
+
+.ks-characters-header {
+  text-align: center;
+  margin-bottom: 97px;
+}
+
+.ks-characters-header h3 {
+  margin: 0 0 4px;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 88.99px;
+  color: #ffffff;
+}
+
+.ks-characters-header p {
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 46px;
+  color: #ffffff;
+}
+
+.ks-tabs-list {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ks-tab-item {
+  margin: 0;
+}
+
+.ks-tab-btn {
+  width: 100%;
+  white-space: nowrap;
+  border: none;
+  background: transparent;
+  color: #fff;
+  border-radius: 79px 79px 0 0;
+  padding: 60px 74px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.ks-tab-icon img {
+  width: auto;
+  max-width: 88px;
+  height: 95px;
+  object-fit: contain;
+}
+
+.ks-tab-label {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.ks-tab-btn.active {
+  background: #fff;
+  color: #ffc936;
+}
+
+.ks-tab-content {
+  margin-top: 0;
+  background: #fff;
+  border-radius: 0 0 80px 80px;
+  padding: 75px 60px 76px 60px;
+  max-height: 141px;
+}
+
+.ks-tab-content p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 400;
+  color: #50595c;
+}
+
+/* Treatments Section */
+.ks-treatments {
+  position: relative;
+  background-image: url("../images/bgimg.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+}
+.treatment-container {
+  position: relative;
+  top: -250px;
+}
+
+.ks-treatments-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2vw;
+  margin-bottom: 3vw;
+}
+html[dir="ltr"] .ks-treatments-header {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.ks-treatments-header.rtl {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.ks-treatments-text {
+  max-width: 760px;
+}
+
+.ks-treatments-text h3 {
+  margin: 0 0 0.8vw;
+  color: #0b2c70;
+  font-weight: 700;
+  font-size: clamp(26px, 2.5vw, 48px);
+  line-height: 1.2;
+}
+
+.ks-treatments-text p {
+  margin: 0;
+  color: #50595c;
+  font-size: clamp(14px, 1vw, 20px);
+  line-height: 1.7;
+}
+
+.ks-security-icon {
+  width: min(8vw, 120px);
+  min-width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+.ks-treatment-card {
+  padding: 100px 0px;
+  /* margin-bottom: 2vw; */
+}
+
+.ks-treatment-card.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.ks-treatment-img-wrap {
+  flex: 0 0 min(35vw, 430px);
+}
+
+.ks-treatment-img-wrap img {
+  width: 100%;
+  max-width: 806px;
+  height: auto;
+  object-fit: cover;
+}
+
+.ks-treatment-info h4 {
+  margin: 0 0 40px;
+  color: #042970;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 100%;
+}
+
+.ks-treatment-info p,
+.ks-treatment-info strong {
+  color: #50595c;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  max-width: 652px;
+}
+.ks-treatment-info p:not(:last-child) {
+  margin-bottom: 20px;
+}
+.ks-treatment-info p.less-space:not(:last-child) {
+  margin-bottom: 10px;
+}
+.ks-treatment-info strong {
+  margin-bottom: 20px;
+  color: #50595c !important;
+  font-weight: 700 !important;
+}
+
+/* Responsive */
+@media screen and (max-width: 1650px) {
+  .ks-tab-btn {
+    padding: 35px 45px;
+  }
+  .ks-tab-label {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .ks-characters {
+    top: -180px;
+    height: 1200px;
+  }
+  .ks-tab-btn {
+    padding: 25px 35px;
+  }
+  .ks-tab-label {
+    font-size: 24px;
+  }
+  .ks-tab-item img {
+    max-width: 200px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ks-characters {
+    top: -120px;
+  }
+  .ks-tab-btn {
+    border-radius: 30px 30px 0 0;
+  }
+  .ks-tab-label {
+    font-size: 20px;
+  }
+  .ks-tab-content {
+    padding: 35px 20px 40px 20px;
+  }
+  .ks-tab-content p {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .ks-characters {
+    top: -30px;
+  }
+  .ks-welcome-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 20px;
+  }
+  .ks-welcome-text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .ks-welcome-text:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .ks-characters-header {
+    margin-bottom: 50px;
+  }
+  .treatment-container {
+    top: -100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ks-tabs-list {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 12px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ks-tab-item {
+    flex: 0 0 auto;
+  }
+   .ks-tab-item img {
+    display: none;
+   }
+
+  .ks-tab-btn {
+    padding: 10px 15px;
+    border-radius: 10px 10px 0 0;
+  }
+  .ks-tab-label {
+    font-size: 14px;
+  }
+
+  .ks-treatment-info h4 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 20px;
+  }
+  .ks-treatment-info p, .ks-treatment-info strong {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .ks-treatments-header {
+    flex-direction: column-reverse !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+
+  }
+}
