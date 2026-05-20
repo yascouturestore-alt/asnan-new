@@ -3470,7 +3470,7 @@ ul.top-news-list li.top-news-item .post-info .post-footer .post-date {
   display: block;
   width: 100%;
   /* height: 8.958vw; */
-  border-radius: 0 0 0 3.698vw;
+  /* border-radius: 0 0 0 3.698vw; */
   background: #fff;
   box-shadow: 0 1.71875vw 5.15625vw rgba(82, 89, 92, 0.05);
   overflow: hidden;
@@ -3487,10 +3487,11 @@ ul.top-news-list li.top-news-item .post-info .post-footer .post-date {
   display: block;
   max-width: 90%;
   font-weight: 700;
-  font-size: 0.99vw;
+  font-size: 28px;
   letter-spacing: -0.07em;
-  color: #50595c;
+  color: #051A53;
   margin: 0 auto;
+  line-height: 40px;
 }
 .floor-wrapper {
   position: relative;

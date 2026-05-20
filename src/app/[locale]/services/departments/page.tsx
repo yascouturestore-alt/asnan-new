@@ -9,16 +9,73 @@ export default function DepartmentsPage() {
   const t = getDictionary(locale);
 
   const departments = [
-    { id: 1, floor: "1", title: locale === 'ar' ? "الاستقبال" : "Reception & Diagnostics", slug: "reception", image: "/images/departments/orthodontics.png" },
-    { id: 2, floor: "2", title: locale === 'ar' ? "مختبر اسنان" : "Orthodontics", slug: "orthodontics", image: "/images/departments/kids-dentistry.png" },
-    { id: 3, floor: "3", title: locale === 'ar' ? "اسنان كيدز (طب اسنان الأطفال)" : "Pedodontics", slug: "pedodontics", image: "/images/departments/dental-lab.png" },
-    { id: 4, floor: "4", title: locale === 'ar' ? "تقويم الاسنان" : "Endodontics & Periodontics", slug: "endodontics", image: "/images/departments/reception.png" },
-    { id: 5, floor: "5", title: locale === 'ar' ? "التجميل و طب الاسنان الشامل" : "Surgery & Implants", slug: "surgery", image: "/images/departments/root-canal-treatment.png" },
-    { id: 6, floor: "6", title: locale === 'ar' ? "جراحه اللثه و زراعه الاسنان" : "Surgery & Implants", slug: "surgery", image: "/images/departments/oral-dental-health.png" },
-    { id: 7, floor: "7", title: locale === 'ar' ? "صحه الفم و الاسنان" : "Surgery & Implants", slug: "surgery", image: "/images/departments/gum-surgery-implants.png" },
-    { id: 8, floor: "8", title: locale === 'ar' ? "علاج أقنيه جذور الاسنان و جراحة ( علاج عصب )" : "Surgery & Implants", slug: "surgery", image: "/images/departments/cosmetic-comprehensive-dentistry.png" },
-    { id: 9, floor: "9", title: locale === 'ar' ? "التركيبات وطب الاسنان الشامل" : "Surgery & Implants", slug: "surgery", image: "/images/departments/prosthodontics-comprehensive-dentistry.png" }
-  ];
+  {
+    id: 1,
+    floor: "1",
+    title: locale === "ar" ? "الاستقبال" : "Reception",
+    slug: "reception",
+    image: "/images/departments/reception.png",
+  },
+  {
+    id: 2,
+    floor: "2",
+    title: locale === "ar" ? "مختبر اسنان" : "Asnan Dental Lab",
+    slug: "dental-lab",
+    image: "/images/departments/dental-lab.png",
+  },
+  {
+    id: 3,
+    floor: "3",
+    title: locale === "ar" ? "اسنان كيدز (طب اسنان الأطفال)" : "Asnan Kids (Pediatric Dentistry)",
+    slug: "kids-dentistry",
+    image: "/images/departments/kids-dentistry.png",
+  },
+  {
+    id: 4,
+    floor: "4",
+    title: locale === "ar" ? "تقويم الاسنان" : "Orthodontics",
+    slug: "orthodontics",
+    image: "/images/departments/orthodontics.png",
+  },
+  {
+    id: 5,
+    floor: "5",
+    title: locale === "ar" ? "التجميل و طب الاسنان الشامل" : "Cosmetic & Comprehensive Dentistry",
+    slug: "cosmetic-comprehensive-dentistry",
+    image: "/images/departments/cosmetic-comprehensive-dentistry.png",
+  },
+  {
+    id: 6,
+    floor: "6",
+    title: locale === "ar" ? "جراحه اللثه و زراعه الاسنان" : "Gum Surgery & Dental Implants",
+    slug: "gum-surgery-implants",
+    image: "/images/departments/gum-surgery-implants.png",
+  },
+  {
+    id: 7,
+    floor: "7",
+    title: locale === "ar" ? "صحه الفم و الاسنان" : "Oral & Dental Health",
+    slug: "oral-dental-health",
+    image: "/images/departments/oral-dental-health.png",
+  },
+  {
+    id: 8,
+    floor: "8",
+    title:
+      locale === "ar"
+        ? "علاج أقنيه جذور الاسنان و جراحة ( علاج عصب )"
+        : "Root Canal Treatment & Endodontic Surgery",
+    slug: "root-canal-treatment",
+    image: "/images/departments/root-canal-treatment.png",
+  },
+  {
+    id: 9,
+    floor: "9",
+    title: locale === "ar" ? "التركيبات وطب الاسنان الشامل" : "Prosthodontics & Comprehensive Dentistry",
+    slug: "prosthodontics-comprehensive-dentistry",
+    image: "/images/departments/prosthodontics-comprehensive-dentistry.png",
+  },
+];
 
   return (
     <>
@@ -100,7 +157,7 @@ export default function DepartmentsPage() {
                     <img src={dept.image} alt={dept.title} className="img-fluid" />
                   </div>
                   {/* <p className="floor-number text-secondary mb-1">{locale === 'ar' ? "الطابق" : "Floor"} {dept.floor}</p> */}
-                  <h4 className="department-title">{dept.title}</h4>
+                  <h4 className="department-title mb-4">{dept.title}</h4>
                 </a>
               </div>
             ))}
