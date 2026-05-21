@@ -84,7 +84,7 @@ export default function Home() {
                 $worldBeautySlider.owlCarousel({
                     mouseDrag: false,
                     touchDrag: false,
-                    loop: false,
+                    loop: true,
                     nav: true,
                     navText: ['<img src="/images/arrow-prev-yellow.svg" alt="Prev">', '<img src="/images/arrow-next-yellow.svg" alt="Next">'],
                     dots: false,
