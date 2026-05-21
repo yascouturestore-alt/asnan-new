@@ -13,7 +13,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
               <div className="row align-items-end">
                   <div className="col-12 col-lg-4 text-center">
                       <div className="footer-logo">
-                          <img src="/images/logo-footer.png" alt="Asnan" />
+                          <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/logo-footer.png`} alt="Asnan" />
                       </div>
                       <div className="ministry">
                         {t.footer_address.split(', ')[0]}<br/>
@@ -32,19 +32,19 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
                       <ul className="contact-list">
                           <li className="contact-item">
                               <a target="_blank" rel="noreferrer" href="https://wa.me/1896666" className="contact-link">
-                                  <img src="/images/Icon-whatsapp.svg" alt="whatsapp icon" height="40" />
+                                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/Icon-whatsapp.svg`} alt="whatsapp icon" height="40" />
                                   {t.footer_whatsapp}
                               </a>
                           </li>
                           <li className="contact-item">
                               <a href="tel:+9651896666" className="contact-link">
-                                  <img src="/images/Icon-phone.svg" alt="phone icon" height="40" width="100" />
+                                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/Icon-phone.svg`} alt="phone icon" height="40" width="100" />
                                   {t.footer_direct_call}
                               </a>
                           </li>
                           <li className="contact-item">
                               <a href="mailto:info@asnan.com" className="contact-link">
-                                  <img src="/images/Icon-Email.svg" alt="email icon" height="40" />
+                                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/Icon-Email.svg`} alt="email icon" height="40" />
                                   {t.footer_email_us}
                               </a>
                           </li>
@@ -52,9 +52,9 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
                       <div className="rewards-block">
                           <div className="rewards-title">{t.footer_our_awards}</div>
                           <div className="rewards-img">
-                              <img src="/images/Asnan-Awards-1.svg" alt="asnan awards" />
-                              <img src="/images/Asnan-Awards-2.svg" alt="asnan awards" />
-                              <img src="/images/Asnan-Awards-3.svg" alt="asnan awards" />
+                              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/Asnan-Awards-1.svg`} alt="asnan awards" />
+                              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/Asnan-Awards-2.svg`} alt="asnan awards" />
+                              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/Asnan-Awards-3.svg`} alt="asnan awards" />
                           </div>
                       </div>
                   </div>
@@ -81,15 +81,15 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
                   <div className="col-12 col-lg-4">
                       <div className="download-block">
                           <a href="https://apps.apple.com/kw/app/asnan-tower/id1495283859" className="download-btn">
-                              <img src="/images/Asnan-App-Store.svg" alt="Asnan App store icon" />
+                              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/Asnan-App-Store.svg`} alt="Asnan App store icon" />
                           </a>
                           <a href="https://play.google.com/store/apps/details?id=com.asnan" className="download-btn">
-                              <img src="/images/Asnan-Google-Play.svg" alt="Asnan Play store icon" />
+                              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/Asnan-Google-Play.svg`} alt="Asnan Play store icon" />
                           </a>
                       </div>
                       <div className="footer-bottom">
                           <div className="footer-logo-gray">
-                              <img src="/images/logo-gray.png" alt="Asnan" />
+                              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/logo-gray.png`} alt="Asnan" />
                           </div>
                           <div className="">
                               <div className="copyrights">
@@ -101,7 +101,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
               </div>
           </div>
           <div className="tower-img">
-              <img src="/images/asnan_tower_new.webp" alt="Asnan Tower Photo" />
+              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/footer/asnan_tower_new.webp`} alt="Asnan Tower Photo" />
           </div>
       </footer>
     </>

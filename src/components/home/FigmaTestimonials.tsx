@@ -38,13 +38,13 @@ export default function FigmaTestimonials({ locale }: FigmaTestimonialsProps) {
 
           <div className={styles.divider} aria-hidden="true">
             <span />
-            <img src="/images/Testimonials/testimonials-quote.svg" alt="" />
+            <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonials-quote.svg`} alt="" />
             <span />
           </div>
 
           <div className={styles.testimonialRow}>
             <button className={styles.control} type="button" aria-label={t.next}>
-              <img src="/images/Testimonials/testimonials-arrow-blue-right.svg" alt="" />
+              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonials-arrow-blue-right.svg`} alt="" />
             </button>
 
             <article className={styles.cardFrame}>
@@ -52,7 +52,7 @@ export default function FigmaTestimonials({ locale }: FigmaTestimonialsProps) {
               <div className={styles.card}>
                 <p className={styles.quoteText}>{t.text}</p>
                 <div className={styles.user}>
-                  <img src="/images/Testimonials/testimonial-user-salman.png" alt="" />
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonial-user-salman.png`} alt="" />
                   <span>{t.user}</span>
                 </div>
               </div>
@@ -60,12 +60,12 @@ export default function FigmaTestimonials({ locale }: FigmaTestimonialsProps) {
             </article>
 
             <button className={styles.control} type="button" aria-label={t.previous}>
-              <img src="/images/Testimonials/testimonials-arrow-blue-left.svg" alt="" />
+              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonials-arrow-blue-left.svg`} alt="" />
             </button>
           </div>
 
           <Link className={styles.readMore} href={`/${locale}/services/testimonials`}>
-            <img src="/images/Testimonials/testimonials-arrow-white.svg" alt="" />
+            <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonials-arrow-white.svg`} alt="" />
             <span>{t.readMore}</span>
           </Link>
         </div>

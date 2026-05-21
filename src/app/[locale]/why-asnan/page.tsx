@@ -56,7 +56,6 @@ export default function WhyAsnanPage() {
 
   return (
     <>
-      {/* Hero */}
       <div className="hero-wrapper">
         <div className="container-fluid">
           <div className="row justify-content-center">
@@ -122,6 +121,223 @@ export default function WhyAsnanPage() {
       <WhyAsnanWaveFeatureSection
         locale={locale}
         image="/images/why-asnan/talent-experience.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 3 */}
+      <WhyAsnanFeatureSection
+        locale={locale}
+        image="/images/why-asnan/our-guarantee.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 4 */}
+      <WhyAsnanWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/sterialization.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 5 */}
+      <WhyAsnanFeatureSection
+        locale={locale}
+        image="/images/why-asnan/international-medical.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 6 */}
+      <WhyAsnanWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/advanced-technology.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 7 */}
+      <WhyAsnanFeatureSection
+        locale={locale}
+        image="/images/why-asnan/treatment-of-fear.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 8 */}
+      <WhyAsnanWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/dental-drilling.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 9 */}
+      <WhyAsnanFeatureSection
+        locale={locale}
+        image="/images/why-asnan/digital-radiology.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 10 */}
+      <WhyAsnanWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/electronic-anesthesia.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 11 */}
+      <WhyAsnanFeatureSection
+        locale={locale}
+        image="/images/why-asnan/zeiss-pro.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 12 */}
+      <WhyAsnanWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/digital-scanner.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 13 */}
+      <WhyAsnanFeatureSection
+        locale={locale}
+        image="/images/why-asnan/digital-printing.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 14 */}
+      <WhyAsnanWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/x-ray-image.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 15 */}
+      <WhyAsnanFeatureSection
+        locale={locale}
+        image="/images/why-asnan/our-laboratory.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 16 */}
+      <WhyAsnanWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/compilemtary-valet.png"
         icon="/images/why-asnan/icon-talent-experience.svg"
         title={talentExperienceFeature.title}
         paragraphs={talentExperienceFeature.paragraphs}

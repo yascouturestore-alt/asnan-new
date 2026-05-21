@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import styles from "./WhyAsnanWaveFeatureSection.module.css";
 
 export type WhyAsnanWaveFeatureSectionProps = {
@@ -10,6 +11,7 @@ export type WhyAsnanWaveFeatureSectionProps = {
   imageAlt?: string;
   iconAlt?: string;
   variant?: "image-left" | "image-right";
+  backgroundImage?: string;
 };
 
 export default function WhyAsnanWaveFeatureSection({
@@ -21,22 +23,24 @@ export default function WhyAsnanWaveFeatureSection({
   imageAlt = "",
   iconAlt = "",
   variant = "image-right",
+  backgroundImage = "/images/why-asnan/bg-wave-grey.svg",
 }: WhyAsnanWaveFeatureSectionProps) {
   const isAr = locale === "ar";
   const isImageRight = variant === "image-right";
 
+  const sectionStyle = {
+    "--wave-bg-image": `url(${backgroundImage})`,
+  } as CSSProperties;
+
   return (
     <section
-      className={`${styles.section} ${isAr ? styles.rtl : styles.ltr} ${
-        isImageRight ? styles.imageRight : styles.imageLeft
-      }`}
+      className={`${styles.section} ${styles.hasWaveBg} ${
+        isAr ? styles.rtl : styles.ltr
+      } ${isImageRight ? styles.imageRight : styles.imageLeft}`}
+      style={sectionStyle}
       dir={isAr ? "rtl" : "ltr"}
       aria-label={title}
     >
-      <div className={styles.waveBg} aria-hidden="true">
-        <img src="/images/why-asnan/bg-wave-grey.svg" alt="" />
-      </div>
-
       <div className={styles.inner}>
         <div className={styles.content}>
           <h2>{title}</h2>
@@ -59,8 +63,11 @@ export default function WhyAsnanWaveFeatureSection({
             />
           </div>
 
-          <div className={styles.iconBadge} aria-hidden={iconAlt ? undefined : "true"}>
-            <Image src={icon} alt={iconAlt} width={152} height={152} />
+          <div
+            className={styles.iconBadge}
+            aria-hidden={iconAlt ? undefined : "true"}
+          >
+            <Image src={icon} alt={iconAlt} width={150} height={150} />
           </div>
         </div>
       </div>

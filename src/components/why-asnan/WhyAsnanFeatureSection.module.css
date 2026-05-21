@@ -73,16 +73,16 @@
 .iconBadge {
   position: absolute;
   top: 50%;
-  right: 0;
+  left: 50%;
   z-index: 4;
   display: grid;
-  width: clamp(148px, 10.4vw, 200px);
-  height: clamp(148px, 10.4vw, 200px);
+  width: clamp(148px, 10.4vw, 250px);
+  height: clamp(148px, 10.4vw, 250px);
   place-items: center;
   border-radius: 50%;
   background: #fff;
   box-shadow: 0 8px 32px rgba(4, 63, 132, 0.14), 0 2px 8px rgba(4, 63, 132, 0.08);
-  transform: translate(50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .imageRight .iconBadge {
@@ -92,7 +92,7 @@
 }
 
 .iconBadge img {
-  width: clamp(104px, 7.5vw, 144px);
+  width: clamp(94px, 6.5vw, 134px);
   height: auto;
 }
 
