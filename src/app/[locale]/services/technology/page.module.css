@@ -1,0 +1,402 @@
+/* ============================================================
+   Technology Page – page.module.css
+   Exact Figma match (node-id 1-8222)
+   ============================================================ */
+
+/* ── Discover Heading ── */
+.discoverHeading {
+  padding: 48px 0 40px;
+  background: #ffffff;
+}
+
+.discoverText {
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 500;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.discoverHighlight {
+  color: #1b3fa6;
+  font-weight: 700;
+}
+
+.discoverYellow {
+  color: #f5a623;
+  font-weight: 700;
+}
+
+/* ── Shared tech section ── */
+.techSection {
+  padding: 70px 0;
+}
+
+.bgWhite {
+  background-color: #ffffff;
+}
+
+.bgGrey {
+  background-color: #f5f6f8;
+}
+
+.techContainer {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.techRow {
+  gap: 0;
+}
+
+/* ── Image wrapper ── */
+.imageWrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.techImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* ── Text content ── */
+.techContent {
+  padding: 0 32px;
+}
+
+[dir="ltr"] .techContent {
+  padding: 0 0 0 40px;
+}
+
+[dir="rtl"] .techContent {
+  padding: 0 40px 0 0;
+}
+
+/* ── Icon circle ── */
+.iconCircle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #1b3fa6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.iconCircle img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* Grey bg sections icon gets white bg with shadow */
+.bgGrey .iconCircle {
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(27, 63, 166, 0.12);
+}
+
+.techTitle {
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.techDesc {
+  font-size: clamp(14px, 1.1vw, 16px);
+  color: #5a6070;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── 2×2 Image grid (Lab section) ── */
+.gridImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gridImages img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Video / Full-width section ── */
+.videoSection {
+  position: relative;
+  width: 100%;
+  padding: 5.208vw 0 4.167vw;
+  background: #ffffff;
+  overflow: visible;
+  z-index: 3;
+}
+
+.videoOuter {
+  position: relative;
+  width: 90.208vw;
+  max-width: 1732px;
+  margin: 0 auto;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 82.917vw;
+  max-width: 1592px;
+  height: 36.51vw;
+  max-height: 701px;
+  min-height: 360px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 2.604vw;
+  background: #000;
+}
+
+.videoPlayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: 0;
+  outline: 0;
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.playBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  width: 5.729vw;
+  height: 5.729vw;
+  max-width: 110px;
+  max-height: 110px;
+  min-width: 68px;
+  min-height: 68px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.playBtn img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.videoLabel {
+  position: absolute;
+  top: calc(50% + 4.25vw);
+  left: 50%;
+  z-index: 4;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-family: Almarai, Tajawal, Arial, sans-serif;
+  font-size: clamp(16px, 1.25vw, 24px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+}
+
+:global(.video-is-playing) .videoOverlay,
+:global(.video-is-playing) .playBtn,
+:global(.video-is-playing) .videoLabel {
+  display: none;
+}
+
+.videoArrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 1.458vw;
+  max-width: 28px;
+  min-width: 18px;
+  height: 2.188vw;
+  max-height: 42px;
+  min-height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.videoArrow img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.videoArrowPrev {
+  left: 0;
+}
+
+.videoArrowNext {
+  right: 0;
+}
+
+/* ── Microscope – dark blue section ── */
+.microscopeSection {
+    position: relative;
+  padding: 72px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle radial glow behind icon */
+/* .microscopeSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(27, 100, 200, 0.25) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+} */
+
+:global(.inner-microsection-container) {
+  position: relative;
+  height: 577px;
+  overflow: hidden;
+  z-index: 1;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:global(.inner-microsection-container)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 577px;
+  background-image: url("/images/technology/dark-blue-bg-lower.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.microscopeContainer {
+max-width: 1054px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.microscopeIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.microscopeIcon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(83%) sepia(64%) saturate(1094%) hue-rotate(331deg) brightness(103%) contrast(101%);
+}
+
+.microscopeTitle {
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.microscopeDesc {
+  font-size: clamp(14px, 1.1vw, 16px);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 2;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 991px) {
+  .techSection {
+    padding: 48px 0;
+  }
+
+  .techContent {
+    padding: 24px 0 0 !important;
+  }
+
+  .gridImages img {
+    height: 150px;
+  }
+
+  .videoWrapper {
+    height: 300px;
+  }
+
+  .microscopeSection {
+    padding: 52px 0 60px;
+  }
+}
+
+@media (max-width: 575px) {
+  .discoverHeading {
+    padding: 32px 0 28px;
+  }
+
+  .gridImages {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+
+  .gridImages img {
+    height: 110px;
+  }
+
+  .videoWrapper {
+    height: 220px;
+  }
+
+  .playBtn {
+    width: 56px;
+    height: 56px;
+  }
+}

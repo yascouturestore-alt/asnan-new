@@ -6763,3 +6763,141 @@ footer .copyrights {
     min-height: calc(100vh - 100px) !important;
   }
 }
+
+/*//////////////////////////////////////*/
+
+.wob-page-slider{
+  width: 590px !important;
+  height: 375px !important;
+  max-width: 590px !important;
+}
+
+.wob-grey-bg {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 115px 0 125px;
+      min-height: 1542px;   
+    align-items: flex-end;
+    justify-content: flex-end;
+    display: flex;
+    margin-top: -700px;
+}
+
+.wob-grey-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url("../images/worldofbeauty/worldofbeautygreybg.png") center top / cover no-repeat;
+}
+
+/* WOB repeated sections - new classes only */
+
+.wob-cases-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.wob-case-section {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+  padding: 5.8vw 0;
+  background: #ffffff;
+}
+
+.wob-case-section--white {
+  background: #ffffff;
+}
+
+.wob-case-section--grey {
+  /* background: #f4f4f4; */
+}
+
+.wob-case-section--grey::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("../images/worldofbeauty/smallgreybgwob.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+}
+
+.wob-case-container {
+  position: relative;
+  z-index: 2;
+}
+
+.wob-case-row {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+.wob-case-section .caption-wrapper {
+  margin: 0 auto;
+}
+
+.wob-case-section .before-after-wrapper {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+.wob-case-section .small-grey-bg::after {
+  display: none !important;
+}
+
+@media screen and (max-width: 991px) {
+  .wob-case-section {
+    padding: 55px 0;
+  }
+
+  .wob-case-section--grey::before {
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .wob-case-section .caption-wrapper {
+    margin-bottom: 25px;
+  }
+}
+
+/* WOB Owl Carousel safe fallback - new class only */
+
+.wob-carousel-safe .world-beauty-slider.owl-carousel:not(.owl-loaded) {
+  display: block !important;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.wob-carousel-safe .world-beauty-slider.owl-carousel:not(.owl-loaded) > .item {
+  display: none;
+}
+
+.wob-carousel-safe .world-beauty-slider.owl-carousel:not(.owl-loaded) > .item:first-child {
+  display: block;
+}
+
+.wob-carousel-safe .world-beauty-slider.owl-carousel:not(.owl-loaded) .row {
+  display: flex;
+  align-items: center;
+}
+
+.wob-carousel-safe .world-beauty-slider.owl-carousel:not(.owl-loaded) .before-after-wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+
+.wob-carousel-safe .world-beauty-slider.owl-carousel:not(.owl-loaded) .caption-wrapper {
+  opacity: 1;
+  visibility: visible;
+}

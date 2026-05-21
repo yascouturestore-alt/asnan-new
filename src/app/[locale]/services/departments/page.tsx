@@ -126,7 +126,6 @@ export default function DepartmentsPage() {
         </div>
       </div>
 
-      {/* Departments Grid */}
       <div className="departments-wrapper">
         <div className="container-fluid">
           <h2 className="departments-title">

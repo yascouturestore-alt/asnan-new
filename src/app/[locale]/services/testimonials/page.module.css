@@ -1,0 +1,715 @@
+.page {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #051a53;
+  font-family: Almarai, Tajawal, "Plus Jakarta Sans", Arial, sans-serif;
+  margin-top: 80px;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  top: -10vw;
+  right: -10vw;
+  width: 100vw;
+  height: 180vw;
+  pointer-events: none;
+  background: url("/images/Mask Group 163.svg") top right / 88vw auto repeat-y;
+  opacity: 0.055;
+  z-index: 0;
+}
+
+.page > section {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.celebritySection {
+  padding-top: 0;
+  /* background: #fff; */
+}
+
+.celebrityInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 34.15vw;
+}
+
+.celebrityPhotoWrap {
+  width: 54.4%;
+  height: 34.15vw;
+  overflow: hidden;
+  border-top-right-radius: 15.1vw;
+  background: #ececec;
+}
+
+.celebrityPhoto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.celebrityInfo {
+  display: flex;
+  width: 45.6%;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 4vw 9.2vw 2vw 4vw;
+}
+
+.ltr .celebrityInfo {
+  align-items: flex-start;
+  padding-right: 4vw;
+  padding-left: 9.2vw;
+}
+
+.celebrityInfo h2 {
+  margin: 0;
+  color: #051a53;
+  font-size: clamp(31px, 2.65vw, 46px);
+  font-weight: 800;
+  line-height: 1.18;
+  white-space: pre-line;
+  letter-spacing: -0.03em;
+}
+
+.celebrityByline {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  margin-top: 2.35vw;
+  color: #50595c;
+  font-size: clamp(12px, 0.9vw, 16px);
+  font-weight: 700;
+}
+
+.celebrityByline img {
+  width: 3.35vw;
+  min-width: 42px;
+  height: 3.35vw;
+  min-height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.thumbnailRail {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  height: 12.5vw;
+  background: #fff;
+      position: relative;
+    z-index: 10;
+
+}
+
+.thumbButton {
+  position: relative;
+  display: block;
+  height: 100%;
+  padding: 0 0 0.35vw;
+  border: 0;
+  border-bottom: 0.35vw solid transparent;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.activeThumb {
+  border-bottom-color: #ffc936;
+}
+
+.thumbButton img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.videoIntro {
+  display: flex;
+  min-height: 14.65vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  padding: 2.2vw 1.5vw 3.1vw;
+    z-index: 10;
+    position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.bg-grey-div{
+  position: relative;
+}
+
+.videoIntro::before {
+  content: "";
+  position: absolute;
+    width: 100%;
+  height: 652px;
+  background-image: url("/images/Testimonials/testimonial-small-bg.png");
+  z-index: 0;
+    background-repeat: no-repeat;
+}
+
+.videoIntro h2,
+.videoIntro p {
+  position: relative;
+  z-index: 1;
+}
+
+.videoIntro h2 {
+  margin: 0;
+  color: #051a53;
+  font-size: clamp(28px, 2.45vw, 46px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.videoIntro p {
+  margin: 1.05vw 0 0;
+  color: #50595c;
+  font-size: clamp(13px, 0.95vw, 16px);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.videoGallery {
+  background: #ECECEC;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 45.4% 54.6%;
+  grid-template-rows: 25.6vw 25.6vw 25.6vw 25.6vw 41.85vw;
+  grid-template-areas:
+    "videoOne videoTwo"
+    "videoThree videoTwo"
+    "videoFive videoFour"
+    "brandTile videoFour"
+    "videoSix blueCta";
+  width: 100%;
+  align-items: stretch;
+  background: #ECECEC;
+}
+
+.videoCard,
+.brandTile,
+.blueCta {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.videoCard {
+  display: block;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+.videoCard:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.videoOne { grid-area: videoOne; }
+.videoTwo { grid-area: videoTwo; }
+.videoThree { grid-area: videoThree; }
+.videoFour { grid-area: videoFour; }
+.videoFive { grid-area: videoFive; }
+.videoSix { grid-area: videoSix; }
+.brandTile { grid-area: brandTile; }
+.blueCta { grid-area: blueCta; }
+
+.videoCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 100%);
+  z-index: 1;
+}
+
+.videoCard > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.videoTwo > img,
+.videoFour > img {
+  object-position: center top;
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: clamp(11px, 0.85vw, 16px);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.playButton img {
+  display: block;
+  width: clamp(42px, 4.2vw, 80px);
+  height: clamp(42px, 4.2vw, 80px);
+  margin-bottom: 0.6vw;
+  object-fit: contain;
+}
+
+.brandTile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffc936 0%, #c68a05 100%);
+}
+
+.brandTile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/Mask Group 142.png") center / 135% auto no-repeat;
+  opacity: 0.23;
+}
+
+.brandTile img {
+  position: relative;
+  z-index: 1;
+  width: 6.2vw;
+  min-width: 64px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
+.blueCta {
+  /* background: #2c8eff; */
+}
+
+.blueCta > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.blueCta > div {
+  position: absolute;
+  top: 27%;
+  right: 9%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #fff;
+  text-align: right;
+}
+
+.ltr .blueCta > div {
+  right: auto;
+  left: 9%;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.blueCta span {
+  display: block;
+  font-size: clamp(21px, 2.1vw, 40px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.blueCta strong {
+  display: block;
+  margin-top: 0.9vw;
+  font-size: clamp(42px, 5.2vw, 100px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.googleReviews {
+  position: relative;
+  /* margin-top: 0;
+  padding: 9vw 0 8.2vw;
+  background: #ececec;
+  overflow: hidden; */
+}
+
+:global(.google-inner) {
+  position: relative;
+  overflow: hidden;
+  padding: 9vw 0 8.2vw;
+      height: 1037px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: -320px;
+}
+
+:global(.google-inner)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/Testimonials/testimonial-google-bg-grey.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* .googleReviews::before {
+  content: "";
+  position: absolute;
+  top: -9.3vw;
+  left: -8%;
+  width: 116%;
+  height: 18vw;
+  border-radius: 0 0 50% 50%;
+  background: #fff;
+  z-index: 0;
+} */
+
+/* .googleReviews::after {
+  content: "";
+  position: absolute;
+  bottom: -8.8vw;
+  left: -8%;
+  width: 116%;
+  height: 18vw;
+  border-radius: 50% 50% 0 0;
+  background: #fff;
+  z-index: 0;
+} */
+
+.googleHeading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.1vw;
+  margin-bottom: 3.1vw;
+}
+
+.googleHeading > img {
+  display: block;
+  width: clamp(140px, 15.9vw, 306px);
+  height: auto;
+}
+
+.googleHeading h2 {
+  margin: 0;
+  color: #50595c;
+  font-size: clamp(28px, 2.4vw, 46px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.ratingPill {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  gap: 0.65vw;
+  padding: 0.35vw 0.9vw 0.35vw 1.5vw;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.83);
+  color: #50595c;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.ratingStars,
+.cardStars {
+  color: #ffc936;
+  letter-spacing: 0.08em;
+}
+
+.ratingStars {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35vw;
+  height: 72px;
+  padding: 0 1.45vw;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 22px;
+}
+
+.reviewsWrap {
+  position: relative;
+  z-index: 1;
+  width: min(82vw, 1580px);
+  margin: 0 auto;
+}
+
+.reviewCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.55vw;
+  width: calc(100% - 7vw);
+  margin: 0 auto;
+}
+
+.reviewCard {
+  min-height: 12.55vw;
+  padding: 1vw 1.05vw 1.35vw;
+  background: #fff;
+  color: #202124;
+  text-align: right;
+}
+
+.reviewCard h3 {
+  margin: 0;
+  color: #50595c;
+  font-family: Gilroy, Almarai, Arial, sans-serif;
+  font-size: clamp(10px, 0.85vw, 16px);
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.reviewMeta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.8vw;
+  color: #838e91;
+  font-family: Gilroy, Almarai, Arial, sans-serif;
+  font-size: clamp(9px, 0.62vw, 12px);
+  line-height: 1.4;
+}
+
+.cardStars {
+  font-size: clamp(10px, 0.8vw, 15px);
+}
+
+.reviewCard p {
+  margin: 1.15vw 0 0;
+  color: #202124;
+  font-size: clamp(13px, 1.15vw, 24px);
+  font-weight: 400;
+  line-height: 1.65;
+  text-align: right;
+}
+
+.reviewArrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 28px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.reviewArrow img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.prevArrow { left: 0; }
+.nextArrow { right: 0; }
+
+@media screen and (max-width: 1199px) {
+  .celebrityInfo {
+    padding-right: 6vw;
+  }
+
+  .galleryGrid {
+    grid-template-rows: 30vw 30vw 30vw 30vw 46vw;
+  }
+
+  .reviewCards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .reviewCard {
+    min-height: 180px;
+    padding: 18px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .celebrityInner {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .celebrityPhotoWrap,
+  .celebrityInfo {
+    width: 100%;
+  }
+
+  .celebrityPhotoWrap {
+    height: 56vw;
+    border-top-right-radius: 120px;
+  }
+
+  .celebrityInfo {
+    align-items: center;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .ltr .celebrityInfo {
+    align-items: center;
+    padding: 40px 24px;
+  }
+
+  .celebrityByline {
+    margin-top: 20px;
+  }
+
+  .thumbnailRail {
+    height: 120px;
+    overflow-x: auto;
+    grid-template-columns: repeat(6, 170px);
+  }
+
+  .videoIntro {
+    min-height: 190px;
+    padding: 55px 20px 45px;
+  }
+
+  .videoIntro::before {
+    top: -95px;
+    height: 160px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 250px) 330px;
+    grid-template-areas:
+      "videoOne videoTwo"
+      "videoThree videoTwo"
+      "videoFive videoFour"
+      "brandTile videoFour"
+      "videoSix videoSix"
+      "blueCta blueCta";
+  }
+
+  .googleReviews {
+    padding: 90px 0 95px;
+  }
+
+  .googleHeading {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .ratingPill {
+    order: 3;
+  }
+
+  .reviewsWrap {
+    width: calc(100% - 30px);
+  }
+
+  .reviewCards {
+    width: calc(100% - 54px);
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .page::before {
+    background-size: 170vw auto;
+    opacity: 0.05;
+  }
+
+  .celebrityPhotoWrap {
+    height: 72vw;
+    border-top-right-radius: 90px;
+  }
+
+  .thumbnailRail {
+    height: 86px;
+    grid-template-columns: repeat(6, 122px);
+  }
+
+  .videoIntro h2 {
+    font-size: 30px;
+  }
+
+  .galleryGrid {
+    grid-template-rows: repeat(5, 210px) 300px;
+  }
+
+  .blueCta > div {
+    top: 22%;
+    right: 7%;
+  }
+
+  .blueCta strong {
+    font-size: 46px;
+  }
+
+  .googleHeading {
+    flex-direction: column;
+  }
+
+  .ratingPill {
+    min-height: 58px;
+    padding: 6px 10px 6px 16px;
+    font-size: 12px;
+  }
+
+  .ratingStars {
+    height: 58px;
+    padding: 0 14px;
+    font-size: 15px;
+  }
+
+  .reviewCards {
+    grid-template-columns: 1fr;
+  }
+
+  .reviewCard:nth-child(n + 3) {
+    display: none;
+  }
+}
