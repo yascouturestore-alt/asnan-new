@@ -12,19 +12,19 @@ export default function Header() {
   const t = getDictionary(locale);
   const otherLocale = locale === "en" ? "ar" : "en";
   const langText = locale === "en" ? "عربي" : "English";
-  const flagSrc = locale === "en" ? "/images/flag-of-Kuwait.png" : "/images/flag-of-United-Kingdom.png";
+  const flagSrc = locale === "en" ? "flag-of-Kuwait.png" : "flag-of-United-Kingdom.png";
 
   return (
     <header>
       <nav className="navbar navbar-expand-lg fixed-top">
         <div className="container-fluid">
           <Link href={`/${locale}`} className="navbar-brand">
-            <img src="/images/Asnan-Header-logo-big.svg" alt="Asnan Logo" />
+            <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/Asnan-Header-logo-big.svg`} alt="Asnan Logo" />
           </Link>
           
           <div className="switch-lang-mobile">
             <Link href={`/${otherLocale}`}>
-              <img className="flag-mobile" src={flagSrc} alt="Language switch icon" />
+              <img className="flag-mobile" src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/${flagSrc}`} alt="Language switch icon" />
             </Link>
           </div>
 
@@ -43,7 +43,7 @@ export default function Header() {
               <div className="d-flex align-items-center justify-content-end my-2">
                 <div className="switch-lang">
                   <Link href={`/${otherLocale}`}>
-                    {langText} <img className="flag" src={flagSrc} alt="Language switch icon" />
+                    {langText} <img className="flag" src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/${flagSrc}`} alt="Language switch icon" />
                   </Link>
                 </div>
               </div>
@@ -54,8 +54,8 @@ export default function Header() {
                 <a href="#requestAppointment" className="btn btn-request-appointment">
                   <span className="req-header"> {t.header_request_appointment.split(' ')[0]}</span>
                   <span className="req-footer"> {t.header_request_appointment.split(' ')[1]}</span>
-                  <img src="/images/next-arrow.svg" alt="" className="arrow-icon" />
-                  <img src="/images/Asnan-Appointment-icon.svg" className="appointment-icon" alt="" />
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/next-arrow.svg`} alt="" className="arrow-icon" />
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/Asnan-Appointment-icon.svg`} className="appointment-icon" alt="" />
                 </a>
               </div>
             </div>
