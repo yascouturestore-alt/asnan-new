@@ -36,7 +36,7 @@ export default function Home() {
     const initScripts = () => {
       if (typeof window !== "undefined" && (window as any).$) {
         const $ = (window as any).$;
-        
+
         // Magnific Popup
         if ($.fn.magnificPopup) {
           $('.image-popup').magnificPopup({
@@ -47,72 +47,76 @@ export default function Home() {
               enabled: true,
               duration: 300,
               easing: 'ease-in-out',
-              opener: function(openerElement: any) {
+              opener: function (openerElement: any) {
                 return openerElement.is('img') ? openerElement : openerElement.find('img');
               }
             }
           });
-          $('.popup-player').magnificPopup({ type:'iframe', midClick: true });
+          $('.popup-player').magnificPopup({ type: 'iframe', midClick: true });
         }
 
         // Before & After Sliders Native Logic
         const containers = document.querySelectorAll('.before-after-wrapper');
         containers.forEach(container => {
-            const slider = container.querySelector('.slider') as HTMLInputElement;
-            if (slider) {
-                slider.addEventListener('input', (e) => {
-                    const target = e.target as HTMLInputElement;
-                    (container as HTMLElement).style.setProperty('--position', `${target.value}%`);
-                });
-            }
+          const slider = container.querySelector('.slider') as HTMLInputElement;
+          if (slider) {
+            slider.addEventListener('input', (e) => {
+              const target = e.target as HTMLInputElement;
+              (container as HTMLElement).style.setProperty('--position', `${target.value}%`);
+            });
+          }
         });
 
         // Read more toggle
-        $('.read-more').off('click').on('click', function(this: any, event: any) {
-            event.preventDefault();
-            $(this).prev('.more-text').toggle();
-            if ($(this).prev('.more-text').is(':visible')) {
-                $('.limited').hide();
-                $(this).hide();
-            }
+        $('.read-more').off('click').on('click', function (this: any, event: any) {
+          event.preventDefault();
+          $(this).prev('.more-text').toggle();
+          if ($(this).prev('.more-text').is(':visible')) {
+            $('.limited').hide();
+            $(this).hide();
+          }
         });
 
         // Initialize Owl Carousel for World of Beauty
         if ($.fn.owlCarousel) {
-            const $worldBeautySlider = $('.owl-carousel.world-beauty-slider');
-            if ($worldBeautySlider.length && !$worldBeautySlider.hasClass('owl-loaded')) {
-                $worldBeautySlider.owlCarousel({
-                    mouseDrag: false,
-                    touchDrag: false,
-                    loop: false,
-                    nav: true,
-                    navText: ['<img src="/images/arrow-prev-yellow.svg" alt="Prev">', '<img src="/images/arrow-next-yellow.svg" alt="Next">'],
-                    dots: false,
-                    margin: 0,
-                    responsiveClass: true,
-                    responsive: { 0: { items: 1 } }
-                });
-            }
+          const $worldBeautySlider = $('.owl-carousel.world-beauty-slider');
+          if ($worldBeautySlider.length && !$worldBeautySlider.hasClass('owl-loaded')) {
+            $worldBeautySlider.owlCarousel({
+              mouseDrag: false,
+              touchDrag: false,
+              loop: false,
+              nav: true,
+              navText: [
+                `<img src="${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-prev-yellow.svg" alt="Prev">`,
+                `<img src="${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-next-yellow.svg" alt="Next">`
+              ],
+              dots: false,
+              margin: 0,
+              responsiveClass: true,
+              responsive: { 0: { items: 1 } }
+            });
+          }
         }
-        
+
       }
     };
 
     // Retry finding $ and plugins a few times in case scripts are loading via next/script lazyOnload
     const tryInit = () => {
-       if (typeof window !== "undefined" && (window as any).$ && (window as any).$.fn.owlCarousel) {
-           initScripts();
-       } else {
-           setTimeout(tryInit, 200);
-       }
+      if (typeof window !== "undefined" && (window as any).$ && (window as any).$.fn.owlCarousel) {
+        initScripts();
+      } else {
+        setTimeout(tryInit, 200);
+      }
     };
-    
+
     tryInit();
   }, []);
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .gallery-row .gallery-column .gallery-item img {
             width: 100%;
             height: 100%;
@@ -481,7 +485,7 @@ export default function Home() {
             }
         }
       `}} />
-      
+
       {/* Hero */}
       <div className="hero-wrapper hero-home">
         <div className="container-fluid">
@@ -506,8 +510,8 @@ export default function Home() {
           </div>
         </div>
         <div className="bg-img">
-          <img src="/images/Backgrounds/Asnan_Cover_Big2x.jpg" alt="background image" />
-          <img src="/images/bg-home-mob.png" alt="background image" />
+          <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Asnan_Cover_Big2x.jpg`} alt="background image" />
+          <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/bg-home-mob.png`} alt="background image" />
         </div>
       </div>
 
@@ -525,7 +529,7 @@ export default function Home() {
             </div>
             <div className="col-12 col-lg-6">
               <div className="welcome-img">
-                <img src="/images/asnan_3d_new.webp" alt="Asnan Tower 3D photo" />
+                <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/asnan_3d_new.webp`} alt="Asnan Tower 3D photo" />
               </div>
             </div>
           </div>
@@ -547,51 +551,51 @@ export default function Home() {
             </button>
           </li>
         </ul>
-        
+
         <div className="tab-content" id="myTabContent">
           <div className="tab-pane fade show active" id="tab2" role="tabpanel">
             <div className="figma-celeb-gallery">
               <div className="figma-celeb-left">
-                <a href="/images/Celebs/yagoob-boushehri.png" className="gallery-item figma-gallery-tile figma-tile-yagoob image-popup">
-                  <img src="/images/Celebs/yagoob-boushehri.png" alt={galleryCopy.names.yagoob} />
+                <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/yagoob-boushehri.png`} className="gallery-item figma-gallery-tile figma-tile-yagoob image-popup">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/yagoob-boushehri.png`} alt={galleryCopy.names.yagoob} />
                   <div className="figma-gallery-title">{galleryCopy.names.yagoob}</div>
                 </a>
-                <a href="/images/Celebs/huda-hussain.png" className="gallery-item figma-gallery-tile figma-tile-huda image-popup">
-                  <img src="/images/Celebs/huda-hussain.png" alt={galleryCopy.names.huda} />
+                <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/huda-hussain.png`} className="gallery-item figma-gallery-tile figma-tile-huda image-popup">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/huda-hussain.png`} alt={galleryCopy.names.huda} />
                   <div className="figma-gallery-title">{galleryCopy.names.huda}</div>
                 </a>
                 <div className="figma-split-row figma-left-portraits">
-                  <a href="/images/Celebs/ghadeer-sultan.png" className="gallery-item figma-gallery-tile figma-tile-ghadeer image-popup">
-                    <img src="/images/Celebs/ghadeer-sultan.png" alt={galleryCopy.names.ghadeer} />
+                  <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/ghadeer-sultan.png`} className="gallery-item figma-gallery-tile figma-tile-ghadeer image-popup">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/ghadeer-sultan.png`} alt={galleryCopy.names.ghadeer} />
                     <div className="figma-gallery-title">{galleryCopy.names.ghadeer}</div>
                   </a>
-                  <a href="/images/Celebs/zainab-khafif.png" className="gallery-item figma-gallery-tile figma-tile-zainab image-popup">
-                    <img src="/images/Celebs/zainab-khafif.png" alt={galleryCopy.names.zainab} />
+                  <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/zainab-khafif.png`} className="gallery-item figma-gallery-tile figma-tile-zainab image-popup">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/zainab-khafif.png`} alt={galleryCopy.names.zainab} />
                     <div className="figma-gallery-title">{galleryCopy.names.zainab}</div>
                   </a>
                 </div>
                 <div className="figma-split-row figma-left-bottom">
                   <div className="gallery-item figma-gallery-tile figma-logo-tile">
-                    <img src="/images/Group%2035316.png" alt="" />
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Group%2035316.png`} alt="" />
                   </div>
-                  <a href="/images/Celebs/salman-alnajadi.png" className="gallery-item figma-gallery-tile figma-tile-salman image-popup">
-                    <img src="/images/Celebs/salman-alnajadi.png" alt={galleryCopy.names.salman} />
+                  <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/salman-alnajadi.png`} className="gallery-item figma-gallery-tile figma-tile-salman image-popup">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/salman-alnajadi.png`} alt={galleryCopy.names.salman} />
                     <div className="figma-gallery-title">{galleryCopy.names.salman}</div>
                   </a>
                 </div>
               </div>
 
               <div className="figma-celeb-right">
-                <a href="/images/Celebs/maya-model.png" className="gallery-item figma-gallery-tile figma-tile-maya image-popup">
-                  <img src="/images/Celebs/maya-model.png" alt={galleryCopy.names.maya} />
+                <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/maya-model.png`} className="gallery-item figma-gallery-tile figma-tile-maya image-popup">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/maya-model.png`} alt={galleryCopy.names.maya} />
                   <div className="figma-gallery-title">{galleryCopy.names.maya}</div>
                 </a>
-                <a href="/images/Celebs/halima-boland.png" className="gallery-item figma-gallery-tile figma-tile-halima image-popup">
-                  <img src="/images/Celebs/halima-boland.png" alt={galleryCopy.names.halima} />
+                <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/halima-boland.png`} className="gallery-item figma-gallery-tile figma-tile-halima image-popup">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/halima-boland.png`} alt={galleryCopy.names.halima} />
                   <div className="figma-gallery-title">{galleryCopy.names.halima}</div>
                 </a>
                 <div className="figma-gallery-cta">
-                  <img className="figma-gallery-cta-bg" src="/images/orthodontist%201.png" alt="" aria-hidden="true" />
+                  <img className="figma-gallery-cta-bg" src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/orthodontist%201.png`} alt="" aria-hidden="true" />
                   <div className="figma-gallery-cta-content">
                     <span className="figma-cta-small">{galleryCopy.ctaSmall}</span>
                     <span className="figma-cta-large">{galleryCopy.ctaMain}</span>
@@ -600,79 +604,79 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           <div className="tab-pane fade" id="tab3" role="tabpanel">
-             <div className="gallery-row">
-                 <div className="gallery-column">
+            <div className="gallery-row">
+              <div className="gallery-column">
+                <div className="gallery-item">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 141.png`} alt="testimonial item" />
+                  <a href="#" className="play-video popup-player video-link-1" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                  </a>
+                </div>
+                <div className="gallery-item">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 141-2.png`} alt="testimonial item" />
+                  <a href="#" className="play-video popup-player video-link-2" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                  </a>
+                </div>
+                <div className="gallery-item no-after">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/orthodontist%201.png`} alt="" />
+                  <div className="change-block">
+                    <div className="change-smile">{t.we_dont}</div>
+                    <div className="change-life">{t.we_change_lives}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="gallery-column">
+                <div className="gallery-item">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 141-3.png`} alt="testimonial item" />
+                  <a href="#" className="play-video popup-player video-link-3" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                  </a>
+                </div>
+                <div className="gallery-item">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 138.png`} alt="testimonial item" />
+                  <a href="#" className="play-video popup-player video-link-4" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                  </a>
+                </div>
+                <div className="gallery-row">
+                  <div className="gallery-column">
                     <div className="gallery-item">
-                        <img src="/images/Mask Group 141.png" alt="testimonial item" />
-                        <a href="#" className="play-video popup-player video-link-1" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                            <img src="/images/play.svg" alt="" /> {t.play}
-                        </a>
+                      <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 138-2.png`} alt="testimonial item" />
+                      <a href="#" className="play-video popup-player video-link-5" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                      </a>
                     </div>
+                  </div>
+                  <div className="gallery-column">
                     <div className="gallery-item">
-                        <img src="/images/Mask Group 141-2.png" alt="testimonial item" />
-                        <a href="#" className="play-video popup-player video-link-2" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                            <img src="/images/play.svg" alt="" /> {t.play}
-                        </a>
+                      <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 138-3.png`} alt="testimonial item" />
+                      <a href="#" className="play-video popup-player video-link-6" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                      </a>
                     </div>
-                    <div className="gallery-item no-after">
-                        <img src="/images/orthodontist%201.png" alt="" />
-                        <div className="change-block">
-                            <div className="change-smile">{t.we_dont}</div>
-                            <div className="change-life">{t.we_change_lives}</div>
-                        </div>
-                    </div>
-                 </div>
-                 
-                 <div className="gallery-column">
+                  </div>
+                </div>
+                <div className="gallery-row">
+                  <div className="gallery-column">
                     <div className="gallery-item">
-                        <img src="/images/Mask Group 141-3.png" alt="testimonial item" />
-                        <a href="#" className="play-video popup-player video-link-3" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                            <img src="/images/play.svg" alt="" /> {t.play}
-                        </a>
+                      <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 139.png`} alt="testimonial item" />
+                      <a href="#" className="play-video popup-player video-link-7" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                      </a>
                     </div>
+                  </div>
+                  <div className="gallery-column">
                     <div className="gallery-item">
-                        <img src="/images/Mask Group 138.png" alt="testimonial item" />
-                        <a href="#" className="play-video popup-player video-link-4" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                            <img src="/images/play.svg" alt="" /> {t.play}
-                        </a>
+                      <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Group%2035316.png`} alt="" />
                     </div>
-                    <div className="gallery-row">
-                        <div className="gallery-column">
-                            <div className="gallery-item">
-                                <img src="/images/Mask Group 138-2.png" alt="testimonial item" />
-                                <a href="#" className="play-video popup-player video-link-5" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                                    <img src="/images/play.svg" alt="" /> {t.play}
-                                </a>
-                            </div>
-                        </div>
-                        <div className="gallery-column">
-                            <div className="gallery-item">
-                                <img src="/images/Mask Group 138-3.png" alt="testimonial item" />
-                                <a href="#" className="play-video popup-player video-link-6" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                                    <img src="/images/play.svg" alt="" /> {t.play}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="gallery-row">
-                        <div className="gallery-column">
-                            <div className="gallery-item">
-                                <img src="/images/Mask Group 139.png" alt="testimonial item" />
-                                <a href="#" className="play-video popup-player video-link-7" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                                    <img src="/images/play.svg" alt="" /> {t.play}
-                                </a>
-                            </div>
-                        </div>
-                        <div className="gallery-column">
-                            <div className="gallery-item">
-                                <img src="/images/Group%2035316.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-             </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -687,8 +691,8 @@ export default function Home() {
                 <div className="col-12 col-lg-7">
                   <div className="before-after-wrapper">
                     <div className="before-after-img">
-                      <img className="image-before" src="/images/teeth-img-before.png" alt="Before" />
-                      <img className="image-after" src="/images/teeth-img-after.png" alt="After" />
+                      <img className="image-before" src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before.png`} alt="Before" />
+                      <img className="image-after" src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after.png`} alt="After" />
                     </div>
                     <div className="before-text">{t.before}</div>
                     <div className="after-text">{t.after}</div>
@@ -705,7 +709,7 @@ export default function Home() {
                       </div>
                       <div className="doctor-small">
                         <div className="doctor-img">
-                            <img src="/images/dr-img-teeth-show.png" alt="" />
+                          <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/dr-img-teeth-show.png`} alt="" />
                         </div>
                       </div>
                       <div className="doctor-info">
@@ -718,14 +722,14 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
             <div className="item">
               <div className="row align-items-center">
                 <div className="col-12 col-lg-7">
                   <div className="before-after-wrapper">
                     <div className="before-after-img">
-                      <img className="image-before" src="/images/teeth-img-before-2.png" alt="Before" />
-                      <img className="image-after" src="/images/teeth-img-after-2.png" alt="After" />
+                      <img className="image-before" src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before-2.png`} alt="Before" />
+                      <img className="image-after" src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after-2.png`} alt="After" />
                     </div>
                     <div className="before-text">{t.before}</div>
                     <div className="after-text">{t.after}</div>
@@ -742,7 +746,7 @@ export default function Home() {
                       </div>
                       <div className="doctor-small">
                         <div className="doctor-img">
-                            <img src="/images/Dr.-Amnah-(1).png" alt="" />
+                          <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Dr.-Amnah-(1).png`} alt="" />
                         </div>
                       </div>
                       <div className="doctor-info">
@@ -756,13 +760,13 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           <div className="row">
             <div className="col-12 col-lg-4">
               <div className="before-after-wrapper">
                 <div className="before-after-img">
-                  <img className="image-before" src="/images/teeth-img-before-3-1.png" alt="Before" />
-                  <img className="image-after" src="/images/teeth-img-after-3-1.png" alt="After" />
+                  <img className="image-before" src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before-3-1.png`} alt="Before" />
+                  <img className="image-after" src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after-3-1.png`} alt="After" />
                 </div>
                 <div className="before-text">{t.before}</div>
                 <div className="after-text">{t.after}</div>
@@ -773,8 +777,8 @@ export default function Home() {
             <div className="col-12 col-lg-4">
               <div className="before-after-wrapper">
                 <div className="before-after-img">
-                  <img className="image-before" src="/images/teeth-img-before-2.png" alt="Before" />
-                  <img className="image-after" src="/images/teeth-img-after-2.png" alt="After" />
+                  <img className="image-before" src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before-2.png`} alt="Before" />
+                  <img className="image-after" src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after-2.png`} alt="After" />
                 </div>
                 <div className="before-text">{t.before}</div>
                 <div className="after-text">{t.after}</div>
@@ -782,23 +786,23 @@ export default function Home() {
                 <div className="slider-line" aria-hidden="true"></div>
               </div>
             </div>
-            
+
             <div className="col-12 col-lg-4">
-               <a href={`/${locale}/services/world-of-beauty`} className="more-smiles-block">
-                  <div className="more-smiles-text">{t.view_more}</div>
-                  <img src="/images/Path%20774.svg" alt="" className="more-smiles-shape" />
-                  <img src="/images/next-arrow.svg" alt="" className="more-smiles-arrow" />
+              <a href={`/${locale}/services/world-of-beauty`} className="more-smiles-block">
+                <div className="more-smiles-text">{t.view_more}</div>
+                <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Path%20774.svg`} alt="" className="more-smiles-shape" />
+                <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/next-arrow.svg`} alt="" className="more-smiles-arrow" />
               </a>
             </div>
           </div>
-          
+
           <div className="row">
             <div className="col-12">
-                <a href={`/${locale}/services/world-of-beauty`} className="more-smiles-block-responsive">
-                    <div className="more-smiles-text-responsive">{t.view_more}</div>
-                    <img src="/images/Path%20774.svg" alt="" className="more-smiles-shape-responsive" />
-                    <img src="/images/next-arrow.svg" alt="" className="more-smiles-arrow-responsive" />
-                </a>
+              <a href={`/${locale}/services/world-of-beauty`} className="more-smiles-block-responsive">
+                <div className="more-smiles-text-responsive">{t.view_more}</div>
+                <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Path%20774.svg`} alt="" className="more-smiles-shape-responsive" />
+                <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/next-arrow.svg`} alt="" className="more-smiles-arrow-responsive" />
+              </a>
             </div>
           </div>
         </div>
@@ -815,32 +819,32 @@ export default function Home() {
 
       {/* Old mission/footer-style block disabled temporarily for Figma footer replacement */}
       {showOldMissionFooter && (
-      <div className="mission-wrapper">
-        <div className="container-fluid">
-          <div className="mission-block">
-            <div className="mission-title">{t.our_mission}</div>
-            <div className="section-title">
-              {t.mission_1} <span className="text-secondary">{t.first}</span> {t.mission_2} <span className="text-primary">{t.dentistry}</span>.
-            </div>
-            <div className="row justify-content-center">
-              <div className="col-12 col-lg-10">
-                <div className="row">
-                  <div className="col-12 col-lg-6">
-                    <p className="mission-text">
-                      {t.asnan_doctors}
-                    </p>
-                  </div>
-                  <div className="col-12 col-lg-6">
-                    <p className="mission-text2">
-                      {t.the_team}
-                    </p>
+        <div className="mission-wrapper">
+          <div className="container-fluid">
+            <div className="mission-block">
+              <div className="mission-title">{t.our_mission}</div>
+              <div className="section-title">
+                {t.mission_1} <span className="text-secondary">{t.first}</span> {t.mission_2} <span className="text-primary">{t.dentistry}</span>.
+              </div>
+              <div className="row justify-content-center">
+                <div className="col-12 col-lg-10">
+                  <div className="row">
+                    <div className="col-12 col-lg-6">
+                      <p className="mission-text">
+                        {t.asnan_doctors}
+                      </p>
+                    </div>
+                    <div className="col-12 col-lg-6">
+                      <p className="mission-text2">
+                        {t.the_team}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       )}
     </>
   );
