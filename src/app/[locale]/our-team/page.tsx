@@ -10,18 +10,18 @@ export default function TeamPage() {
 
   const doctors = [
     {
-      name: "Dr. Hmoud",
-      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
-      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
-      image: "/images/Dr.-Hmoud.png",
-      slug: "dr-hmoud"
-    },
-    {
-      name: "Dr. Amnah",
+      name: "Dr. Amina Al-Jassem",
       title: locale === 'ar' ? "أخصائي تقويم أسنان" : "Orthodontist",
       university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
       image: "/images/Dr.-Amnah-(1).png",
       slug: "dr-amnah"
+    },
+    {
+      name: "Dr. Mohammed Al-Hajji",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.-Hmoud.png",
+      slug: "dr-hmoud"
     },
     {
       name: "Dr. Essa Al Essa",
@@ -29,7 +29,181 @@ export default function TeamPage() {
       university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
       image: "/images/Dr.%20Essa%20Al%20Essa.png",
       slug: "dr-essa"
-    }
+    },
+    {
+      name: "Dr. Tareq Burezq",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Amna Al Mutawaa",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Talal Al-Reyahi",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Hashem Ghadanfari",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Khaled Al-Khayat",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Moayad Al-Omar",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Yahya Al Yahya",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Bashar Rajab",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Hamoud Al-Farsi",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Hadi Al Saffar",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Ali Al Saffar",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Paul Nassar",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Essa AlRashid",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Ahmad Albuzem",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Catherine Raffoul",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Fawaz Al-Foraih",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Abdullah Al Qaid",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    },
+    {
+      name: "Dr. Abdulwahab AlKandari",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr.%20Essa%20Al%20Essa.png",
+      slug: "dr-tareq-burezq"
+    }, {
+      name: "Dr. Zaher Sabbagh",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr. Zaher Sabbagh.png",
+      slug: "dr-tareq-burezq"
+    }, {
+      name: "Dr. Rawan Alomary",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr. Rawan Alomary.png",
+      slug: "dr-tareq-burezq"
+    }, {
+      name: "Dr. Rawad Karam",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr. Rawad Karam.png",
+      slug: "dr-tareq-burezq"
+    }, {
+      name: "Dr. Abdullah Alfadhli",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr. Abdullah Alfadhli.png",
+      slug: "dr-tareq-burezq"
+    }, {
+      name: "Dr. Layal Saleh",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr. Layal Saleh.png",
+      slug: "dr-tareq-burezq"
+    }, {
+      name: "Dr. Meshaal Al-Kanderi",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr. Meshaal Al-Kanderi.png",
+      slug: "dr-tareq-burezq"
+    }, {
+      name: "Dr. Kamal Alkamal",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr. Kamal Alkamal.png",
+      slug: "dr-tareq-burezq"
+    }, {
+      name: "Dr. Yousif German",
+      title: locale === 'ar' ? "أخصائي تعويضات سنية" : "Prosthodontist",
+      university: locale === 'ar' ? "جامعة الكويت" : "Kuwait University",
+      image: "/images/Dr. Yousif German.png",
+      slug: "dr-tareq-burezq"
+    },
   ];
 
   return (
@@ -94,7 +268,7 @@ export default function TeamPage() {
           {/* Doctors Grid */}
           <div className="row mt-5">
             {doctors.map((doctor, index) => (
-              <div key={index} className="col-lg-4 col-sm-6 col-12 mb-4">
+              <div key={index} className="col-lg-3 col-sm-6 col-12 mb-4">
                 <div className="doctor-card border rounded overflow-hidden shadow-sm">
                   <div className="doctor-img">
                     <img src={doctor.image} alt={doctor.name} className="img-fluid w-100" />
