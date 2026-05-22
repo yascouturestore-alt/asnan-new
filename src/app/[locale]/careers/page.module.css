@@ -1,0 +1,565 @@
+.page {
+  --asnan-blue: #051a53;
+  --asnan-mid-blue: #042970;
+  --asnan-sky: #2c8eff;
+  --asnan-yellow: #ffc936;
+  --asnan-text: #50595c;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: var(--asnan-blue);
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vw * 1097 / 1920);
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.heroBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/careers/careers-bg-hero.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: min(786px, calc(100% - 40px));
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(38px, 4.2vw, 80px);
+  text-align: center;
+}
+
+.heroEyebrow,
+.heroText {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(14px, 0.94vw, 18px);
+  font-weight: 700;
+  line-height: 1.9;
+}
+
+.heroContent h1 {
+  margin: 11px 0 6px;
+  color: #fff;
+  font-size: clamp(42px, 3.65vw, 70px);
+  font-weight: 800;
+  line-height: 1.26;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.callButton {
+  display: inline-flex;
+  width: min(346px, 100%);
+  min-height: 77px;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+  padding: 11px 39px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  direction: rtl;
+}
+
+.callButton:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.callCopy {
+  display: grid;
+  gap: 0;
+  text-align: right;
+}
+
+.callCopy > span {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.callCopy strong {
+  font-family: Spartan, "Spartan MB", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 36px;
+  white-space: nowrap;
+}
+
+.callCopy strong span {
+  color: var(--asnan-sky);
+}
+
+.callCopy strong em {
+  color: var(--asnan-yellow);
+  font-style: normal;
+}
+
+.callIcon {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: #000;
+}
+
+.valuesSection {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  padding: clamp(68px, 4.8vw, 92px) 0 clamp(74px, 6.25vw, 120px);
+  background: #fff;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--asnan-blue);
+  font-size: clamp(32px, 2.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.valuesGrid {
+  display: grid;
+  width: min(1592px, calc(100% - 104px));
+  grid-template-columns: repeat(4, minmax(0, 383px));
+  gap: 20px;
+  justify-content: center;
+  margin-top: clamp(50px, 4.35vw, 83px);
+  direction: inherit;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 241px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 0 40px 1px rgb(0 0 0 / 10%);
+  color: var(--asnan-blue);
+  text-align: center;
+}
+
+.benefitsGrid .card {
+  box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+}
+
+.cardIcon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  color: var(--asnan-blue);
+}
+
+.cardIcon svg {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.card h3 {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  margin: 35px 0 0;
+  color: var(--asnan-blue);
+  font-size: clamp(19px, 1.46vw, 28px);
+  font-weight: 700;
+  line-height: 1.18;
+  text-align: center;
+}
+
+.card p {
+  width: min(303px, 100%);
+  margin: 10px auto 0;
+  color: var(--asnan-text);
+  font-size: clamp(12px, 0.84vw, 16px);
+  font-weight: 400;
+  line-height: 1.56;
+  text-align: center;
+}
+
+.blueButton {
+  display: inline-flex;
+  width: 248px;
+  min-height: 60px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  padding: 0 38px;
+  border-radius: 999px;
+  background: var(--asnan-sky);
+  color: #fff;
+  font-size: clamp(15px, 1.04vw, 20px);
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.blueButton:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.benefitsSection {
+  position: relative;
+  min-height: calc(100vw * 1642 / 1920);
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.benefitsBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.benefitsBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/PPopular-categories-section-bg-rtl.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+  filter: brightness(0.38) saturate(1.2);
+}
+
+.ltr .benefitsBg::before {
+  background-image: url("/images/PPopular-categories-section-bg.png");
+}
+
+.benefitsInner {
+  display: grid;
+  justify-items: center;
+  width: min(1592px, calc(100% - 104px));
+  margin: 0 auto;
+  padding: clamp(280px, 21.9vw, 422px) 0 clamp(290px, 21.1vw, 405px);
+}
+
+.benefitsTitle {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(32px, 2.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.benefitsGrid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(0, 383px));
+  gap: 20px;
+  justify-content: center;
+  margin-top: 60px;
+  direction: inherit;
+}
+
+.lifeSection {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  padding: clamp(76px, 5.75vw, 110px) 0 clamp(96px, 6.25vw, 120px);
+  background: #fff;
+}
+
+.videoCard {
+  position: relative;
+  display: block;
+  width: min(1592px, calc(100% - 104px));
+  aspect-ratio: 1592 / 701;
+  overflow: hidden;
+  margin-top: clamp(54px, 4.1vw, 78px);
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.videoBg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgb(0 0 0 / 40%), rgb(0 0 0 / 40%)), url("/images/careers/careers-video-thumb.png");
+  background-repeat: no-repeat;
+  background-position: center 27%;
+  background-size: cover;
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: clamp(70px, 5.73vw, 110px);
+  height: clamp(70px, 5.73vw, 110px);
+  place-items: center;
+  transform: translate(-50%, -50%);
+}
+
+.playButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.joinSection {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: clamp(340px, 23.5vw, 451px);
+  align-items: center;
+  overflow: hidden;
+}
+
+.joinWave {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.joinWave::before {
+  content: "";
+  position: absolute;
+  inset: 0 -1px;
+  background-image: url("/images/bgimg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+.joinInner {
+  display: grid;
+  width: min(786px, calc(100% - 40px));
+  justify-items: center;
+  margin: 0 auto;
+  padding: clamp(70px, 5.2vw, 100px) 0;
+  text-align: center;
+}
+
+.joinTitle {
+  margin: 0;
+  color: var(--asnan-blue);
+  font-size: clamp(32px, 2.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.joinInner p {
+  width: min(786px, 100%);
+  margin: clamp(18px, 1.45vw, 28px) 0 0;
+  color: var(--asnan-text);
+  font-size: clamp(14px, 0.94vw, 18px);
+  font-weight: 400;
+  line-height: 1.67;
+  text-align: center;
+}
+
+.joinInner .blueButton {
+  margin-top: clamp(34px, 3.3vw, 64px);
+}
+
+@media (max-width: 1280px) {
+  .valuesGrid,
+  .benefitsInner,
+  .videoCard {
+    width: min(1120px, calc(100% - 56px));
+  }
+
+  .valuesGrid,
+  .benefitsGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    min-height: 215px;
+    padding: 30px 22px;
+  }
+
+  .card h3 {
+    margin-top: 26px;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    min-height: 640px;
+  }
+
+  .heroBg::before {
+    background-image: url("/images/bg-home-mob.png");
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .heroContent h1 {
+    white-space: normal;
+  }
+
+  .valuesGrid,
+  .benefitsGrid {
+    width: min(720px, calc(100% - 40px));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .valuesSection {
+    padding-bottom: 90px;
+  }
+
+  .benefitsSection {
+    min-height: auto;
+    margin-top: -28px;
+  }
+
+  .benefitsBg::before,
+  .ltr .benefitsBg::before {
+    background-image: url("/images/PPopular-categories-section-bg-mob.png");
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .benefitsInner {
+    width: 100%;
+    padding: 210px 0 220px;
+  }
+
+  .videoCard {
+    width: min(720px, calc(100% - 40px));
+    aspect-ratio: 1.6 / 1;
+    border-radius: 32px;
+  }
+
+  .joinSection {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    min-height: 560px;
+  }
+
+  .heroContent {
+    width: calc(100% - 30px);
+  }
+
+  .heroContent h1 {
+    font-size: 34px;
+  }
+
+  .heroEyebrow,
+  .heroText {
+    font-size: 14px;
+  }
+
+  .callButton {
+    min-height: 64px;
+    padding: 10px 24px;
+  }
+
+  .callCopy > span {
+    font-size: 13px;
+  }
+
+  .callCopy strong {
+    font-size: 19px;
+    line-height: 28px;
+  }
+
+  .valuesSection {
+    padding: 56px 0 76px;
+  }
+
+  .sectionTitle,
+  .benefitsTitle,
+  .joinTitle {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .valuesGrid,
+  .benefitsGrid {
+    width: calc(100% - 30px);
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 220px;
+  }
+
+  .benefitsInner {
+    padding: 160px 0 180px;
+  }
+
+  .lifeSection {
+    padding: 58px 0 76px;
+  }
+
+  .videoCard {
+    width: calc(100% - 30px);
+    border-radius: 22px;
+  }
+
+  .joinInner {
+    width: calc(100% - 30px);
+    padding: 70px 0;
+  }
+}

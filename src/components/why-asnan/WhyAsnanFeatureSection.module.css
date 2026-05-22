@@ -295,3 +295,47 @@
     font-size: clamp(26px, 8vw, 34px);
   }
 }
+
+/* paragraph text option - for sections without bullets */
+
+.paragraphText {
+  display: grid;
+  gap: clamp(20px, 1.6vw, 28px);
+}
+
+.paragraphText p {
+  margin: 0;
+  color: #50595c;
+  font-family: Almarai, Tajawal, Arial, sans-serif;
+  font-size: clamp(15px, 0.938vw, 18px);
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* white cross lines on image */
+
+.imagePanel::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: clamp(4px, 0.36vw, 7px);
+  background: #ffffff;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.imagePanel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 3;
+  width: clamp(4px, 0.36vw, 7px);
+  height: 100%;
+  background: #ffffff;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
