@@ -211,7 +211,6 @@ export default function AsnanopediaPage() {
 
   return (
     <>
-
       <div className="hero-wrapper hero-home asnanopedia-hero" style={{minHeight:"unset", paddingBottom: "70px"}}>
         <div className="container-fluid">
           <div className="row justify-content-center">

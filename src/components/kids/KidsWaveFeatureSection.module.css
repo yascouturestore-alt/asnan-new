@@ -1,0 +1,279 @@
+.section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 61.146vw;
+  overflow: hidden;
+  isolation: isolate;
+  background: #ffffff;
+  padding: clamp(120px, 10.1vw, 194px) 0;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hasWaveBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: var(--wave-bg-image);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: min(82.917vw, 1592px);
+  grid-template-columns: minmax(360px, 652px) minmax(420px, 806px);
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(70px, 6.98vw, 134px);
+  margin: 0 auto;
+  direction: ltr;
+}
+
+.imageLeft .inner {
+  grid-template-columns: minmax(420px, 806px) minmax(360px, 652px);
+}
+
+.content {
+  width: 100%;
+  max-width: 652px;
+}
+
+.imageRight .content {
+  grid-column: 1;
+}
+
+.imageRight .visual {
+  grid-column: 2;
+}
+
+.imageLeft .visual {
+  grid-column: 1;
+}
+
+.imageLeft .content {
+  grid-column: 2;
+}
+
+.rtl .content {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr .content {
+  direction: ltr;
+  text-align: left;
+}
+
+.content h2 {
+  margin: 0 0 34px;
+  color: #042970;
+  font-family: Almarai, Tajawal, Arial, sans-serif;
+  font-size: clamp(34px, 2.396vw, 46px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text {
+  display: grid;
+  gap: 26px;
+}
+
+.text p {
+  margin: 0;
+  color: #50595c;
+  font-family: Almarai, Tajawal, Arial, sans-serif;
+  font-size: clamp(15px, 0.938vw, 18px);
+  font-weight: 400;
+  line-height: 1.67;
+}
+
+.visual {
+  position: relative;
+  width: 100%;
+  max-width: 806px;
+  aspect-ratio: 806 / 786;
+}
+
+.imagePanel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 0 88px 28px 88px;
+  background: #d6dee0;
+}
+
+.imagePanel img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.imagePanel::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 100%;
+  height: 7px;
+  background: #ffffff;
+  transform: translateY(-50%, -50%);
+  pointer-events: none;
+}
+
+.imagePanel::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 7px;
+  height: 100%;
+  background: #ffffff;
+  transform: translateX(-50%, -50%);
+  pointer-events: none;
+}
+
+.iconBadge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  display: grid;
+  width: clamp(148px, 10.4vw, 250px);
+  height: clamp(148px, 10.4vw, 250px);
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(4, 63, 132, 0.14), 0 2px 8px rgba(4, 63, 132, 0.08);
+  transform: translate(-50%, -50%);
+}
+
+.iconBadge img {
+  width: clamp(94px, 6.5vw, 134px);
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(83%) sepia(64%)
+    saturate(1094%) hue-rotate(331deg) brightness(103%) contrast(101%);
+}
+
+@media (max-width: 1199px) {
+  .section {
+    min-height: auto;
+    padding: 100px 0;
+  }
+
+  .inner,
+  .imageLeft .inner {
+    width: min(1100px, calc(100% - 56px));
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .imagePanel {
+    border-radius: 0 70px 24px 70px;
+  }
+
+  .iconBadge {
+    width: 140px;
+    height: 140px;
+  }
+
+  .iconBadge img {
+    width: 86px;
+  }
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 72px 0 90px;
+  }
+
+  .hasWaveBg::before {
+    background-size: cover;
+  }
+
+  .inner,
+  .imageLeft .inner {
+    display: flex;
+    width: min(620px, calc(100% - 32px));
+    flex-direction: column;
+    gap: 55px;
+  }
+
+  .visual {
+    order: 1;
+    max-width: none;
+  }
+
+  .content {
+    order: 2;
+    max-width: none;
+  }
+
+  .imagePanel {
+    border-radius: 0 56px 20px 56px;
+  }
+
+  .imagePanel::before {
+    height: 5px;
+  }
+
+  .imagePanel::after {
+    width: 5px;
+  }
+
+  .iconBadge {
+    width: 118px;
+    height: 118px;
+  }
+
+  .iconBadge img {
+    width: 72px;
+  }
+
+  .content h2 {
+    margin-bottom: 22px;
+    font-size: clamp(26px, 7vw, 38px);
+  }
+
+  .text p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 460px) {
+  .section {
+    padding: 60px 0 76px;
+  }
+
+  .inner,
+  .imageLeft .inner {
+    width: calc(100% - 24px);
+    gap: 46px;
+  }
+
+  .imagePanel {
+    border-radius: 0 42px 16px 42px;
+  }
+
+  .iconBadge {
+    width: 96px;
+    height: 96px;
+  }
+
+  .iconBadge img {
+    width: 58px;
+  }
+}

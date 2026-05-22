@@ -1826,8 +1826,6 @@ footer .socials {
 .popular-categories-wrapper {
   position: relative;
   display: block;
-  background: url("../images/PPopular-categories-section-bg.png") center/contain
-    no-repeat;
   width: 100%;
   min-height: 94.271vw;
   padding-top: 17.708vw;
@@ -5145,8 +5143,8 @@ footer .copyrights {
     right: 0;
     width: 105%;
     height: 100%;
-    background: url("../images/PPopular-categories-section-bg-mob.png")
-      top/cover no-repeat;
+    /* background: url("../images/PPopular-categories-section-bg-mob.png")
+      top/cover no-repeat; */
     z-index: -1;
   }
   .popular-categories-wrapper .popular-categories-title {

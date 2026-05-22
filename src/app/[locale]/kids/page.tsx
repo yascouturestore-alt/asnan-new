@@ -2,18 +2,190 @@
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
 import { getDictionary } from '@/dictionaries';
+import KidsFeatureSection from "@/components/kids/KidsFeatureSection";
+import PopularCategoriesSection, { PopularCategory } from "@/components/asnanopedia/PopularCategoriesSection";
+import KidsWaveFeatureSection from "@/components/kids/KidsWaveFeatureSection";
+
+const copy = {
+  ar: {
+    heroTitle: "اسنانوبيديا",
+    heroCount: "٤٧ مقالة من قبل أسنان تاور",
+    searchPlaceholder: "اكتب هنا على سبيل المثال: كيف أحافظ على صحة أسناني؟",
+    searchBtn: "البحث",
+    articlesTitle: "مقالات مختارة بعناية",
+    articlesSubtitle: "مقالات مفيدة مختارة من قبل أسنان تاور",
+    bookNow: "احجز الآن",
+    learnMore: "تعلم المزيد",
+    categoriesTitle: "المجالات المطلوبة",
+    categoriesSubtitle: "تصفح الفئات المختلفة المتاحة في قاعدة المعرفة.",
+    faqTitle: "أسئلة وأجوبة",
+    faqSubtitle: "إبحث عن إجابة سريعة لمشكلة أو سؤال عن كيفية القيام به.",
+    /* DOM order: index 0 = rightmost in RTL */
+    cats: ["الوقاية", "طوارئ الأسنان", "مشاكل الأسنان", "صحة الفم والجسم", "الأسئلة الأكثر شيوعاً"],
+  },
+  en: {
+    heroTitle: "ASNANOPEDIA",
+    heroCount: "47 articles by Asnan Tower",
+    searchPlaceholder: "Type here e.g: How to keep my teeth healthy?",
+    searchBtn: "Search",
+    articlesTitle: "Carefully Selected Articles",
+    articlesSubtitle: "Useful articles selected by Asnan Tower",
+    bookNow: "Book Now",
+    learnMore: "Learn More",
+    categoriesTitle: "Popular Categories",
+    categoriesSubtitle: "Browse the different categories available in the knowledge base.",
+    faqTitle: "Questions & Answers",
+    faqSubtitle: "Find a quick answer to a problem or question about how to do something.",
+    cats: ["Prevention", "Dental Emergencies", "Dental Problems", "Oral & Body Health", "Most Asked Questions"],
+  },
+};
+
+
+
+
+
+const categoriesAr: PopularCategory[] = [
+  {
+    id: "prevention",
+    label: "الوقاية",
+    icon: "/images/Prevention-icon.svg",
+    sideItems: ["خيطك للمعركة ومحاربة التسوس", "العمر والأسنان", "السلوك والعادات"],
+    articles: [
+      { title: "خيطك للمعركة، ومحاربة التسوس", count: 20, image: "/assets/asnanopedia/popular-categories/articles/mouth-thread.jpg" },
+      { title: "نصائح لصحة الأسنان لموسم البرد والإنفلونزا", count: 6, image: "/assets/asnanopedia/popular-categories/articles/flu-woman.jpg" },
+      { title: "إصابات الأسنان خلال الرياضات الصيفية", count: 0, image: "/assets/asnanopedia/popular-categories/articles/sports-injury.jpg" },
+    ],
+  },
+  {
+    id: "oral-body-health",
+    label: "صحة الفم والجسم",
+    icon: "/images/Dental-icon.svg",
+    sideItems: ["صحة الفم والجسم"],
+    articles: [
+      { title: "كيف تحافظ على أسنانك صحية", count: 2, image: "/assets/asnanopedia/popular-categories/articles/healthy-tooth.jpg" },
+      { title: "الزيارات الدورية لطبيب أسنانك", count: 0, image: "/assets/asnanopedia/popular-categories/articles/dentist-visit.jpg" },
+      { title: "تنظيف اللثة العميق", count: 9, image: "/assets/asnanopedia/popular-categories/articles/deep-cleaning.jpg" },
+    ],
+  },
+  {
+    id: "dental-emergencies",
+    label: "طوارئ الأسنان",
+    icon: "/images/Dental-emergencies-icon.svg",
+    sideItems: ["طوارئ الأسنان"],
+    articles: [
+      { title: "دخول مادة بين الأسنان", count: 0, image: "/assets/asnanopedia/popular-categories/articles/tooth-particles.jpg" },
+      { title: "سقوط السن الدائم", count: 2, image: "/assets/asnanopedia/popular-categories/articles/fallen-tooth.jpg" },
+      { title: "ألم الأسنان", count: 2, image: "/assets/asnanopedia/popular-categories/articles/toothache.jpg" },
+    ],
+  },
+  {
+    id: "dental-problems",
+    label: "مشاكل الاسنان",
+    icon: "/images/Dental-Problems-icon.svg",
+    sideItems: ["مشاكل الاسنان"],
+    articles: [
+      { title: "أمراض اللثة", count: 4, image: "/assets/asnanopedia/popular-categories/articles/gum-disease.jpg" },
+      { title: "عادات تهدد صحة فمك وأسنانك", count: 1, image: "/assets/asnanopedia/popular-categories/articles/dental-tools.jpg" },
+      { title: "فطريات الفم", count: 31, image: "/assets/asnanopedia/popular-categories/articles/mouth-ulcer.jpg" },
+    ],
+  },
+];
+
+const categoriesEn: PopularCategory[] = [
+  {
+    id: "prevention",
+    label: "Prevention",
+    icon: "/images/Prevention-icon.svg",
+    sideItems: ["Flossing and Fighting Tooth Decay", "Age and Teeth", "Habits and Behavior"],
+    articles: [
+      { title: "Flossing and Fighting Tooth Decay", count: 20, image: "/assets/asnanopedia/popular-categories/articles/mouth-thread.jpg" },
+      { title: "Dental Health Tips for Cold and Flu Season", count: 6, image: "/assets/asnanopedia/popular-categories/articles/flu-woman.jpg" },
+      { title: "Dental Injuries During Summer Sports", count: 0, image: "/assets/asnanopedia/popular-categories/articles/sports-injury.jpg" },
+    ],
+  },
+  {
+    id: "oral-body-health",
+    label: "Oral & Body Health",
+    icon: "/images/Dental-icon.svg",
+    sideItems: ["Oral & Body Health"],
+    articles: [
+      { title: "How to Keep Your Teeth Healthy", count: 2, image: "/assets/asnanopedia/popular-categories/articles/healthy-tooth.jpg" },
+      { title: "Regular Visits to Your Dentist", count: 0, image: "/assets/asnanopedia/popular-categories/articles/dentist-visit.jpg" },
+      { title: "Deep Gum Cleaning", count: 9, image: "/assets/asnanopedia/popular-categories/articles/deep-cleaning.jpg" },
+    ],
+  },
+  {
+    id: "dental-emergencies",
+    label: "Dental Emergencies",
+    icon: "/images/Dental-emergencies-icon.svg",
+    sideItems: ["Dental Emergencies"],
+    articles: [
+      { title: "Object Stuck Between Teeth", count: 0, image: "/assets/asnanopedia/popular-categories/articles/tooth-particles.jpg" },
+      { title: "Permanent Tooth Knocked Out", count: 2, image: "/assets/asnanopedia/popular-categories/articles/fallen-tooth.jpg" },
+      { title: "Tooth Pain", count: 2, image: "/assets/asnanopedia/popular-categories/articles/toothache.jpg" },
+    ],
+  },
+  {
+    id: "dental-problems",
+    label: "Dental Problems",
+    icon: "/images/Dental-Problems-icon.svg",
+    sideItems: ["Dental Problems"],
+    articles: [
+      { title: "Gum Disease", count: 4, image: "/assets/asnanopedia/popular-categories/articles/gum-disease.jpg" },
+      { title: "Habits That Harm Your Teeth", count: 1, image: "/assets/asnanopedia/popular-categories/articles/dental-tools.jpg" },
+      { title: "Mouth Fungus", count: 31, image: "/assets/asnanopedia/popular-categories/articles/mouth-ulcer.jpg" },
+    ],
+  },
+];
+
 
 export default function KidsPage() {
   const params = useParams();
   const locale = (params?.locale as string) || "en";
-  const t = getDictionary(locale);
+  const isAr = locale === "ar";
+  const t = isAr ? copy.ar : copy.en;
 
-  const [activeChar, setActiveChar] = useState(0);
+  const usaGraduateFeature = {
+    title: isAr
+      ? "لماذا تختار طبيب متخرج من أمريكا؟"
+      : "Why Choose an American Graduate Dentist?",
+    points: isAr
+      ? [
+        "أكثر دولة تستثمر في الأبحاث والتطوير في مجال طب الأسنان.",
+        "اكثر دولة تقدم اختراعات في العالم",
+        "أقوى جامعات طب الاسنان في العالم.",
+        "اقدم جامعة لطب الاسنان في العالم كانت في أمريكا(ماريلاند-بالتيمور)",
+        "تخصصات طب الأسنان بدأت على مستوى العالم في أمريكا(بوستن)",
+        "الشعب الأمريكي لديه أجمل إبتسامة.",
+      ]
+      : [
+        "The United States invests heavily in dental research and development.",
+        "The United States leads the world in innovation.",
+        "It is home to some of the strongest dental universities in the world.",
+        "The oldest dental school in the world was founded in America, in Maryland, Baltimore.",
+        "Dental specialties began at a global level in America, in Boston.",
+        "Americans are known for beautiful smiles.",
+      ],
+  };
 
-  const kidsCharacters = [
-    { id: 0, title: "Lulu", image: "/images/Kids/kids-charcters-02.png", description: locale === 'ar' ? "لولو هي الشخصية المرحة في اسنان كيدز." : "Lulu is the fun character at Asnan Kids." },
-    { id: 1, title: "Zaki", image: "/images/Kids/kids-charcters-02.png", description: locale === 'ar' ? "زكي يحب الحفاظ على أسنان قوية." : "Zaki loves keeping his teeth strong." }
-  ];
+  const talentExperienceFeature = {
+    title: isAr
+      ? "المزج الصحيح بين الموهبة والخبرة"
+      : "The Right Mix Between Talent and Experience",
+    paragraphs: isAr
+      ? [
+        "منذ افتتاح أسنان في عام 2008، كرّسنا أنفسنا لتوفير بيئة مريحة حيث يشعر المرضى فور دخولهم باهتمام خاص وخدمة سبع نجوم. موظفات الاستقبال مدرّبين على خدمة الضيوف بأعلى المستويات تجعل المريض يتحرر من قلقه من الألم والخوف.",
+        "أسنان تاور عيادة الأسنان الوحيدة في الكويت التي يعمل بها أخصائي متخرج من الولايات المتحدة الأمريكية والمملكة المتحدة في كل تخصص من تخصصات طب الأسنان.",
+        "هدفنا أن تكون تجربتكم لا تُنسى على كافة الأصعدة، حتى قبل أن يراكم طبيب الأسنان. نحن نعتبر ضيوفنا جزء من عائلتنا. من أول اتصال لكم ستشعرون بالفرق.",
+        "ملتزمون بتقديم خدمات طب الأسنان بجودة عالية لحماية أسنانكم والحفاظ عليها بيضاء جميلة، ونحلم دائماً أن نغير حياتكم وليس أسنانكم فقط.",
+      ]
+      : [
+        "Since opening Asnan in 2008, we have dedicated ourselves to creating a comfortable environment where patients feel special from the moment they enter, with attentive care and a seven-star service experience.",
+        "Asnan Tower is the only dental clinic in Kuwait with specialists graduated from the United States and the United Kingdom across every dental specialty.",
+        "Our goal is to make your experience memorable at every level, even before you meet your dentist. We consider our guests part of our family, and from the first call you will feel the difference.",
+        "We are committed to providing high-quality dental services to protect your teeth and keep them healthy and beautiful, because we aim to change your life, not only your smile.",
+      ],
+  };
 
   return (
     <>
@@ -47,7 +219,7 @@ export default function KidsPage() {
       </div>
 
       {/* Welcome Kids */}
-      <div className="welcome-kids py-5">
+      <div className="welcome-kids py-5" >
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 mb-4 mb-lg-0">
@@ -60,38 +232,20 @@ export default function KidsPage() {
               </p>
             </div>
             <div className="col-12 col-lg-6 text-center">
-              <img src="/images/Kids/kids-charcters-02.png" alt="kids characters" className="img-fluid" style={{ maxHeight: '300px' }} />
+              <img src="/images/Kids/kids-charcters-02.png" alt="kids characters" className="img-fluid" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Characters Tabs */}
-      <div className="popular-categories-wrapper kids-characters py-5 bg-light">
-        <div className="container-fluid">
-          <h3 className="popular-categories-title text-center h2 mb-2">{locale === 'ar' ? "شخصياتنا" : "Characters"}</h3>
-          <p className="popular-categories-text text-center text-muted mb-5">{locale === 'ar' ? "تصفح الشخصيات المختلفة في قسم الأطفال." : "Browse the different characters in the kids section."}</p>
 
-          <ul className="nav nav-tabs justify-content-center border-0 mb-4" role="tablist">
-            {kidsCharacters.map((char) => (
-              <li key={char.id} className="nav-item">
-                <button 
-                  className={`nav-link border-0 bg-transparent px-4 py-2 ${activeChar === char.id ? 'active border-bottom border-primary font-weight-bold' : ''}`}
-                  onClick={() => setActiveChar(char.id)}
-                >
-                  <img src={char.image} alt={char.title} className="me-2" style={{ width: '30px' }} />
-                  {char.title}
-                </button>
-              </li>
-            ))}
-          </ul>
-          <div className="tab-content text-center">
-            <div className="tab-pane fade show active">
-              <p className="lead">{kidsCharacters[activeChar].description}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/*POPULAR CATEGORIES*/}
+      <PopularCategoriesSection
+        locale={locale}
+        title={t.categoriesTitle}
+        subtitle={t.categoriesSubtitle}
+        categories={isAr ? categoriesAr : categoriesEn}
+      />
 
       {/* Treatments */}
       <div className="container-fluid py-5">
@@ -112,29 +266,256 @@ export default function KidsPage() {
             </div>
           </div>
         </div>
-
-        <div className="kids-articles-wrapper">
-          <div className="row">
-            {[1, 2].map((item) => (
-              <div key={item} className="col-12 mb-5">
-                <div className="kids-article p-4 border rounded shadow-sm">
-                  <div className="row align-items-center">
-                    <div className="col-12 col-lg-5 mb-3 mb-lg-0">
-                      <img src="/images/mu-1.png" alt="Treatment" className="img-fluid rounded" />
-                    </div>
-                    <div className="col-12 col-lg-7">
-                      <h4 className="article-title h4 mb-3">{locale === 'ar' ? "فحص الأسنان الدوري" : "Regular Dental Checkup"}</h4>
-                      <p className="article-text text-muted">
-                        {locale === 'ar' ? "الفحص الدوري يساعد في الحفاظ على صحة أسنان طفلك." : "Regular checkups help in maintaining your child's dental health and preventing issues early."}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
+
+      {/* Section 1 */}
+      <KidsFeatureSection
+        locale={locale}
+        image="/images/why-asnan/usa-graduate-building.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 2 */}
+      <KidsWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/talent-experience.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 3 */}
+      <KidsFeatureSection
+        locale={locale}
+        image="/images/why-asnan/our-guarantee.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 4 */}
+      <KidsWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/sterialization.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 5 */}
+      <KidsFeatureSection
+        locale={locale}
+        image="/images/why-asnan/international-medical.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 6 */}
+      <KidsWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/advanced-technology.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 7 */}
+      <KidsFeatureSection
+        locale={locale}
+        image="/images/why-asnan/treatment-of-fear.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 8 */}
+      <KidsWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/dental-drilling.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 9 */}
+      <KidsFeatureSection
+        locale={locale}
+        image="/images/why-asnan/digital-radiology.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 10 */}
+      <KidsWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/electronic-anesthesia.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 11 */}
+      <KidsFeatureSection
+        locale={locale}
+        image="/images/why-asnan/zeiss-pro.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 12 */}
+      <KidsWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/digital-scanner.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 13 */}
+      <KidsFeatureSection
+        locale={locale}
+        image="/images/why-asnan/digital-printing.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 14 */}
+      <KidsWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/x-ray-image.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
+      {/* Section 15 */}
+      <KidsFeatureSection
+        locale={locale}
+        image="/images/why-asnan/our-laboratory.png"
+        icon="/images/why-asnan/icon-university.svg"
+        title={usaGraduateFeature.title}
+        points={usaGraduateFeature.points}
+        imageAlt={isAr ? "مبنى جامعة أمريكية" : "American university building"}
+        iconAlt={isAr ? "أيقونة جامعة" : "University icon"}
+        variant="image-left"
+      />
+
+      {/* Section 16 */}
+      <KidsWaveFeatureSection
+        locale={locale}
+        image="/images/why-asnan/compilemtary-valet.png"
+        icon="/images/why-asnan/icon-talent-experience.svg"
+        title={talentExperienceFeature.title}
+        paragraphs={talentExperienceFeature.paragraphs}
+        imageAlt={
+          isAr
+            ? "طبيب أسنان يشرح العلاج"
+            : "Dentist explaining dental treatment"
+        }
+        iconAlt={
+          isAr
+            ? "أيقونة الموهبة والخبرة"
+            : "Talent and experience icon"
+        }
+        variant="image-right"
+      />
     </>
   );
 }
