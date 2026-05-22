@@ -4021,25 +4021,24 @@ footer .copyrights {
 .doctor-card {
   position: relative;
   display: block;
-  width: 24.792vw;
-  max-width: 100%;
-  min-height: 630px;
-  border-radius: 4.167vw;
+  width: 19.792vw;
+  /* max-width: 100%; */
+  /* min-height: 630px; */
+  border-radius: 3.167vw !important;
   background: #fff;
-  box-shadow: 0 2.604vw 5.15625vw rgba(80, 89, 92, 0.1);
-  margin: 3.333vw auto;
+  box-shadow: 0 2.604vw 5.15625vw #ECECEC;
 }
 .doctor-card .doctor-img {
   display: block;
   width: 100%;
   height: 19.583vw;
   overflow: hidden;
+  background-color: #ECECEC;
+  padding: 2vw 2vw 0 2vw;
 }
 .doctor-card .doctor-img img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
 }
 .doctor-card .doctor-info {
   display: block;
@@ -4052,7 +4051,7 @@ footer .copyrights {
   font-weight: 700;
   font-size: 0.729vw;
   letter-spacing: -0.07em;
-  color: #50595c;
+  color: #50595C !important;
   margin-bottom: 1.042vw;
 }
 .doctor-card .doctor-info .doctor-university img {
@@ -4067,9 +4066,13 @@ footer .copyrights {
   font-weight: 700;
   font-size: 1.458vw;
   letter-spacing: -0.07em;
-  color: #50595c;
+  color: #051A53;
   padding-bottom: 0.625vw;
   margin-bottom: 1.042vw;
+}
+
+.doctor-card .btn::before{
+  background-color: #051A53 !important;
 }
 .doctor-card .doctor-info .doctor-name:after {
   content: "";
