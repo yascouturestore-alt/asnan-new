@@ -1,0 +1,710 @@
+.page {
+  --asnan-blue: #051a53;
+  --asnan-mid-blue: #042970;
+  --asnan-sky: #2c8eff;
+  --asnan-yellow: #ffc936;
+  --asnan-text: #50595c;
+  --asnan-soft: #f0f0f0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: var(--asnan-blue);
+  font-family: Almarai, Tajawal, Arial, sans-serif;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vw * 1097 / 1920);
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.heroBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/Backgrounds/Im_New_Cover_Image2x.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  width: min(786px, calc(100% - 40px));
+  margin-top: clamp(70px, 7.4vw, 142px);
+  text-align: center;
+}
+
+.heroInner h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(38px, 3.65vw, 70px);
+  font-weight: 800;
+  line-height: 1.26;
+  letter-spacing: 0;
+}
+
+.heroInner p {
+  margin: clamp(6px, 1.04vw, 20px) 0 0;
+  color: #fff;
+  font-size: clamp(14px, 0.94vw, 18px);
+  font-weight: 700;
+  line-height: 1.9;
+}
+
+.heroInner p span {
+  color: var(--asnan-yellow);
+}
+
+.beliefSection {
+  display: grid;
+  min-height: clamp(230px, 16.7vw, 320px);
+  place-items: center;
+  padding: clamp(54px, 5vw, 96px) 20px clamp(40px, 4.1vw, 78px);
+  background: #fff;
+  text-align: center;
+}
+
+.beliefSection h2 {
+  max-width: 1080px;
+  margin: 0;
+  color: var(--asnan-blue);
+  font-size: clamp(30px, 2.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.75;
+  letter-spacing: 0;
+}
+
+.blue {
+  color: var(--asnan-sky);
+}
+
+.yellow {
+  color: var(--asnan-yellow);
+}
+
+.paymentSection {
+  position: relative;
+  min-height: clamp(270px, 19.64vw, 377px);
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+}
+
+.paymentWave {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.paymentWave::before {
+  content: "";
+  position: absolute;
+  inset: 0 -1px;
+  width: calc(100% + 2px);
+  height: 377px;
+  background-image: url("/images/im-new/slim-grey-bg-im-new.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+.paymentInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(1323px, calc(100% - 64px));
+  grid-template-columns: minmax(0, 786px) 108px 226px;
+  gap: clamp(34px, 2.3vw, 44px);
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  direction: ltr;
+}
+
+.paymentCopy {
+  text-align: right;
+  direction: rtl;
+}
+
+.ltr .paymentCopy {
+  text-align: left;
+  direction: ltr;
+}
+
+.paymentCopy h2 {
+  margin: 0 0 clamp(14px, 1vw, 19px);
+  color: var(--asnan-mid-blue);
+  font-size: clamp(30px, 2.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.paymentCopy p {
+  width: min(786px, 100%);
+  margin: 0;
+  color: var(--asnan-text);
+  font-size: clamp(14px, 0.94vw, 18px);
+  font-weight: 400;
+  line-height: 1.67;
+}
+
+.paymentPlan {
+  width: 108px;
+  color: var(--asnan-blue);
+  text-align: right;
+  direction: rtl;
+}
+
+.ltr .paymentPlan {
+  text-align: left;
+  direction: ltr;
+}
+
+.paymentPlan p,
+.paymentPlan span {
+  display: block;
+  margin: 0;
+  color: var(--asnan-blue);
+  font-size: clamp(14px, 1.25vw, 24px);
+  font-weight: 700;
+  line-height: 1.54;
+}
+
+.paymentPlan strong {
+  display: block;
+  margin: clamp(2px, 0.2vw, 4px) 0 0;
+  color: var(--asnan-text);
+  font-family: Gilroy, Arial, sans-serif;
+  font-size: clamp(42px, 3.23vw, 62px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.paymentPlan span {
+  font-size: clamp(12px, 0.84vw, 16px);
+  font-weight: 400;
+}
+
+.paymentIcon {
+  display: flex;
+  justify-content: flex-end;
+  width: 226px;
+}
+
+.paymentIcon img {
+  display: block;
+  width: min(226px, 100%);
+  height: auto;
+}
+
+.internationalSection {
+  position: relative;
+  min-height: calc(100vw * 1535 / 1920);
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  margin-top: 60px;
+}
+
+.internationalBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.internationalBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/jumeirah-pic.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+.internationalInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(1592px, calc(100% - 64px));
+  min-height: clamp(560px, 35.73vw, 686px);
+  grid-template-columns: minmax(320px, 805px) minmax(320px, 787px);
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: clamp(70px, 5.2vw, 100px) 0;
+  direction: ltr;
+}
+
+.jumeirahBrand {
+  display: grid;
+  justify-items: center;
+  gap: clamp(30px, 2.6vw, 50px);
+}
+
+.planeIcon {
+  width: clamp(160px, 16.4vw, 315px);
+  height: auto;
+}
+
+.jumeirahLogo {
+  width: clamp(210px, 20.2vw, 388px);
+  height: auto;
+}
+
+.internationalCopy {
+  width: min(787px, 100%);
+  color: #fff;
+  text-align: right;
+  direction: rtl;
+}
+
+.ltr .internationalCopy {
+  text-align: left;
+  direction: ltr;
+}
+
+.internationalCopy h2 {
+  margin: 0 0 clamp(24px, 1.65vw, 30px);
+  color: #fff;
+  font-size: clamp(34px, 2.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.internationalCopy p {
+  margin: 0 0 clamp(24px, 1.77vw, 34px);
+  color: #fff;
+  font-size: clamp(14px, 0.94vw, 18px);
+  font-weight: 400;
+  line-height: 1.67;
+}
+
+.travelButton {
+  display: inline-flex;
+  min-width: clamp(210px, 14.5vw, 278px);
+  min-height: 60px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 34px;
+  border-radius: 999px;
+  background: var(--asnan-yellow);
+  color: var(--asnan-blue);
+  font-size: clamp(15px, 1.04vw, 20px);
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+.travelButton:hover {
+  color: var(--asnan-blue);
+  text-decoration: none;
+}
+
+.firstVisitSection {
+  position: relative;
+  height: 531px;
+  min-height: 531px;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+}
+
+.firstVisitWave {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.firstVisitWave::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1px;
+  right: -1px;
+  width: calc(100% + 2px);
+  height: 531px;
+  background-image: url("/images/im-new/slim-grey-bg-im-new.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+.firstVisitInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(1056px, calc(100% - 64px));
+  min-height: 331px;
+  grid-template-columns: minmax(0, 652px) minmax(170px, 268px);
+  gap: clamp(70px, 7.08vw, 136px);
+  align-items: center;
+  margin: 0 auto;
+  direction: ltr;
+}
+
+.firstVisitCopy {
+  color: var(--asnan-text);
+  text-align: right;
+  direction: rtl;
+}
+
+.ltr .firstVisitCopy {
+  text-align: left;
+  direction: ltr;
+}
+
+.firstVisitCopy h2 {
+  margin: 0 0 clamp(24px, 1.9vw, 36px);
+  color: var(--asnan-mid-blue);
+  font-size: clamp(34px, 2.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.firstVisitCopy p {
+  margin: 0 0 clamp(13px, 1.05vw, 20px);
+  color: var(--asnan-text);
+  font-size: clamp(14px, 0.94vw, 18px);
+  font-weight: 400;
+  line-height: 1.67;
+}
+
+.firstVisitIcon {
+  display: grid;
+  justify-items: center;
+}
+
+.firstVisitIcon img {
+  width: clamp(180px, 13.96vw, 268px);
+  height: auto;
+}
+
+.stepsSection {
+  position: relative;
+  z-index: 1;
+  padding: 80px 0 120px;
+  background: #fff;
+}
+
+.stepsTitle {
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto 60px;
+  color: var(--asnan-blue);
+  font-size: clamp(34px, 2.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.22;
+  text-align: center;
+}
+
+.stepsTitle span {
+  color: var(--asnan-sky);
+}
+
+.stepsGrid {
+  display: grid;
+  width: min(1592px, calc(100% - 64px));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 0 auto;
+  direction: inherit;
+}
+
+.stepCard {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 0 40px 1px rgb(0 0 0 / 10%);
+}
+
+.stepImageWrap {
+  position: relative;
+  width: 100%;
+  height: 69.05%;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background: #f4f4f4;
+}
+
+.stepImage {
+  object-fit: cover;
+}
+
+.stepNumber {
+  position: absolute;
+  top: 28px;
+  left: 20px;
+  z-index: 2;
+  color: var(--asnan-sky);
+  font-family: Gilroy, Arial, sans-serif;
+  font-size: clamp(34px, 2.4vw, 46px);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stepCard h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 40px);
+  height: 23.21%;
+  margin: 3.87% auto 0;
+  padding: 0;
+  color: var(--asnan-blue);
+  font-size: clamp(20px, 1.46vw, 28px);
+  font-weight: 700;
+  line-height: 1.43;
+  text-align: center;
+}
+
+@media (max-width: 1280px) {
+  .paymentInner,
+  .internationalInner,
+  .stepsGrid {
+    width: min(1120px, calc(100% - 48px));
+  }
+
+  .paymentInner {
+    grid-template-columns: minmax(0, 1fr) 100px 170px;
+  }
+
+  .paymentIcon {
+    width: 170px;
+  }
+
+  .internationalInner {
+    grid-template-columns: minmax(290px, 1fr) minmax(360px, 1fr);
+  }
+
+  .stepsGrid {
+    gap: 18px;
+  }
+
+  .stepNumber {
+    top: 22px;
+    left: 18px;
+    font-size: 34px;
+  }
+
+  .stepCard h3 {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    min-height: 560px;
+  }
+
+  .heroBg::before {
+    background-image: url("/images/Backgrounds/mobile/Asnan_Cover_Mobile_ImNew_Cropped@3x.jpg");
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .heroInner {
+    margin-top: 86px;
+  }
+
+  .beliefSection h2 br {
+    display: none;
+  }
+
+  .paymentSection {
+    min-height: auto;
+    padding: 86px 0;
+  }
+
+  .firstVisitSection {
+    height: auto;
+    min-height: auto;
+    padding: 86px 0;
+  }
+
+  .paymentWave::before,
+  .firstVisitWave::before {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    clip-path: polygon(0 5%, 25% 0, 52% 5%, 76% 0, 100% 6%, 100% 94%, 76% 100%, 54% 95%, 26% 100%, 0 94%);
+  }
+
+  .paymentInner,
+  .firstVisitInner,
+  .internationalInner {
+    width: min(720px, calc(100% - 40px));
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .paymentInner {
+    justify-items: center;
+  }
+
+  .paymentCopy,
+  .ltr .paymentCopy,
+  .paymentPlan,
+  .ltr .paymentPlan {
+    text-align: center;
+  }
+
+  .paymentIcon,
+  .paymentPlan {
+    width: auto;
+  }
+
+  .paymentIcon img {
+    width: 170px;
+  }
+
+  .internationalSection {
+    min-height: auto;
+  }
+
+  .internationalBg::before {
+    background-size: cover;
+  }
+
+  .internationalInner {
+    min-height: 760px;
+    padding: 130px 0 150px;
+  }
+
+  .jumeirahBrand {
+    order: 2;
+  }
+
+  .internationalCopy {
+    order: 1;
+  }
+
+  .internationalCopy,
+  .ltr .internationalCopy,
+  .firstVisitCopy,
+  .ltr .firstVisitCopy {
+    text-align: center;
+  }
+
+  .stepsSection {
+    padding: 68px 0 94px;
+  }
+
+  .stepsTitle {
+    margin-bottom: 42px;
+  }
+
+  .stepsGrid {
+    width: min(720px, calc(100% - 40px));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stepCard h3 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    min-height: 520px;
+  }
+
+  .heroInner {
+    width: calc(100% - 30px);
+  }
+
+  .heroInner h1 {
+    font-size: 34px;
+  }
+
+  .beliefSection {
+    min-height: auto;
+    padding: 58px 18px 48px;
+  }
+
+  .beliefSection h2,
+  .paymentCopy h2,
+  .internationalCopy h2,
+  .firstVisitCopy h2,
+  .stepsTitle {
+    font-size: 28px;
+    line-height: 1.45;
+  }
+
+  .paymentSection,
+  .firstVisitSection {
+    padding: 66px 0;
+  }
+
+  .paymentInner,
+  .firstVisitInner,
+  .internationalInner,
+  .stepsGrid {
+    width: calc(100% - 30px);
+  }
+
+  .internationalInner {
+    min-height: 700px;
+    padding: 104px 0 124px;
+  }
+
+  .stepsSection {
+    padding: 54px 0 76px;
+  }
+
+  .stepsTitle {
+    margin-bottom: 34px;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .stepNumber {
+    top: 18px;
+    left: 16px;
+    font-size: 30px;
+  }
+
+  .stepCard h3 {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+}
