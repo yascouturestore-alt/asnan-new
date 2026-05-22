@@ -178,7 +178,7 @@ export default function Header() {
             <li><Link href={`/${locale}/careers`}>{t.header_careers}</Link></li>
             <li className="switch-lang-menu">
               <Link href={`/${otherLocale}`}>
-                {langText} <img className="flag" src={flagSrc} alt="Language switch button" />
+                {langText} <img className="flag" src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/${flagSrc}`} alt="Language switch button" />
               </Link>
             </li>
           </ul>

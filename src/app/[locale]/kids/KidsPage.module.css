@@ -1,0 +1,257 @@
+.kidsPage {
+  --asnan-blue: #051a53;
+  --asnan-light-blue: #0ea5e9;
+  --asnan-grey: #5f696d;
+}
+
+/* ── Welcome Section ── */
+.welcome {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.welcomeInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  width: min(1560px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.welcomeImgWrap img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+}
+
+.welcomeContent {
+  max-width: 680px;
+}
+
+.welcomeTitle {
+  margin-bottom: 32px;
+  color: var(--asnan-blue);
+  font-size: clamp(32px, 4vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.welcomeTitle span {
+  display: block;
+  color: var(--asnan-light-blue);
+}
+
+.welcomeText {
+  margin-bottom: 24px;
+  color: var(--asnan-grey);
+  font-size: clamp(16px, 1.4vw, 22px);
+  line-height: 1.6;
+}
+
+/* ── Characters Section ── */
+.characters {
+  position: relative;
+  z-index: 2;
+  /* stay above FAQ grey background */
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  /* image ko distort/squeeze nahi karega */
+  background-size: 100% auto;
+
+  /* tumhari image ka original ratio approx 1292x1218 hai */
+  min-height: calc(100vw * 1218 / 1292);
+
+  /* content ko top white curve se neeche laane ke liye */
+  padding: clamp(250px, 15vw, 300px) 0 clamp(180px, 12vw, 240px);
+
+  overflow: hidden;
+}
+
+.charactersBox {
+  text-align: center;
+  margin: 9vw 0;
+}
+
+.charactersTitle {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 40px 0;
+}
+
+.charactersText {
+  font-family: 'Almarai', 'Tajawal', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ── Tab bar wrapper ── */
+.tabsBar {
+  width: min(1300px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* ── Tabs list ── */
+.tabsList {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0;
+}
+
+/* ── Single tab item ── */
+.tabItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 clamp(8px, 1.5vw, 20px) 18px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  min-width: 0;
+  user-select: none;
+}
+
+.tabItemActive {
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+}
+
+/* ── Character image container ── */
+.charImgWrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 140px;
+  margin-bottom: 14px;
+  overflow: visible;
+}
+
+.charImgWrap img {
+  height: 115px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.3));
+}
+
+.tabItemActive .charImgWrap {
+  height: 190px;
+}
+
+.tabItemActive .charImgWrap img {
+  height: 190px;
+}
+
+/* ── Tab label ── */
+.tabLabel {
+  font-size: clamp(14px, 1.3vw, 20px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
+  white-space: nowrap;
+  transition: color 0.25s ease;
+  line-height: 1;
+  padding: 10px 0;
+}
+
+.tabItemActive .tabLabel {
+  color: #f5c252;
+}
+
+/* ── Description card — merges with active tab's white bg ── */
+.tabDescription {
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+  padding: clamp(16px, 1.8vw, 60px) clamp(20px, 3vw, 44px);
+  margin-top: 0px;
+}
+
+.tabDescription p {
+  margin: 0;
+  color: #5f696d;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.75;
+}
+
+/* ── Treatments Header ── */
+.treatmentsHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1560px, calc(100% - 64px));
+  margin: 80px auto 40px;
+  padding: 40px;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+.treatmentsHeaderText h3 {
+  margin-bottom: 12px;
+  color: var(--asnan-blue);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.treatmentsHeaderText p {
+  margin: 0;
+  color: var(--asnan-grey);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.securityIcon {
+  width: 80px;
+  height: auto;
+}
+
+/* ── RTL Support ── */
+[dir="rtl"] .welcomeTitle {
+  text-align: right;
+}
+
+[dir="rtl"] .welcomeInner {
+  direction: rtl;
+}
+
+[dir="rtl"] .treatmentsHeader {
+  direction: rtl;
+}
+
+/* ── Mobile ── */
+@media (max-width: 991px) {
+  .welcomeInner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .welcomeTitle {
+    text-align: center !important;
+  }
+
+  .welcomeContent {
+    order: 1;
+  }
+
+  .welcomeImgWrap {
+    order: 2;
+  }
+
+  .treatmentsHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}

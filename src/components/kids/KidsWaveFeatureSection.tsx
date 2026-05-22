@@ -5,23 +5,21 @@ import styles from "./KidsWaveFeatureSection.module.css";
 export type KidsWaveFeatureSectionProps = {
   locale: string;
   image: string;
-  icon: string;
   title: string;
-  paragraphs: string[];
+  subTitle: string
+  paragraph: string;
   imageAlt?: string;
-  iconAlt?: string;
   variant?: "image-left" | "image-right";
   backgroundImage?: string;
 };
 
-export default function WhyAsnanWaveFeatureSection({
+export default function KidsWaveFeatureSection({
   locale,
   image,
-  icon,
   title,
-  paragraphs,
+  subTitle,
+  paragraph,
   imageAlt = "",
-  iconAlt = "",
   variant = "image-right",
   backgroundImage = "/images/why-asnan/bg-wave-grey.svg",
 }: KidsWaveFeatureSectionProps) {
@@ -34,9 +32,8 @@ export default function WhyAsnanWaveFeatureSection({
 
   return (
     <section
-      className={`${styles.section} ${styles.hasWaveBg} ${
-        isAr ? styles.rtl : styles.ltr
-      } ${isImageRight ? styles.imageRight : styles.imageLeft}`}
+      className={`${styles.section} ${styles.hasWaveBg} ${isAr ? styles.rtl : styles.ltr
+        } ${isImageRight ? styles.imageRight : styles.imageLeft}`}
       style={sectionStyle}
       dir={isAr ? "rtl" : "ltr"}
       aria-label={title}
@@ -44,30 +41,19 @@ export default function WhyAsnanWaveFeatureSection({
       <div className={styles.inner}>
         <div className={styles.content}>
           <h2>{title}</h2>
-
+          <h4>{subTitle}</h4>
           <div className={styles.text}>
-            {paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
+            <p key={paragraph}>{paragraph}</p>
           </div>
         </div>
 
         <div className={styles.visual}>
           <div className={styles.imagePanel}>
-            <Image
+            <img
               src={image}
               alt={imageAlt}
-              fill
               sizes="(max-width: 860px) calc(100vw - 32px), 806px"
-              priority={false}
             />
-          </div>
-
-          <div
-            className={styles.iconBadge}
-            aria-hidden={iconAlt ? undefined : "true"}
-          >
-            <Image src={icon} alt={iconAlt} width={150} height={150} />
           </div>
         </div>
       </div>

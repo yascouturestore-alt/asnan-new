@@ -14,8 +14,7 @@ export interface PopularCategory {
   id: string;
   label: string;
   icon: string;
-  sideItems: string[];
-  articles: PopularArticle[];
+  paragraph: string;
 }
 
 interface Props {
@@ -23,47 +22,6 @@ interface Props {
   title: string;
   subtitle: string;
   categories: PopularCategory[];
-}
-
-function ChevronLeft() {
-  return (
-    <svg
-      className={styles.viewAllArrow}
-      viewBox="0 0 26 40"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M18 6L8 20L18 34"
-        stroke="white"
-        strokeWidth="3.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function SmileIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="9" stroke="#838F91" strokeWidth="1.5" />
-      <path
-        d="M8.5 14.5C8.5 14.5 9.5 16 12 16C14.5 16 15.5 14.5 15.5 14.5"
-        stroke="#838F91"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <circle cx="9.5" cy="10.5" r="1" fill="#838F91" />
-      <circle cx="14.5" cy="10.5" r="1" fill="#838F91" />
-    </svg>
-  );
 }
 
 export default function PopularCategoriesSection({
@@ -76,8 +34,6 @@ export default function PopularCategoriesSection({
   const selectedCategory = categories.find((c) => c.id === activeCategoryId)!;
   const dir = locale === "ar" ? "rtl" : "ltr";
   const isAr = locale === "ar";
-  const learnMoreText = isAr ? "تعلم المزيد" : "Learn More";
-  const viewAllText = isAr ? "عرض الكل" : "View All";
 
   return (
     <section
@@ -125,51 +81,9 @@ export default function PopularCategoriesSection({
             );
           })}
         </div>
-
-        {/* Content tray — direction forced ltr so columns never reorder */}
         <div className={styles.tray}>
-          {/* View All button */}
-          <button type="button" className={styles.viewAllBtn}>
-            <ChevronLeft />
-            <span className={styles.viewAllText}>{viewAllText}</span>
-          </button>
-
-          {/* 3 Article cards */}
           <div className={styles.cards} role="tabpanel">
-            {selectedCategory.articles.map((article, i) => (
-              <article key={i} className={styles.card}>
-                <div className={styles.cardImageWrap}>
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 262px"
-                    style={{ objectFit: "cover", objectPosition: "center" }}
-                  />
-                </div>
-                <div className={styles.cardBody}>
-                  <div className={styles.cardTop}>
-                    <p className={styles.cardTitle}>{article.title}</p>
-                    <button type="button" className={styles.learnMoreBtn}>
-                      {learnMoreText}
-                    </button>
-                  </div>
-                  <div className={styles.countRow}>
-                    <span>{article.count}</span>
-                    <SmileIcon />
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          {/* Side description box */}
-          <div className={styles.sideBox}>
-            {selectedCategory.sideItems.map((item, i) => (
-              <p key={i} className={styles.sideBoxItem}>
-                {item}
-              </p>
-            ))}
+            {selectedCategory.paragraph}
           </div>
         </div>
       </div>
