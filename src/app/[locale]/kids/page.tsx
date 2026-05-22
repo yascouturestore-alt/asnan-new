@@ -202,7 +202,7 @@ export default function KidsPage() {
                   <img src="/images/Icon-phone.svg" alt="phone icon" height="50" />
                 </div>
                 <div className="call-btn-txt">
-                  <p className="call-desc">{t.direct_call}</p>
+                  <p className="call-desc">Call</p>
                   <span className="phone-link">965-189<span>6666</span></span>
                 </div>
               </a>
