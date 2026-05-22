@@ -41,9 +41,6 @@ const copy = {
 };
 
 
-
-
-
 const categoriesAr: PopularCategory[] = [
   {
     id: "prevention",
