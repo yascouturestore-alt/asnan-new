@@ -1,0 +1,375 @@
+.page {
+  --asnan-blue: #051a53;
+  --asnan-mid-blue: #042970;
+  --asnan-sky: #2c8eff;
+  --asnan-yellow: #ffc936;
+  --asnan-text: #50595c;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: var(--asnan-blue);
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vw * 1135.296 / 1920);
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.heroBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/careers/values-bg-hero.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(42px, 3.65vw, 70px);
+  font-weight: 800;
+  line-height: 1.26;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.valuesList {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(-45px, -2.35vw, 0px);
+}
+
+.valueSection {
+  position: relative;
+  display: grid;
+  min-height: clamp(760px, 61.15vw, 1174px);
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #fff;
+}
+
+.waveSection {
+  background: transparent;
+}
+
+.waveBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.waveBg::before {
+  content: "";
+  position: absolute;
+  inset: 0 -1px;
+  background-image: url("/images/bgimg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+.valueInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(1592px, calc(100% - 64px));
+  grid-template-columns: minmax(320px, 806px) minmax(300px, 652px);
+  gap: clamp(72px, 7vw, 134px);
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  direction: ltr;
+}
+
+.reverse {
+  grid-template-columns: minmax(300px, 652px) minmax(320px, 806px);
+}
+
+.reverse .videoPanel {
+  grid-column: 2;
+}
+
+.reverse .valueContent {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.videoPanel {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 806 / 786;
+  overflow: hidden;
+  border-radius: 0 100px 0 100px;
+  background: #d6dee0;
+  color: #fff;
+  text-decoration: none;
+}
+
+.videoPanel:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.videoImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.videoShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(102, 102, 102, 0) 50%);
+  pointer-events: none;
+}
+
+.playIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: clamp(72px, 5.73vw, 110px);
+  height: clamp(72px, 5.73vw, 110px);
+  transform: translate(-50%, -50%);
+}
+
+.playIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.videoCaption {
+  position: absolute;
+  right: 24px;
+  bottom: clamp(38px, 3.13vw, 60px);
+  left: 24px;
+  z-index: 2;
+  display: grid;
+  gap: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.videoCaption strong {
+  display: block;
+  font-size: clamp(18px, 1.25vw, 24px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.videoCaption span {
+  display: block;
+  font-size: clamp(13px, 0.83vw, 16px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.valueContent {
+  color: var(--asnan-text);
+  text-align: right;
+  direction: rtl;
+}
+
+.ltr .valueContent {
+  text-align: left;
+  direction: ltr;
+}
+
+.valueNumber {
+  margin: 0 0 clamp(20px, 1.66vw, 32px);
+  color: var(--asnan-text);
+  font-size: clamp(14px, 0.94vw, 18px);
+  font-weight: 400;
+  line-height: 1.67;
+}
+
+.valueContent h2 {
+  margin: 0 0 clamp(24px, 1.82vw, 35px);
+  color: var(--asnan-mid-blue);
+  font-size: clamp(34px, 2.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.valueContent p {
+  margin: 0 0 clamp(10px, 0.83vw, 16px);
+  color: var(--asnan-text);
+  font-size: clamp(14px, 0.94vw, 18px);
+  font-weight: 400;
+  line-height: 1.67;
+}
+
+.valueContent ul {
+  display: grid;
+  gap: 10px;
+  margin: clamp(13px, 1.1vw, 22px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.valueContent li {
+  position: relative;
+  color: var(--asnan-text);
+  font-size: clamp(14px, 0.94vw, 18px);
+  font-weight: 400;
+  line-height: 1.67;
+}
+
+.rtl .valueContent li {
+  padding-right: 46px;
+}
+
+.ltr .valueContent li {
+  padding-left: 46px;
+}
+
+.valueContent li::before {
+  content: "";
+  position: absolute;
+  top: 0.1em;
+  width: 26px;
+  height: 26px;
+  border: 8px solid var(--asnan-sky);
+  border-radius: 50%;
+}
+
+.rtl .valueContent li::before {
+  right: 0;
+}
+
+.ltr .valueContent li::before {
+  left: 0;
+}
+
+@media (max-width: 1280px) {
+  .valueInner {
+    width: min(1120px, calc(100% - 56px));
+    gap: clamp(48px, 5vw, 80px);
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    min-height: 560px;
+  }
+
+  .heroBg::before {
+    background-image: url("/images/bg-home-mob.png");
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .valueSection {
+    min-height: auto;
+    padding: 86px 0;
+  }
+
+  .waveBg::before {
+    background-size: 100% 100%;
+  }
+
+  .valueInner,
+  .reverse {
+    width: min(720px, calc(100% - 40px));
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .reverse .videoPanel,
+  .reverse .valueContent {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .videoPanel {
+    border-radius: 0 70px 0 70px;
+  }
+
+  .valueContent,
+  .ltr .valueContent {
+    text-align: center;
+  }
+
+  .valueContent ul {
+    text-align: inherit;
+  }
+
+  .rtl .valueContent li,
+  .ltr .valueContent li {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .valueContent li::before {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .valuesList {
+    margin-top: -22px;
+  }
+
+  .valueSection {
+    padding: 62px 0;
+  }
+
+  .valueInner,
+  .reverse {
+    width: calc(100% - 30px);
+    gap: 28px;
+  }
+
+  .videoPanel {
+    border-radius: 0 44px 0 44px;
+  }
+
+  .valueContent h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .valueNumber,
+  .valueContent p,
+  .valueContent li {
+    font-size: 14px;
+  }
+}
