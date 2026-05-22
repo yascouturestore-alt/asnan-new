@@ -256,11 +256,13 @@
 .valueContent li::before {
   content: "";
   position: absolute;
-  top: 0.1em;
+  top: 0.12em;
   width: 26px;
   height: 26px;
-  border: 8px solid var(--asnan-sky);
-  border-radius: 50%;
+  background-image: url("/images/why-asnan/icon-bullet-circle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .rtl .valueContent li::before {
@@ -321,17 +323,18 @@
   }
 
   .valueContent ul {
-    text-align: inherit;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    text-align: initial;
   }
 
-  .rtl .valueContent li,
-  .ltr .valueContent li {
-    padding-right: 0;
-    padding-left: 0;
+  .rtl .valueContent ul {
+    text-align: right;
   }
 
-  .valueContent li::before {
-    display: none;
+  .ltr .valueContent ul {
+    text-align: left;
   }
 }
 

@@ -126,14 +126,14 @@ export default function Home() {
         }
         .home-figma-gallery {
             position: relative;
-            padding-top: 7vw;
+            padding-top: 2vw !important;
             overflow: visible;
             z-index: 1;
             background: transparent;
         }
         .home-figma-gallery:before {
             display: block;
-            top: -7vw;
+            top: -11vw;
             background: url("/images/Mask Group 140.png") center no-repeat;
             background-size: contain;
             width: 100%;

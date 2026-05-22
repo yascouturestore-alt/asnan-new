@@ -158,7 +158,7 @@ const values: ValueItem[] = [
         "نستمتع بعملنا. العمل في طب الأسنان يتطلب جهدًا كبيرًا، لكن العمل الشاق قد يكون ممتعًا أيضًا. نأخذ عملنا على محمل الجد، ونؤمن بأن بيئة العمل الممتعة تُسهم في تقديم رعاية أفضل لمرضانا وتوفير بيئة عمل أفضل لفريقنا. نسعى جاهدين للتميز، ونستمتع بتحقيقه.",
       ],
     },
-    image: "/images/careers/d7.png",
+    image: "/images/careers/p&f-image.png",
     variant: "image-right",
     wave: true,
     playAlt: { en: "Play positivity and fun video", ar: "تشغيل فيديو الإيجابية والمرح" },
