@@ -161,10 +161,11 @@
 }
 
 .phone-link {
-    font-size: 1.25vw;
-    font-weight: bold;
-    color: var(--color-primary);
+        font-size: 30px;
+    font-weight: 700;
+    color: white;
     white-space: nowrap;
+    line-height: 45px;
 }
 
 .phone-link span {

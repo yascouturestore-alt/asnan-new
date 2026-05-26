@@ -47,6 +47,8 @@ export default function Header() {
                   </Link>
                 </div>
               </div>
+            </div>
+            <div className="ul-quick-bt-wrap">    
               <div className="d-flex align-items-center my-2">
                 <a href="https://wa.me/1896666" target="_blank" rel="noreferrer" className="phone-link" id="book-phone-whatsapp">
                   189<span>6666</span>
@@ -58,9 +60,7 @@ export default function Header() {
                   <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/Asnan-Appointment-icon.svg`} className="appointment-icon" alt="" />
                 </a>
               </div>
-            </div>
-            
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav">
               <li className="nav-item active">
                 <Link className="nav-link" href={`/${locale}`}>{t.header_home}</Link>
               </li>
@@ -158,6 +158,7 @@ export default function Header() {
                 <Link className="nav-link" href={`/${locale}/book-appointment`}>{t.header_contact}</Link>
               </li>
             </ul>
+            </div>
           </div>
         </div>
         <a href="#requestAppointment" className="btn btn-secondary">

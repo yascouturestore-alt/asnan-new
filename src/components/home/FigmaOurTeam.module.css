@@ -26,7 +26,7 @@
 
 .bgOverlay {
   inset: 0;
-  background: linear-gradient(180deg, rgba(1, 13, 54, 0.16), rgba(1, 17, 66, 0.24));
+  /* background: linear-gradient(180deg, rgba(1, 13, 54, 0.16), rgba(1, 17, 66, 0.24)); */
   z-index: 1;
 }
 
@@ -41,7 +41,7 @@
 .inner {
   position: relative;
   z-index: 3;
-  width: min(1180px, 78vw);
+  width: min(1280px, 78vw);
   min-height: clamp(660px, 66vw, 1269px);
   margin: 0 auto;
   padding-top: clamp(78px, 7.4vw, 142px);
@@ -51,7 +51,7 @@
 .headline {
   position: absolute;
   top: clamp(80px, 6.95vw, 134px);
-  left: clamp(250px, 21.5vw, 414px);
+      left: clamp(250px, 15.5vw, 414px);
   z-index: 8;
   margin: 0;
   color: #ffc936;
@@ -76,7 +76,7 @@
   filter: blur(0.25px);
   font-size: clamp(124px, 11vw, 212px);
   font-weight: 800;
-  line-height: 0.9;
+  line-height: 1.1;
   text-align: center;
   white-space: nowrap;
   letter-spacing: 0;
@@ -84,15 +84,15 @@
 
 .doctorsCurveMask {
   position: absolute;
-  top: clamp(420px, 40.7vw, 782px);
+      top: clamp(420px, 32.7vw, 782px);
   left: 50%;
   z-index: 5;
   display: block;
   width: 100vw;
-  height: clamp(280px, 26.8vw, 515px);
+  height: clamp(420px, 36vw, 700px);
   max-width: none;
   transform: translateX(-50%);
-  object-fit: cover;
+  object-fit: fill;
   object-position: center top;
   pointer-events: none;
 }
@@ -223,14 +223,17 @@
 .specialties {
   position: relative;
   z-index: 7;
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: clamp(8px, 1.1vw, 22px);
-  align-items: center;
-  margin: clamp(24px, 2.5vw, 48px) auto 0;
-  padding: 0;
   list-style: none;
   direction: ltr;
+  align-items: center;
+    gap: 15px;
+    margin: clamp(24px, 2.5vw, 48px) auto 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
 }
 
 .specialty {
@@ -246,14 +249,14 @@
 
 .specialty img {
   flex: 0 0 clamp(22px, 1.55vw, 30px);
-  width: clamp(22px, 1.55vw, 30px);
-  height: clamp(22px, 1.55vw, 30px);
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
 
 .specialty span {
   display: block;
-  font-size: clamp(8px, 0.56vw, 11px);
+  font-size: 12px;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: 0;
@@ -481,7 +484,7 @@
   }
 
   .specialties {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+            justify-content: center;
     gap: 18px 12px;
     margin-top: 38px;
   }

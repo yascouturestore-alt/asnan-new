@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { getDictionary } from "@/dictionaries";
 import FigmaOurTeam from "@/components/home/FigmaOurTeam";
 import AppointmentSection from "@/components/home/AppointmentSection";
 import styles from "./page.module.css";
@@ -112,24 +113,303 @@ const copy = {
   },
 };
 
-function BeforeAfter({ before, after, size = "large", labels }: { before: string; after: string; size?: "large" | "small"; labels: { before: string; after: string } }) {
+function HomeWorldBeautySection({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale);
+
+  useEffect(() => {
+    const initWorldBeauty = () => {
+      if (typeof window === "undefined") return;
+
+      const containers = document.querySelectorAll(
+        ".orthodontics-world-beauty .before-after-wrapper"
+      );
+
+      containers.forEach((container) => {
+        const slider = container.querySelector(".slider") as HTMLInputElement | null;
+        if (!slider || slider.dataset.asnanOrthoBound === "true") return;
+
+        slider.dataset.asnanOrthoBound = "true";
+
+        const setPosition = () => {
+          (container as HTMLElement).style.setProperty(
+            "--position",
+            `${slider.value}%`
+          );
+        };
+
+        setPosition();
+        slider.addEventListener("input", setPosition);
+      });
+
+      const $ = (window as any).$;
+
+      if ($?.fn?.owlCarousel) {
+        const $worldBeautySlider = $(
+          ".orthodontics-world-beauty .owl-carousel.world-beauty-slider"
+        );
+
+        if (
+          $worldBeautySlider.length &&
+          !$worldBeautySlider.hasClass("owl-loaded")
+        ) {
+          $worldBeautySlider.owlCarousel({
+            mouseDrag: false,
+            touchDrag: false,
+            loop: false,
+            nav: true,
+            navText: [
+              `<img src="${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-prev-yellow.svg" alt="Prev">`,
+              `<img src="${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-next-yellow.svg" alt="Next">`,
+            ],
+            dots: false,
+            margin: 0,
+            responsiveClass: true,
+            responsive: { 0: { items: 1 } },
+          });
+        }
+      }
+    };
+
+    const tryInit = () => {
+      const $ = typeof window !== "undefined" ? (window as any).$ : undefined;
+
+      if ($?.fn?.owlCarousel) {
+        initWorldBeauty();
+      } else {
+        window.setTimeout(tryInit, 200);
+      }
+    };
+
+    tryInit();
+  }, []);
+
   return (
-    <div className={`${styles.beforeAfter} ${size === "small" ? styles.beforeAfterSmall : ""}`}>
-      <div className={styles.afterPane}>
-        <img src={after} alt={labels.after} />
+    <div className="world-beauty-wrapper orthodontics-world-beauty">
+      <div className="world-beauty-title">{t.world_of_beauty}</div>
+      <div className="container-fluid">
+        <div className="owl-carousel owl-theme world-beauty-slider">
+          <div className="item">
+            <div className="row align-items-center">
+              <div className="col-12 col-lg-7">
+                <div className="before-after-wrapper">
+                  <div className="before-after-img">
+                    <img
+                      className="image-before"
+                      src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before.png`}
+                      alt="Before"
+                    />
+                    <img
+                      className="image-after"
+                      src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after.png`}
+                      alt="After"
+                    />
+                  </div>
+                  <div className="before-text">{t.before}</div>
+                  <div className="after-text">{t.after}</div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    defaultValue="50"
+                    aria-label="Percentage of before photo shown"
+                    className="slider"
+                  />
+                  <div className="slider-line" aria-hidden="true" />
+                </div>
+              </div>
+
+              <div className="col-12 col-lg-5">
+                <div className="caption-wrapper">
+                  <div className="caption-text">{t.beautiful_smile}</div>
+                  <div className="made-by-wrapper">
+                    <div className="made-by-title">
+                      {t.this_smile} <div>{t.made_by}</div>
+                    </div>
+
+                    <div className="doctor-small">
+                      <div className="doctor-img">
+                        <img
+                          src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/dr-img-teeth-show.png`}
+                          alt=""
+                        />
+                      </div>
+                    </div>
+
+                    <div className="doctor-info">
+                      <div className="doctor-name">{t.dr_border_img}</div>
+                      <div className="doctor-title">{t.prosthodontist}</div>
+                      <div className="doctor-title">{t.kuwait_university}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="row align-items-center">
+              <div className="col-12 col-lg-7">
+                <div className="before-after-wrapper">
+                  <div className="before-after-img">
+                    <img
+                      className="image-before"
+                      src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before-2.png`}
+                      alt="Before"
+                    />
+                    <img
+                      className="image-after"
+                      src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after-2.png`}
+                      alt="After"
+                    />
+                  </div>
+                  <div className="before-text">{t.before}</div>
+                  <div className="after-text">{t.after}</div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    defaultValue="50"
+                    aria-label="Percentage of before photo shown"
+                    className="slider"
+                  />
+                  <div className="slider-line" aria-hidden="true" />
+                </div>
+              </div>
+
+              <div className="col-12 col-lg-5">
+                <div className="caption-wrapper">
+                  <div className="caption-text">{t.beautiful_smile}</div>
+                  <div className="made-by-wrapper">
+                    <div className="made-by-title">
+                      {t.this_smile} <div>{t.made_by_female}</div>
+                    </div>
+
+                    <div className="doctor-small">
+                      <div className="doctor-img">
+                        <img
+                          src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Dr.-Amnah-(1).png`}
+                          alt=""
+                        />
+                      </div>
+                    </div>
+
+                    <div className="doctor-info">
+                      <div className="doctor-name">Dr. Amnah</div>
+                      <div className="doctor-title">{t.orthodontist}</div>
+                      <div className="doctor-title">{t.kuwait_university}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12 col-lg-4">
+            <div className="before-after-wrapper">
+              <div className="before-after-img">
+                <img
+                  className="image-before"
+                  src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before-3-1.png`}
+                  alt="Before"
+                />
+                <img
+                  className="image-after"
+                  src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after-3-1.png`}
+                  alt="After"
+                />
+              </div>
+              <div className="before-text">{t.before}</div>
+              <div className="after-text">{t.after}</div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                defaultValue="50"
+                aria-label="Percentage of before photo shown"
+                className="slider"
+              />
+              <div className="slider-line" aria-hidden="true" />
+            </div>
+          </div>
+
+          <div className="col-12 col-lg-4">
+            <div className="before-after-wrapper">
+              <div className="before-after-img">
+                <img
+                  className="image-before"
+                  src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before-2.png`}
+                  alt="Before"
+                />
+                <img
+                  className="image-after"
+                  src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after-2.png`}
+                  alt="After"
+                />
+              </div>
+              <div className="before-text">{t.before}</div>
+              <div className="after-text">{t.after}</div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                defaultValue="50"
+                aria-label="Percentage of before photo shown"
+                className="slider"
+              />
+              <div className="slider-line" aria-hidden="true" />
+            </div>
+          </div>
+
+          <div className="col-12 col-lg-4">
+            <a
+              href={`/${locale}/services/world-of-beauty`}
+              className="more-smiles-block"
+            >
+              <div className="more-smiles-text">{t.view_more}</div>
+              <img
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Path%20774.svg`}
+                alt=""
+                className="more-smiles-shape"
+              />
+              <img
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/next-arrow.svg`}
+                alt=""
+                className="more-smiles-arrow"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12">
+            <a
+              href={`/${locale}/services/world-of-beauty`}
+              className="more-smiles-block-responsive"
+            >
+              <div className="more-smiles-text-responsive">{t.view_more}</div>
+              <img
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Path%20774.svg`}
+                alt=""
+                className="more-smiles-shape-responsive"
+              />
+              <img
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/next-arrow.svg`}
+                alt=""
+                className="more-smiles-arrow-responsive"
+              />
+            </a>
+          </div>
+        </div>
       </div>
-      <div className={styles.beforePane}>
-        <img src={before} alt={labels.before} />
-      </div>
-      <span className={`${styles.baLabel} ${styles.beforeLabel}`}>{labels.before}</span>
-      <span className={`${styles.baLabel} ${styles.afterLabel}`}>{labels.after}</span>
-      <span className={styles.baDivider} aria-hidden="true" />
     </div>
   );
 }
 
 function HomeLivesGallery({ locale }: { locale: Locale }) {
   const isAr = locale === "ar";
+  const t = getDictionary(locale);
   const galleryCopy = {
     title: isAr ? "راح نغير حياتك" : "We Change Lives",
     celebrities: isAr ? "مشاهير أسنان" : "Celebrities",
@@ -147,11 +427,51 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
     },
   };
 
+  useEffect(() => {
+    const initGallery = () => {
+      if (typeof window === "undefined") return;
+      const $ = (window as any).$;
+
+      if (!$) {
+        window.setTimeout(initGallery, 200);
+        return;
+      }
+
+      if ($.fn?.magnificPopup) {
+        const $imagePopups = $(".orthodontics-home-figma-gallery .image-popup");
+        const $videoPopups = $(".orthodontics-home-figma-gallery .popup-player");
+
+        if ($imagePopups.length) {
+          $imagePopups.magnificPopup({
+            type: "image",
+            mainClass: "mfp-with-zoom",
+            gallery: { enabled: true },
+            zoom: {
+              enabled: true,
+              duration: 300,
+              easing: "ease-in-out",
+              opener: function (openerElement: any) {
+                return openerElement.is("img")
+                  ? openerElement
+                  : openerElement.find("img");
+              },
+            },
+          });
+        }
+
+        if ($videoPopups.length) {
+          $videoPopups.magnificPopup({ type: "iframe", midClick: true });
+        }
+      }
+    };
+
+    initGallery();
+  }, []);
+
   return (
     <>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .gallery-row .gallery-column .gallery-item img {
             width: 100%;
             height: 100%;
@@ -161,7 +481,7 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
         }
         .home-figma-gallery {
             position: relative;
-            padding-top: 2vw;
+            padding-top: 2vw !important;
             overflow: visible;
             z-index: 1;
             background: transparent;
@@ -176,26 +496,25 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
             z-index: 0;
         }
         .home-figma-gallery .change-lives {
-            color: #043f84;
-            font-size: clamp(26px, 2.2vw, 42px);
-            font-weight: 800;
-            line-height: 1;
-            letter-spacing: 0 !important;
-            margin: 0;
-            padding-top: 0.9vw;
-            z-index: 3;
+                color: #043f84;
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 50px;
+    letter-spacing: 0 !important;
+    margin: 0;
+    padding-top: 0.9vw;
+    z-index: 3;
         }
         .home-figma-gallery .nav-tabs {
-            margin: 1.5vw auto 1.25vw;
+            margin: 2.5vw auto 2.25vw;
         }
         .home-figma-gallery .nav-tabs .nav-link {
             color: rgba(255, 255, 255, 0.96);
-            font-size: clamp(14px, 0.98vw, 19px);
-            font-weight: 600;
-            line-height: 1;
-            letter-spacing: 0 !important;
-            padding: 0 0 0.48vw;
-            margin: 0 1.55vw;
+                font-size: 24px;
+    font-weight: 700;
+    line-height: 54px;
+    letter-spacing: 0 !important;
+    margin: 0 1.55vw;
         }
         .home-figma-gallery .nav-tabs .nav-link.active,
         .home-figma-gallery .nav-tabs.show .nav-link {
@@ -268,18 +587,18 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
             padding: 0 !important;
         }
         .home-figma-gallery .figma-gallery-title {
-            position: absolute;
-            right: clamp(22px, 3.2vw, 62px);
-            bottom: clamp(18px, 2.2vw, 42px);
-            display: inline-block;
-            color: #fff;
-            font-size: clamp(13px, 1.05vw, 20px);
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: 0 !important;
-            text-align: right;
-            direction: rtl;
-            z-index: 2;
+                position: absolute;
+    right: clamp(22px, 3.2vw, 62px);
+    bottom: clamp(18px, 2.2vw, 42px);
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0 !important;
+    text-align: right;
+    direction: rtl;
+    z-index: 2;
         }
         .home-figma-gallery .figma-gallery-title:after {
             content: '';
@@ -341,16 +660,16 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
             padding: 0 !important;
             z-index: 0;
         }
-        .home-figma-gallery-ltr .figma-gallery-cta-bg {
-            transform: scaleX(-1);
-        }
+       .home-figma-gallery-rtl .figma-gallery-cta-bg {
+    transform: scaleX(-1);
+}
         .home-figma-gallery .figma-gallery-cta-content {
             position: relative;
             z-index: 2;
             display: flex;
             height: 100%;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             padding: 2vw 3vw 8vw;
             color: #fff;
@@ -371,10 +690,11 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
         }
         .home-figma-gallery .figma-cta-large {
             display: block;
-            font-size: clamp(40px, 5vw, 88px);
+                font-size: 100px;
             font-weight: 800;
             line-height: 1.05;
             letter-spacing: 0 !important;
+                 text-align: start;
         }
         @media screen and (max-width: 991px) {
             .home-figma-gallery {
@@ -432,20 +752,21 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
                 padding-top: 50px;
             }
             .home-figma-gallery:before {
-                height: 233px;
+                height: 255px;
                 background-position: top center;
             }
             .home-figma-gallery .change-lives {
-                font-size: 30px;
-                padding-top: 38px;
+        font-size: 28px;
+        padding-top: 41px;
             }
             .home-figma-gallery .nav-tabs {
-                margin: 18px auto 26px;
+        margin: 12px auto 18px;
             }
             .home-figma-gallery .nav-tabs .nav-link {
                 font-size: 17px;
                 padding-bottom: 10px;
                 margin: 0 11px;
+    line-height: 40px;
             }
             .home-figma-gallery .figma-celeb-gallery {
                 display: grid;
@@ -518,73 +839,51 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
                 font-size: 46px;
                 line-height: 1.15;
             }
-        }`,
-        }}
-      />
+        }
+      `}} />
 
-      <section className={`gallery-wrapper home-figma-gallery ${isAr ? "home-figma-gallery-rtl" : "home-figma-gallery-ltr"}`} aria-labelledby="lives-title">
-        <div id="lives-title" className="change-lives">{galleryCopy.title}</div>
-
-        <ul className="nav nav-tabs" id="doctorLivesTab" role="tablist">
+      {/* Gallery */}
+      <div className={`gallery-wrapper home-figma-gallery orthodontics-home-figma-gallery ${isAr ? "home-figma-gallery-rtl" : "home-figma-gallery-ltr"}`}>
+        <div className="change-lives">{galleryCopy.title}</div>
+        <ul className="nav nav-tabs" id="myTab" role="tablist">
           <li className="nav-item" role="presentation">
-            <button
-              className="nav-link active"
-              data-toggle="tab"
-              data-target="#doctor-tab-celebrities"
-              type="button"
-              role="tab"
-              aria-controls="doctor-tab-celebrities"
-              aria-selected="true"
-            >
+            <button className="nav-link active" data-toggle="tab" data-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="true">
               {galleryCopy.celebrities}
             </button>
           </li>
           <li className="nav-item" role="presentation">
-            <button
-              className="nav-link"
-              data-toggle="tab"
-              data-target="#doctor-tab-testimonials"
-              type="button"
-              role="tab"
-              aria-controls="doctor-tab-testimonials"
-              aria-selected="false"
-            >
+            <button className="nav-link" data-toggle="tab" data-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">
               {galleryCopy.testimonials}
             </button>
           </li>
         </ul>
 
-        <div className="tab-content" id="doctorLivesTabContent">
-          <div className="tab-pane fade show active" id="doctor-tab-celebrities" role="tabpanel">
+        <div className="tab-content" id="myTabContent">
+          <div className="tab-pane fade show active" id="tab2" role="tabpanel">
             <div className="figma-celeb-gallery">
               <div className="figma-celeb-left">
                 <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/yagoob-boushehri.png`} className="gallery-item figma-gallery-tile figma-tile-yagoob image-popup">
                   <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/yagoob-boushehri.png`} alt={galleryCopy.names.yagoob} />
                   <div className="figma-gallery-title">{galleryCopy.names.yagoob}</div>
                 </a>
-
                 <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/huda-hussain.png`} className="gallery-item figma-gallery-tile figma-tile-huda image-popup">
                   <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/huda-hussain.png`} alt={galleryCopy.names.huda} />
                   <div className="figma-gallery-title">{galleryCopy.names.huda}</div>
                 </a>
-
                 <div className="figma-split-row figma-left-portraits">
                   <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/ghadeer-sultan.png`} className="gallery-item figma-gallery-tile figma-tile-ghadeer image-popup">
                     <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/ghadeer-sultan.png`} alt={galleryCopy.names.ghadeer} />
                     <div className="figma-gallery-title">{galleryCopy.names.ghadeer}</div>
                   </a>
-
                   <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/zainab-khafif.png`} className="gallery-item figma-gallery-tile figma-tile-zainab image-popup">
                     <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/zainab-khafif.png`} alt={galleryCopy.names.zainab} />
                     <div className="figma-gallery-title">{galleryCopy.names.zainab}</div>
                   </a>
                 </div>
-
                 <div className="figma-split-row figma-left-bottom">
                   <div className="gallery-item figma-gallery-tile figma-logo-tile">
                     <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Group%2035316.png`} alt="" />
                   </div>
-
                   <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/salman-alnajadi.png`} className="gallery-item figma-gallery-tile figma-tile-salman image-popup">
                     <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/salman-alnajadi.png`} alt={galleryCopy.names.salman} />
                     <div className="figma-gallery-title">{galleryCopy.names.salman}</div>
@@ -597,12 +896,10 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
                   <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/maya-model.png`} alt={galleryCopy.names.maya} />
                   <div className="figma-gallery-title">{galleryCopy.names.maya}</div>
                 </a>
-
                 <a href={`${process.env.NEXT_PUBLIC_CDN_URL}/home/halima-boland.png`} className="gallery-item figma-gallery-tile figma-tile-halima image-popup">
                   <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/halima-boland.png`} alt={galleryCopy.names.halima} />
                   <div className="figma-gallery-title">{galleryCopy.names.halima}</div>
                 </a>
-
                 <div className="figma-gallery-cta">
                   <img className="figma-gallery-cta-bg" src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/orthodontist%201.png`} alt="" aria-hidden="true" />
                   <div className="figma-gallery-cta-content">
@@ -614,9 +911,81 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
             </div>
           </div>
 
-          <div className="tab-pane fade" id="doctor-tab-testimonials" role="tabpanel" aria-hidden="true" />
+          <div className="tab-pane fade" id="tab3" role="tabpanel">
+            <div className="gallery-row">
+              <div className="gallery-column">
+                <div className="gallery-item">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 141.png`} alt="testimonial item" />
+                  <a href="#" className="play-video popup-player video-link-1" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                  </a>
+                </div>
+                <div className="gallery-item">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 141-2.png`} alt="testimonial item" />
+                  <a href="#" className="play-video popup-player video-link-2" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                  </a>
+                </div>
+                <div className="gallery-item no-after">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/orthodontist%201.png`} alt="" />
+                  <div className="change-block">
+                    <div className="change-smile">{t.we_dont}</div>
+                    <div className="change-life">{t.we_change_lives}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="gallery-column">
+                <div className="gallery-item">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 141-3.png`} alt="testimonial item" />
+                  <a href="#" className="play-video popup-player video-link-3" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                  </a>
+                </div>
+                <div className="gallery-item">
+                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 138.png`} alt="testimonial item" />
+                  <a href="#" className="play-video popup-player video-link-4" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                  </a>
+                </div>
+                <div className="gallery-row">
+                  <div className="gallery-column">
+                    <div className="gallery-item">
+                      <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 138-2.png`} alt="testimonial item" />
+                      <a href="#" className="play-video popup-player video-link-5" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                      </a>
+                    </div>
+                  </div>
+                  <div className="gallery-column">
+                    <div className="gallery-item">
+                      <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 138-3.png`} alt="testimonial item" />
+                      <a href="#" className="play-video popup-player video-link-6" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="gallery-row">
+                  <div className="gallery-column">
+                    <div className="gallery-item">
+                      <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Mask Group 139.png`} alt="testimonial item" />
+                      <a href="#" className="play-video popup-player video-link-7" data-mfp-src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/play.svg`} alt="" /> {t.play}
+                      </a>
+                    </div>
+                  </div>
+                  <div className="gallery-column">
+                    <div className="gallery-item">
+                      <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Group%2035316.png`} alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }
@@ -677,36 +1046,9 @@ export default function OrthodonticsServicePage() {
         </div>
       </section>
 
-      <section className={styles.worldSection}>
-        <div className={styles.worldTitle}>{t.worldTitle}</div>
-        <div className={styles.worldWrap}>
-          <div className={styles.worldText}>
-            <h2>{t.smileTitle}</h2>
-            <div className={styles.madeBy}>
-              <div className={styles.madeCopy}>
-                <span>{t.made1}</span>
-                <strong>{t.made2}</strong>
-              </div>
-              <div className={styles.doctorPhoto}><img src={A.doctor} alt={t.doctorName} /></div>
-              <div className={styles.doctorInfo}>
-                <b>{t.doctorName}</b>
-                <span>{t.doctorTitle}</span>
-                <span>{t.doctorUni}</span>
-              </div>
-            </div>
-          </div>
-          <div className={styles.worldMainSmile}>
-            <BeforeAfter before={A.before} after={A.after} labels={{ before: t.before, after: t.after }} />
-          </div>
-          <Link href={`/${locale}/services/world-of-beauty`} className={styles.moreSmiles}>
-            <span>{t.moreSmiles}</span>
-            <b>‹</b>
-          </Link>
-          <BeforeAfter before={A.before1} after={A.after1} size="small" labels={{ before: t.before, after: t.after }} />
-          <BeforeAfter before={A.before2} after={A.after2} size="small" labels={{ before: t.before, after: t.after }} />
-        </div>
-      </section>
+      <HomeWorldBeautySection locale={locale} />
 
+      {/* Our Team - exact homepage component */}
       <FigmaOurTeam locale={locale} />
 
       <HomeLivesGallery locale={locale} />

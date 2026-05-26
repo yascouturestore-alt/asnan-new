@@ -54,7 +54,7 @@
   position: relative;
   z-index: 1;
   width: min(786px, calc(100% - 40px));
-  margin-top: clamp(70px, 7.4vw, 142px);
+  /* margin-top: clamp(70px, 7.4vw, 142px); */
   text-align: center;
 }
 
@@ -529,7 +529,7 @@
 
 @media (max-width: 991px) {
   .hero {
-    min-height: 560px;
+    min-height: 795px;
   }
 
   .heroBg::before {
@@ -600,6 +600,8 @@
 
   .internationalBg::before {
     background-size: cover;
+    min-height: 1000px;
+    height: 100%;
   }
 
   .internationalInner {
@@ -641,9 +643,6 @@
 }
 
 @media (max-width: 620px) {
-  .hero {
-    min-height: 520px;
-  }
 
   .heroInner {
     width: calc(100% - 30px);

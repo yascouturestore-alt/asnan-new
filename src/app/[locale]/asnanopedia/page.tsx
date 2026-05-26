@@ -61,29 +61,29 @@ const categoryLinks = [
 ];
 
 const selectedArticlesAr: SelectedArticle[] = [
-  { title: "خيطك للمعركة، ومحاربة التسوس", category: "الوقاية", count: 20, image: "/assets/asnanopedia/articles/mouth-thread.jpg" },
-  { title: "نصائح لصحة الأسنان لموسم البرد والإنفلونزا", category: "الوقاية", count: 6, image: "/assets/asnanopedia/articles/flu-woman.jpg" },
-  { title: "إصابات الأسنان خلال الرياضات الحركية", category: "الوقاية", count: 0, image: "/assets/asnanopedia/articles/sports-injury.jpg" },
-  { title: "الرضع وحديثي الولادة", category: "الوقاية", count: 1, image: "/assets/asnanopedia/articles/newborn.jpg" },
-  { title: "الاطفال", category: "الوقاية", count: 3, image: "/assets/asnanopedia/articles/child.jpg" },
-  { title: "المراهقون", category: "الوقاية", count: 219, image: "/assets/asnanopedia/articles/students.jpg" },
-  { title: "المراهقون", category: "الوقاية", count: 142, image: "/assets/asnanopedia/articles/teenagers.jpg" },
-  { title: "كبار السن", category: "الوقاية", count: 3, image: "/assets/asnanopedia/articles/elderly.jpg" },
-  { title: "الحوامل", category: "الوقاية", count: 0, image: "/assets/asnanopedia/articles/pregnant.jpg" },
-  { title: "المرضعات", category: "الوقاية", count: 15, image: "/assets/asnanopedia/articles/breastfeeding.jpg" },
+  { title: "خيطك للمعركة، ومحاربة التسوس", category: "الوقاية", count: 20, image: "/images/asnanopedia/articles/mouth-thread.png" },
+  { title: "نصائح لصحة الأسنان لموسم البرد والإنفلونزا", category: "الوقاية", count: 6, image: "/images/asnanopedia/articles/flu-woman.png" },
+  { title: "إصابات الأسنان خلال الرياضات الحركية", category: "الوقاية", count: 0, image: "/images/asnanopedia/articles/sports-injury.png" },
+  { title: "الرضع وحديثي الولادة", category: "الوقاية", count: 1, image: "/images/asnanopedia/articles/newborn.png" },
+  { title: "الاطفال", category: "الوقاية", count: 3, image: "/images/asnanopedia/articles/child.png" },
+  { title: "المراهقون", category: "الوقاية", count: 219, image: "/images/asnanopedia/articles/students.png" },
+  { title: "المراهقون", category: "الوقاية", count: 142, image: "/images/asnanopedia/articles/teenagers.png" },
+  { title: "كبار السن", category: "الوقاية", count: 3, image: "/images/asnanopedia/articles/elderly.png" },
+  { title: "الحوامل", category: "الوقاية", count: 0, image: "/images/asnanopedia/articles/pregnant.png" },
+  { title: "المرضعات", category: "الوقاية", count: 15, image: "/images/asnanopedia/articles/breastfeeding.png" },
 ];
 
 const selectedArticlesEn: SelectedArticle[] = [
-  { title: "Your Floss in the Fight Against Tooth Decay", category: "Prevention", count: 20, image: "/assets/asnanopedia/articles/mouth-thread.jpg" },
-  { title: "Dental Health Tips for Cold and Flu Season", category: "Prevention", count: 6, image: "/assets/asnanopedia/articles/flu-woman.jpg" },
-  { title: "Dental Injuries During Contact Sports", category: "Prevention", count: 0, image: "/assets/asnanopedia/articles/sports-injury.jpg" },
-  { title: "Infants and Newborns", category: "Prevention", count: 1, image: "/assets/asnanopedia/articles/newborn.jpg" },
-  { title: "Children", category: "Prevention", count: 3, image: "/assets/asnanopedia/articles/child.jpg" },
-  { title: "Teenagers", category: "Prevention", count: 219, image: "/assets/asnanopedia/articles/students.jpg" },
-  { title: "Teenagers", category: "Prevention", count: 142, image: "/assets/asnanopedia/articles/teenagers.jpg" },
-  { title: "Older Adults", category: "Prevention", count: 3, image: "/assets/asnanopedia/articles/elderly.jpg" },
-  { title: "Pregnant Women", category: "Prevention", count: 0, image: "/assets/asnanopedia/articles/pregnant.jpg" },
-  { title: "Breastfeeding Mothers", category: "Prevention", count: 15, image: "/assets/asnanopedia/articles/breastfeeding.jpg" },
+  { title: "Your Floss in the Fight Against Tooth Decay", category: "Prevention", count: 20, image: "/images/asnanopedia/articles/mouth-thread.png" },
+  { title: "Dental Health Tips for Cold and Flu Season", category: "Prevention", count: 6, image: "/images/asnanopedia/articles/flu-woman.png" },
+  { title: "Dental Injuries During Contact Sports", category: "Prevention", count: 0, image: "/images/asnanopedia/articles/sports-injury.png" },
+  { title: "Infants and Newborns", category: "Prevention", count: 1, image: "/images/asnanopedia/articles/newborn.png" },
+  { title: "Children", category: "Prevention", count: 3, image: "/images/asnanopedia/articles/child.png" },
+  { title: "Teenagers", category: "Prevention", count: 219, image: "/images/asnanopedia/articles/students.png" },
+  { title: "Teenagers", category: "Prevention", count: 142, image: "/images/asnanopedia/articles/teenagers.png" },
+  { title: "Older Adults", category: "Prevention", count: 3, image: "/images/asnanopedia/articles/elderly.png" },
+  { title: "Pregnant Women", category: "Prevention", count: 0, image: "/images/asnanopedia/articles/pregnant.png" },
+  { title: "Breastfeeding Mothers", category: "Prevention", count: 15, image: "/images/asnanopedia/articles/breastfeeding.png" },
 ];
 
 const categoriesAr: PopularCategory[] = [
@@ -93,9 +93,9 @@ const categoriesAr: PopularCategory[] = [
     icon: "/images/Prevention-icon.svg",
     sideItems: ["خيطك للمعركة ومحاربة التسوس", "العمر والأسنان", "السلوك والعادات"],
     articles: [
-      { title: "خيطك للمعركة، ومحاربة التسوس", count: 20, image: "/assets/asnanopedia/popular-categories/articles/mouth-thread.jpg" },
-      { title: "نصائح لصحة الأسنان لموسم البرد والإنفلونزا", count: 6, image: "/assets/asnanopedia/popular-categories/articles/flu-woman.jpg" },
-      { title: "إصابات الأسنان خلال الرياضات الصيفية", count: 0, image: "/assets/asnanopedia/popular-categories/articles/sports-injury.jpg" },
+      { title: "خيطك للمعركة، ومحاربة التسوس", count: 20, image: "/images/asnanopedia/articles/mouth-thread.png" },
+      { title: "نصائح لصحة الأسنان لموسم البرد والإنفلونزا", count: 6, image: "/images/asnanopedia/articles/flu-woman.png" },
+      { title: "إصابات الأسنان خلال الرياضات الصيفية", count: 0, image: "/images/asnanopedia/articles/sports-injury.png" },
     ],
   },
   {
@@ -104,9 +104,9 @@ const categoriesAr: PopularCategory[] = [
     icon: "/images/Dental-icon.svg",
     sideItems: ["صحة الفم والجسم"],
     articles: [
-      { title: "كيف تحافظ على أسنانك صحية", count: 2, image: "/assets/asnanopedia/popular-categories/articles/healthy-tooth.jpg" },
-      { title: "الزيارات الدورية لطبيب أسنانك", count: 0, image: "/assets/asnanopedia/popular-categories/articles/dentist-visit.jpg" },
-      { title: "تنظيف اللثة العميق", count: 9, image: "/assets/asnanopedia/popular-categories/articles/deep-cleaning.jpg" },
+      { title: "كيف تحافظ على أسنانك صحية", count: 2, image: "/images/asnanopedia/popular-categories/articles/healthy-tooth.png" },
+      { title: "الزيارات الدورية لطبيب أسنانك", count: 0, image: "/images/asnanopedia/popular-categories/articles/dentist-visit.png" },
+      { title: "تنظيف اللثة العميق", count: 9, image: "/images/asnanopedia/popular-categories/articles/deep-cleaning.png" },
     ],
   },
   {
@@ -115,9 +115,9 @@ const categoriesAr: PopularCategory[] = [
     icon: "/images/Dental-emergencies-icon.svg",
     sideItems: ["طوارئ الأسنان"],
     articles: [
-      { title: "دخول مادة بين الأسنان", count: 0, image: "/assets/asnanopedia/popular-categories/articles/tooth-particles.jpg" },
-      { title: "سقوط السن الدائم", count: 2, image: "/assets/asnanopedia/popular-categories/articles/fallen-tooth.jpg" },
-      { title: "ألم الأسنان", count: 2, image: "/assets/asnanopedia/popular-categories/articles/toothache.jpg" },
+      { title: "دخول مادة بين الأسنان", count: 0, image: "/images/asnanopedia/popular-categories/articles/tooth-particles.png" },
+      { title: "سقوط السن الدائم", count: 2, image: "/images/asnanopedia/popular-categories/articles/fallen-tooth.png" },
+      { title: "ألم الأسنان", count: 2, image: "/images/asnanopedia/popular-categories/articles/toothache.png" },
     ],
   },
   {
@@ -126,9 +126,9 @@ const categoriesAr: PopularCategory[] = [
     icon: "/images/Dental-Problems-icon.svg",
     sideItems: ["مشاكل الاسنان"],
     articles: [
-      { title: "أمراض اللثة", count: 4, image: "/assets/asnanopedia/popular-categories/articles/gum-disease.jpg" },
-      { title: "عادات تهدد صحة فمك وأسنانك", count: 1, image: "/assets/asnanopedia/popular-categories/articles/dental-tools.jpg" },
-      { title: "فطريات الفم", count: 31, image: "/assets/asnanopedia/popular-categories/articles/mouth-ulcer.jpg" },
+      { title: "أمراض اللثة", count: 4, image: "/images/asnanopedia/popular-categories/articles/gum-disease.png" },
+      { title: "عادات تهدد صحة فمك وأسنانك", count: 1, image: "/images/asnanopedia/popular-categories/articles/dental-tools.png" },
+      { title: "فطريات الفم", count: 31, image: "/images/asnanopedia/popular-categories/articles/mouth-ulcer.png" },
     ],
   },
 ];
@@ -140,9 +140,9 @@ const categoriesEn: PopularCategory[] = [
     icon: "/images/Prevention-icon.svg",
     sideItems: ["Flossing and Fighting Tooth Decay", "Age and Teeth", "Habits and Behavior"],
     articles: [
-      { title: "Flossing and Fighting Tooth Decay", count: 20, image: "/assets/asnanopedia/popular-categories/articles/mouth-thread.jpg" },
-      { title: "Dental Health Tips for Cold and Flu Season", count: 6, image: "/assets/asnanopedia/popular-categories/articles/flu-woman.jpg" },
-      { title: "Dental Injuries During Summer Sports", count: 0, image: "/assets/asnanopedia/popular-categories/articles/sports-injury.jpg" },
+      { title: "Flossing and Fighting Tooth Decay", count: 20, image: "/images/asnanopedia/articles/mouth-thread.png" },
+      { title: "Dental Health Tips for Cold and Flu Season", count: 6, image: "/images/asnanopedia/articles/flu-woman.png" },
+      { title: "Dental Injuries During Summer Sports", count: 0, image: "/images/asnanopedia/articles/sports-injury.png" },
     ],
   },
   {
@@ -151,9 +151,9 @@ const categoriesEn: PopularCategory[] = [
     icon: "/images/Dental-icon.svg",
     sideItems: ["Oral & Body Health"],
     articles: [
-      { title: "How to Keep Your Teeth Healthy", count: 2, image: "/assets/asnanopedia/popular-categories/articles/healthy-tooth.jpg" },
-      { title: "Regular Visits to Your Dentist", count: 0, image: "/assets/asnanopedia/popular-categories/articles/dentist-visit.jpg" },
-      { title: "Deep Gum Cleaning", count: 9, image: "/assets/asnanopedia/popular-categories/articles/deep-cleaning.jpg" },
+      { title: "How to Keep Your Teeth Healthy", count: 2, image: "/images/asnanopedia/popular-categories/articles/healthy-tooth.png" },
+      { title: "Regular Visits to Your Dentist", count: 0, image: "/images/asnanopedia/popular-categories/articles/dentist-visit.png" },
+      { title: "Deep Gum Cleaning", count: 9, image: "/images/asnanopedia/popular-categories/articles/deep-cleaning.png" },
     ],
   },
   {
@@ -162,9 +162,9 @@ const categoriesEn: PopularCategory[] = [
     icon: "/images/Dental-emergencies-icon.svg",
     sideItems: ["Dental Emergencies"],
     articles: [
-      { title: "Object Stuck Between Teeth", count: 0, image: "/assets/asnanopedia/popular-categories/articles/tooth-particles.jpg" },
-      { title: "Permanent Tooth Knocked Out", count: 2, image: "/assets/asnanopedia/popular-categories/articles/fallen-tooth.jpg" },
-      { title: "Tooth Pain", count: 2, image: "/assets/asnanopedia/popular-categories/articles/toothache.jpg" },
+      { title: "Object Stuck Between Teeth", count: 0, image: "/images/asnanopedia/popular-categories/articles/tooth-particles.png" },
+      { title: "Permanent Tooth Knocked Out", count: 2, image: "/images/asnanopedia/popular-categories/articles/fallen-tooth.png" },
+      { title: "Tooth Pain", count: 2, image: "/images/asnanopedia/popular-categories/articles/toothache.png" },
     ],
   },
   {
@@ -173,9 +173,9 @@ const categoriesEn: PopularCategory[] = [
     icon: "/images/Dental-Problems-icon.svg",
     sideItems: ["Dental Problems"],
     articles: [
-      { title: "Gum Disease", count: 4, image: "/assets/asnanopedia/popular-categories/articles/gum-disease.jpg" },
-      { title: "Habits That Harm Your Teeth", count: 1, image: "/assets/asnanopedia/popular-categories/articles/dental-tools.jpg" },
-      { title: "Mouth Fungus", count: 31, image: "/assets/asnanopedia/popular-categories/articles/mouth-ulcer.jpg" },
+      { title: "Gum Disease", count: 4, image: "/images/asnanopedia/popular-categories/articles/gum-disease.png" },
+      { title: "Habits That Harm Your Teeth", count: 1, image: "/images/asnanopedia/popular-categories/articles/dental-tools.png" },
+      { title: "Mouth Fungus", count: 31, image: "/images/asnanopedia/popular-categories/articles/mouth-ulcer.png" },
     ],
   },
 ];

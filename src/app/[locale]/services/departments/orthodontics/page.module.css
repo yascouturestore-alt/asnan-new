@@ -22,10 +22,9 @@
 }
 
 .hero {
-  position: relative;
-  min-height: clamp(690px, 57.15vw, 1097px);
-  overflow: hidden;
-  background: linear-gradient(128deg, #042970 0%, #0978d6 58%, #2c8eff 100%);
+      min-height: 1097px;
+    position: relative;
+    overflow: hidden;
 }
 
 .heroBgOne,
@@ -41,7 +40,7 @@
 .heroBgOne { z-index: 0; opacity: 1; }
 .heroBgTwo { z-index: 1; opacity: 1; mix-blend-mode: normal; }
 
-.hero::after {
+/* .hero::after {
   content: "";
   position: absolute;
   left: -4%;
@@ -52,7 +51,7 @@
   border-radius: 58% 42% 0 0 / 60% 72% 0 0;
   transform: rotate(-3deg);
   z-index: 2;
-}
+} */
 
 .heroPattern {
   position: absolute;

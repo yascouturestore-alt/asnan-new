@@ -141,26 +141,25 @@ export default function Home() {
             z-index: 0;
         }
         .home-figma-gallery .change-lives {
-            color: #043f84;
-            font-size: clamp(26px, 2.2vw, 42px);
-            font-weight: 800;
-            line-height: 1;
-            letter-spacing: 0 !important;
-            margin: 0;
-            padding-top: 0.9vw;
-            z-index: 3;
+                color: #043f84;
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 50px;
+    letter-spacing: 0 !important;
+    margin: 0;
+    padding-top: 0.9vw;
+    z-index: 3;
         }
         .home-figma-gallery .nav-tabs {
-            margin: 1.5vw auto 1.25vw;
+            margin: 2.5vw auto 2.25vw;
         }
         .home-figma-gallery .nav-tabs .nav-link {
             color: rgba(255, 255, 255, 0.96);
-            font-size: clamp(14px, 0.98vw, 19px);
-            font-weight: 600;
-            line-height: 1;
-            letter-spacing: 0 !important;
-            padding: 0 0 0.48vw;
-            margin: 0 1.55vw;
+                font-size: 24px;
+    font-weight: 700;
+    line-height: 54px;
+    letter-spacing: 0 !important;
+    margin: 0 1.55vw;
         }
         .home-figma-gallery .nav-tabs .nav-link.active,
         .home-figma-gallery .nav-tabs.show .nav-link {
@@ -233,18 +232,18 @@ export default function Home() {
             padding: 0 !important;
         }
         .home-figma-gallery .figma-gallery-title {
-            position: absolute;
-            right: clamp(22px, 3.2vw, 62px);
-            bottom: clamp(18px, 2.2vw, 42px);
-            display: inline-block;
-            color: #fff;
-            font-size: clamp(13px, 1.05vw, 20px);
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: 0 !important;
-            text-align: right;
-            direction: rtl;
-            z-index: 2;
+                position: absolute;
+    right: clamp(22px, 3.2vw, 62px);
+    bottom: clamp(18px, 2.2vw, 42px);
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0 !important;
+    text-align: right;
+    direction: rtl;
+    z-index: 2;
         }
         .home-figma-gallery .figma-gallery-title:after {
             content: '';
@@ -306,16 +305,16 @@ export default function Home() {
             padding: 0 !important;
             z-index: 0;
         }
-        .home-figma-gallery-ltr .figma-gallery-cta-bg {
-            transform: scaleX(-1);
-        }
+       .home-figma-gallery-rtl .figma-gallery-cta-bg {
+    transform: scaleX(-1);
+}
         .home-figma-gallery .figma-gallery-cta-content {
             position: relative;
             z-index: 2;
             display: flex;
             height: 100%;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             padding: 2vw 3vw 8vw;
             color: #fff;
@@ -336,10 +335,11 @@ export default function Home() {
         }
         .home-figma-gallery .figma-cta-large {
             display: block;
-            font-size: clamp(40px, 5vw, 88px);
+                font-size: 100px;
             font-weight: 800;
             line-height: 1.05;
             letter-spacing: 0 !important;
+                text-align: left;
         }
         @media screen and (max-width: 991px) {
             .home-figma-gallery {
@@ -397,20 +397,21 @@ export default function Home() {
                 padding-top: 50px;
             }
             .home-figma-gallery:before {
-                height: 233px;
+                height: 255px;
                 background-position: top center;
             }
             .home-figma-gallery .change-lives {
-                font-size: 30px;
-                padding-top: 38px;
+        font-size: 28px;
+        padding-top: 41px;
             }
             .home-figma-gallery .nav-tabs {
-                margin: 18px auto 26px;
+        margin: 12px auto 18px;
             }
             .home-figma-gallery .nav-tabs .nav-link {
                 font-size: 17px;
                 padding-bottom: 10px;
                 margin: 0 11px;
+    line-height: 40px;
             }
             .home-figma-gallery .figma-celeb-gallery {
                 display: grid;
@@ -524,6 +525,12 @@ export default function Home() {
               <p className="welcome-text limited">
                 {t.welcome_para_short}
               </p>
+              <br />
+               <p className="welcome-text limited m-0">
+                {t.welcome_para_short2}
+              </p>
+              <p className="welcome-text limited m-0">{t.welcome_para_short3}</p>
+              <p className="welcome-text limited">{t.welcome_para_short4}</p>
               <p className="welcome-text more-text full" style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: t.welcome_para.replace(/\n/g, '<br />') }}></p>
               <a href="#" className="btn btn-primary mt-3 read-more">{t.read_more}</a>
             </div>

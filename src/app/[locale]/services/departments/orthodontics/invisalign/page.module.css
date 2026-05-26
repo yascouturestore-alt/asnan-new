@@ -17,7 +17,7 @@
   min-height: clamp(700px, 57.14vw, 1097px);
   overflow: hidden;
   isolation: isolate;
-  background: linear-gradient(138deg, #042970 0%, #0d7fe8 62%, #2e9dff 100%);
+  /* background: linear-gradient(138deg, #042970 0%, #0d7fe8 62%, #2e9dff 100%); */
 }
 
 .heroBgBack,
@@ -40,18 +40,19 @@
   position: relative;
   z-index: 1;
   display: grid;
-  width: min(1592px, calc(100% - 72px));
+  width: min(1200px, calc(100% - 72px));
   min-height: clamp(640px, 48vw, 920px);
-  grid-template-columns: minmax(450px, 652px) minmax(540px, 749px);
-  gap: clamp(72px, 7vw, 168px);
+  grid-template-columns: minmax(0, 520px) minmax(0, 560px);
+  gap: clamp(52px, 6vw, 120px);
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
   padding: clamp(175px, 13.4vw, 258px) 0 clamp(190px, 12vw, 250px);
   direction: ltr;
 }
 
 .heroVisual {
-  width: min(652px, 100%);
+  width: min(520px, 100%);
   justify-self: start;
 }
 
@@ -64,7 +65,7 @@
 
 .heroContent {
   justify-self: end;
-  width: min(749px, 100%);
+  width: min(560px, 100%);
   color: #fff;
   text-align: right;
   direction: rtl;
@@ -72,12 +73,13 @@
 
 .heroContent h1 {
   position: relative;
+  max-width: 100%;
   margin: 0 0 clamp(38px, 3.1vw, 60px);
   color: #fff;
-  font-size: clamp(42px, 3.65vw, 70px);
+  font-size: clamp(38px, 3.1vw, 60px);
   font-weight: 800;
   line-height: 1.4;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .heroContent h1 span {
@@ -223,11 +225,12 @@
 }
 
 .benefits {
-  position: relative;
-  min-height: clamp(520px, 49.64vw, 953px);
-  padding: clamp(120px, 8vw, 152px) 0 clamp(160px, 12vw, 232px);
-  overflow: hidden;
-  background: #fff;
+      height: 560px;
+    display: flex;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
 }
 
 .benefitsBg {
@@ -755,8 +758,17 @@
 
 @media (max-width: 1400px) {
   .heroInner {
-    grid-template-columns: minmax(380px, 44%) minmax(440px, 52%);
-    gap: 64px;
+    width: min(1100px, calc(100% - 64px));
+    grid-template-columns: minmax(0, 48%) minmax(0, 48%);
+    gap: 48px;
+  }
+
+  .heroVisual {
+    width: min(500px, 100%);
+  }
+
+  .heroContent {
+    width: min(540px, 100%);
   }
 
   .introInner {
@@ -799,11 +811,13 @@
   .heroContent {
     order: 1;
     justify-self: center;
+    width: min(560px, 100%);
     text-align: center;
   }
 
   .heroVisual {
     order: 2;
+    width: min(520px, 100%);
     justify-self: center;
   }
 
@@ -951,7 +965,12 @@
   }
 
   .benefits {
-    padding: 66px 0 82px;
+    padding: 30px 0 82px;
+    height: 1000px;
+  }
+
+  .benefitsBg {
+    height: 1000px;
   }
 
   .benefits h2 {
@@ -1053,7 +1072,7 @@
   }
 
   .faqInner {
-    padding: 70px 0 76px;
+    padding: 140px 0 76px;
   }
 
   .faq h2 {

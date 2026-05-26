@@ -259,11 +259,11 @@
 }
 
 .videoArrowPrev {
-  left: 0;
+  left: -10px;
 }
 
 .videoArrowNext {
-  right: 0;
+  right: -10px;
 }
 
 /* ── Microscope – dark blue section ── */
@@ -381,6 +381,11 @@ max-width: 1054px;
 @media (max-width: 575px) {
   .discoverHeading {
     padding: 32px 0 28px;
+  }
+  
+  :global(.inner-microsection-container) , 
+  :global(.inner-microsection-container)::before {
+    height: 500px;
   }
 
   .gridImages {

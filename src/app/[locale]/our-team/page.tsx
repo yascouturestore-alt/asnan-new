@@ -217,7 +217,7 @@ export default function TeamPage() {
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero - unchanged */}
       <div className="hero-wrapper">
         <div className="container-fluid">
           <div className="row justify-content-center">
@@ -245,65 +245,365 @@ export default function TeamPage() {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="page-content py-5">
-        <div className="container-fluid">
-          {/* Our Mission */}
-          <div className="mission-block text-center mb-5">
-            <div className="mission-title h4 text-secondary mb-3">
-              {locale === 'ar' ? "هدفنا" : "Our Mission"}
-            </div>
-            <div className="section-title h2 mb-4">
-              {locale === 'ar' ? "تحويل العالم الثالث إلى العالم الأول من خلال طب الأسنان" : "To transform the third world into the first world through dentistry."}
-            </div>
-            <div className="row justify-content-center">
-              <div className="col-12 col-lg-10">
-                <div className="row">
-                  <div className="col-12 col-lg-6 mb-3">
-                    <p className="mission-text text-muted">
-                      {locale === 'ar' ? "أسنان تاور عيادة الأسنان الوحيدة في الكويت التي يعمل بها أخصائي متخرج من الولايات المتحدة الأمريكية والمملكة المتحدة في كل تخصص." : "Asnan Tower Doctors carry post graduate specialty degrees from the United States, United Kingdom & Canada."}
-                    </p>
-                  </div>
-                  <div className="col-12 col-lg-6 mb-3">
-                    <p className="mission-text text-muted">
-                      {locale === 'ar' ? "يحرص فريقنا الطبي دوماً على حضور المؤتمرات وورش العمل العالمية لتطبيق أحدث التطورات والتقنيات." : "This team empowers itself by utilizing the best materials and constantly attending courses to provide exceptional dental care."}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Content from Figma screen: hero ke neeche aur appointment/footer se upar */}
+      <main className="asnan-team-page" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+        {/* Mission / Goal */}
+        <section className="asnan-mission-section" aria-labelledby="asnan-mission-title">
+          <p className="asnan-mission-kicker">
+            {locale === 'ar' ? "هدفنا" : "Our Mission"}
+          </p>
 
-          {/* Doctors Grid */}
-          <div className="row mt-5">
-            {doctors.map((doctor, index) => (
-              <div key={index} className="col-lg-3 col-sm-6 col-12 mb-4">
-                <div className="doctor-card border rounded overflow-hidden shadow-sm">
-                  <div className="doctor-img">
-                    <img src={doctor.image} alt={doctor.name} className="img-fluid w-100" />
-                  </div>
-                  <div className="doctor-info p-4 text-center">
-                    <div className="doctor-university text-secondary mb-2">
-                      {doctor.university}
-                    </div>
-                    <div className="doctor-name h5 font-weight-bold">{doctor.name}</div>
-                    <div className="doctor-title text-muted mb-3">{doctor.title}</div>
-                    <a href="#" className="btn btn-secondary">
-                      {locale === 'ar' ? "مشاهدة الملف الشخصي" : "View Profile"}
-                    </a>
-                    {/* <a href={`/${locale}/our-team/${doctor.slug}`} className="btn btn-secondary">
-                      {locale === 'ar' ? "مشاهدة الملف الشخصي" : "View Profile"}
-                    </a> */}
-                  </div>
+          <h2 id="asnan-mission-title" className="asnan-mission-title">
+            {locale === 'ar' ? (
+              <>
+                تـــحويــل العـــالــــم الثـــالــــــث
+                <br />
+                الــــى العــــالــــــم <span className="asnan-yellow">الأول</span> مــــــن خــــــــلال <span className="asnan-blue-text">طــــب الأســنــان</span>.
+              </>
+            ) : (
+              <>
+                To transform the third world into the first world through <span className="asnan-blue-text">dentistry</span>.
+              </>
+            )}
+          </h2>
+
+          <div className="asnan-mission-copy">
+            <p>
+              {locale === 'ar'
+                ? "أسنان تاور عيادة الأسنان الوحيدة في الكويت التي يعمل بها أخصائي متخرج من الولايات المتحدة الأمريكية والممكلة المتحدة في كل تخصص من تخصصات طب الأسنان."
+                : "Asnan Tower Doctors carry post graduate specialty degrees from the United States, United Kingdom & Canada."}
+            </p>
+            <p>
+              {locale === 'ar'
+                ? "يحرص فريقنا الطبي دوما على حضور المؤتمرات وورش العمل العالمية لتطبيق أحدث التطورات والتقنيات في مجال طب الأسنان."
+                : "This team empowers itself by utilizing the best materials and constantly attending courses to provide exceptional dental care."}
+            </p>
+          </div>
+        </section>
+
+        {/* Doctors Grid */}
+        <section className="asnan-doctors-section" aria-label={locale === 'ar' ? "فريقنا الطبي" : "Doctors team"}>
+          <div className="asnan-doctors-grid">
+            {doctors.map((doctor) => (
+              <article className="asnan-doctor-card" key={doctor.slug}>
+                <div className="asnan-doctor-image-wrap">
+                  <img
+                    src={doctor.image}
+                    alt={doctor.name}
+                    className="asnan-doctor-image"
+                    loading="lazy"
+                  />
                 </div>
-              </div>
+
+                <div className="asnan-doctor-content">
+                  <p className="asnan-doctor-university">{doctor.university}</p>
+                  <h3 className="asnan-doctor-name">{doctor.name}</h3>
+                  <span className="asnan-doctor-line" aria-hidden="true" />
+                  <p className="asnan-doctor-title">{doctor.title}</p>
+                </div>
+
+                <a
+                  href={`/${locale}/our-team/${doctor.slug}`}
+                  className="asnan-doctor-button"
+                >
+                  {locale === 'ar' ? "مشاهدة الملف الشخصي" : "View Profile"}
+                </a>
+              </article>
             ))}
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
 
       {/* Appointment */}
       <AppointmentSection locale={locale} />
+
+      <style jsx global>{`
+        .asnan-team-page {
+          --asnan-navy: #051a53;
+          --asnan-blue: #2c8eff;
+          --asnan-yellow: #ffc936;
+          --asnan-gray: #50595c;
+          --asnan-card-bg: #ffffff;
+          --asnan-image-bg: #ececec;
+          --asnan-shadow: 0 0 40px 1px rgba(0, 0, 0, 0.1);
+          width: 100%;
+          background: #ffffff;
+          color: var(--asnan-navy);
+          font-family: "Almarai", "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+          overflow: hidden;
+        }
+
+        .asnan-mission-section {
+          width: min(1323px, calc(100% - 48px));
+          margin: clamp(58px, 7vw, 80px) auto clamp(44px, 5vw, 60px);
+          text-align: center;
+        }
+
+        .asnan-mission-kicker {
+          margin: 0 0 24px;
+          color: var(--asnan-gray);
+          font-size: 20px;
+          font-weight: 800;
+          line-height: 1.2;
+        }
+
+        .asnan-mission-title {
+          margin: 0 auto;
+          max-width: 1323px;
+          color: var(--asnan-navy);
+          font-size: clamp(30px, 3.2vw, 46px);
+          font-weight: 800;
+          line-height: 1.52;
+          letter-spacing: 0;
+        }
+
+        .asnan-yellow {
+          color: var(--asnan-yellow);
+        }
+
+        .asnan-blue-text {
+          color: var(--asnan-blue);
+        }
+
+        .asnan-mission-copy {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 517px));
+          justify-content: center;
+          gap: 20px;
+          margin-top: 34px;
+          color: var(--asnan-gray);
+          font-size: 20px;
+          line-height: 1.5;
+          text-align: inherit;
+        }
+
+        .asnan-mission-copy p {
+          margin: 0;
+          text-align: inherit;
+        }
+
+        .asnan-team-page[dir="rtl"] .asnan-mission-copy p {
+          text-align: right;
+        }
+
+        .asnan-team-page[dir="ltr"] .asnan-mission-copy p {
+          text-align: left;
+        }
+
+        .asnan-doctors-section {
+          width: min(1598px, calc(100% - 48px));
+          margin: 0 auto clamp(74px, 8vw, 116px);
+        }
+
+        .asnan-doctors-grid {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 383px));
+          justify-content: center;
+          gap: 20px 77px;
+          direction: inherit;
+        }
+
+        .asnan-doctor-card {
+          width: 100%;
+          min-height: 627px;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          border-radius: 50px;
+          background: var(--asnan-card-bg);
+          box-shadow: var(--asnan-shadow);
+        }
+
+        .asnan-doctor-image-wrap {
+          height: 332px;
+          flex: 0 0 332px;
+          border-radius: 50px 50px 0 0;
+          background: var(--asnan-image-bg);
+          overflow: hidden;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+        }
+
+        .asnan-doctor-image {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: center top;
+        }
+
+        .asnan-doctor-content {
+          flex: 1 1 auto;
+          padding: 36px 20px 14px;
+          text-align: inherit;
+        }
+
+        .asnan-doctor-university {
+          min-height: 38px;
+          margin: 0;
+          color: var(--asnan-gray);
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 1.35;
+        }
+
+        .asnan-doctor-name {
+          min-height: 43px;
+          margin: 13px 0 0;
+          color: var(--asnan-navy);
+          font-size: clamp(24px, 1.55vw, 28px);
+          font-weight: 800;
+          line-height: 1.18;
+        }
+
+        .asnan-doctor-line {
+          display: block;
+          width: 114px;
+          height: 2px;
+          margin-top: 11px;
+          margin-bottom: 20px;
+          background: var(--asnan-yellow);
+        }
+
+        .asnan-team-page[dir="rtl"] .asnan-doctor-line {
+        margin-left: auto;
+          margin-right: 0;
+        }
+
+        .asnan-team-page[dir="ltr"] .asnan-doctor-line {
+          margin-right: auto;
+          margin-left: 0;
+        }
+
+        .asnan-doctor-title {
+          min-height: 44px;
+          margin: 0;
+          color: var(--asnan-gray);
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.38;
+        }
+
+        .asnan-doctor-button {
+          align-self: center;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 48px;
+          max-width: calc(100% - 40px);
+          margin: 0 20px 40px;
+          padding: 8px 24px;
+          border-radius: 30px;
+          color: #ffffff !important;
+          background: linear-gradient(100deg, #042970 7.7%, #197ad9 100%);
+          text-decoration: none !important;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 1.3;
+          text-align: center;
+          white-space: nowrap;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .asnan-doctor-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 22px rgba(25, 122, 217, 0.25);
+        }
+
+        @media (max-width: 1599px) {
+          .asnan-doctors-grid {
+            gap: 28px;
+          }
+        }
+
+        @media (max-width: 1399px) {
+          .asnan-doctors-grid {
+            grid-template-columns: repeat(3, minmax(0, 383px));
+          }
+        }
+
+        @media (max-width: 1080px) {
+          .asnan-mission-copy {
+            grid-template-columns: 1fr;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .asnan-doctors-grid {
+            grid-template-columns: repeat(2, minmax(0, 383px));
+          }
+        }
+
+        @media (max-width: 767px) {
+          .asnan-mission-section {
+            width: min(100% - 28px, 560px);
+            margin-top: 54px;
+          }
+
+          .asnan-mission-kicker {
+            font-size: 18px;
+            margin-bottom: 18px;
+          }
+
+          .asnan-mission-title {
+            font-size: 30px;
+            line-height: 1.5;
+          }
+
+          .asnan-mission-copy {
+            margin-top: 24px;
+            font-size: 16px;
+            line-height: 1.75;
+          }
+
+          .asnan-doctors-section {
+            width: min(100% - 28px, 430px);
+            margin-bottom: 72px;
+          }
+
+          .asnan-doctors-grid {
+            grid-template-columns: 1fr;
+            gap: 28px;
+          }
+
+          .asnan-doctor-card {
+            min-height: auto;
+            border-radius: 34px;
+          }
+
+          .asnan-doctor-image-wrap {
+            height: 320px;
+            flex-basis: 320px;
+            border-radius: 34px 34px 0 0;
+          }
+
+          .asnan-doctor-content {
+            padding: 28px 18px 14px;
+          }
+
+          .asnan-doctor-button {
+            margin-bottom: 30px;
+            font-size: 17px;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .asnan-mission-title {
+            font-size: 26px;
+          }
+
+          .asnan-doctor-image-wrap {
+            height: 292px;
+            flex-basis: 292px;
+          }
+
+          .asnan-doctor-name {
+            font-size: 23px;
+          }
+        }
+      `}</style>
     </>
   );
 }

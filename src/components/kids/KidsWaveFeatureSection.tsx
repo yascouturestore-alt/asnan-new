@@ -1,14 +1,14 @@
-import Image from "next/image";
 import type { CSSProperties } from "react";
 import styles from "./KidsWaveFeatureSection.module.css";
 
 export type KidsWaveFeatureSectionProps = {
   locale: string;
   image: string;
+  icon: string;
   title: string;
-  subTitle: string
-  paragraph: string;
+  paragraphs: string[];
   imageAlt?: string;
+  iconAlt?: string;
   variant?: "image-left" | "image-right";
   backgroundImage?: string;
 };
@@ -17,8 +17,7 @@ export default function KidsWaveFeatureSection({
   locale,
   image,
   title,
-  subTitle,
-  paragraph,
+  paragraphs,
   imageAlt = "",
   variant = "image-right",
   backgroundImage = "/images/why-asnan/bg-wave-grey.svg",
@@ -32,8 +31,9 @@ export default function KidsWaveFeatureSection({
 
   return (
     <section
-      className={`${styles.section} ${styles.hasWaveBg} ${isAr ? styles.rtl : styles.ltr
-        } ${isImageRight ? styles.imageRight : styles.imageLeft}`}
+      className={`${styles.section} ${styles.hasWaveBg} ${
+        isAr ? styles.rtl : styles.ltr
+      } ${isImageRight ? styles.imageRight : styles.imageLeft}`}
       style={sectionStyle}
       dir={isAr ? "rtl" : "ltr"}
       aria-label={title}
@@ -41,9 +41,11 @@ export default function KidsWaveFeatureSection({
       <div className={styles.inner}>
         <div className={styles.content}>
           <h2>{title}</h2>
-          <h4>{subTitle}</h4>
+
           <div className={styles.text}>
-            <p key={paragraph}>{paragraph}</p>
+            {paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </div>
 
@@ -53,6 +55,14 @@ export default function KidsWaveFeatureSection({
               src={image}
               alt={imageAlt}
               sizes="(max-width: 860px) calc(100vw - 32px), 806px"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
             />
           </div>
         </div>

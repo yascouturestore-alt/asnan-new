@@ -135,9 +135,19 @@ export default function DepartmentsPage() {
             <div className="col-12 col-lg-8">
               <div className="row justify-content-between align-items-center">
                 <div className="col-12 col-lg-6">
-                  <p className="departments-text">
-                    {locale === 'ar' ? "أول عيادة أسنان في الكويت تلتزم بصرامة بمعايير الولايات المتحدة للعناية بالأسنان" : "The First Dental Clinic in Kuwait to strictly adhere to the United States standards of dental care."}
-                  </p>
+                  <p 
+  className="departments-text" 
+  style={{ 
+    textAlign: locale === 'ar' ? 'right' : 'left', 
+    direction: locale === 'ar' ? 'rtl' : 'ltr' 
+  }}
+>
+  {locale === 'ar' 
+    ? "أول عيادة أسنان في الكويت تلتزم بصرامة بمعايير الولايات المتحدة للعناية بالأسنان، ولا يمكن تحقيق السعي لتوفير علاجات الأسنان الأكثر تقدمًا إلا من خلال أفضل العمالة والمعدات الحديثة." 
+    : "The first dental clinic in Kuwait to strictly adhere to United States dental care standards. The pursuit of providing the most advanced dental treatments can only be achieved through the finest workforce and modern equipment."
+  }
+</p>
+
                 </div>
                 <div className="col-12 col-lg-5">
                   <a href={`/${locale}/services/departments/reception`} className="btn btn-secondary my-2">
@@ -148,7 +158,7 @@ export default function DepartmentsPage() {
             </div>
           </div>
           
-          <div className="row row-cols-1 row-cols-md-3 row-cols-lg-5 mt-5 justify-content-center">
+          <div className="row row-cols-1 row-cols-md-3 row-cols-lg-5 mt-5 justify-content-center cards-wrapper-div">
             {departments.map((dept) => (
               <div key={dept.id} className="col-md-3 col-lg-3 mb-4">
                 <a href={`/${locale}/services/departments/${dept.slug}`} className="department-item text-center">

@@ -3,6 +3,9 @@
     "we_change_lives_quote_p2": "we change lives.",
     "welcome_title": "Welcome To Asnan Tower",
     "welcome_para_short": "At Asnan Tower Dental Clinic, our dedication to providing the highest levels of American dental care has been unwavering since our establishment in 2008. We are proud to be the only dental clinic in Kuwait staffed by specialists who have received their education and training in the United States.",
+        "welcome_para_short2": "Why choose the United States for our doctors' education and development?",
+    "welcome_para_short3": "1. The world’s leading investor in medical research and clinical studies.",
+    "welcome_para_short4": "2. Home to the world's first dental college (University of Baltimore)...",
     "welcome_para": "At Asnan Tower Dental Clinic, our dedication to providing the highest levels of American dental care has been unwavering since our establishment in 2008. We are proud to be the only dental clinic in Kuwait staffed by specialists who have received their education and training in the United States.\n\nThere are several reasons why we chose the United States as a source for educating and developing our doctors.\n1- The United States invests significantly in medical research and studies, which is reflected in the quality of dental care that is available there.\n2- USA has a rich history in dentistry, being home to the first dental college (University of Baltimore) and the first university to offer dental specialties (Boston University).\n3- The level of dental care and dentists in the United States is renowned, as evidenced by the beautiful smiles and healthy teeth of its population.\n\nWe understand that dentistry is not just about providing medical treatment, but also about creating a comfortable and welcoming environment for our patients. Our medical and administrative staff have been trained to provide the highest international standards in oral health and dental aesthetics, ensuring that our patients feel special and valued during every visit",
     "read_more": "Read more",
     "we_change_lives": "We Change Lives",
@@ -72,12 +75,13 @@
     "footer_view_all": "View All",
     "footer_all_rights_reserved": "All rights reserved.",
     "celebrity": "Celebrity",
-    "beautiful_smile": "Beautiful Smile created with care.",
+    "beautiful_smile": "A design for every smile.",
     "dr_border_img": "Dr. Issa Alissa",
     "prosthodontist": "Prosthodontist",
     "orthodontist": "Orthodontist",
     "endodontist": "Endodontist",
     "periodontist": "Periodontist",
     "oral_surgeon": "Oral Surgeon",
-    "kuwait_university": "Kuwait University"
+    "kuwait_university": "Kuwait University",
+    "wob_main_dr_name": "Dr. Tareq Bawarzeg"
 }

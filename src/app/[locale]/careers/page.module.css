@@ -441,7 +441,7 @@
 
 @media (max-width: 991px) {
   .hero {
-    min-height: 640px;
+    min-height: 680px;
   }
 
   .heroBg::before {
@@ -493,10 +493,6 @@
 }
 
 @media (max-width: 620px) {
-  .hero {
-    min-height: 560px;
-  }
-
   .heroContent {
     width: calc(100% - 30px);
   }

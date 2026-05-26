@@ -73,9 +73,8 @@ ul {
 textarea {
   resize: none !important;
 }
-.container-fluid {
-  padding-left: 8.854vw;
-  padding-right: 8.854vw;
+.departments-wrapper .container-fluid{
+      padding: 0 36.5px !important; 
 }
 .text-primary {
   color: var(--color-primary) !important;
@@ -85,23 +84,22 @@ textarea {
 }
 .btn-primary,
 .btn-secondary {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 3.125vw;
-  border-radius: 1.5625vw;
-  border: none !important;
-  background: rgba(214, 222, 224, 0.27);
-  color: #fff !important;
-  font-weight: 500;
-  font-size: 1.09375vw;
-  letter-spacing: -0.1em;
-  padding-left: 2.604vw;
-  padding-right: 2.604vw;
-  white-space: nowrap;
-  transition: var(--transition);
-  z-index: 1;
+        position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    border-radius: 30px;
+    border: none !important;
+    background: rgba(214, 222, 224, 0.27);
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 20px;
+    white-space: nowrap;
+    transition: var(--transition);
+    z-index: 1;
+    padding: 0 56.5px;
+    line-height: 24px;
 }
 .btn-primary:before,
 .btn-secondary:before {
@@ -111,7 +109,7 @@ textarea {
   left: -0.26vw;
   width: 100%;
   height: 100%;
-  border-radius: 1.5625vw;
+    border-radius: 30px;
   z-index: -2;
 }
 .btn-primary:before {
@@ -171,7 +169,8 @@ textarea {
   padding-top: 0;
 }
 .navbar .navbar-brand img {
-  height: 6.5625vw;
+      height: 60px;
+    width: 84px;
   transition: var(--transition);
 }
 .navbar.scrolled .navbar-brand img {
@@ -258,7 +257,7 @@ footer .socials a {
   height: 1.25vw;
   margin-left: 0.52vw;
 }
-.navbar .top-content .phone-link {
+.navbar .top-content .ul-quick-bt-wrap .phone-link {
   font-weight: 700;
   font-size: 1.5625vw;
   letter-spacing: -0.07em;
@@ -269,7 +268,23 @@ footer .socials a {
 footer .phone-link span {
   color: var(--color-secondary);
 }
-.navbar .top-content .btn-request-appointment {
+
+.navbar .ul-quick-bt-wrap{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+    align-items: center;
+}
+
+.navbar .ul-quick-bt-wrap >div {
+  gap: 20px;
+}
+
+html[dir="rtl"] .ul-quick-bt-wrap {
+  flex-direction: row-reverse;    
+  margin-right: 60px;
+}
+.navbar .ul-quick-bt-wrap .btn-request-appointment {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -547,6 +562,14 @@ ul.instructions-list li.instruction-item .instruction-img img {
   padding-bottom: 10.417vw;
   z-index: 1;
 }
+
+/* Jab HTML me 'no-after' class hogi, to image hide ho jaye gi */
+.hero-wrapper.no-after::after {
+  display: none !important;
+  background-image: none !important; /* Agar content ki jagah background se lagi hai */
+}
+
+
 .hero-wrapper:after {
   content: "";
   position: absolute;
@@ -567,7 +590,7 @@ ul.instructions-list li.instruction-item .instruction-img img {
 .hero-wrapper.hero-home {
   align-items: flex-start;
   min-height: 78.698vw;
-  padding-top: 20vw;
+  padding-top: 12vw;
 }
 .hero-wrapper.hero-asnanopedia {
   padding-bottom: 4vw;
@@ -685,20 +708,20 @@ footer .phone-link {
   z-index: 2;
 }
 .welcome-wrapper .welcome-title {
-  display: block;
-  font-weight: 700;
-  font-size: 2.552vw;
-  letter-spacing: -0.07em;
-  color: #50595c;
-  margin-bottom: 1.823vw;
+      display: block;
+    font-weight: 800;
+    font-size: 2.9vw;
+    letter-spacing: -0.07em;
+    color: #042970;
+    margin-bottom: 2.5vw;
 }
 .welcome-wrapper .welcome-text {
   display: block;
-  font-weight: 400;
-  font-size: 0.99vw;
+  font-weight: 300;
+  font-size: 24px;
   letter-spacing: -0.07em;
   line-height: 1.40625vw;
-  color: #50595c;
+  color: #50595C;
   margin-bottom: 1.042vw;
 }
 .welcome-wrapper .welcome-img {
@@ -1127,9 +1150,9 @@ ul.top-news-list li.top-news-item .post-info {
   margin-bottom: 0.78125vw;
 }
 .world-beauty-slider .caption-wrapper .caption-text {
-  font-size: 4.53125vw;
-  line-height: 5.417vw;
-  margin-bottom: 1.25vw;
+  font-size: 70px;
+    line-height: 104px;
+    margin-bottom: 1.25vw;
 }
 .caption-wrapper .made-by-wrapper,
 .category-header .category-block {
@@ -1139,14 +1162,16 @@ ul.top-news-list li.top-news-item .post-info {
 }
 .caption-wrapper .made-by-wrapper .made-by-title {
   display: inline-block;
-  font-weight: 500;
-  font-size: 0.729vw;
-  letter-spacing: -0.1em;
-  color: #50595c;
+      font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.1em;
+    color: #50595c;
+    line-height: 21px;
 }
 .caption-wrapper .made-by-wrapper .made-by-title div {
   font-weight: 700;
-  font-size: 1.042vw;
+      font-size: 20px;
+    line-height: 30px;
 }
 .caption-wrapper .made-by-wrapper .doctor-small {
   position: relative;
@@ -1161,7 +1186,7 @@ ul.top-news-list li.top-news-item .post-info {
   overflow: hidden;
 }
 .caption-wrapper .made-by-wrapper .doctor-small .doctor-img {
-  width: 55%;
+  width: 100%;
   height: 100%;
 }
 .caption-wrapper .made-by-wrapper .doctor-small .doctor-name {
@@ -1179,12 +1204,20 @@ ul.top-news-list li.top-news-item .post-info {
   right: 0.417vw;
   width: 1.354vw;
 }
+.doctor-info .doctor-name{
+      font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #212529;
+}
 .caption-wrapper .made-by-wrapper .doctor-info .doctor-title {
   display: block;
-  font-weight: 500;
-  font-size: 0.625vw;
+      display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
   letter-spacing: -0.1em;
-  color: #50595c;
+  color: #50595c !important;
 }
 .caption-wrapper .made-by-wrapper .doctor-info .doctor-university {
   display: block;
@@ -1489,8 +1522,8 @@ ul.departments-list li .department-item .department-title {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 3.75vw;
-  border-radius: 1.875vw;
+      height: 72px;
+    border-radius: 36px;
   background: rgba(255, 255, 255, 0.83);
   margin: 3.125vw auto;
 }
@@ -4484,7 +4517,7 @@ footer .copyrights {
   .flag {
     filter: none !important;
   }
-  .navbar .top-content .phone-link {
+  .navbar .top-content .ul-quick-bt-wrap .phone-link {
     position: absolute;
     bottom: 28px;
     left: 60px;
@@ -4492,18 +4525,18 @@ footer .copyrights {
     z-index: 2;
     transition: var(--transition);
   }
-  .navbar.scrolled .top-content .phone-link {
+  .navbar.scrolled .top-content .ul-quick-bt-wrap .phone-link {
     bottom: 17px;
     color: var(--color-primary);
   }
   .navbar .top-content .phone-link span:first-of-type {
     color: var(--color-primary);
   }
-  .navbar .top-content .phone-link span:last-of-type,
+  .navbar .top-content .ul-quick-bt-wrap .phone-link span:last-of-type,
   .side-wrapper .phone-link span {
     color: var(--color-secondary);
   }
-  .navbar .top-content .btn-request-appointment {
+  .navbar .top-content .ul-quick-bt-wrap .btn-request-appointment {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -4522,10 +4555,10 @@ footer .copyrights {
     line-height: 9px;
     text-align: left;
   }
-  .navbar.scrolled .top-content .btn-request-appointment {
+  .navbar.scrolled .top-content .ul-quick-bt-wrap .btn-request-appointment {
     color: #50595c;
   }
-  .navbar .top-content .btn-request-appointment .appointment-icon {
+  .navbar .top-content .ul-quick-bt-wrap .btn-request-appointment .appointment-icon {
     width: 28px;
     margin-top: 8px;
     margin-right: 6px;
@@ -4726,7 +4759,7 @@ footer .copyrights {
     font-size: 42px;
   }
   .world-beauty-wrapper .world-beauty-title {
-    font-size: 98px;
+    font-size: 86px;
     line-height: 65px;
     margin-bottom: 25px;
   }
@@ -5999,6 +6032,10 @@ footer .copyrights {
     font-size: 29px;
     margin: 0 auto 15px;
   }
+
+  .cards-wrapper-div{
+    margin-top: 0 !important;
+  }
   .departments-wrapper .departments-text {
     font-size: 15px;
     line-height: 18px;
@@ -6008,14 +6045,15 @@ footer .copyrights {
     margin: 40px auto !important;
   }
   .departments-wrapper .department-item {
-    width: 278px;
-    height: 320px;
+    /* width: 278px; */
+    /* height: 320px; */
+    min-height: unset !important;
     border-radius: 29px;
     margin: 20px auto;
   }
   .departments-wrapper .department-item .floor-img {
     height: 182px;
-    border-radius: 0 0 0 71px;
+    /* border-radius: 0 0 0 71px; */
   }
   .departments-wrapper .department-item .floor-number {
     font-size: 18px;
@@ -6901,4 +6939,165 @@ footer .copyrights {
 .wob-carousel-safe .world-beauty-slider.owl-carousel:not(.owl-loaded) .caption-wrapper {
   opacity: 1;
   visibility: visible;
+}
+
+@media (max-width: 991px) {
+  /* Header base */
+  header .navbar .container-fluid {
+    position: relative !important;
+    min-height: 78px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  /* Center logo */
+  header .navbar-brand {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 14px !important;
+    z-index: 1055;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-50%) !important;
+  }
+
+  header .navbar-brand img {
+    display: block;
+    width: 72px;
+    height: auto;
+  }
+
+  /* Hamburger left */
+  header .toggle-menu {
+    position: absolute !important;
+    left: 18px !important;
+    right: auto !important;
+    top: 30px !important;
+    z-index: 1065;
+    margin: 0 !important;
+  }
+
+  /* Language flag near hamburger */
+  header .switch-lang-mobile {
+    position: absolute !important;
+    left: 58px !important;
+    right: auto !important;
+    top: 22px !important;
+    z-index: 1065;
+    margin: 0 !important;
+  }
+
+  header .switch-lang-mobile img,
+  header .switch-lang-mobile .flag-mobile {
+    display: block;
+    width: 24px;
+    height: auto;
+  }
+
+  /* Keep navbar-collapse technically visible only for appointment button */
+  header .navbar-collapse {
+    display: block !important;
+    flex-basis: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Hide normal collapsed content when menu is closed */
+  header .navbar-collapse:not(.show) .top-content,
+  header .navbar-collapse:not(.show) .navbar-nav,
+  header .navbar-collapse:not(.show) .ul-quick-bt-wrap > .d-flex > .phone-link {
+    display: none !important;
+  }
+
+  /* Reset wrapper so it does not push logo/button */
+  header .navbar-collapse:not(.show) .ul-quick-bt-wrap {
+    display: block !important;
+    position: static !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-direction: unset !important;
+  }
+
+  html[dir="rtl"] header .navbar-collapse:not(.show) .ul-quick-bt-wrap,
+  html[dir="ltr"] header .navbar-collapse:not(.show) .ul-quick-bt-wrap {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  header .navbar-collapse:not(.show) .ul-quick-bt-wrap > .d-flex {
+    display: block !important;
+    position: static !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Mobile appointment button on right */
+  header .navbar-collapse:not(.show) .btn-request-appointment {
+    position: absolute !important;
+    top: 18px !important;
+    right: 16px !important;
+    left: auto !important;
+    z-index: 1060;
+    display: inline-flex !important;
+    width: 86px !important;
+    min-width: 86px !important;
+    height: 44px !important;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 8px !important;
+    border: 0 !important;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16) !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+  }
+
+  header .navbar-collapse:not(.show) .btn-request-appointment .arrow-icon {
+    display: none !important;
+  }
+
+  header .navbar-collapse:not(.show) .btn-request-appointment .appointment-icon {
+    display: block !important;
+    order: 0;
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: contain;
+  }
+
+  header .navbar-collapse:not(.show) .btn-request-appointment .req-header,
+  header .navbar-collapse:not(.show) .btn-request-appointment .req-footer {
+    display: block !important;
+    color: #fff !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    white-space: nowrap;
+  }
+
+  header .navbar-collapse:not(.show) .btn-request-appointment::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    bottom: -6px;
+    width: 52px;
+    height: 3px;
+    border-radius: 999px;
+    background: #ff1f3d;
+  }
+
+  /* Hide yellow desktop request button on mobile */
+  header .navbar > .btn-secondary {
+    display: none !important;
+  }
 }

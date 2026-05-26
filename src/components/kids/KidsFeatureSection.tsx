@@ -1,22 +1,21 @@
-import Image from "next/image";
 import styles from "./KidsFeatureSection.module.css";
 
 export type KidsFeatureSectionProps = {
   locale: string;
   image: string;
+  icon: string;
   title: string;
-  subTitle: string
-  paragraph: string;
+  points: string[];
   imageAlt?: string;
+  iconAlt?: string;
   variant?: "image-left" | "image-right";
 };
 
-export default function WhyAsnanFeatureSection({
+export default function KidsFeatureSection({
   locale,
   image,
   title,
-  subTitle,
-  paragraph,
+  points,
   imageAlt = "",
   variant = "image-left",
 }: KidsFeatureSectionProps) {
@@ -25,10 +24,11 @@ export default function WhyAsnanFeatureSection({
 
   return (
     <section
-      className={`${styles.section} ${isAr ? styles.rtl : styles.ltr} ${isImageRight ? styles.imageRight : styles.imageLeft
-        }`}
+      className={`${styles.section} ${isAr ? styles.rtl : styles.ltr} ${
+        isImageRight ? styles.imageRight : styles.imageLeft
+      }`}
       dir={isAr ? "rtl" : "ltr"}
-      aria-labelledby="why-asnan-feature-title"
+      aria-labelledby="kids-feature-title"
     >
       <div className={styles.inner}>
         <div className={styles.imagePanelWrap}>
@@ -37,14 +37,43 @@ export default function WhyAsnanFeatureSection({
               src={image}
               alt={imageAlt}
               sizes="(max-width: 860px) 100vw, (max-width: 1180px) 50vw, 806px"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
             />
           </div>
         </div>
 
         <div className={styles.content}>
-          <h2 id="why-asnan-feature-title">{title}</h2>
-          <h4>{subTitle}</h4>
-          <p>{paragraph}</p>
+          <h2 id="kids-feature-title">{title}</h2>
+
+          <div
+            style={{
+              display: "grid",
+              gap: "26px",
+            }}
+          >
+            {points.map((point) => (
+              <p
+                key={point}
+                style={{
+                  margin: 0,
+                  color: "#50595c",
+                  fontFamily: "Almarai, Tajawal, Arial, sans-serif",
+                  fontSize: "clamp(15px, 0.938vw, 18px)",
+                  fontWeight: 400,
+                  lineHeight: 1.67,
+                }}
+              >
+                {point}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </section>

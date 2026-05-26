@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { getDictionary } from "@/dictionaries";
 import AppointmentSection from "@/components/home/AppointmentSection";
 import styles from "./page.module.css";
 
@@ -38,7 +39,7 @@ const A = {
   heroMosaic: "https://www.figma.com/api/mcp/asset/77f0eee0-6cbd-43b9-a95e-645b4178f451",
   overviewMosaic: "https://www.figma.com/api/mcp/asset/bde3d23e-25ef-4c7b-bb9c-c7b08380f1e0",
   overviewCenter: "https://www.figma.com/api/mcp/asset/e62d664d-e822-47a1-bc35-b74664a0739e",
-  benefitsBg: "https://www.figma.com/api/mcp/asset/02185ed8-d535-42be-9700-872e157b3252",
+  benefitsBg: "/images/benefitsBg.png",
   doctor: "https://www.figma.com/api/mcp/asset/2886187b-84c5-4b2b-bb5d-2fd5ddc4d69b",
   asnanLogo: "https://www.figma.com/api/mcp/asset/40069f33-a55b-49da-8b77-1205935380b0",
   beforeMain: "https://www.figma.com/api/mcp/asset/b8134ceb-f667-46db-83ce-52381985ab10",
@@ -121,41 +122,300 @@ const copy: Record<Locale, Copy> = {
   },
 };
 
-function BeforeAfter({ before, after, labels, compact = false }: { before: string; after: string; labels: { before: string; after: string }; compact?: boolean }) {
+function HomeWorldBeautySection({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale);
+
+  useEffect(() => {
+    const initWorldBeauty = () => {
+      if (typeof window === "undefined") return;
+
+      const containers = document.querySelectorAll(
+        ".orthodontics-world-beauty .before-after-wrapper"
+      );
+
+      containers.forEach((container) => {
+        const slider = container.querySelector(".slider") as HTMLInputElement | null;
+        if (!slider || slider.dataset.asnanOrthoBound === "true") return;
+
+        slider.dataset.asnanOrthoBound = "true";
+
+        const setPosition = () => {
+          (container as HTMLElement).style.setProperty(
+            "--position",
+            `${slider.value}%`
+          );
+        };
+
+        setPosition();
+        slider.addEventListener("input", setPosition);
+      });
+
+      const $ = (window as any).$;
+
+      if ($?.fn?.owlCarousel) {
+        const $worldBeautySlider = $(
+          ".orthodontics-world-beauty .owl-carousel.world-beauty-slider"
+        );
+
+        if (
+          $worldBeautySlider.length &&
+          !$worldBeautySlider.hasClass("owl-loaded")
+        ) {
+          $worldBeautySlider.owlCarousel({
+            mouseDrag: false,
+            touchDrag: false,
+            loop: false,
+            nav: true,
+            navText: [
+              `<img src="${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-prev-yellow.svg" alt="Prev">`,
+              `<img src="${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-next-yellow.svg" alt="Next">`,
+            ],
+            dots: false,
+            margin: 0,
+            responsiveClass: true,
+            responsive: { 0: { items: 1 } },
+          });
+        }
+      }
+    };
+
+    const tryInit = () => {
+      const $ = typeof window !== "undefined" ? (window as any).$ : undefined;
+
+      if ($?.fn?.owlCarousel) {
+        initWorldBeauty();
+      } else {
+        window.setTimeout(tryInit, 200);
+      }
+    };
+
+    tryInit();
+  }, []);
+
   return (
-    <div className={`${styles.beforeAfter} ${compact ? styles.compactSmile : ""}`}>
-      <div className={styles.afterImage}>
-        <img src={after} alt={labels.after} />
+    <div className="world-beauty-wrapper orthodontics-world-beauty">
+      <div className="world-beauty-title">{t.world_of_beauty}</div>
+      <div className="container-fluid">
+        <div className="owl-carousel owl-theme world-beauty-slider">
+          <div className="item">
+            <div className="row align-items-center">
+              <div className="col-12 col-lg-7">
+                <div className="before-after-wrapper">
+                  <div className="before-after-img">
+                    <img
+                      className="image-before"
+                      src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before.png`}
+                      alt="Before"
+                    />
+                    <img
+                      className="image-after"
+                      src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after.png`}
+                      alt="After"
+                    />
+                  </div>
+                  <div className="before-text">{t.before}</div>
+                  <div className="after-text">{t.after}</div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    defaultValue="50"
+                    aria-label="Percentage of before photo shown"
+                    className="slider"
+                  />
+                  <div className="slider-line" aria-hidden="true" />
+                </div>
+              </div>
+
+              <div className="col-12 col-lg-5">
+                <div className="caption-wrapper">
+                  <div className="caption-text">{t.beautiful_smile}</div>
+                  <div className="made-by-wrapper">
+                    <div className="made-by-title">
+                      {t.this_smile} <div>{t.made_by}</div>
+                    </div>
+
+                    <div className="doctor-small">
+                      <div className="doctor-img">
+                        <img
+                          src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/dr-img-teeth-show.png`}
+                          alt=""
+                        />
+                      </div>
+                    </div>
+
+                    <div className="doctor-info">
+                      <div className="doctor-name">{t.dr_border_img}</div>
+                      <div className="doctor-title">{t.prosthodontist}</div>
+                      <div className="doctor-title">{t.kuwait_university}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="row align-items-center">
+              <div className="col-12 col-lg-7">
+                <div className="before-after-wrapper">
+                  <div className="before-after-img">
+                    <img
+                      className="image-before"
+                      src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before-2.png`}
+                      alt="Before"
+                    />
+                    <img
+                      className="image-after"
+                      src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after-2.png`}
+                      alt="After"
+                    />
+                  </div>
+                  <div className="before-text">{t.before}</div>
+                  <div className="after-text">{t.after}</div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    defaultValue="50"
+                    aria-label="Percentage of before photo shown"
+                    className="slider"
+                  />
+                  <div className="slider-line" aria-hidden="true" />
+                </div>
+              </div>
+
+              <div className="col-12 col-lg-5">
+                <div className="caption-wrapper">
+                  <div className="caption-text">{t.beautiful_smile}</div>
+                  <div className="made-by-wrapper">
+                    <div className="made-by-title">
+                      {t.this_smile} <div>{t.made_by_female}</div>
+                    </div>
+
+                    <div className="doctor-small">
+                      <div className="doctor-img">
+                        <img
+                          src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Dr.-Amnah-(1).png`}
+                          alt=""
+                        />
+                      </div>
+                    </div>
+
+                    <div className="doctor-info">
+                      <div className="doctor-name">Dr. Amnah</div>
+                      <div className="doctor-title">{t.orthodontist}</div>
+                      <div className="doctor-title">{t.kuwait_university}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12 col-lg-4">
+            <div className="before-after-wrapper">
+              <div className="before-after-img">
+                <img
+                  className="image-before"
+                  src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before-3-1.png`}
+                  alt="Before"
+                />
+                <img
+                  className="image-after"
+                  src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after-3-1.png`}
+                  alt="After"
+                />
+              </div>
+              <div className="before-text">{t.before}</div>
+              <div className="after-text">{t.after}</div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                defaultValue="50"
+                aria-label="Percentage of before photo shown"
+                className="slider"
+              />
+              <div className="slider-line" aria-hidden="true" />
+            </div>
+          </div>
+
+          <div className="col-12 col-lg-4">
+            <div className="before-after-wrapper">
+              <div className="before-after-img">
+                <img
+                  className="image-before"
+                  src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-before-2.png`}
+                  alt="Before"
+                />
+                <img
+                  className="image-after"
+                  src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/teeth-img-after-2.png`}
+                  alt="After"
+                />
+              </div>
+              <div className="before-text">{t.before}</div>
+              <div className="after-text">{t.after}</div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                defaultValue="50"
+                aria-label="Percentage of before photo shown"
+                className="slider"
+              />
+              <div className="slider-line" aria-hidden="true" />
+            </div>
+          </div>
+
+          <div className="col-12 col-lg-4">
+            <a
+              href={`/${locale}/services/world-of-beauty`}
+              className="more-smiles-block"
+            >
+              <div className="more-smiles-text">{t.view_more}</div>
+              <img
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Path%20774.svg`}
+                alt=""
+                className="more-smiles-shape"
+              />
+              <img
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/next-arrow.svg`}
+                alt=""
+                className="more-smiles-arrow"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12">
+            <a
+              href={`/${locale}/services/world-of-beauty`}
+              className="more-smiles-block-responsive"
+            >
+              <div className="more-smiles-text-responsive">{t.view_more}</div>
+              <img
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/Path%20774.svg`}
+                alt=""
+                className="more-smiles-shape-responsive"
+              />
+              <img
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/next-arrow.svg`}
+                alt=""
+                className="more-smiles-arrow-responsive"
+              />
+            </a>
+          </div>
+        </div>
       </div>
-      <div className={styles.beforeImage}>
-        <img src={before} alt={labels.before} />
-      </div>
-      <span className={`${styles.smileLabel} ${styles.beforeLabel}`}>{labels.before}</span>
-      <span className={`${styles.smileLabel} ${styles.afterLabel}`}>{labels.after}</span>
-      <span className={styles.sliderLine} aria-hidden="true" />
-      <img className={styles.smileLogo} src={A.asnanLogo} alt="" aria-hidden="true" />
     </div>
   );
 }
 
-function DoctorSignature({ t }: { t: Copy }) {
-  return (
-    <div className={styles.doctorSignature}>
-      <div className={styles.signatureCopy}>
-        <span>{t.madeThis}</span>
-        <strong>{t.madeBy}</strong>
-      </div>
-      <div className={styles.doctorPhoto}>
-        <img src={A.doctor} alt={t.doctor} />
-      </div>
-      <div className={styles.doctorInfo}>
-        <b>{t.doctor}</b>
-        <span>{t.doctorTitle}</span>
-        <span>{t.doctorUniversity}</span>
-      </div>
-    </div>
-  );
-}
 
 export default function InvisalignDetailPage() {
   const params = useParams();
@@ -180,10 +440,13 @@ export default function InvisalignDetailPage() {
             <div className={styles.heroDoctorRow}>
               <div>
                 <h2>{t.doctor}</h2>
+                <div className="d-flex align-items-center gap-2">
+                  <img src="/images/teeth-icon.svg" alt="teethicon" />
                 <p>
                   <b>{t.doctorTitle}</b>
                   <span>{t.doctorUniversity}</span>
                 </p>
+                </div>
               </div>
             </div>
             <Link href={bookHref} className={styles.whitePill}>{t.readMore}</Link>
@@ -221,29 +484,7 @@ export default function InvisalignDetailPage() {
         </div>
       </section>
 
-      <section className={styles.beauty} aria-labelledby="beauty-title">
-        <h2 id="beauty-title" className={styles.beautyWatermark}>{t.worldTitle}</h2>
-        <div className={styles.beautySlider}>
-          <button className={`${styles.sliderArrow} ${styles.prevArrow}`} aria-label={isAr ? "السابق" : "Previous"} type="button">‹</button>
-          <button className={`${styles.sliderArrow} ${styles.nextArrow}`} aria-label={isAr ? "التالي" : "Next"} type="button">›</button>
-          <div className={styles.beautyIntro}>
-            <h3>{t.smileTitle}</h3>
-            <DoctorSignature t={t} />
-          </div>
-          <div className={styles.mainSmile}>
-            <BeforeAfter before={A.beforeMain} after={A.afterMain} labels={{ before: t.before, after: t.after }} />
-          </div>
-        </div>
-        <div className={styles.smileThumbs}>
-          <Link href={`/${locale}/services/world-of-beauty`} className={styles.moreSmiles}>
-            <img src={A.moreSmilesShape} alt="" aria-hidden="true" />
-            <span>{t.moreSmiles}</span>
-            <b>‹</b>
-          </Link>
-          <BeforeAfter before={A.beforeOne} after={A.afterOne} labels={{ before: t.before, after: t.after }} compact />
-          <BeforeAfter before={A.beforeTwo} after={A.afterTwo} labels={{ before: t.before, after: t.after }} compact />
-        </div>
-      </section>
+      <HomeWorldBeautySection locale={locale} />
 
       <section className={styles.faq} aria-labelledby="faq-title">
         <img className={styles.faqWave} src={A.faqWave} alt="" aria-hidden="true" />
@@ -266,8 +507,8 @@ export default function InvisalignDetailPage() {
           <p>{t.journeyText}</p>
         </div>
         <Link href={bookHref} className={styles.blueButton}>
-          <img src={A.buttonIcon} alt="" aria-hidden="true" />
           <span>{t.bookButton}</span>
+          <img src={A.buttonIcon} alt="" aria-hidden="true" />
         </Link>
       </section>
 

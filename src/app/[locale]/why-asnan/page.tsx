@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
 import WhyAsnanFeatureSection from "@/components/why-asnan/WhyAsnanFeatureSection";
 import WhyAsnanWaveFeatureSection from "@/components/why-asnan/WhyAsnanWaveFeatureSection";
+import AppointmentSection from "@/components/home/AppointmentSection";
 
 type SectionItem = {
   component: "feature" | "wave";
@@ -607,6 +608,7 @@ export default function WhyAsnanPage() {
           />
         );
       })}
+      <AppointmentSection locale={locale} />
     </>
   );
 }
