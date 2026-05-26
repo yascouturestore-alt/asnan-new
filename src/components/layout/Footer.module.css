@@ -1,0 +1,518 @@
+.footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: clamp(252px, 13.15vw, 252px) 0 41px;
+  background:
+    url("/images/footer/footer-bg-gradient.png") center top / cover no-repeat;
+  color: #fff;
+      background-size: 100% auto !important;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(1170px, calc(100% - 72px));
+  margin: 0 auto;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  direction: ltr;
+}
+
+.contactNav {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  direction: ltr;
+}
+
+.contactItem {
+  display: inline-flex;
+  min-width: 52px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #fff;
+  font-family: Tajawal, Almarai, Arial, sans-serif;
+  font-size: 13.2px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contactItem:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contactIcon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 100px;
+  background: #ffba00;
+}
+
+.contactIcon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.logoLink {
+  display: inline-flex;
+}
+
+.logo {
+  display: block;
+  width: 99px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: 37px 0 0;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 452px) minmax(0, 451px);
+  gap: 30px;
+  align-items: center;
+  justify-content: end;
+  width: 933px;
+  max-width: 100%;
+  margin-inline-start: auto;
+  padding: 55px 0 51px;
+  direction: ltr;
+}
+
+.linksArea {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(117px, max-content);
+  gap: 99px;
+  align-items: start;
+  direction: ltr;
+}
+
+.stackedLinks {
+  display: grid;
+  gap: 68px;
+  align-items: start;
+}
+
+.linkGroup {
+  color: #fff;
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr .linkGroup {
+  direction: ltr;
+  text-align: left;
+}
+
+.linkGroup h3 {
+  margin: 0 0 16px;
+  color: #fff;
+  font-family: Tajawal, Almarai, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 20.47px;
+  white-space: nowrap;
+}
+
+.linkGroup ul {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linkGroup a {
+  display: inline-block;
+  color: #fff;
+  font-family: Tajawal, Almarai, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20.47px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.linkGroup a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.phoneArea {
+  display: grid;
+  justify-items: end;
+  gap: 45px;
+  color: #fff;
+  direction: rtl;
+  text-align: right;
+}
+
+.phoneNumber {
+  display: inline-block;
+  min-width: 100%;
+  margin: 0;
+  color: #2c8eff;
+  font-family: Spartan, "Plus Jakarta Sans", Arial, sans-serif;
+  font-size: 42.5px;
+  font-weight: 800;
+  line-height: 63.79px;
+  text-align: right;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+
+.phoneNumber:hover {
+  color: #2c8eff;
+  text-decoration: none;
+}
+
+.phoneNumber span {
+  color: #ffc936;
+}
+
+.hours {
+  margin: 0;
+}
+
+.hours p {
+  margin: 0;
+  color: #fff;
+  font-family: Tajawal, Almarai, Arial, sans-serif;
+  font-size: 16.8px;
+  font-weight: 400;
+  line-height: 25.99px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.storeBadges {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 16px;
+  direction: ltr;
+}
+
+.storeBadges a {
+  display: inline-flex;
+}
+
+.storeBadges img {
+  display: block;
+  width: 120.48px;
+  height: 34.65px;
+  object-fit: contain;
+}
+
+.bottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  width: 100%;
+  padding-top: 39px;
+  direction: ltr;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7.86px;
+  direction: ltr;
+}
+
+.socials a {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials img {
+  display: block;
+  max-width: 31px;
+  max-height: 29px;
+  object-fit: contain;
+}
+
+.copyright {
+  margin: 0;
+  color: #fff;
+  font-family: "Plus Jakarta Sans", "Noto Sans Arabic", Tajawal, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.rtl .copyright {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+.ltr .topRow {
+  flex-direction: row-reverse;
+}
+
+.ltr .mainGrid {
+  grid-template-columns: minmax(0, 451px) minmax(0, 452px);
+}
+
+.ltr .phoneArea {
+  order: 1;
+  justify-items: start;
+  direction: ltr;
+  text-align: left;
+}
+
+.ltr .linksArea {
+  order: 2;
+}
+
+.ltr .phoneNumber,
+.ltr .hours p {
+  text-align: left;
+}
+
+.ltr .storeBadges {
+  justify-content: flex-start;
+}
+
+@media (max-width: 1280px) {
+  .inner {
+    width: min(1024px, calc(100% - 48px));
+  }
+
+  .mainGrid {
+    width: 900px;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+  }
+
+  .linksArea {
+    gap: 54px;
+  }
+}
+
+@media (max-width: 991px) {
+  .footer {
+    padding: 190px 0 42px;
+  }
+
+  .footer::before {
+    height: 178px;
+  }
+
+  .inner {
+    width: min(720px, calc(100% - 36px));
+  }
+
+  .topRow,
+  .ltr .topRow {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .contactNav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .divider {
+    margin-top: 36px;
+  }
+
+  .mainGrid,
+  .ltr .mainGrid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 52px;
+    padding: 46px 0 48px;
+  }
+
+  .linksArea,
+  .ltr .linksArea {
+    order: 2;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+  }
+
+  .phoneArea,
+  .ltr .phoneArea {
+    order: 1;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .phoneNumber,
+  .ltr .phoneNumber,
+  .hours p,
+  .ltr .hours p,
+  .linkGroup,
+  .ltr .linkGroup {
+    text-align: center;
+  }
+
+  .storeBadges,
+  .ltr .storeBadges {
+    justify-content: center;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    gap: 26px;
+    padding-top: 36px;
+  }
+
+  .copyright {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer {
+    padding: 154px 0 36px;
+  }
+
+  .footer::before {
+    height: 148px;
+  }
+
+  .inner {
+    width: calc(100% - 28px);
+  }
+
+  .contactNav {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .contactItem {
+    flex: 1 1 0;
+    min-width: 0;
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  .logo {
+    width: 86px;
+    height: auto;
+  }
+
+  .mainGrid,
+  .ltr .mainGrid {
+    padding: 38px 0 42px;
+  }
+
+  .linksArea,
+  .ltr .linksArea {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .stackedLinks {
+    gap: 40px;
+  }
+
+  .linkGroup h3 {
+    font-size: 16px;
+  }
+
+  .linkGroup a {
+    font-size: 15px;
+    white-space: normal;
+  }
+
+  .phoneNumber {
+    min-width: 0;
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .hours p {
+    font-size: 15px;
+    line-height: 1.55;
+    white-space: normal;
+  }
+
+  .storeBadges {
+    flex-wrap: wrap;
+  }
+
+  .storeBadges img {
+    width: 120px;
+    height: auto;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* =========================================================
+   FIX: Desktop footer exact Figma height/background
+   Figma frame is 1920 x 971. The background must stretch
+   to the complete footer height, not just the visible content.
+   ========================================================= */
+@media (min-width: 992px) {
+  .footer {
+    min-height: 971px;
+    padding: 252px 0 34px;
+    background:
+      url("/images/footer/footer-bg-gradient.png") center top / 100% 100% no-repeat;
+      background-size: auto !important;
+  }
+
+  .inner {
+    height: 685px;
+    display: flex;
+    flex-direction: column;
+    gap: 62px;
+        margin-top: 90px;
+  }
+
+  .divider {
+    flex: 0 0 1px;
+    margin: 0;
+  }
+
+  .mainGrid {
+    padding: 0;
+  }
+
+  .bottomRow {
+    padding-top: 0;
+  }
+}

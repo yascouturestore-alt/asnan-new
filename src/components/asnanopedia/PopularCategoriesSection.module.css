@@ -2,22 +2,21 @@
 
 .section {
   position: relative;
-  z-index: 2; /* stay above FAQ grey background */
+  z-index: 2;
   background-color: transparent;
   background-image: var(--popular-categories-bg);
   background-repeat: no-repeat;
   background-position: center top;
 
-  /* image ko distort/squeeze nahi karega */
   background-size: 100% auto;
 
-  /* tumhari image ka original ratio approx 1292x1218 hai */
   min-height: calc(100vw * 1218 / 1292);
 
-  /* content ko top white curve se neeche laane ke liye */
   padding: clamp(250px, 15vw, 300px) 0 clamp(180px, 12vw, 240px);
 
   overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .topWave {

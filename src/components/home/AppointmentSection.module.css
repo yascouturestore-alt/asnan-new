@@ -2,7 +2,7 @@
   position: relative;
   z-index: 5;
   width: 100%;
-  min-height: calc(100vw * 1500 / 3260);
+    min-height: 34.0123vw;
   overflow: hidden;
   margin-bottom: 0;
   scroll-margin-top: 118px;

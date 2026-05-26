@@ -129,6 +129,15 @@ textarea {
   box-shadow: 0 2px 3px #ccc;
   padding: 0.5vw 10vw 0.5vw 0;
 }
+
+.navbar.scrolled .ul-quick-bt-wrap .phone-link {
+  color: #2c8eff !important;
+}
+
+.navbar.scrolled .ul-quick-bt-wrap .phone-link span {
+  color: #ffc936 !important;
+}
+
 .navbar:after,
 .navbar:before {
   content: "";
@@ -300,7 +309,7 @@ html[dir="rtl"] .ul-quick-bt-wrap {
   letter-spacing: -0.1em;
   padding-left: 1.146vw;
   padding-right: 1.146vw;
-  margin-left: 1.302vw;
+  /* margin-left: 1.302vw; */
   transition: var(--transition);
   overflow: hidden;
   z-index: 1;
@@ -7099,5 +7108,62 @@ footer .copyrights {
   /* Hide yellow desktop request button on mobile */
   header .navbar > .btn-secondary {
     display: none !important;
+  }
+}
+
+/* Header overflow fix - keep same design, prevent horizontal scrollbar */
+@media (min-width: 992px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  header,
+  header .navbar {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  header .navbar > .container-fluid {
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+  }
+
+  header .navbar .navbar-brand {
+    flex: 0 0 auto;
+  }
+
+  header .navbar .navbar-collapse {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  header .navbar .ul-quick-bt-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  html[dir="rtl"] header .navbar .ul-quick-bt-wrap {
+    margin-right: 0 !important;
+    padding-right: 60px;
+  }
+
+  html[dir="ltr"] header .navbar .ul-quick-bt-wrap {
+    margin-left: 0 !important;
+    padding-left: 60px;
+  }
+
+  header .navbar .navbar-nav {
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: nowrap;
   }
 }
