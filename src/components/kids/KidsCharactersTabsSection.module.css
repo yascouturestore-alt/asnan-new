@@ -1,0 +1,318 @@
+/* KidsCharactersTabsSection.module.css */
+
+.section {
+  --asnan-navy: #0b1b55;
+  --asnan-yellow: #ffc936;
+  --asnan-text: #50595c;
+
+  position: relative;
+  isolation: isolate;
+  min-height: 1810px;
+  margin: 0;
+  padding: 422px 0 480px;
+  overflow: hidden;
+  /* background-color: var(--asnan-navy); */
+  background-image: url("/images/popular-categories-bg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 1920px 1810px;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(1580px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 98px;
+}
+
+.title {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Almarai", "Tajawal", sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.93;
+}
+
+.subtitle {
+  margin: -10px 0 0;
+  color: #ffffff;
+  font-family: "Almarai", "Tajawal", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2.875;
+}
+
+.tabsWrap {
+  width: 100%;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: end;
+  width: 100%;
+}
+
+.tab {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: "Almarai", "Tajawal", sans-serif;
+  text-align: center;
+}
+
+.tab:focus-visible {
+  outline: 3px solid rgba(255, 201, 54, 0.75);
+  outline-offset: 8px;
+  border-radius: 80px 80px 0 0;
+}
+
+.characterImageSlot {
+  height: 270px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.characterImage {
+  display: block;
+  width: auto;
+  max-width: 92%;
+  height: 250px;
+  object-fit: contain;
+}
+
+.mrtooth {
+  height: 250px;
+  max-width: 286px;
+}
+
+.mrstooth {
+  height: 250px;
+  max-width: 257px;
+}
+
+.superpaste {
+  height: 250px;
+  max-width: 187px;
+}
+
+.emptyCharacter {
+  display: block;
+  width: 64px;
+  height: 24px;
+}
+
+.tabLabelWrap {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 79px 79px 0 0;
+  transition: background-color 0.2s ease;
+}
+
+.tabLabel {
+  display: block;
+  color: currentColor;
+  font-size: clamp(24px, 1.875vw, 36px);
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+.activeTab .tabLabelWrap {
+  background: #ffffff;
+}
+
+.activeTab .tabLabel {
+  color: var(--asnan-yellow);
+  font-weight: 700;
+}
+
+.panel {
+  min-height: 141px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 60px 50px;
+  background: #ffffff;
+  border-radius: 0 0 80px 80px;
+}
+
+.panel p {
+  width: 100%;
+  margin: 0;
+  color: var(--asnan-text);
+  font-family: "Almarai", "Tajawal", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.55;
+  text-align: right;
+}
+
+[dir="ltr"] .panel p {
+  text-align: left;
+}
+
+@media (max-width: 1400px) {
+  .section {
+    min-height: 1320px;
+    padding: 300px 0 330px;
+    background-size: cover;
+  }
+
+  .inner {
+    width: calc(100% - 56px);
+  }
+
+  .header {
+    margin-bottom: 68px;
+  }
+
+  .characterImageSlot {
+    height: 220px;
+    margin-bottom: 16px;
+  }
+
+  .characterImage {
+    height: 205px;
+  }
+
+  .tabLabelWrap {
+    height: 130px;
+    border-radius: 64px 64px 0 0;
+  }
+
+  .panel {
+    padding: 42px 44px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    min-height: auto;
+    padding: 240px 0 250px;
+    background-position: center top;
+  }
+
+  .inner {
+    width: calc(100% - 40px);
+  }
+
+  .title {
+    font-size: 38px;
+  }
+
+  .header {
+    margin-bottom: 48px;
+  }
+
+  .tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 0;
+  }
+
+  .characterImageSlot {
+    height: 180px;
+  }
+
+  .characterImage {
+    height: 165px;
+  }
+
+  .tabLabelWrap {
+    height: 100px;
+    border-radius: 48px 48px 0 0;
+  }
+
+  .tabLabel {
+    font-size: 22px;
+  }
+
+  .panel {
+    border-radius: 0 0 46px 46px;
+    padding: 34px 30px;
+  }
+
+  .panel p {
+    font-size: 18px;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 190px 0 210px;
+  }
+
+  .inner {
+    width: calc(100% - 28px);
+  }
+
+  .header {
+    margin-bottom: 34px;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 1.45;
+  }
+
+  .subtitle {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .characterImageSlot {
+    height: 126px;
+    margin-bottom: 10px;
+  }
+
+  .characterImage {
+    height: 116px;
+  }
+
+  .emptyCharacter {
+    width: 40px;
+    height: 16px;
+  }
+
+  .tabLabelWrap {
+    height: 76px;
+    border-radius: 28px 28px 0 0;
+  }
+
+  .tabLabel {
+    font-size: 16px;
+  }
+
+  .panel {
+    min-height: auto;
+    padding: 26px 18px 28px;
+    border-radius: 0 0 30px 30px;
+  }
+
+  .panel p {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+}
