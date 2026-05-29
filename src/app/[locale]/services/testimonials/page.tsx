@@ -384,8 +384,8 @@ export default function TestimonialsPage() {
           position: relative;
           height: 41.6vw;
           overflow: hidden;
-          border: 1px solid #fff;
-          background: #fff;
+          // border: 1px solid #fff;
+    background-color: #ececec;
         }
 
         .home-figma-gallery .figma-gallery-cta-bg {

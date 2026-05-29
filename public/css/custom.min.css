@@ -1,1 +1,998 @@
-.asnanopedia-article ul li:before,.asnanopedia-article-new ul li:before,.instruction-text ul li:before{content:'';position:absolute;top:.365vw;background:url(../images/Bullets.svg) center/contain no-repeat;width:.729vw;height:.833vw}.career-form-container,.job-container{box-shadow:0 1.7vw 5.1vw 0 rgba(82,89,92,.05);background-color:#fff}.iti__flag{background-image:url("../img/flags.png")}.intl-tel-input.allow-dropdown .flag-container:hover .selected-flag,.intl-tel-input.separate-dial-code .selected-flag{background-color:transparent}.intl-tel-input .selected-flag .iti-arrow{right:-10px}.intl-tel-input.allow-dropdown input{padding-left:100px!important}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){.iti__flag{background-image:url("../img/flags.png")}}.caption-wrapper .made-by-wrapper .doctor-small .doctor-name{width:50px}.filter-yellow{filter:invert(62%) sepia(94%) saturate(4546%) hue-rotate(195deg) brightness(101%) contrast(102%)}.doctor-description p{margin-bottom:10px;font-weight:300;font-size:1.35vw;letter-spacing:-.08em;color:#50595c;word-spacing:3px}.article-wrapper p,.service-item .service-info p,.service-text{font-weight:300;font-size:1.615vw;letter-spacing:-.08em;line-height:2.24vw;color:#50595c}.service-item .service-info p{display:block}ul.services-list li.service-item .service-img{max-height:750px}.article-img img{width:100%}.category-header{z-index:20}ul.top-news-list li.top-news-item .post-info .post-footer .post-date{letter-spacing:0;font-size:10px}.gallery-row .gallery-column .gallery-item img{width:100%;height:100%;object-fit:cover;object-position:top;padding:2px}.teeth-before-after:before{content:'';position:absolute;top:1.5625vw;right:1.5625vw;background:url(../images/Asnan-logo.svg) center/contain no-repeat;width:3vw;height:2.115vw;z-index:2}.ba-slider img{display:block;max-width:none;height:100%;object-fit:cover}.doctor-description ul,.news-article .article-wrapper ul{list-style:initial;margin:revert;padding:revert}.asnanopedia-article ol li,.doctor-description ol li,.doctor-description ul li,.news-article ol li,.news-article ul li,.speciality-services-article ul li{position:relative;display:block;font-weight:300;font-size:1.25vw;letter-spacing:-.08em;line-height:1.771vw;color:#50595c;padding-left:1.5625vw;margin-bottom:.521vw}.doctor-description ul li:before,.news-article .article-wrapper ul li:before,.speciality-services-article ul li:before,ul.why-asnan .service-description ul li:before{content:'';position:absolute;top:.365vw;left:0;background:url(../images/Bullets.svg) center/contain no-repeat;width:.729vw;height:.833vw}.floor-wrapper .bg-img img{width:100%;object-fit:cover}ul.instructions-list li.instruction-item .instruction-img img{width:100%;height:100%;object-fit:contain}.navbar .dropdown.dropdown-mega .dropdown-menu .services-menu .service-item .service-info .service-text,.navbar .dropdown.dropdown-mega .dropdown-menu .services-menu .service-item .service-info .service-text2{display:block;font-weight:500;font-size:.625vw;letter-spacing:-.1em;color:#fff;width:8vw;line-height:1.25}.article-wrapper p,.service-text{word-spacing:3px}.asnanopedia-article .title,.news-article .title,.speciality-services-article .title{position:relative;display:block;font-weight:700;font-size:2.083vw;letter-spacing:-.05em;line-height:1.667vw;color:#50595c;padding-bottom:1.042vw;margin-bottom:2.083vw}.asnanopedia-article .title:before,.news-article .title:before,.speciality-services-article .title:before{content:'';position:absolute;bottom:0;left:0;width:10.417vw;height:.208vw;border-radius:.104vw;background:var(--color-secondary)}.asnanopedia-article .brief,.news-article .brief,.speciality-services-article .brief{font-weight:300;font-size:1.8vw;letter-spacing:-.08em;line-height:2.5vw;color:#50595c;word-spacing:3px}.asnanopedia-article p,.character-content p,.news-article p,.speciality-services-article p{font-weight:300;font-size:1.35vw;letter-spacing:-.08em;line-height:2.24vw;color:#50595c;word-spacing:3px}.asnanopedia-article h4,.news-article h4,.speciality-services-article h4{position:relative;display:block;font-weight:700;font-size:2.083vw;letter-spacing:-.05em;line-height:3vw;color:#50595c;padding-bottom:1.042vw;margin-bottom:2.083vw;margin-top:2.083vw}.asnanopedia-article ul,.instruction-text ul,.speciality-services-article ul{list-style:initial;margin:revert;padding:5px}.asnanopedia-article ol li,.asnanopedia-article ul li,.instruction-text ol li,.instruction-text ul li{position:relative;display:block;font-weight:300;font-size:1.25vw;letter-spacing:-.08em;line-height:1.771vw;color:#50595c;margin-bottom:.521vw}.asnanopedia-article ul li:before,.instruction-text ul li:before{left:-30px}.asnanopedia-article-new ul li:before{left:692px}.department-info-wrapper{top:-10vw;margin:0;padding-bottom:200px;z-index:10}.department-info{margin-top:40vw}.specialities-wrapper{margin-top:10vw}.category-header .speciality-block{display:block;align-items:center;justify-content:flex-start}.category-header .speciality-block .category-icon img{width:100%;object-fit:contain}.specialities .category-title{font-size:2.5vw!important;font-weight:700;letter-spacing:-.05em;line-height:4vw;color:#50595c}.specialities-wrapper .category-icon{min-width:7.5vw!important;width:7.5vw!important;display:inline-block}.speciality-services-article .article-img{display:block;width:36.40625vw;max-width:100%;border-radius:5.208vw 5.208vw 5.208vw 10.9375vw;height:auto;overflow:hidden}.speciality-services-article .article-img img{width:auto;max-width:100%;height:auto;min-height:400px;object-fit:cover}.caption-wrapper .made-by-wrapper .doctor-small{min-height:100px;min-width:100px}.carousel-control-prev{left:-100px}.carousel-control-next{right:-100px}ul.top-news-list li.top-news-item .post-info .post-footer{display:block;line-height:12px}.tags-wrapper ul.tags-list{padding:0}.navbar,.navbar.activeMegaMenu:after,.navbar.activeMegaMenu:before{transition:none}.navbar .top-content .switch-lang a{font-size:1.5vw}.testimonial-item .testimonial-user .user-img{width:50px;height:auto}.testimonials-wrapper .splide__track--nav>.splide__list>.splide__slide{width:17.083vw!important;height:12.5vw!important}.testimonials-block .testimonial-img img,.testimonials-wrapper .splide__track--nav>.splide__list>.splide__slide img{object-fit:cover;object-position:top}.testimonials-footer{margin-bottom:0}.side-wrapper .services-menu .service-item .service-info .service-text{color:#fff;font-size:10px}.doctor-description .doctor-title{margin:0}.doctor-description .doctor-name{font-weight:700}.welcome-wrapper .welcome-text,ul.why-asnan .service-description,ul.why-asnan .service-description p,ul.why-asnan .service-description ul li{position:relative;font-weight:300;font-size:1vw;letter-spacing:-.08em;line-height:1.771vw;margin-bottom:.521vw;color:#50595c;display:block}ul.why-asnan .service-description ul li{padding-left:1.5625vw}#footer-phone-call-btn,.welcome-wrapper .more-text{display:none}.before-after-wrapper .before-after-img img.image-before{filter:none}.job-container{width:79.6vw;padding:2vw 3vw 2.6vw;border-radius:2.3vw;border:1px solid rgba(112,112,112,.25);margin-bottom:2vw}.job-container .job-top-container{display:flex;flex-direction:row;justify-content:space-between;align-items:center;padding-bottom:1.25vw}.job-container .job-title{font-size:1.875vw;font-weight:600;letter-spacing:-.14vw;color:#50595c}.job-container .job-btn-container .btn-secondary{padding:.5vw 1.5vw}.job-container .job-description{font-size:1.25vw;line-height:1.67;letter-spacing:-.09vw;color:#50595c}.ministry{display:block;font-size:.9375vw;text-align:end;margin:auto 2vw;color:#b8c2c4;font-family:URWGeometricArabic,Tajawal,Spartan,'Spartan MB',Arial,sans-serif}.career-form-container{border:1px solid rgba(112,112,112,.25);border-radius:2.3vw;padding:2.3vw;font-family:Spartan,'Spartan MB',Arial,sans-serif}#book-form{margin-top:5vw;padding-left:4.454vw;padding-right:4.454vw;display:flex;flex-direction:row}#book-form form{color:#000}#book-form .request-appointment-title{font-size:4vw}@media screen and (max-width:1024px){.career-form-container,.job-container{border-radius:15px;padding:20px}.job-container{width:90%;margin:0 auto 20px}.job-container .job-title{font-size:3vw;letter-spacing:-.5px}.job-container .job-btn-container{display:flex;flex-direction:row;justify-content:center;align-items:center;gap:10px}.job-container .job-btn-container .btn-secondary{padding:8px 15px;font-size:14px}.job-container .job-description{font-size:16px;letter-spacing:-.3px}.ministry{font-size:12px;margin:10px 0}}@media screen and (max-width:768px){.career-form-container,.job-container{border-radius:10px;padding:15px}.ministry{margin-top:350px;font-size:18px}#footer-phone-call-btn{display:block;max-width:200px}#footer-whatsapp-call-btn{display:none}.job-container{width:95%}.job-container .job-top-container{flex-direction:column;align-items:flex-start}.job-container .job-title{font-size:25px;margin-bottom:10px}.job-container .job-btn-container{display:flex;flex-direction:row;justify-content:center;align-items:center;gap:10px;width:100%}.job-container .job-btn-container .btn{width:100%;text-align:center}.job-container .job-description{font-size:14px;line-height:1.5}}@media screen and (max-width:991px){#book-form{flex-direction:column;margin-top:0}#book-form form{color:#000}#book-form .request-appointment-title{font-size:4vw;color:#fff}.ministry{margin-top:350px;font-size:18px}.department-info{margin-top:0}.department-info-wrapper{padding-bottom:0}ul.why-asnan li.service-item .service-info .service-title{font-size:22px;line-height:29px;margin-bottom:30px}.navbar .navbar-brand img{margin:0 auto}.navbar .navbar-brand{display:block;padding-top:0;position:relative;top:40px;transform:translateY(-50%);left:0;right:0;margin:0 auto;text-align:center}.navbar .toggle-menu{margin:20px;padding:20px}.welcome-wrapper .welcome-text,ul.why-asnan li.service-item .service-info .service-description,ul.why-asnan li.service-item .service-info .service-description p,ul.why-asnan li.service-item .service-info .service-description ul li{font-size:18px;line-height:25px;margin-bottom:20px}ul.why-asnan li.service-item .service-info .service-description ul li{padding:0 15px}ul.why-asnan .service-description ul li:before{top:5px;width:10px;height:10px}.doctor-card .doctor-info .doctor-name:after,.navbar .top-content .switch-lang{display:none}.character-content p{font-size:14px;line-height:16px;word-spacing:1px}.doctor-description .doctor-title{margin:0}.doctor-card{width:100%}.doctor-card .doctor-info{margin:0 auto;text-align:center}.doctor-card .doctor-info .doctor-university img{width:20px}.doctor-card .doctor-info .doctor-university{display:flex;align-items:center;font-size:12px;line-height:10px;margin-bottom:10px}.doctor-card .doctor-img{height:30vh}.doctor-card .doctor-info .doctor-name{font-size:14px;line-height:16px;margin-bottom:10px}.btn-secondary,.doctor-card .btn-primary{height:40px;width:80%;padding-left:20px;padding-right:20px;font-size:14px;margin:15px auto 10px}.doctor-card .doctor-info .doctor-title{font-size:10px;line-height:10px;margin-bottom:20px}.mission-block .section-title .text-primary.team-page{color:var(--color-primary)!important}.doctor-description p{font-size:18px}.article-wrapper p,.asnanopedia-article .brief,.asnanopedia-article p,.news-article .brief,.news-article p,.service-item .service-info p,.service-text,.speciality-services-article p{font-size:18px;line-height:24px}.asnanopedia .article-title,.asnanopedia-article .title,.asnanopedia-article h4,.news-article .title,.speciality-services-article .title{line-height:26px;font-size:22px;padding-bottom:10px;margin-bottom:20px}.teeth-before-after:before{top:15px;right:15px;width:30px;height:24px}.doctor-description ol li,.doctor-description ul li{font-size:16px;line-height:20px;padding-left:20px;margin-bottom:8px}.doctor-description ul li:before,.news-article ul li:before,.speciality-services-article ul li:before{top:6px;width:7px;height:8px}.asnanopedia .article-title:before,.asnanopedia-article .title:before,.news-article .title:before,.speciality-services-article .title:before{width:100px;height:2px;border-radius:2px}.asnanopedia-article h4{margin-top:20px}.asnanopedia-article ol li,.asnanopedia-article ul li,.news-article ol li,.news-article ul li{font-size:18px;line-height:24px;padding-left:20px;margin-bottom:10px}.asnanopedia-article ul li:before{top:6px;width:7px;height:8px;left:0}.specialities-wrapper{margin-top:100px}.specialities .category-title{font-size:24px!important;line-height:48px}.specialities-wrapper .category-icon{min-width:150px;width:150px}.speciality-services-article .brief{font-size:18px;line-height:16px}.speciality-services-article h4{font-size:22px;line-height:30px;padding-bottom:10px;margin-bottom:20px;margin-top:20px}.asnanopedia-article ol li,.speciality-services-article ul li{font-size:16px;line-height:20px;padding-left:20px;margin-bottom:10px}.speciality-services-article .article-img{width:300px;max-width:100%;max-height:300px;border-radius:50px;margin:0 auto}.speciality-services-article .article-img img{min-height:200px}.carousel-control-prev{left:-30px}.carousel-control-next{right:-30px}.news-article h4{font-size:22px;line-height:18px;padding-bottom:10px;margin-bottom:20px;margin-top:20px}.patients-outside-wrapper .bg-img img{min-height:650px;object-fit:cover}}
+.asnanopedia-article ul li:before,
+.asnanopedia-article-new ul li:before,
+.instruction-text ul li:before {
+  content: "";
+  position: absolute;
+  top: 0.365vw;
+  background: url(../images/Bullets.svg) center/contain no-repeat;
+  width: 0.729vw;
+  height: 0.833vw;
+}
+.career-form-container,
+.job-container {
+  box-shadow: 0 1.7vw 5.1vw 0 rgba(82, 89, 92, 0.05);
+  background-color: #fff;
+}
+.iti__flag {
+  background-image: url("../img/flags.png");
+}
+.intl-tel-input.allow-dropdown .flag-container:hover .selected-flag,
+.intl-tel-input.separate-dial-code .selected-flag {
+  background-color: transparent;
+}
+.intl-tel-input .selected-flag .iti-arrow {
+  right: -10px;
+}
+.intl-tel-input.allow-dropdown input {
+  padding-left: 100px !important;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("../img/flags.png");
+  }
+}
+.caption-wrapper .made-by-wrapper .doctor-small .doctor-name {
+  width: 50px;
+}
+.filter-yellow {
+  filter: invert(62%) sepia(94%) saturate(4546%) hue-rotate(195deg)
+    brightness(101%) contrast(102%);
+}
+.doctor-description p {
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-size: 1.35vw;
+  letter-spacing: -0.08em;
+  color: #50595c;
+  word-spacing: 3px;
+}
+.article-wrapper p,
+.service-item .service-info p,
+.service-text {
+  font-weight: 300;
+  font-size: 1.615vw;
+  letter-spacing: -0.08em;
+  line-height: 2.24vw;
+  color: #50595c;
+}
+.service-item .service-info p {
+  display: block;
+}
+ul.services-list li.service-item .service-img {
+  max-height: 750px;
+}
+.article-img img {
+  width: 100%;
+}
+.category-header {
+  z-index: 20;
+}
+ul.top-news-list li.top-news-item .post-info .post-footer .post-date {
+  letter-spacing: 0;
+  font-size: 10px;
+}
+.gallery-row .gallery-column .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  padding: 2px;
+}
+.teeth-before-after:before {
+  content: "";
+  position: absolute;
+  top: 1.5625vw;
+  right: 1.5625vw;
+  background: url(../images/Asnan-logo.svg) center/contain no-repeat;
+  width: 3vw;
+  height: 2.115vw;
+  z-index: 2;
+}
+.ba-slider img {
+  display: block;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+}
+.doctor-description ul,
+.news-article .article-wrapper ul {
+  list-style: initial;
+  margin: revert;
+  padding: revert;
+}
+.asnanopedia-article ol li,
+.doctor-description ol li,
+.doctor-description ul li,
+.news-article ol li,
+.news-article ul li,
+.speciality-services-article ul li {
+  position: relative;
+  display: block;
+  font-weight: 300;
+  font-size: 1.25vw;
+  letter-spacing: -0.08em;
+  line-height: 1.771vw;
+  color: #50595c;
+  padding-left: 1.5625vw;
+  margin-bottom: 0.521vw;
+}
+.doctor-description ul li:before,
+.news-article .article-wrapper ul li:before,
+.speciality-services-article ul li:before,
+ul.why-asnan .service-description ul li:before {
+  content: "";
+  position: absolute;
+  top: 0.365vw;
+  left: 0;
+  background: url(../images/Bullets.svg) center/contain no-repeat;
+  width: 0.729vw;
+  height: 0.833vw;
+}
+.floor-wrapper .bg-img img {
+  width: 100%;
+  object-fit: cover;
+}
+ul.instructions-list li.instruction-item .instruction-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.navbar
+  .dropdown.dropdown-mega
+  .dropdown-menu
+  .services-menu
+  .service-item
+  .service-info
+  .service-text,
+.navbar
+  .dropdown.dropdown-mega
+  .dropdown-menu
+  .services-menu
+  .service-item
+  .service-info
+  .service-text2 {
+  display: block;
+  font-weight: 500;
+  font-size: 0.625vw;
+  letter-spacing: -0.1em;
+  color: #fff;
+  width: 8vw;
+  line-height: 1.25;
+}
+.article-wrapper p,
+.service-text {
+  word-spacing: 3px;
+}
+.asnanopedia-article .title,
+.news-article .title,
+.speciality-services-article .title {
+  position: relative;
+  display: block;
+  font-weight: 700;
+  font-size: 2.083vw;
+  letter-spacing: -0.05em;
+  line-height: 1.667vw;
+  color: #50595c;
+  padding-bottom: 1.042vw;
+  margin-bottom: 2.083vw;
+}
+.asnanopedia-article .title:before,
+.news-article .title:before,
+.speciality-services-article .title:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10.417vw;
+  height: 0.208vw;
+  border-radius: 0.104vw;
+  background: var(--color-secondary);
+}
+.asnanopedia-article .brief,
+.news-article .brief,
+.speciality-services-article .brief {
+  font-weight: 300;
+  font-size: 1.8vw;
+  letter-spacing: -0.08em;
+  line-height: 2.5vw;
+  color: #50595c;
+  word-spacing: 3px;
+}
+.asnanopedia-article p,
+.character-content p,
+.news-article p,
+.speciality-services-article p {
+  font-weight: 300;
+  font-size: 1.35vw;
+  letter-spacing: -0.08em;
+  line-height: 2.24vw;
+  color: #50595c;
+  word-spacing: 3px;
+}
+.asnanopedia-article h4,
+.news-article h4,
+.speciality-services-article h4 {
+  position: relative;
+  display: block;
+  font-weight: 700;
+  font-size: 2.083vw;
+  letter-spacing: -0.05em;
+  line-height: 3vw;
+  color: #50595c;
+  padding-bottom: 1.042vw;
+  margin-bottom: 2.083vw;
+  margin-top: 2.083vw;
+}
+.asnanopedia-article ul,
+.instruction-text ul,
+.speciality-services-article ul {
+  list-style: initial;
+  margin: revert;
+  padding: 5px;
+}
+.asnanopedia-article ol li,
+.asnanopedia-article ul li,
+.instruction-text ol li,
+.instruction-text ul li {
+  position: relative;
+  display: block;
+  font-weight: 300;
+  font-size: 1.25vw;
+  letter-spacing: -0.08em;
+  line-height: 1.771vw;
+  color: #50595c;
+  margin-bottom: 0.521vw;
+}
+.asnanopedia-article ul li:before,
+.instruction-text ul li:before {
+  left: -30px;
+}
+.asnanopedia-article-new ul li:before {
+  left: 692px;
+}
+.department-info-wrapper {
+  top: -10vw;
+  margin: 0;
+  padding-bottom: 200px;
+  z-index: 10;
+}
+.department-info {
+  margin-top: 40vw;
+}
+.specialities-wrapper {
+  margin-top: 10vw;
+}
+.category-header .speciality-block {
+  display: block;
+  align-items: center;
+  justify-content: flex-start;
+}
+.category-header .speciality-block .category-icon img {
+  width: 100%;
+  object-fit: contain;
+}
+.specialities .category-title {
+  font-size: 2.5vw !important;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 4vw;
+  color: #50595c;
+}
+.specialities-wrapper .category-icon {
+  min-width: 7.5vw !important;
+  width: 7.5vw !important;
+  display: inline-block;
+}
+.speciality-services-article .article-img {
+  display: block;
+  width: 36.40625vw;
+  max-width: 100%;
+  border-radius: 5.208vw 5.208vw 5.208vw 10.9375vw;
+  height: auto;
+  overflow: hidden;
+}
+.speciality-services-article .article-img img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  min-height: 400px;
+  object-fit: cover;
+}
+.caption-wrapper .made-by-wrapper .doctor-small {
+  min-height: 100px;
+  min-width: 100px;
+}
+.carousel-control-prev {
+  left: -100px;
+}
+.carousel-control-next {
+  right: -100px;
+}
+ul.top-news-list li.top-news-item .post-info .post-footer {
+  display: block;
+  line-height: 12px;
+}
+.tags-wrapper ul.tags-list {
+  padding: 0;
+}
+.navbar,
+.navbar.activeMegaMenu:after,
+.navbar.activeMegaMenu:before {
+  transition: none;
+}
+.navbar .top-content .switch-lang a {
+  font-size: 1.5vw;
+}
+.testimonial-item .testimonial-user .user-img {
+  width: 50px;
+  height: auto;
+}
+.testimonials-wrapper .splide__track--nav > .splide__list > .splide__slide {
+  width: 17.083vw !important;
+  height: 12.5vw !important;
+}
+.testimonials-block .testimonial-img img,
+.testimonials-wrapper .splide__track--nav > .splide__list > .splide__slide img {
+  object-fit: cover;
+  object-position: top;
+}
+.testimonials-footer {
+  margin-bottom: 0;
+}
+.side-wrapper .services-menu .service-item .service-info .service-text {
+  color: #fff;
+  font-size: 10px;
+}
+.doctor-description .doctor-title {
+  margin: 0;
+}
+.doctor-description .doctor-name {
+  font-weight: 700;
+}
+.welcome-wrapper .welcome-text,
+ul.why-asnan .service-description,
+ul.why-asnan .service-description p,
+ul.why-asnan .service-description ul li {
+  position: relative;
+  font-weight: 300;
+  font-size: 1vw;
+  letter-spacing: -0.08em;
+  line-height: 1.771vw;
+  margin-bottom: 0.521vw;
+  color: #50595c;
+  display: block;
+}
+ul.why-asnan .service-description ul li {
+  padding-left: 1.5625vw;
+}
+#footer-phone-call-btn,
+.welcome-wrapper .more-text {
+  display: none;
+}
+.before-after-wrapper .before-after-img img.image-before {
+  filter: none;
+}
+.job-container {
+  width: 79.6vw;
+  padding: 2vw 3vw 2.6vw;
+  border-radius: 2.3vw;
+  border: 1px solid rgba(112, 112, 112, 0.25);
+  margin-bottom: 2vw;
+}
+.job-container .job-top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25vw;
+}
+.job-container .job-title {
+  font-size: 1.875vw;
+  font-weight: 600;
+  letter-spacing: -0.14vw;
+  color: #50595c;
+}
+.job-container .job-btn-container .btn-secondary {
+  padding: 0.5vw 1.5vw;
+}
+.job-container .job-description {
+  font-size: 1.25vw;
+  line-height: 1.67;
+  letter-spacing: -0.09vw;
+  color: #50595c;
+}
+.ministry {
+  display: block;
+  font-size: 0.9375vw;
+  text-align: end;
+  margin: auto 2vw;
+  color: #b8c2c4;
+  font-family:
+    URWGeometricArabic, Tajawal, Spartan, "Spartan MB", Arial, sans-serif;
+}
+.career-form-container {
+  border: 1px solid rgba(112, 112, 112, 0.25);
+  border-radius: 2.3vw;
+  padding: 2.3vw;
+  font-family: Spartan, "Spartan MB", Arial, sans-serif;
+}
+#book-form {
+  margin-top: 5vw;
+  padding-left: 4.454vw;
+  padding-right: 4.454vw;
+  display: flex;
+  flex-direction: row;
+}
+#book-form form {
+  color: #000;
+}
+#book-form .request-appointment-title {
+  font-size: 4vw;
+}
+@media screen and (max-width: 1024px) {
+  .career-form-container,
+  .job-container {
+    border-radius: 15px;
+    padding: 20px;
+  }
+  .job-container {
+    width: 90%;
+    margin: 0 auto 20px;
+  }
+  .job-container .job-title {
+    font-size: 3vw;
+    letter-spacing: -0.5px;
+  }
+  .job-container .job-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .job-container .job-btn-container .btn-secondary {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  .job-container .job-description {
+    font-size: 16px;
+    letter-spacing: -0.3px;
+  }
+  .ministry {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .career-form-container,
+  .job-container {
+    border-radius: 10px;
+    padding: 15px;
+  }
+  .ministry {
+    margin-top: 350px;
+    font-size: 18px;
+  }
+  #footer-phone-call-btn {
+    display: block;
+    max-width: 200px;
+  }
+  #footer-whatsapp-call-btn {
+    display: none;
+  }
+  .job-container {
+    width: 95%;
+  }
+  .job-container .job-top-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .job-container .job-title {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  .job-container .job-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .job-container .job-btn-container .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .job-container .job-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+@media screen and (max-width: 991px) {
+  #book-form {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  #book-form form {
+    color: #000;
+  }
+  #book-form .request-appointment-title {
+    font-size: 4vw;
+    color: #fff;
+  }
+  .ministry {
+    margin-top: 350px;
+    font-size: 18px;
+  }
+  .department-info {
+    margin-top: 0;
+  }
+  .department-info-wrapper {
+    padding-bottom: 0;
+  }
+  ul.why-asnan li.service-item .service-info .service-title {
+    font-size: 22px;
+    line-height: 29px;
+    margin-bottom: 30px;
+  }
+  .navbar .navbar-brand img {
+    margin: 0 auto;
+  }
+  .navbar .navbar-brand {
+    display: block;
+    padding-top: 0;
+    position: relative;
+    top: 40px;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .navbar .toggle-menu {
+    margin: 20px;
+    padding: 20px;
+  }
+  .welcome-wrapper .welcome-text,
+  ul.why-asnan li.service-item .service-info .service-description,
+  ul.why-asnan li.service-item .service-info .service-description p,
+  ul.why-asnan li.service-item .service-info .service-description ul li {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+  ul.why-asnan li.service-item .service-info .service-description ul li {
+    padding: 0 15px;
+  }
+  ul.why-asnan .service-description ul li:before {
+    top: 5px;
+    width: 10px;
+    height: 10px;
+  }
+  .doctor-card .doctor-info .doctor-name:after,
+  .navbar .top-content .switch-lang {
+    display: none;
+  }
+  .character-content p {
+    font-size: 14px;
+    line-height: 16px;
+    word-spacing: 1px;
+  }
+  .doctor-description .doctor-title {
+    margin: 0;
+  }
+  .doctor-card {
+    width: 100%;
+  }
+  .doctor-card .doctor-info {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .doctor-card .doctor-info .doctor-university img {
+    width: 20px;
+  }
+  .doctor-card .doctor-info .doctor-university {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 10px;
+    margin-bottom: 10px;
+  }
+  .doctor-card .doctor-img {
+    height: 30vh;
+  }
+  .doctor-card .doctor-info .doctor-name {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+  .btn-secondary,
+  .doctor-card .btn-primary {
+    height: 40px;
+    width: 80%;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    margin: 15px auto 10px;
+  }
+  .doctor-card .doctor-info .doctor-title {
+    font-size: 10px;
+    line-height: 10px;
+    margin-bottom: 20px;
+  }
+  .mission-block .section-title .text-primary.team-page {
+    color: var(--color-primary) !important;
+  }
+  .doctor-description p {
+    font-size: 18px;
+  }
+  .article-wrapper p,
+  .asnanopedia-article .brief,
+  .asnanopedia-article p,
+  .news-article .brief,
+  .news-article p,
+  .service-item .service-info p,
+  .service-text,
+  .speciality-services-article p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .asnanopedia .article-title,
+  .asnanopedia-article .title,
+  .asnanopedia-article h4,
+  .news-article .title,
+  .speciality-services-article .title {
+    line-height: 26px;
+    font-size: 22px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .teeth-before-after:before {
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 24px;
+  }
+  .doctor-description ol li,
+  .doctor-description ul li {
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 8px;
+  }
+  .doctor-description ul li:before,
+  .news-article ul li:before,
+  .speciality-services-article ul li:before {
+    top: 6px;
+    width: 7px;
+    height: 8px;
+  }
+  .asnanopedia .article-title:before,
+  .asnanopedia-article .title:before,
+  .news-article .title:before,
+  .speciality-services-article .title:before {
+    width: 100px;
+    height: 2px;
+    border-radius: 2px;
+  }
+  .asnanopedia-article h4 {
+    margin-top: 20px;
+  }
+  .asnanopedia-article ol li,
+  .asnanopedia-article ul li,
+  .news-article ol li,
+  .news-article ul li {
+    font-size: 18px;
+    line-height: 24px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  .asnanopedia-article ul li:before {
+    top: 6px;
+    width: 7px;
+    height: 8px;
+    left: 0;
+  }
+  .specialities-wrapper {
+    margin-top: 100px;
+  }
+  .specialities .category-title {
+    font-size: 24px !important;
+    line-height: 48px;
+  }
+  .specialities-wrapper .category-icon {
+    min-width: 150px;
+    width: 150px;
+  }
+  .speciality-services-article .brief {
+    font-size: 18px;
+    line-height: 16px;
+  }
+  .speciality-services-article h4 {
+    font-size: 22px;
+    line-height: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .asnanopedia-article ol li,
+  .speciality-services-article ul li {
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  .speciality-services-article .article-img {
+    width: 300px;
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 50px;
+    margin: 0 auto;
+  }
+  .speciality-services-article .article-img img {
+    min-height: 200px;
+  }
+  .carousel-control-prev {
+    left: -30px;
+  }
+  .carousel-control-next {
+    right: -30px;
+  }
+  .news-article h4 {
+    font-size: 22px;
+    line-height: 18px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .patients-outside-wrapper .bg-img img {
+    min-height: 650px;
+    object-fit: cover;
+  }
+}
+
+/* Header */
+/* =====================================================
+   Mobile / Tablet Header Fix up to 991px
+   Clean mobile header
+   - Hamburger 40x40
+   - Flag aligned
+   - Logo centered
+   - Mobile appointment button outside collapse
+   - Same appointment position open/closed
+   - Duplicate navbar links hidden
+   ===================================================== */
+.mobile-request-appointment {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  header .navbar {
+    padding: 0 !important;
+  }
+
+  header .navbar > .container-fluid {
+    position: relative !important;
+    min-height: 78px !important;
+    height: 78px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  header .navbar .navbar-brand {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 50% !important;
+    z-index: 1055 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  header .navbar .navbar-brand img {
+    display: block !important;
+    width: 72px !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  header .navbar .toggle-menu {
+    position: absolute !important;
+    left: 18px !important;
+    right: auto !important;
+    top: 50% !important;
+    z-index: 1065 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    flex: 0 0 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    line-height: 1 !important;
+    transform: translateY(-50%) !important;
+    overflow: visible !important;
+  }
+
+  header .navbar .toggle-menu span {
+    position: absolute !important;
+    left: 8px !important;
+    right: 8px !important;
+    display: block !important;
+    width: 24px !important;
+    height: 2px !important;
+    margin: 0 !important;
+    border-radius: 2px !important;
+    background: #ffffff !important;
+  }
+
+  header .navbar .toggle-menu span:first-child {
+    top: 14px !important;
+  }
+
+  header .navbar .toggle-menu span:last-child {
+    top: 24px !important;
+  }
+
+  header .navbar .switch-lang-mobile {
+    position: absolute !important;
+    left: 58px !important;
+    right: auto !important;
+    top: 50% !important;
+    z-index: 1065 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    flex: 0 0 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: translateY(-50%) !important;
+  }
+
+  header .navbar .switch-lang-mobile a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  header .navbar .switch-lang-mobile img,
+  header .navbar .switch-lang-mobile .flag-mobile {
+    display: block !important;
+    width: 24px !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  header .navbar > .btn-secondary {
+    display: none !important;
+  }
+
+  header .navbar > .btn-secondary::before,
+  header .navbar > .btn-secondary::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  header .navbar .navbar-collapse .ul-quick-bt-wrap > div {
+    display: none !important;
+  }
+
+  header .navbar .navbar-collapse .navbar-nav,
+  header .navbar .navbar-collapse.show .navbar-nav,
+  header .navbar .navbar-collapse .top-content,
+  header .navbar .navbar-collapse.show .top-content {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  header .navbar .mobile-request-appointment {
+    position: absolute !important;
+    top: 50% !important;
+    right: 18px !important;
+    left: auto !important;
+    z-index: 1065 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: row-reverse !important;
+    gap: 4px !important;
+    width: auto !important;
+    min-width: 118px !important;
+    max-width: 136px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+    padding: 0 12px !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 24px !important;
+    background: rgba(255, 255, 255, 0.19) !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16) !important;
+    color: #ffffff !important;
+    font-family: Tajawal, Almarai, Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    transform: translateY(-50%) !important;
+    overflow: hidden !important;
+  }
+
+  header .navbar .mobile-request-appointment::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  header .navbar .mobile-request-appointment .req-header,
+  header .navbar .mobile-request-appointment .req-footer {
+    display: inline-block !important;
+    color: #ffffff !important;
+    font-family: Tajawal, Almarai, Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  header .navbar .mobile-request-appointment .arrow-icon {
+    display: none !important;
+  }
+
+  header .navbar .mobile-request-appointment .appointment-icon {
+    display: inline-block !important;
+    width: 30px !important;
+    min-width: 30px !important;
+    height: 30px !important;
+    margin: 0 0 0 6px !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    object-fit: contain !important;
+  }
+
+  html[dir="rtl"] header .navbar .toggle-menu {
+    left: 18px !important;
+    right: auto !important;
+  }
+
+  html[dir="rtl"] header .navbar .switch-lang-mobile {
+    left: 58px !important;
+    right: auto !important;
+  }
+
+  html[dir="rtl"] header .navbar .mobile-request-appointment {
+    right: 18px !important;
+    left: auto !important;
+    flex-direction: row-reverse !important;
+  }
+}

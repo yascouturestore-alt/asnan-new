@@ -165,7 +165,7 @@
     font-weight: 700;
     color: white;
     white-space: nowrap;
-    line-height: 45px;
+    line-height: 45px;  
 }
 
 .phone-link span {
@@ -344,7 +344,7 @@
 
     .call-btn {
         padding: 10px 20px;
-        border-radius: 25px !important;
+        /* border-radius: 25px !important; */
     }
 
     #phone-icon,#whatsapp-icon {

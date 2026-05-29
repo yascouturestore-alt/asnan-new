@@ -516,3 +516,9 @@
     padding-top: 0;
   }
 }
+
+@media (max-width: 991px) {
+  .footer {
+  background: linear-gradient(123deg, #051a53 0%, #143d83 50%, #3262b9 100%);
+  }
+}

@@ -393,6 +393,8 @@ export default function TeamPage() {
         .asnan-doctors-section {
           width: min(1598px, calc(100% - 48px));
           margin: 0 auto clamp(74px, 8vw, 116px);
+    z-index: 2;
+    position: relative;
         }
 
         .asnan-doctors-grid {

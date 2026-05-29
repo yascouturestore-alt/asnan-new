@@ -298,8 +298,8 @@
 @media (max-width: 767px) {
   .panel {
     min-height: auto;
-    border-top-right-radius: 180px;
-    border-bottom-left-radius: 180px;
+    border-top-right-radius: 130px;
+    border-bottom-left-radius: 130px;
   }
 
   .inner {
@@ -370,7 +370,7 @@
 .card {
   position: relative;
   top: auto;
-  left: auto;
+  /* left: auto; */
   width: 100%;
   height: auto;
   min-height: 205px;

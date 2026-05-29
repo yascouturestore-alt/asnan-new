@@ -713,8 +713,9 @@ footer .phone-link {
 .welcome-wrapper {
   position: relative;
   display: block;
-  margin-top: -10vw;
   z-index: 2;
+      max-width: 1200px;
+    margin: -10vw auto 0;
 }
 .welcome-wrapper .welcome-title {
       display: block;
@@ -6815,21 +6816,19 @@ footer .copyrights {
 /*//////////////////////////////////////*/
 
 .wob-page-slider{
-  width: 590px !important;
-  height: 375px !important;
-  max-width: 590px !important;
+  width: 590px;
+  height: 375px;
+  max-width: 590px;
 }
 
 .wob-grey-bg {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: 115px 0 125px;
-      min-height: 1542px;   
+      position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 115px 0 125px;
     align-items: flex-end;
     justify-content: flex-end;
     display: flex;
-    margin-top: -700px;
 }
 
 .wob-grey-bg::after {
@@ -7056,7 +7055,7 @@ footer .copyrights {
     right: 16px !important;
     left: auto !important;
     z-index: 1060;
-    display: inline-flex !important;
+    display: none !important;
     width: 86px !important;
     min-width: 86px !important;
     height: 44px !important;

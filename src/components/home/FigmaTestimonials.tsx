@@ -105,7 +105,7 @@ export default function FigmaTestimonials({ locale }: FigmaTestimonialsProps) {
               aria-label={t.next}
               onClick={handleNext}
             >
-              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonials-arrow-blue-left.svg`} alt="" />
+              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonials-arrow-blue-right.svg`} alt="" />
             </button>
 
             <article className={styles.cardFrame}>
@@ -135,7 +135,7 @@ export default function FigmaTestimonials({ locale }: FigmaTestimonialsProps) {
               aria-label={t.previous}
               onClick={handlePrev}
             >
-              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonials-arrow-blue-right.svg`} alt="" />
+              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonials-arrow-blue-left.svg`} alt="" />
             </button>
           </div>
 

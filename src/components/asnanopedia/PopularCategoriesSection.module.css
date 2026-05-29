@@ -12,7 +12,8 @@
 
   min-height: calc(100vw * 1218 / 1292);
 
-  padding: clamp(250px, 15vw, 300px) 0 clamp(180px, 12vw, 240px);
+    padding: 300px 0;
+    background-size: 100% 100%;
 
   overflow: hidden;
     display: flex;
@@ -443,7 +444,8 @@
     /* padding: 130px 0 100px; */
     background-size: cover;
     background-position: center top;
-    padding: 185px 0 285px;
+    padding: 325px 0;
+        margin-top: -200px;
   }
 
   .inner {
