@@ -429,6 +429,7 @@ ul.why-asnan .service-description ul li {
 #book-form .request-appointment-title {
   font-size: 4vw;
 }
+
 @media screen and (max-width: 1024px) {
   .career-form-container,
   .job-container {
@@ -806,28 +807,28 @@ ul.why-asnan .service-description ul li {
   }
 
   header .navbar .toggle-menu {
-    position: absolute !important;
-    left: 18px !important;
-    right: auto !important;
-    top: 50% !important;
-    z-index: 1065 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 40px !important;
-    min-width: 40px !important;
-    max-width: 40px !important;
-    height: 40px !important;
-    min-height: 40px !important;
-    max-height: 40px !important;
-    flex: 0 0 40px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: 0 !important;
-    background: transparent !important;
-    line-height: 1 !important;
-    transform: translateY(-50%) !important;
-    overflow: visible !important;
+            position: absolute !important;
+        left: 18px !important;
+        right: auto !important;
+        top: 50% !important;
+        z-index: 1065 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 32px !important;
+        min-width: 32px !important;
+        max-width: 32px !important;
+        height: 32px !important;
+        min-height: 32px !important;
+        max-height: 32px !important;
+        flex: 0 0 40px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        line-height: 1 !important;
+        transform: translateY(-50%) !important;
+        overflow: visible !important;
   }
 
   header .navbar .toggle-menu span {
@@ -916,7 +917,7 @@ ul.why-asnan .service-description ul li {
   header .navbar .mobile-request-appointment {
     position: absolute !important;
     top: 50% !important;
-    right: 18px !important;
+    right: 6px !important;
     left: auto !important;
     z-index: 1065 !important;
     display: inline-flex !important;
@@ -925,11 +926,11 @@ ul.why-asnan .service-description ul li {
     flex-direction: row-reverse !important;
     gap: 4px !important;
     width: auto !important;
-    min-width: 118px !important;
-    max-width: 136px !important;
-    height: 42px !important;
-    min-height: 42px !important;
-    max-height: 42px !important;
+    min-width: 130px !important;
+    max-width: 130px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
     padding: 0 12px !important;
     margin: 0 !important;
     border: 0 !important;
