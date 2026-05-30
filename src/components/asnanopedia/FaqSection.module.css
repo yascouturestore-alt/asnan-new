@@ -271,12 +271,15 @@
   }
 
   .cardTitle {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .button {
     min-width: 108px;
     height: 38px;
     font-size: 15px;
+  }
+  .cardbody{
+    min-height: 160px;
   }
 }

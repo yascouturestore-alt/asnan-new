@@ -165,6 +165,12 @@
     padding: 48px 16px 64px;
   }
 
+  .meta .button{
+        width: 120px;
+    height: 40px;
+    font-size: 16px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     max-width: 360px;
@@ -179,7 +185,8 @@
   }
 
   .cardTitle {
-    font-size: 22px;
+        font-size: 18px;
+
   }
 
   .body {

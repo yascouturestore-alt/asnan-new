@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
 import { RiMenu2Line } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
@@ -9,6 +9,7 @@ import { RxCross2 } from "react-icons/rx";
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const params = useParams();
+  const pathname = usePathname();
 
   const locale = (params?.locale as string) || "en";
   const t = getDictionary(locale);
@@ -38,6 +39,24 @@ useEffect(() => {
     window.removeEventListener("scroll", handleScroll);
   };
 }, []);
+
+const closeMobileMenu = () => {
+  setIsMobileMenuOpen(false);
+
+  // legacy/bootstrap/jquery classes cleanup
+  if (typeof document !== "undefined") {
+    document.body.classList.remove("menu-open", "overflow-hidden", "modal-open");
+
+    document.querySelector(".side-wrapper")?.classList.remove("active", "show", "open");
+    document.querySelector(".navbar-collapse")?.classList.remove("show");
+    document.querySelector(".toggle-menu")?.classList.remove("active");
+  }
+};
+
+useEffect(() => {
+  setIsMobileMenuOpen(false);
+}, [pathname]);
+
   return (
     <header>
       <nav
@@ -89,7 +108,11 @@ useEffect(() => {
   type="button"
   aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
   aria-expanded={isMobileMenuOpen}
-  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+  onClick={(e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  setIsMobileMenuOpen((prev) => !prev);
+}}
 >
   {isMobileMenuOpen ? (
     <RxCross2 className="close-icon" />
@@ -329,51 +352,65 @@ useEffect(() => {
       <aside className="side-wrapper d-lg-none">
         <div className="container-fluid">
           <ul className="side-menu">
-            <li>
-              <Link href={`/${locale}`}>{t.header_home}</Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/why-asnan`}>
-                {t.header_why_asnan}
-              </Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/asnanopedia`}>
-                {t.header_asnanopedia}
-              </Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/services/departments`}>
-                {t.header_departments}
-              </Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/our-team`}>{t.header_our_team}</Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/kids`}>
-                <img src="/images/kids.png" alt="" />
-              </Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/asnan-boutique`}>
-                {t.header_boutique}
-              </Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/careers`}>{t.header_careers}</Link>
-            </li>
-            <li className="switch-lang-menu">
-              <Link href={`/${otherLocale}`}>
-                {langText}{" "}
-                <img
-                  className="flag"
-                  src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/${flagSrc}`}
-                  alt="Language switch button"
-                />
-              </Link>
-            </li>
-          </ul>
+  <li>
+    <Link onClick={closeMobileMenu} href={`/${locale}`}>
+      {t.header_home}
+    </Link>
+  </li>
+
+  <li>
+    <Link onClick={closeMobileMenu} href={`/${locale}/why-asnan`}>
+      {t.header_why_asnan}
+    </Link>
+  </li>
+
+  <li>
+    <Link onClick={closeMobileMenu} href={`/${locale}/asnanopedia`}>
+      {t.header_asnanopedia}
+    </Link>
+  </li>
+
+  <li>
+    <Link onClick={closeMobileMenu} href={`/${locale}/services/departments`}>
+      {t.header_departments}
+    </Link>
+  </li>
+
+  <li>
+    <Link onClick={closeMobileMenu} href={`/${locale}/our-team`}>
+      {t.header_our_team}
+    </Link>
+  </li>
+
+  <li>
+    <Link onClick={closeMobileMenu} href={`/${locale}/kids`}>
+      <img src="/images/kids.png" alt="" />
+    </Link>
+  </li>
+
+  <li>
+    <Link onClick={closeMobileMenu} href={`/${locale}/asnan-boutique`}>
+      {t.header_boutique}
+    </Link>
+  </li>
+
+  <li>
+    <Link onClick={closeMobileMenu} href={`/${locale}/careers`}>
+      {t.header_careers}
+    </Link>
+  </li>
+
+  <li className="switch-lang-menu">
+    <Link onClick={closeMobileMenu} href={`/${otherLocale}`}>
+      {langText}{" "}
+      <img
+        className="flag"
+        src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/${flagSrc}`}
+        alt="Language switch button"
+      />
+    </Link>
+  </li>
+</ul>
 
           <div className="position-relative d-inline-block">
             <div className="get-touch">{t.header_get_in_touch}</div>
