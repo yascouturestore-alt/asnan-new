@@ -26,7 +26,6 @@
 
 .bgOverlay {
   inset: 0;
-  /* background: linear-gradient(180deg, rgba(1, 13, 54, 0.16), rgba(1, 17, 66, 0.24)); */
   z-index: 1;
 }
 
@@ -51,7 +50,7 @@
 .headline {
   position: absolute;
   top: clamp(80px, 6.95vw, 134px);
-      left: clamp(250px, 15.5vw, 414px);
+  left: clamp(250px, 15.5vw, 414px);
   z-index: 8;
   margin: 0;
   color: #ffc936;
@@ -69,7 +68,12 @@
   z-index: 3;
   width: 100%;
   transform: translateX(-50%);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.33) 0%, rgba(255, 255, 255, 0.18) 54%, rgba(255, 255, 255, 0.03) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.33) 0%,
+    rgba(255, 255, 255, 0.18) 54%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -84,7 +88,7 @@
 
 .doctorsCurveMask {
   position: absolute;
-      top: clamp(420px, 32.7vw, 782px);
+  top: clamp(420px, 32.7vw, 782px);
   left: 50%;
   z-index: 5;
   display: block;
@@ -220,20 +224,22 @@
   text-align: right;
 }
 
+.sliderButton {
+  display: none;
+}
+
 .specialties {
   position: relative;
   z-index: 7;
-  list-style: none;
   direction: ltr;
   align-items: center;
-    gap: 15px;
-    margin: clamp(24px, 2.5vw, 48px) auto 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    flex-wrap: wrap;
+  gap: 15px;
+  margin: clamp(24px, 2.5vw, 48px) auto 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .specialty {
@@ -445,21 +451,46 @@
   }
 
   .doctorsStage {
-    display: flex;
-    flex-direction: column;
-    gap: 34px;
-    overflow: visible;
+    display: block;
+    position: relative;
+    height: 445px;
+    overflow: hidden;
     padding: 58px 0 0;
     margin: 0;
   }
 
-  .doctor {
+  .doctor,
+  .hashem,
+  .khalid,
+  .amna {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    top: 58px;
+    width: 100%;
     min-width: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(24px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      visibility 0.35s ease;
+  }
+
+  .activeDoctor {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
   }
 
   .doctorPhoto {
     width: min(270px, 78vw);
     max-height: none;
+    margin: 0 auto;
   }
 
   .doctorInfo,
@@ -472,6 +503,7 @@
 
   .doctorText h3 {
     font-size: 17px;
+    white-space: normal;
   }
 
   .doctorText {
@@ -483,8 +515,52 @@
     font-size: 11px;
   }
 
+  .sliderButton {
+    position: absolute;
+    top: 50%;
+    z-index: 20;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .sliderButton img {
+    width: 42px;
+    height: 42px;
+    display: block;
+    object-fit: contain;
+  }
+
+  .prevButton {
+    left: -7px;
+  }
+
+  .nextButton {
+    right: -7px;
+  }
+
+  .nextButton img {
+    transform: scaleX(-1);
+  }
+
+  .rtl .prevButton img {
+    transform: scaleX(-1);
+  }
+
+  .rtl .nextButton img {
+    transform: none;
+  }
+
   .specialties {
-            justify-content: center;
+    justify-content: center;
     gap: 18px 12px;
     margin-top: 38px;
   }

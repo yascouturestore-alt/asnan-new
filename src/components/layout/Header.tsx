@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
+import { RiMenu2Line } from "react-icons/ri";
+import { RxCross2 } from "react-icons/rx";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,7 +43,7 @@ useEffect(() => {
       <nav
   className={`navbar navbar-expand-lg fixed-top ${
     isScrolled ? "scrolled" : ""
-  }`}
+  } ${isMobileMenuOpen ? "menu-open" : ""}`}
 >
         <div className="container-fluid">
           <Link href={`/${locale}`} className="navbar-brand">
@@ -85,12 +87,15 @@ useEffect(() => {
           <button
   className={`toggle-menu ${isMobileMenuOpen ? "active" : ""}`}
   type="button"
-  aria-label="Toggle navigation"
+  aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
   aria-expanded={isMobileMenuOpen}
   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 >
-  <span></span>
-  <span></span>
+  {isMobileMenuOpen ? (
+    <RxCross2 className="close-icon" />
+  ) : (
+    <RiMenu2Line className="menu-icon" />
+  )}
 </button>
 
           <div

@@ -1,18 +1,74 @@
-/* No globals needed. Using legacy CSS. */
-.navbar.scrolled .toggle-menu span {
-  background-color: #003b7a !important;
+/* React Icons hamburger + close icon fix */
+.toggle-menu {
+  width: 28px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  box-shadow: none !important;
+  position: relative;
+  z-index: 10000;
+}
+
+.toggle-menu .menu-icon,
+.toggle-menu .close-icon {
+  width: 22px !important;
+  height: 22px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  color: #ffffff !important;
+}
+
+/* when header is white/scrolled/menu-open */
+.navbar.scrolled .toggle-menu .menu-icon,
+.navbar.scrolled .toggle-menu .close-icon,
+.navbar.menu-open .toggle-menu .menu-icon,
+.navbar.menu-open .toggle-menu .close-icon {
+  color: #003b7a !important;
+}
+
+/* Mobile fixed position so icon does not jump */
+@media (max-width: 991.98px) {
+  .navbar .toggle-menu {
+    position: absolute !important;
+    left: 18px !important;
+    right: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  html[dir="rtl"] .navbar .toggle-menu {
+    left: 18px !important;
+    right: auto !important;
+  }
+
+  .navbar.menu-open,
+  .navbar.scrolled {
+    background: #ffffff !important;
+  }
 }
 
 .navbar.scrolled .mobile-request-appointment,
 .navbar.scrolled .desktop-request-appointment,
-.navbar.scrolled .btn-request-appointment {
+.navbar.scrolled .btn-request-appointment,
+.navbar.menu-open .mobile-request-appointment,
+.navbar.menu-open .desktop-request-appointment,
+.navbar.menu-open .btn-request-appointment {
   color: #003b7a !important;
-        max-width: 120px;
 }
 
 .navbar.scrolled .mobile-request-appointment .req-header,
 .navbar.scrolled .mobile-request-appointment .req-footer,
 .navbar.scrolled .btn-request-appointment .req-header,
-.navbar.scrolled .btn-request-appointment .req-footer {
+.navbar.scrolled .btn-request-appointment .req-footer,
+.navbar.menu-open .mobile-request-appointment .req-header,
+.navbar.menu-open .mobile-request-appointment .req-footer,
+.navbar.menu-open .btn-request-appointment .req-header,
+.navbar.menu-open .btn-request-appointment .req-footer {
   color: #003b7a !important;
 }

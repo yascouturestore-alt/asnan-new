@@ -100,13 +100,20 @@ export default function FigmaTestimonials({ locale }: FigmaTestimonialsProps) {
 
           <div className={styles.testimonialRow}>
             <button
-              className={styles.control}
-              type="button"
-              aria-label={t.next}
-              onClick={handleNext}
-            >
-              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonials-arrow-blue-right.svg`} alt="" />
-            </button>
+  className={styles.control}
+  type="button"
+  aria-label={isAr ? t.next : t.previous}
+  onClick={isAr ? handleNext : handlePrev}
+>
+  <img
+    src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/${
+      isAr
+        ? "testimonials-arrow-blue-right.svg"
+        : "testimonials-arrow-blue-left.svg"
+    }`}
+    alt=""
+  />
+</button>
 
             <article className={styles.cardFrame}>
               <div className={styles.largecard}>
@@ -130,13 +137,20 @@ export default function FigmaTestimonials({ locale }: FigmaTestimonialsProps) {
             </article>
 
             <button
-              className={styles.control}
-              type="button"
-              aria-label={t.previous}
-              onClick={handlePrev}
-            >
-              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/testimonials-arrow-blue-left.svg`} alt="" />
-            </button>
+  className={styles.control}
+  type="button"
+  aria-label={isAr ? t.previous : t.next}
+  onClick={isAr ? handlePrev : handleNext}
+>
+  <img
+    src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/${
+      isAr
+        ? "testimonials-arrow-blue-left.svg"
+        : "testimonials-arrow-blue-right.svg"
+    }`}
+    alt=""
+  />
+</button>
           </div>
 
           <Link className={styles.readMore} href={`/${locale}/services/testimonials`}>

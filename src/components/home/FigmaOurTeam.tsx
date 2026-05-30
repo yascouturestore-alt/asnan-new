@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import styles from "./FigmaOurTeam.module.css";
 
@@ -77,47 +80,132 @@ const specialties = {
 
 export default function FigmaOurTeam({ locale }: FigmaOurTeamProps) {
   const isAr = locale === "ar";
+
   const copy = {
     headline: isAr ? "نختارهم بعناية" : "We are Selective",
     watermark: "Our Team",
     cta: isAr ? "مشاهدة جميع الأطباء" : "View All Doctors",
   };
+
   const doctorList = isAr ? doctors.ar : doctors.en;
   const specialtyList = isAr ? specialties.ar : specialties.en;
 
+  const [activeDoctorIndex, setActiveDoctorIndex] = useState(0);
+  const totalDoctors = doctorList.length;
+
+  const goToPrevDoctor = () => {
+    setActiveDoctorIndex((prev) => (prev === 0 ? totalDoctors - 1 : prev - 1));
+  };
+
+  const goToNextDoctor = () => {
+    setActiveDoctorIndex((prev) => (prev === totalDoctors - 1 ? 0 : prev + 1));
+  };
+
   return (
-    <section className={`${styles.section} ${isAr ? styles.rtl : styles.ltr}`} dir={isAr ? "rtl" : "ltr"}>
-      <img className={styles.bgMain} src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/team-bg-main.png`} alt="" aria-hidden="true" />
+    <section
+      className={`${styles.section} ${isAr ? styles.rtl : styles.ltr}`}
+      dir={isAr ? "rtl" : "ltr"}
+    >
+      <img
+        className={styles.bgMain}
+        src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/team-bg-main.png`}
+        alt=""
+        aria-hidden="true"
+      />
+
       <div className={styles.bgOverlay} aria-hidden="true" />
-      <img className={styles.bgPattern} src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/team-bg-pattern.png`} alt="" aria-hidden="true" />
+
+      <img
+        className={styles.bgPattern}
+        src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/team-bg-pattern.png`}
+        alt=""
+        aria-hidden="true"
+      />
 
       <div className={styles.inner}>
         <p className={styles.headline}>{copy.headline}</p>
-        <div className={styles.watermark} aria-hidden="true">{copy.watermark}</div>
-        <img className={styles.doctorsCurveMask} src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/team-doctors-curve-mask.png`} alt="" aria-hidden="true" />
+
+        <div className={styles.watermark} aria-hidden="true">
+          {copy.watermark}
+        </div>
+
+        <img
+          className={styles.doctorsCurveMask}
+          src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/team-doctors-curve-mask.png`}
+          alt=""
+          aria-hidden="true"
+        />
 
         <div className={styles.doctorsStage}>
-          {doctorList.map((doctor) => (
-            <article className={`${styles.doctor} ${doctor.className}`} key={doctor.name}>
-              <img className={styles.doctorPhoto} src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/${doctor.image}`} alt={doctor.name} />
+          <button
+            type="button"
+            className={`${styles.sliderButton} ${styles.prevButton}`}
+            onClick={goToPrevDoctor}
+            aria-label={isAr ? "الطبيب السابق" : "Previous doctor"}
+          >
+            <img
+              src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-yellow-left.svg`}
+              alt=""
+            />
+          </button>
+
+          {doctorList.map((doctor, index) => (
+            <article
+              className={`${styles.doctor} ${doctor.className} ${
+                index === activeDoctorIndex ? styles.activeDoctor : ""
+              }`}
+              key={doctor.name}
+            >
+              <img
+                className={styles.doctorPhoto}
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/${doctor.image}`}
+                alt={doctor.name}
+              />
+
               <div className={styles.doctorInfo}>
                 <div className={styles.doctorText}>
                   <h3>{doctor.name}</h3>
                   <p className={styles.subtitle}>{doctor.subtitle}</p>
                   <p className={styles.education}>{doctor.education}</p>
                 </div>
-                <Link className={styles.arrowLink} href={`/${locale}/our-team`} aria-label={doctor.name}>
-                  <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-yellow-left.svg`} alt="" />
+
+                <Link
+                  className={styles.arrowLink}
+                  href={`/${locale}/our-team`}
+                  aria-label={doctor.name}
+                >
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-yellow-left.svg`}
+                    alt=""
+                  />
                 </Link>
               </div>
             </article>
           ))}
+
+          <button
+            type="button"
+            className={`${styles.sliderButton} ${styles.nextButton}`}
+            onClick={goToNextDoctor}
+            aria-label={isAr ? "الطبيب التالي" : "Next doctor"}
+          >
+            <img
+              src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-yellow-left.svg`}
+              alt=""
+            />
+          </button>
         </div>
 
-        <ul className={styles.specialties} aria-label={isAr ? "التخصصات" : "Specialties"}>
+        <ul
+          className={styles.specialties}
+          aria-label={isAr ? "التخصصات" : "Specialties"}
+        >
           {specialtyList.map((specialty) => (
             <li className={styles.specialty} key={specialty.label}>
-              <img src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/${specialty.icon}`} alt="" />
+              <img
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/${specialty.icon}`}
+                alt=""
+              />
               <span>{specialty.label}</span>
             </li>
           ))}
