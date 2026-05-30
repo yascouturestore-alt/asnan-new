@@ -179,10 +179,10 @@ export default function Footer({ locale = "en" }: FooterProps) {
 
             <div className={styles.storeBadges}>
               <a href="https://play.google.com/store/apps/details?id=com.asnan" target="_blank" rel="noreferrer" aria-label="Google Play">
-                <img src="/images/footer/Asnan-Google-Play.svg" alt="Get it on Google Play" />
+                <img src="/images/footer/play-store-icon.svg" alt="Get it on Google Play" />
               </a>
               <a href="https://apps.apple.com/kw/app/asnan-tower/id1495283859" target="_blank" rel="noreferrer" aria-label="App Store">
-                <img src="/images/footer/Asnan-App-Store.svg" alt="Download on the App Store" />
+                <img src="/images/footer/app-store-icon.svg" alt="Download on the App Store" />
               </a>
             </div>
           </section>

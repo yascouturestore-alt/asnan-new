@@ -603,7 +603,7 @@
   .containerWide,
   .heroInner,
   .worldWrap { width: calc(100% - 28px); }
-  .hero { padding: 112px 0 120px; }
+  .hero { padding: 112px 0 120px; height: 666px;}
   .hero::after { height: 130px; bottom: -60px; }
   .heroContent h1 { font-size: 34px; }
   .heroContent h2 { font-size: 20px; }
@@ -657,4 +657,8 @@
   .galleryCta div { inset: 22% 8% auto 8%; }
   .galleryCta span { font-size: 22px; margin-bottom: 14px; }
   .galleryCta strong { font-size: 45px; line-height: 1.15; }
+
+  .heroVisual{
+    display: none;
+  }
 }

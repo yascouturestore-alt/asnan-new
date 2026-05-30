@@ -1,1 +1,17 @@
 /* No globals needed. Using legacy CSS. */
+.navbar.scrolled .toggle-menu span {
+  background-color: #003b7a !important;
+}
+
+.navbar.scrolled .mobile-request-appointment,
+.navbar.scrolled .desktop-request-appointment,
+.navbar.scrolled .btn-request-appointment {
+  color: #003b7a !important;
+}
+
+.navbar.scrolled .mobile-request-appointment .req-header,
+.navbar.scrolled .mobile-request-appointment .req-footer,
+.navbar.scrolled .btn-request-appointment .req-header,
+.navbar.scrolled .btn-request-appointment .req-footer {
+  color: #003b7a !important;
+}

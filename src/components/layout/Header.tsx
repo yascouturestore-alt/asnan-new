@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
@@ -22,10 +21,28 @@ export default function Header() {
   const requestWords = t.header_request_appointment.split(" ");
   const requestFirst = requestWords[0] || "";
   const requestSecond = requestWords[1] || "";
+const [isScrolled, setIsScrolled] = useState(false);
 
+useEffect(() => {
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 10);
+  };
+
+  handleScroll();
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
   return (
     <header>
-      <nav className="navbar navbar-expand-lg fixed-top">
+      <nav
+  className={`navbar navbar-expand-lg fixed-top ${
+    isScrolled ? "scrolled" : ""
+  }`}
+>
         <div className="container-fluid">
           <Link href={`/${locale}`} className="navbar-brand">
             <img
@@ -66,14 +83,15 @@ export default function Header() {
           </a>
 
           <button
-            className="toggle-menu"
-            type="button"
-            aria-label="Toggle navigation"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <span></span>
-            <span></span>
-          </button>
+  className={`toggle-menu ${isMobileMenuOpen ? "active" : ""}`}
+  type="button"
+  aria-label="Toggle navigation"
+  aria-expanded={isMobileMenuOpen}
+  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+>
+  <span></span>
+  <span></span>
+</button>
 
           <div
             className={`collapse navbar-collapse ${
