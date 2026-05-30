@@ -255,3 +255,170 @@
     gap: 20px;
   }
 }
+/* Figma-matched Kids welcome section */
+.welcome {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: clamp(96px, 7.3vw, 140px) 0 clamp(72px, 6vw, 116px);
+  overflow: hidden;
+}
+
+.welcomeInner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(420px, 792px) minmax(420px, 805px);
+  align-items: center;
+  gap: clamp(44px, 5vw, 86px);
+  width: min(82.917vw, 1592px);
+  margin: 0 auto;
+  direction: ltr;
+}
+
+.welcomeImage {
+  grid-column: 1;
+  position: relative;
+  align-self: end;
+}
+
+.welcomeImage img {
+  display: block;
+  width: min(41.25vw, 792px);
+  max-width: 100%;
+  height: auto;
+  transform: scaleX(-1);
+}
+
+.welcomeContent {
+  grid-column: 2;
+  max-width: 805px;
+  text-align: right;
+  direction: rtl;
+}
+
+.welcomeTitle {
+  margin: 0 0 30px;
+  color: #051a53;
+  font-family: Almarai, Tajawal, Arial, sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 60px;
+  letter-spacing: 0;
+}
+
+.welcomeTitle span {
+  display: block;
+}
+
+.welcomeTitle strong {
+  color: #ffc936;
+  font-weight: 800;
+}
+
+.welcomeText {
+  display: grid;
+  gap: 20px;
+  color: #50595c;
+  font-family: Almarai, Tajawal, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.welcomeText p {
+  margin: 0;
+}
+
+.treatmentsHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 60px;
+  width: min(82.917vw, 1592px);
+  margin: clamp(92px, 8.8vw, 170px) auto clamp(56px, 4.6vw, 88px);
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  direction: rtl;
+}
+
+.treatmentsText {
+  order: 1;
+  max-width: 730px;
+  text-align: right;
+}
+
+.treatmentsText h2 {
+  margin: 0 0 0;
+  color: #051a53;
+  font-family: Tajawal, Almarai, Arial, sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 87px;
+}
+
+.treatmentsText p {
+  margin: 0;
+  color: #50595c;
+  font-family: Almarai, Tajawal, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 29px;
+}
+
+.treatmentsIcon {
+  order: 2;
+  width: 253px;
+  min-width: 253px;
+}
+
+.treatmentsIcon img {
+  display: block;
+  width: 253px;
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  .welcomeInner {
+    display: flex;
+    flex-direction: column-reverse;
+    width: min(620px, calc(100% - 32px));
+    gap: 40px;
+  }
+
+  .welcomeImage img {
+    width: 100%;
+  }
+
+  .welcomeContent {
+    max-width: none;
+    text-align: right;
+  }
+
+  .welcomeTitle {
+    font-size: clamp(30px, 7vw, 40px);
+    line-height: 1.25;
+  }
+
+  .treatmentsHeader {
+    width: min(620px, calc(100% - 32px));
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 24px;
+    margin: 80px auto 48px;
+  }
+
+  .treatmentsIcon,
+  .treatmentsIcon img {
+    width: 150px;
+    min-width: 150px;
+  }
+
+  .treatmentsText h2 {
+    font-size: 36px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+}

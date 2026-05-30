@@ -59,7 +59,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(38px, 4.2vw, 80px);
+  /* margin-top: clamp(38px, 4.2vw, 80px); */
   text-align: center;
 }
 
@@ -466,7 +466,7 @@
 
   .benefitsSection {
     min-height: auto;
-    margin-top: -28px;
+    /* margin-top: -28px; */
   }
 
   .benefitsBg::before,
@@ -477,8 +477,8 @@
   }
 
   .benefitsInner {
-    width: 100%;
-    padding: 210px 0 220px;
+    /* width: 100%; */
+    padding: 230px 0;
   }
 
   .videoCard {
@@ -542,7 +542,7 @@
   }
 
   .benefitsInner {
-    padding: 160px 0 180px;
+    /* padding: 160px 0 180px; */
   }
 
   .lifeSection {
@@ -558,4 +558,68 @@
     width: calc(100% - 30px);
     padding: 70px 0;
   }
+}
+
+
+/* --------------------------------------
+   Call Buttons Styling
+-------------------------------------- */
+.call-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.call-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 38px;
+    padding: 10px;
+    transition: box-shadow 0.4s ease-in-out;
+    background-color: #F0F0F0;
+    color: black;
+    cursor: pointer;
+    width: 345px;
+}
+
+.call-btn:hover {
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 5.2px;
+}
+
+.call-btn-icon {
+    margin-left: 0.5vw;
+}
+
+.call-btn-icon img {
+    height: 50px;
+    width: 70px;
+}
+
+.call-btn-txt p,
+.call-btn-txt a {
+    margin: 0;
+    text-align: right;
+}
+
+.call-desc {
+        font-size: 16px !important;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+.call-btn-container .phone-link {
+        font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+    white-space: nowrap;
+    line-height: 36px;
+}
+
+.call-btn-container .phone-link span {
+    color: var(--color-secondary);
 }

@@ -32,6 +32,7 @@
   overflow: hidden;
   isolation: isolate;
   color: #fff;
+        z-index: 3;
 }
 
 .heroBg {
@@ -172,8 +173,9 @@
 }
 
 .jobCard {
-        display: flex;
-    justify-content: space-between;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   min-height: 173px;
   height: 173px;
@@ -351,6 +353,7 @@
   justify-content: center;
   gap: 22px;
   text-align: center;
+        margin-left: -20px;
 }
 
 .rtl .applyButton,

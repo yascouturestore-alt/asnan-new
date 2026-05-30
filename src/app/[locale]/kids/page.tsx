@@ -5,6 +5,8 @@ import { getDictionary } from '@/dictionaries';
 import KidsFeatureSection from "@/components/kids/KidsFeatureSection";
 import KidsCharactersTabsSection from "@/components/kids/KidsCharactersTabsSection";
 import KidsWaveFeatureSection from "@/components/kids/KidsWaveFeatureSection";
+import styles from "./KidsPage.module.css";
+import AppointmentSection from '@/components/home/AppointmentSection';
 
 const copy = {
   ar: {
@@ -259,24 +261,46 @@ export default function KidsPage() {
       </div>
 
       {/* Welcome Kids */}
-      <div className="welcome-kids py-5" >
-        <div className="container-fluid">
-          <div className="row align-items-center">
-            <div className="col-12 col-lg-6 mb-4 mb-lg-0">
-              <h3 className="welcome-kids-title h2 mb-4">
-                {locale === 'ar' ? "مرحبا بكم في" : "Welcome To"}
-                <span className="text-secondary"> {locale === 'ar' ? "اسنان كيدز" : "Asnan Kids"}</span>
-              </h3>
-              <p className="welcome-kids-text text-muted lead">
-                {locale === 'ar' ? "تقدم عيادة أسنان تاور في الكويت رعاية أسنان عالية الجودة وشاملة للرضع والأطفال." : "Asnan Tower in Kuwait provides high-quality and comprehensive dental care for infants and children."}
-              </p>
-            </div>
-            <div className="col-12 col-lg-6 text-center">
-              <img src="/images/Kids/kids-charcters-02.png" alt="kids characters" className="img-fluid" />
+      <section className={styles.welcome} dir={isAr ? "rtl" : "ltr"}>
+        <div className={styles.welcomeInner}>
+          <div className={styles.welcomeImage}>
+            <img src="/images/Kids/kids-charcters-02.png" alt={isAr ? "شخصيات أسنان كيدز" : "Asnan Kids characters"} />
+          </div>
+
+          <div className={styles.welcomeContent}>
+            <h2 className={styles.welcomeTitle}>
+              {isAr ? (
+                <>
+                  <span>مرحبا بكم</span>
+                  <span>في <strong>اسنان كيدز</strong></span>
+                </>
+              ) : (
+                <>
+                  <span>Welcome To</span>
+                  <span><strong>Asnan Kids</strong></span>
+                </>
+              )}
+            </h2>
+
+            <div className={styles.welcomeText}>
+              {(isAr
+                ? [
+                    "تقدم عيادة أسنان تاور في الكويت رعاية أسنان عالية الجودة وشاملة للرضع والأطفال بما في ذلك ذوي الاحتياجات الخاصة برعاية استشاري أطباء أسنان الأطفال المعتمدون لدينا.",
+                    "تم تصميم أسنان كيدز بطريقة محببة لطفلك تجعله يقضي الوقت داخل العيادة في بيئة مريحة حيث نقدم له كل الرعاية الصحية للفم وذلك للوقاية الأولية من لحظة الولادة و حتى سن المراهقة.",
+                    "الجو الآمن والمريح يجعل زيارة طفلك ممتعة وتعليمية من البداية وحتى النهاية.",
+                  ]
+                : [
+                    "Asnan Tower Clinic in Kuwait provides high-quality, comprehensive dental care for infants and children, including children with special needs, under the care of our certified pediatric dental consultants.",
+                    "Asnan Kids is designed in a child-friendly way, helping your child spend time in a comfortable clinic environment while receiving complete oral healthcare from early prevention through adolescence.",
+                    "The safe and comfortable atmosphere makes your child’s visit enjoyable and educational from beginning to end.",
+                  ]
+              ).map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
 
       {/*KIDS CATEGORIES*/}
@@ -287,25 +311,20 @@ export default function KidsPage() {
 />
 
       {/* Treatments */}
-      <div className="container-fluid py-5">
-        <div className="category-header mb-5">
-          <div className="row justify-content-between align-items-center">
-            <div className="col-12 col-lg-8">
-              <div className="category-block d-flex align-items-center">
-                <div className="category-icon me-4">
-                  <img src="/images/Prevention-icon-3.svg" alt="prevention icon" style={{ width: '60px' }} />
-                </div>
-                <div className="category-info">
-                  <div className="category-title h3">{locale === 'ar' ? "العلاجات" : "Treatments"}</div>
-                  <div className="category-text text-muted">
-                    {locale === 'ar' ? "دع خبراء طب الأسنان لدينا يستعيدون ابتسامتك بأحدث التقنيات." : "Let our dental experts restore your child's smile with the latest techniques."}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <section className={styles.treatmentsHeader} dir={isAr ? "rtl" : "ltr"}>
+        <div className={styles.treatmentsText}>
+          <h2>{isAr ? "العلاجات" : "Treatments"}</h2>
+          <p>
+            {isAr
+              ? "دع خبراء طب الأسنان لدينا يستعيدون ابتسامتك بأحدث التقنيات للأسنان المفقودة أو المتضررة وأمراض اللثة وأي مشاكل تسبب لك الانزعاج أو القلق."
+              : "Let our dental experts restore your child’s smile with modern techniques for missing or damaged teeth, gum concerns, and any problems causing discomfort or anxiety."}
+          </p>
         </div>
-      </div>
+
+        <div className={styles.treatmentsIcon}>
+          <img src="/images/Prevention-icon-3.svg" alt={isAr ? "أيقونة الوقاية" : "Prevention icon"} />
+        </div>
+      </section>
 
       {kidsTreatmentFeatures.map((feature, index) => {
         const shouldBeWave = index % 2 === 0;
@@ -336,6 +355,7 @@ export default function KidsPage() {
           />
         );
       })}
+              <AppointmentSection locale={locale} />
     </>
   );
 }

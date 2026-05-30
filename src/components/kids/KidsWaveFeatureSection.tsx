@@ -4,7 +4,7 @@ import styles from "./KidsWaveFeatureSection.module.css";
 export type KidsWaveFeatureSectionProps = {
   locale: string;
   image: string;
-  icon: string;
+  icon?: string;
   title: string;
   paragraphs: string[];
   imageAlt?: string;
@@ -19,7 +19,7 @@ export default function KidsWaveFeatureSection({
   title,
   paragraphs,
   imageAlt = "",
-  variant = "image-right",
+  variant = "image-left",
   backgroundImage = "/images/why-asnan/bg-wave-grey.svg",
 }: KidsWaveFeatureSectionProps) {
   const isAr = locale === "ar";
@@ -55,14 +55,6 @@ export default function KidsWaveFeatureSection({
               src={image}
               alt={imageAlt}
               sizes="(max-width: 860px) calc(100vw - 32px), 806px"
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
             />
           </div>
         </div>

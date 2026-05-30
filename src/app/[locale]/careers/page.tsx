@@ -260,20 +260,31 @@ export default function CareersPage() {
           <p className={styles.heroEyebrow}>{t.heroEyebrow}</p>
           <h1 id="careers-hero-title">{t.heroTitle}</h1>
           <p className={styles.heroText}>{t.heroText}</p>
-          <a className={styles.callButton} href="tel:+9651896666" aria-label="+965 1896666">
-            <span className={styles.callCopy}>
-              <span>{t.directCall}</span>
-              <strong>
-                <span>965-189</span>
-                <em>6666</em>
-              </strong>
-            </span>
-            <span className={styles.callIcon} aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.7 4.8 9.5 4c.7-.2 1.5.1 1.8.8l1.3 3c.3.7.1 1.5-.5 1.9l-1.6 1.2c1.1 2.2 2.8 3.9 5 5l1.2-1.6c.5-.6 1.3-.8 1.9-.5l3 1.3c.7.3 1 1.1.8 1.8l-.8 2.8c-.2.8-.9 1.3-1.7 1.3C10.6 21 3 13.4 3 4.1c0-.8.5-1.5 1.3-1.7Z" fill="currentColor" />
-              </svg>
-            </span>
-          </a>
+          <div className="col-12 call-btn-container">
+              <a
+                href="tel:+9651896666"
+                target="_blank"
+                rel="noreferrer"
+                className="call-btn phone-btn"
+                id="hero-phone-call-btn"
+              >
+                <div className="call-btn-icon">
+                  <img
+                    src="/images/Icon-phone.svg"
+                    alt="phone icon"
+                    id="phone-icon"
+                    height="50"
+                  />
+                </div>
+
+                <div className="call-btn-txt">
+                  <p className="call-desc">{t.directCall}</p>
+                  <span className="phone-link">
+                    965-189<span>6666</span>
+                  </span>
+                </div>
+              </a>
+            </div>
         </div>
       </section>
 
