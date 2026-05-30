@@ -974,7 +974,7 @@ ul.why-asnan .service-description ul li {
     width: 30px !important;
     min-width: 30px !important;
     height: 30px !important;
-    margin: 0 0 0 6px !important;
+    /* margin: 0 0 0 6px !important; */
     padding: 0 !important;
     opacity: 1 !important;
     object-fit: contain !important;

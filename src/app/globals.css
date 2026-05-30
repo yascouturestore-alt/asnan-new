@@ -7,6 +7,7 @@
 .navbar.scrolled .desktop-request-appointment,
 .navbar.scrolled .btn-request-appointment {
   color: #003b7a !important;
+        max-width: 120px;
 }
 
 .navbar.scrolled .mobile-request-appointment .req-header,
