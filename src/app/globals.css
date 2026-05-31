@@ -6,7 +6,10 @@
   margin: 0 !important;
   border: 0 !important;
   background: transparent !important;
-  display: flex !important;
+
+  /* Desktop par hidden rahega */
+  display: none !important;
+
   align-items: center !important;
   justify-content: center !important;
   line-height: 1 !important;
@@ -35,6 +38,7 @@
 /* Mobile fixed position so icon does not jump */
 @media (max-width: 991.98px) {
   .navbar .toggle-menu {
+    display: flex !important;
     position: absolute !important;
     left: 18px !important;
     right: auto !important;
@@ -71,4 +75,260 @@
 .navbar.menu-open .btn-request-appointment .req-header,
 .navbar.menu-open .btn-request-appointment .req-footer {
   color: #003b7a !important;
+}
+
+/* Hero Direct Call button - make English design same as Arabic */
+html[dir="ltr"] #hero-phone-call-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row-reverse !important;
+  gap: 18px !important;
+
+  width: 430px !important;
+  max-width: 100% !important;
+  min-height: 72px !important;
+  padding: 10px 34px !important;
+
+  background: #ffffff !important;
+  border-radius: 999px !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+
+  position: relative !important;
+  overflow: visible !important;
+  direction: ltr !important;
+}
+
+/* Remove old English floating icon position */
+html[dir="ltr"] #hero-phone-call-btn .call-btn-icon {
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+
+  width: 62px !important;
+  height: 62px !important;
+  min-width: 62px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+html[dir="ltr"] #hero-phone-call-btn .call-btn-icon img {
+  width: 52px !important;
+  height: 52px !important;
+  max-width: 52px !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* Text area same like Arabic button */
+html[dir="ltr"] #hero-phone-call-btn .call-btn-txt {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+  direction: ltr !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.1 !important;
+}
+
+html[dir="ltr"] #hero-phone-call-btn .call-desc {
+  margin: 0 0 4px 0 !important;
+  padding: 0 !important;
+
+  color: #243746 !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+}
+
+html[dir="ltr"] #hero-phone-call-btn .phone-link {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #2797e6 !important;
+  font-size: 31px !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0 !important;
+}
+
+html[dir="ltr"] #hero-phone-call-btn .phone-link span {
+  color: #f5c62e !important;
+}
+
+/* Center the button properly */
+html[dir="ltr"] .call-btn-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Mobile adjustment */
+@media (max-width: 575.98px) {
+  html[dir="ltr"] #hero-phone-call-btn {
+    width: 330px !important;
+    min-height: 62px !important;
+    padding: 8px 22px !important;
+    gap: 12px !important;
+  }
+
+  html[dir="ltr"] #hero-phone-call-btn .call-btn-icon {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+  }
+
+  html[dir="ltr"] #hero-phone-call-btn .call-btn-icon img {
+    width: 44px !important;
+    height: 44px !important;
+    max-width: 44px !important;
+  }
+
+  html[dir="ltr"] #hero-phone-call-btn .call-desc {
+    font-size: 14px !important;
+  }
+
+  html[dir="ltr"] #hero-phone-call-btn .phone-link {
+    font-size: 24px !important;
+  }
+}
+
+/* Welcome Read More button
+   btn/btn-primary classes removed from JSX to stop old style.min.css pseudo button layer. */
+.welcome-read-more,
+.welcome-read-more:visited {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 145px !important;
+  height: 48px !important;
+  padding: 0 28px !important;
+  margin-top: 10px !important;
+  background: #2f91ee !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.welcome-read-more::before,
+.welcome-read-more::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* .welcome-read-more:hover,
+.welcome-read-more:focus,
+.welcome-read-more:active {
+  background: #1976d2 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+} */
+
+@media (max-width: 575.98px) {
+  .welcome-read-more,
+  .welcome-read-more:visited {
+    min-width: 145px !important;
+    height: 46px !important;
+    padding: 0 26px !important;
+    font-size: 15px !important;
+  }
+}
+
+/* Welcome section Read More dynamic height fix */
+.welcome-wrapper {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+.welcome-wrapper .container-fluid,
+.welcome-wrapper .row,
+.welcome-wrapper [class*="col-"] {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+.welcome-wrapper .welcome-text,
+.welcome-wrapper .more-text,
+.welcome-wrapper .full {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* After Read More click */
+.welcome-wrapper.welcome-expanded {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;    
+  padding-top: clamp(80px, 9vw, 180px) !important;
+  padding-bottom: clamp(80px, 9vw, 180px) !important;
+  margin-bottom: clamp(35px, 5vw, 90px) !important;
+}
+
+.welcome-wrapper.welcome-expanded .row {
+  align-items: center !important;
+}
+
+.welcome-wrapper.welcome-expanded .col-12.col-lg-6:first-child {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+.welcome-wrapper.welcome-expanded .welcome-img {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Gallery/next section should not overlap expanded welcome text */
+.welcome-wrapper.welcome-expanded + .gallery-wrapper,
+.welcome-wrapper.welcome-expanded + .home-figma-gallery {
+  clear: both !important;
+  margin-top: 0 !important;
+}
+
+/* Mobile/tablet safety */
+@media (max-width: 991.98px) {
+  .welcome-wrapper.welcome-expanded {
+        padding: 0 !important;
+    margin-bottom: 35px !important;
+  }
+
+  .welcome-wrapper.welcome-expanded .row {
+    align-items: flex-start !important;
+  }
 }

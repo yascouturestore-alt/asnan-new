@@ -247,10 +247,10 @@
 }
 
 .readMore img {
-  order: 2;
-  width: 36px;
-  height: 36px;
-  flex: 0 0 36px;
+      flex: 0 0 32px;
+    order: 2;
+    width: 32px;
+    height: 32px;
 }
 
 .ltr .readMore {
@@ -295,7 +295,7 @@
 }
 
 /* Mobile */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .panel {
     min-height: auto;
     border-top-right-radius: 130px;
@@ -304,11 +304,11 @@
 
   .inner {
     width: calc(100% - 32px);
-    padding: 42px 0 48px;
+    padding: 30px 0 34px;
   }
 
   .title {
-    font-size: 25px;
+    font-size: 22px;
     line-height: 1.18;
   }
 
@@ -332,14 +332,14 @@
   }
 
   .control {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin-top: 2px;
   }
 
   .control img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
 
   .testimonialRow .control:first-child {
@@ -357,7 +357,7 @@
 
   .cardFrame {
   grid-area: card;
-  width: 100%;
+  /* width: 100%; */
   height: auto;
   min-height: 0;
   overflow: visible;
@@ -387,7 +387,7 @@
 
   .quoteText {
     max-width: 100%;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.45;
   }
 
@@ -396,7 +396,11 @@
   }
 
   .readMore {
-    margin-top: 20px;
+            margin-top: 20px;
+        min-width: 105px;
+        font-size: 12px;
+        height: 40px;
+        padding: 0 3px 0 0;
   }
 
   .slideNext {

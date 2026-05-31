@@ -80,8 +80,7 @@
   border: 0;
   background: transparent;
   color: #051a53;
-  font: inherit;
-  font-size: clamp(16px, 1vw, 20px);
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.25;
   outline: none;
@@ -310,7 +309,10 @@
   }
 
   .locationColumn {
-    width: min(520px, 100%);
+           width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
   }
 }
 
@@ -332,7 +334,7 @@
 
   .title {
     margin-bottom: 26px;
-        font-size: 34px;
+        font-size: 32px;
         line-height: 36px;
   }
 
@@ -342,12 +344,12 @@
   }
 
   .field {
-    min-height: 54px;
+    min-height: 48px;
     margin-bottom: 16px;
   }
 
   .field input {
-    height: 54px;
+    height: 48px;
     padding: 0 18px;
   }
 
@@ -373,7 +375,7 @@
 
   .submitButton {
     width: 100%;
-    height: 54px;
+    height: 48px;
   }
 
   .formFooter p {
@@ -388,13 +390,13 @@
   }
 
   .address {
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
     line-height: 32px;
   }
 
   .directionsButton {
-    min-height: 54px;
+    min-height: 48px;
     padding: 0 22px;
     font-size: 15px;
   }

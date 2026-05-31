@@ -355,9 +355,9 @@ ul.why-asnan .service-description p,
 ul.why-asnan .service-description ul li {
   position: relative;
   font-weight: 300;
-  font-size: 1vw;
+  font-size: 18px;
   letter-spacing: -0.08em;
-  line-height: 1.771vw;
+  line-height: 22px;
   margin-bottom: 0.521vw;
   color: #50595c;
   display: block;
@@ -558,8 +558,8 @@ ul.why-asnan .service-description ul li {
   ul.why-asnan li.service-item .service-info .service-description,
   ul.why-asnan li.service-item .service-info .service-description p,
   ul.why-asnan li.service-item .service-info .service-description ul li {
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 24px;
     margin-bottom: 20px;
   }
   ul.why-asnan li.service-item .service-info .service-description ul li {
@@ -925,18 +925,18 @@ ul.why-asnan .service-description ul li {
     justify-content: center !important;
     flex-direction: row-reverse !important;
     gap: 4px !important;
-    width: auto !important;
-    min-width: 130px !important;
-    max-width: 130px !important;
+    /* width: auto !important; */
+    /* min-width: 130px !important; */
+    /* max-width: 130px !important; */
     height: 40px !important;
     min-height: 40px !important;
     max-height: 40px !important;
-    padding: 0 12px !important;
+    padding: 0 !important;
     margin: 0 !important;
     border: 0 !important;
-    border-radius: 24px !important;
-    background: rgba(255, 255, 255, 0.19) !important;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16) !important;
+    /* border-radius: 24px !important; */
+    /* background: rgba(255, 255, 255, 0.19) !important; */
+    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16) !important; */
     color: #ffffff !important;
     font-family: Tajawal, Almarai, Arial, sans-serif !important;
     font-size: 13px !important;

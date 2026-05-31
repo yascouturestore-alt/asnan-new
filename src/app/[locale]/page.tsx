@@ -67,15 +67,18 @@ export default function Home() {
           }
         });
 
-        // Read more toggle
-        $('.read-more').off('click').on('click', function (this: any, event: any) {
-          event.preventDefault();
-          $(this).prev('.more-text').toggle();
-          if ($(this).prev('.more-text').is(':visible')) {
-            $('.limited').hide();
-            $(this).hide();
-          }
-        });
+// Read more toggle - Welcome section height fix
+$('.read-more').off('click').on('click', function (this: any, event: any) {
+  event.preventDefault();
+
+  const $welcomeWrapper = $(this).closest('.welcome-wrapper');
+
+  $welcomeWrapper.addClass('welcome-expanded');
+  $welcomeWrapper.find('.more-text').show();
+  $welcomeWrapper.find('.limited').hide();
+
+  $(this).hide();
+});
 
         // Initialize Owl Carousel for World of Beauty
         if ($.fn.owlCarousel) {
@@ -174,7 +177,7 @@ export default function Home() {
         }
         .home-figma-gallery .nav-tabs .nav-link.active:after,
         .home-figma-gallery .nav-tabs.show .nav-link:after {
-            width: 112%;
+            width: 100%;
         }
         .home-figma-gallery .figma-celeb-gallery {
             position: relative;
@@ -339,7 +342,16 @@ export default function Home() {
             font-weight: 800;
             line-height: 1.05;
             letter-spacing: 0 !important;
-                text-align: left;
+                 text-align: start;
+        }
+        @media screen and (max-width: 1024px) {
+            .home-figma-gallery:before {
+            height: 40vw;
+            }
+            
+        .home-figma-gallery .figma-cta-large {
+        font-size: 60px;
+        }
         }
         @media screen and (max-width: 991px) {
             .home-figma-gallery {
@@ -347,12 +359,13 @@ export default function Home() {
             }
             .home-figma-gallery:before {
                 top: 0;
-                height: 220px;
+                height: 40vw;
                 background-size: cover;
                 background-position: top;
             }
             .home-figma-gallery .change-lives {
                 padding-top: 48px;
+                font-size: 32px;
             }
             .home-figma-gallery .nav-tabs {
                 margin: 18px auto 36px;
@@ -360,6 +373,8 @@ export default function Home() {
             .home-figma-gallery .nav-tabs .nav-link {
                 padding-bottom: 8px;
                 margin: 0 14px;
+    font-size: 18px;
+    line-height: 28px;
             }
             .home-figma-gallery .nav-tabs .nav-link:after {
                 height: 3px;
@@ -490,8 +505,8 @@ export default function Home() {
       {/* Hero */}
       <div className="hero-wrapper hero-home">
         <div className="container-fluid">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-12 mb-2">
+          <div className="row justify-content-center mt-4">
+            <div className="col-12 col-lg-12 mb-4">
               <h1 className="hero-title">
                 {t.we_change_lives_quote_p1}<br />
                 {t.we_change_lives_quote_p2}
@@ -532,7 +547,7 @@ export default function Home() {
               <p className="welcome-text limited m-0">{t.welcome_para_short3}</p>
               <p className="welcome-text limited">{t.welcome_para_short4}</p>
               <p className="welcome-text more-text full" style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: t.welcome_para.replace(/\n/g, '<br />') }}></p>
-              <a href="#" className="btn btn-primary mt-3 read-more">{t.read_more}</a>
+              <a href="#" className="read-more welcome-read-more">{t.read_more}</a>
             </div>
             <div className="col-12 col-lg-6">
               <div className="welcome-img">
@@ -768,7 +783,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="row">
+          <div className="row px-lg-4">
             <div className="col-12 col-lg-4">
               <div className="before-after-wrapper">
                 <div className="before-after-img">

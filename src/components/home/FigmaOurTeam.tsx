@@ -92,14 +92,37 @@ export default function FigmaOurTeam({ locale }: FigmaOurTeamProps) {
 
   const [activeDoctorIndex, setActiveDoctorIndex] = useState(0);
   const totalDoctors = doctorList.length;
+  const secondVisibleDoctorIndex = (activeDoctorIndex + 1) % totalDoctors;
 
-  const goToPrevDoctor = () => {
-    setActiveDoctorIndex((prev) => (prev === 0 ? totalDoctors - 1 : prev - 1));
-  };
+  const getDoctorSlideStep = () => {
+  if (typeof window === "undefined") return 1;
 
-  const goToNextDoctor = () => {
-    setActiveDoctorIndex((prev) => (prev === totalDoctors - 1 ? 0 : prev + 1));
-  };
+  const width = window.innerWidth;
+
+  // 521px to 757px par 2 doctors ek sath change honge
+  if (width >= 521 && width <= 757) {
+    return 2;
+  }
+
+  // 520px se neeche old mobile behavior same rahega: 1 doctor change hoga
+  return 1;
+};
+
+const goToPrevDoctor = () => {
+  const step = getDoctorSlideStep();
+
+  setActiveDoctorIndex((prev) => {
+    return (prev - step + totalDoctors) % totalDoctors;
+  });
+};
+
+const goToNextDoctor = () => {
+  const step = getDoctorSlideStep();
+
+  setActiveDoctorIndex((prev) => {
+    return (prev + step) % totalDoctors;
+  });
+};
 
   return (
     <section
@@ -144,7 +167,7 @@ export default function FigmaOurTeam({ locale }: FigmaOurTeamProps) {
             aria-label={isAr ? "الطبيب السابق" : "Previous doctor"}
           >
             <img
-              src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-yellow-left.svg`}
+              src="/images/next-arrow.svg"
               alt=""
             />
           </button>
@@ -152,8 +175,12 @@ export default function FigmaOurTeam({ locale }: FigmaOurTeamProps) {
           {doctorList.map((doctor, index) => (
             <article
               className={`${styles.doctor} ${doctor.className} ${
-                index === activeDoctorIndex ? styles.activeDoctor : ""
-              }`}
+  index === activeDoctorIndex ? styles.activeDoctor : ""
+} ${
+  index === activeDoctorIndex || index === secondVisibleDoctorIndex
+    ? styles.visibleDoctor
+    : ""
+}`}
               key={doctor.name}
             >
               <img
@@ -190,7 +217,7 @@ export default function FigmaOurTeam({ locale }: FigmaOurTeamProps) {
             aria-label={isAr ? "الطبيب التالي" : "Next doctor"}
           >
             <img
-              src={`${process.env.NEXT_PUBLIC_CDN_URL}/home/arrow-yellow-left.svg`}
+              src="/images/home/next-arrow.svg"
               alt=""
             />
           </button>

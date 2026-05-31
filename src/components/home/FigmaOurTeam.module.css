@@ -65,7 +65,7 @@
   position: absolute;
   top: clamp(88px, 7.55vw, 145px);
   left: 50%;
-  z-index: 3;
+  z-index: -1;
   width: 100%;
   transform: translateX(-50%);
   background: linear-gradient(
@@ -533,10 +533,12 @@
   }
 
   .sliderButton img {
-    width: 42px;
-    height: 42px;
+            width: 24px;
+        height: 24px;
     display: block;
     object-fit: contain;
+    filter: brightness(0) invert(70%);
+  opacity: 0.75;
   }
 
   .prevButton {
@@ -547,17 +549,25 @@
     right: -7px;
   }
 
-  .nextButton img {
-    transform: scaleX(-1);
-  }
+  /* Mobile team slider arrows direction fix */
 
-  .rtl .prevButton img {
-    transform: scaleX(-1);
-  }
+/* English/LTR: left arrow should point left, right arrow should point right */
+.ltr .prevButton img {
+  transform: scaleX(-1);
+}
 
-  .rtl .nextButton img {
-    transform: none;
-  }
+.ltr .nextButton img {
+  transform: none;
+}
+
+/* Arabic/RTL: keep same visual direction as Arabic screenshot */
+.rtl .prevButton img {
+  transform: scaleX(-1);
+}
+
+.rtl .nextButton img {
+  transform: none;
+}
 
   .specialties {
     justify-content: center;
@@ -576,5 +586,157 @@
 
   .ctaWrap {
     margin-top: 34px;
+  }
+}
+
+/* Tablet/mobile team slider fix: 521px to 757px
+   Is range me 2 doctors show honge, horizontal scroller nahi ayega.
+   520px se neeche existing 1 doctor mobile slider same rahega. */
+@media (min-width: 521px) and (max-width: 757px) {
+  .inner {
+    width: min(720px, 94vw);
+    padding-top: 86px;
+    padding-bottom: 58px;
+  }
+
+  .headline {
+    top: 90px;
+    left: 50%;
+    width: max-content;
+    max-width: 92vw;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .watermark {
+    top: 112px;
+    font-size: clamp(78px, 15vw, 112px);
+  }
+
+  .doctorsStage {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+    height: 455px !important;
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    padding: 62px 42px 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+  }
+
+  .doctor,
+  .hashem,
+  .khalid,
+  .amna {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    transform: none !important;
+
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .visibleDoctor {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .doctorPhoto {
+    width: min(235px, 38vw) !important;
+    max-height: 330px !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+  }
+
+  .doctorInfo,
+  .ltr .doctorInfo {
+    display: flex !important;
+    align-items: center !important;
+    width: min(265px, 39vw) !important;
+    margin: -34px auto 0 !important;
+    gap: 8px !important;
+  }
+
+  .doctorText h3 {
+    font-size: 15px !important;
+    white-space: normal !important;
+    line-height: 1.15 !important;
+  }
+
+  .subtitle,
+  .education {
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+  }
+
+  .arrowLink {
+    flex: 0 0 36px !important;
+    width: 36px !important;
+    height: 40px !important;
+  }
+
+  .sliderButton {
+    position: absolute !important;
+    top: 50% !important;
+    z-index: 30 !important;
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: translateY(-50%) !important;
+    cursor: pointer !important;
+  }
+
+  .sliderButton img {
+    width: 24px !important;
+    height: 24px !important;
+    display: block !important;
+    object-fit: contain !important;
+    filter: brightness(0) invert(70%) !important;
+    opacity: 0.75 !important;
+  }
+
+  .prevButton {
+    left: 8px !important;
+  }
+
+  .nextButton {
+    right: 8px !important;
+  }
+
+  .ltr .prevButton img,
+  .rtl .prevButton img {
+    transform: scaleX(-1) !important;
+  }
+
+  .ltr .nextButton img,
+  .rtl .nextButton img {
+    transform: none !important;
+  }
+
+  .specialties {
+    justify-content: center !important;
+    gap: 18px 16px !important;
+    margin-top: 34px !important;
+  }
+
+  .specialty span {
+    font-size: 12px !important;
   }
 }

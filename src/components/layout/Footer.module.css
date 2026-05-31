@@ -162,12 +162,12 @@
 }
 
 .phoneArea {
-  display: grid;
-  justify-items: end;
-  gap: 45px;
-  color: #fff;
-  direction: rtl;
-  text-align: right;
+      color: #fff;
+    text-align: start;
+    direction: rtl;
+    justify-items: start;
+    gap: 45px;
+    display: grid;
 }
 
 .phoneNumber {
@@ -324,7 +324,7 @@
 
 @media (max-width: 991px) {
   .footer {
-    padding: 190px 0 42px;
+    padding: 90px 0 42px;
   }
 
   .footer::before {

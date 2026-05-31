@@ -127,11 +127,12 @@ textarea {
 .navbar.scrolled {
   background: #fff;
   box-shadow: 0 2px 3px #ccc;
-  padding: 0.5vw 10vw 0.5vw 0;
+  padding: 0.5vw 7vw 0.5vw 0;
 }
 
 .navbar.scrolled .ul-quick-bt-wrap .phone-link {
   color: #2c8eff !important;
+      font-size: 20px;
 }
 
 .navbar.scrolled .ul-quick-bt-wrap .phone-link span {
@@ -4357,6 +4358,18 @@ footer .copyrights {
   height: 100%;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
+
+@media screen and (max-width: 991px) {
+    .world-beauty-wrapper .world-beauty-title {
+        font-size: 70px;
+    }
+    .caption-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
 @media screen and (max-width: 991px) {
   .navbar .top-content .switch-lang,
   .side-wrapper {
@@ -4374,7 +4387,6 @@ footer .copyrights {
   .departments-tower .departments-tower-text .divider,
   .departments-wrapper .bg-img,
   .floor-wrapper .tower-floors .tower-img,
-  .gallery-row .gallery-column .gallery-item .change-block .change-smile,
   .handpicked-articles-wrapper .handpicked-articles-text,
   .hero-wrapper .bg-img img:first-of-type,
   .hero-wrapper .hero-search .btn,
@@ -4394,6 +4406,7 @@ footer .copyrights {
   .testimonials-block .container-fluid .testimonial-img,
   .world-beauty-slider + .row,
   footer .footer-logo-gray,
+
   ul.departments-list {
     display: none;
   }
@@ -4606,7 +4619,7 @@ footer .copyrights {
     top: 38%;
   }
   .hero-wrapper .hero-title {
-    font-size: 42px !important;
+        font-size: 36px !important;
   }
   .hero-wrapper .hero-title .kids-img {
     height: 4.167vw;
@@ -4637,7 +4650,7 @@ footer .copyrights {
   }
   .welcome-wrapper .welcome-title {
     font-size: 23px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
   .welcome-wrapper .welcome-text {
     font-size: 15px;
@@ -4766,10 +4779,10 @@ footer .copyrights {
     top: 20%;
   }
   .gallery-row .gallery-column .gallery-item .change-block .change-life {
-    font-size: 42px;
+    font-size: 24px;
   }
   .world-beauty-wrapper .world-beauty-title {
-    font-size: 86px;
+    font-size: 56px;
     line-height: 65px;
     margin-bottom: 25px;
   }
@@ -6738,12 +6751,13 @@ footer .copyrights {
     margin: 4.167vw auto 3.646vw;
   }
   .more-smiles-block-responsive .more-smiles-shape-responsive {
-    position: absolute;
-    top: 4vw;
-    left: 12vw;
-    margin: 0 auto;
-    width: 70%;
-    z-index: -1;
+            position: absolute;
+        top: 4vw;
+        left: 12vw;
+        margin: 0 auto;
+        width: 63%;
+        height: 200px;
+        z-index: -1;
   }
   .more-smiles-block-responsive .more-smiles-arrow-responsive {
     display: block;
@@ -7056,16 +7070,16 @@ footer .copyrights {
     left: auto !important;
     z-index: 1060;
     display: none !important;
-    width: 86px !important;
-    min-width: 86px !important;
+    /* width: 86px !important; */
+    /* min-width: 86px !important; */
     height: 44px !important;
     align-items: center;
     justify-content: center;
     gap: 5px;
     padding: 0 8px !important;
-    border: 0 !important;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.16) !important;
+    /* border: 0 !important; */
+    /* border-radius: 999px; */
+    /* background: rgba(255, 255, 255, 0.16) !important; */
     color: #fff !important;
     box-shadow: none !important;
     text-decoration: none !important;
