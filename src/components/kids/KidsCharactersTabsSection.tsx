@@ -75,7 +75,7 @@ const charactersEn: KidsCharacterTab[] = [
   {
     id: "mrs-tooth",
     label: "Mrs. Tooth",
-    image: "https://www.figma.com/api/mcp/asset/d2c45078-dc3f-4d09-b049-58fe4cce07d5",
+    image: "/images/kids/Mrs.Tooth.png",
     imageAlt: "Mrs. Tooth",
     description:
       "I am Mrs. Tooth. I love healthy smiles and remind you to brush, floss, and visit the dentist regularly.",

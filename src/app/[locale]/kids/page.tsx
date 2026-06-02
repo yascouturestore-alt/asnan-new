@@ -1,52 +1,15 @@
 "use client";
-import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
-import { getDictionary } from '@/dictionaries';
 import KidsFeatureSection from "@/components/kids/KidsFeatureSection";
 import KidsCharactersTabsSection from "@/components/kids/KidsCharactersTabsSection";
 import KidsWaveFeatureSection from "@/components/kids/KidsWaveFeatureSection";
 import styles from "./KidsPage.module.css";
 import AppointmentSection from '@/components/home/AppointmentSection';
 
-const copy = {
-  ar: {
-    heroTitle: "اسنانوبيديا",
-    heroCount: "٤٧ مقالة من قبل أسنان تاور",
-    searchPlaceholder: "اكتب هنا على سبيل المثال: كيف أحافظ على صحة أسناني؟",
-    searchBtn: "البحث",
-    articlesTitle: "مقالات مختارة بعناية",
-    articlesSubtitle: "مقالات مفيدة مختارة من قبل أسنان تاور",
-    bookNow: "احجز الآن",
-    learnMore: "تعلم المزيد",
-    categoriesTitle: "المجالات المطلوبة",
-    categoriesSubtitle: "تصفح الفئات المختلفة المتاحة في قاعدة المعرفة.",
-    faqTitle: "أسئلة وأجوبة",
-    faqSubtitle: "إبحث عن إجابة سريعة لمشكلة أو سؤال عن كيفية القيام به.",
-    /* DOM order: index 0 = rightmost in RTL */
-    cats: ["الوقاية", "طوارئ الأسنان", "مشاكل الأسنان", "صحة الفم والجسم", "الأسئلة الأكثر شيوعاً"],
-  },
-  en: {
-    heroTitle: "ASNANOPEDIA",
-    heroCount: "47 articles by Asnan Tower",
-    searchPlaceholder: "Type here e.g: How to keep my teeth healthy?",
-    searchBtn: "Search",
-    articlesTitle: "Carefully Selected Articles",
-    articlesSubtitle: "Useful articles selected by Asnan Tower",
-    bookNow: "Book Now",
-    learnMore: "Learn More",
-    categoriesTitle: "Popular Categories",
-    categoriesSubtitle: "Browse the different categories available in the knowledge base.",
-    faqTitle: "Questions & Answers",
-    faqSubtitle: "Find a quick answer to a problem or question about how to do something.",
-    cats: ["Prevention", "Dental Emergencies", "Dental Problems", "Oral & Body Health", "Most Asked Questions"],
-  },
-};
-
 export default function KidsPage() {
   const params = useParams();
   const locale = (params?.locale as string) || "en";
   const isAr = locale === "ar";
-  const t = isAr ? copy.ar : copy.en;
 
   const kidsTreatmentFeatures = [
     {
@@ -66,7 +29,7 @@ export default function KidsPage() {
           ],
     },
     {
-      image: "https://www.figma.com/api/mcp/asset/42fc0679-c18b-44c2-b9a7-9c054ae84079",
+      image: "/images/Kids/im2.png",
       title: isAr ? "الغاز الضاحك" : "Laughing Gas",
       imageAlt: isAr ? "الغاز الضاحك للأطفال" : "Laughing gas for children",
       paragraphs: isAr
@@ -80,7 +43,7 @@ export default function KidsPage() {
           ],
     },
     {
-      image: "https://www.figma.com/api/mcp/asset/0028a05c-bbc9-4a99-99f9-f6fb33370262",
+      image: "/images/Kids/im3.png",
       title: isAr ? "درهم وقاية خير من قنطار علاج" : "Prevention Is Better Than Cure",
       imageAlt: isAr ? "وقاية أسنان الأطفال" : "Children dental prevention",
       paragraphs: isAr
@@ -96,7 +59,7 @@ export default function KidsPage() {
           ],
     },
     {
-      image: "https://www.figma.com/api/mcp/asset/a20ebcc7-c908-4b53-ab7e-f07efc497d30",
+      image: "/images/Kids/blank.png",
       title: isAr ? "الحشوات الوقائية" : "Preventive Fillings",
       imageAlt: isAr ? "الحشوات الوقائية للأطفال" : "Preventive dental fillings for children",
       paragraphs: isAr
@@ -108,7 +71,7 @@ export default function KidsPage() {
           ],
     },
     {
-      image: "https://www.figma.com/api/mcp/asset/9b7ce0e4-8af0-4df1-a804-0ca746870bcf",
+      image: "/images/Kids/im5.png",
       title: isAr ? "الحشوات التجميلية العلاجية" : "Therapeutic Cosmetic Fillings",
       imageAlt: isAr ? "الحشوات التجميلية العلاجية" : "Therapeutic cosmetic fillings",
       paragraphs: isAr
@@ -120,7 +83,7 @@ export default function KidsPage() {
           ],
     },
     {
-      image: "https://www.figma.com/api/mcp/asset/f349586d-d02a-4827-9251-f0386f4cdeab",
+      image: "/images/Kids/im6.png",
       title: isAr ? "علاج العصب والتلبيس" : "Pulp Treatment and Crowns",
       imageAlt: isAr ? "علاج العصب والتلبيس للأطفال" : "Pulp treatment and crowns for children",
       paragraphs: isAr
@@ -132,7 +95,7 @@ export default function KidsPage() {
           ],
     },
     {
-      image: "https://www.figma.com/api/mcp/asset/b483a8c2-5de4-438b-a43d-dcb582d4252e",
+      image: "/images/Kids/blank.png",
       title: isAr ? "التاج للأسنان اللبنية الخلفية" : "Crowns for Back Baby Teeth",
       imageAlt: isAr ? "التاج للأسنان اللبنية الخلفية" : "Crowns for back baby teeth",
       paragraphs: isAr
@@ -146,7 +109,7 @@ export default function KidsPage() {
           ],
     },
     {
-      image: "https://www.figma.com/api/mcp/asset/a98cdd80-7900-4eb9-9497-370e7f6ffbee",
+      image: "/images/Kids/im8.png",
       title: isAr ? "خلع الاسنان اللبنية" : "Baby Tooth Extraction",
       imageAlt: isAr ? "خلع الأسنان اللبنية" : "Baby tooth extraction",
       paragraphs: isAr
@@ -164,7 +127,7 @@ export default function KidsPage() {
           ],
     },
     {
-      image: "https://www.figma.com/api/mcp/asset/cf4c021b-47d7-4f53-8e39-5cfe4db74891",
+      image: "/images/Kids/im9.png",
       title: isAr ? "التقويم المبكر" : "Early Orthodontics",
       imageAlt: isAr ? "التقويم المبكر للأطفال" : "Early orthodontics for children",
       paragraphs: isAr
@@ -186,7 +149,7 @@ export default function KidsPage() {
           ],
     },
     {
-      image: "https://www.figma.com/api/mcp/asset/5bf861b2-0cef-472a-85fa-42eace1ed80e",
+      image: "/images/Kids/im10.png",
       title: isAr ? "الأجهزة المتحركة لتقويم الأسنان" : "Removable Orthodontic Appliances",
       imageAlt: isAr ? "الأجهزة المتحركة لتقويم الأسنان" : "Removable orthodontic appliances",
       paragraphs: isAr
@@ -210,7 +173,7 @@ export default function KidsPage() {
           ],
     },
     {
-      image: "https://www.figma.com/api/mcp/asset/0fb0a7b3-5a7c-4984-ae19-91205ff81f29",
+      image: "/images/Kids/im11.png",
       title: isAr ? "حافظ المسافة" : "Space Maintainer",
       imageAlt: isAr ? "حافظ المسافة للأطفال" : "Space maintainer for children",
       paragraphs: isAr
@@ -238,17 +201,17 @@ export default function KidsPage() {
             <div className="col-12 col-lg-10">
               <h1 className="hero-title">
                 {locale === 'ar' ? "أسنان" : "Asnan"}
-                <img className="kids-img img-fluid ms-3" src="/images/kids.png" alt="Kids section" style={{ width: '100px' }} />
+                <img className="kids-img img-fluid ms-3" src="/images/kids.png" alt="Kids section" />
               </h1>
             </div>
             <div className="col-12 call-btn-container">
-              <a href="tel:+9651896666" target="_blank" rel="noreferrer" className="call-btn phone-btn">
+              <a href="tel:+9651896666" target="_blank" rel="noreferrer" className={`${styles['call-btn']} ${styles['phone-btn']}`}>
                 <div className="call-btn-icon">
                   <img src="/images/Icon-phone.svg" alt="phone icon" height="50" />
                 </div>
                 <div className="call-btn-txt">
-                  <p className="call-desc">Call</p>
-                  <span className="phone-link">965-189<span>6666</span></span>
+                  <p className={styles.callDesc}>Direct Call</p>
+                  <span className={styles.phoneLink}>965-189<span>6666</span></span>
                 </div>
               </a>
             </div>
@@ -266,7 +229,6 @@ export default function KidsPage() {
           <div className={styles.welcomeImage}>
             <img src="/images/Kids/kids-charcters-02.png" alt={isAr ? "شخصيات أسنان كيدز" : "Asnan Kids characters"} />
           </div>
-
           <div className={styles.welcomeContent}>
             <h2 className={styles.welcomeTitle}>
               {isAr ? (
@@ -312,6 +274,9 @@ export default function KidsPage() {
 
       {/* Treatments */}
       <section className={styles.treatmentsHeader} dir={isAr ? "rtl" : "ltr"}>
+        <div className={styles.treatmentsIcon}>
+          <img src="/images/Prevention-icon-3.svg" alt={isAr ? "أيقونة الوقاية" : "Prevention icon"} />
+        </div>
         <div className={styles.treatmentsText}>
           <h2>{isAr ? "العلاجات" : "Treatments"}</h2>
           <p>
@@ -319,10 +284,6 @@ export default function KidsPage() {
               ? "دع خبراء طب الأسنان لدينا يستعيدون ابتسامتك بأحدث التقنيات للأسنان المفقودة أو المتضررة وأمراض اللثة وأي مشاكل تسبب لك الانزعاج أو القلق."
               : "Let our dental experts restore your child’s smile with modern techniques for missing or damaged teeth, gum concerns, and any problems causing discomfort or anxiety."}
           </p>
-        </div>
-
-        <div className={styles.treatmentsIcon}>
-          <img src="/images/Prevention-icon-3.svg" alt={isAr ? "أيقونة الوقاية" : "Prevention icon"} />
         </div>
       </section>
 
