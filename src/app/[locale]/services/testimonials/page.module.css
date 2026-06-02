@@ -482,14 +482,24 @@
 }
 
 .reviewCards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 1.55vw;
   width: calc(100% - 7vw);
   margin: 0 auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.reviewCards::-webkit-scrollbar {
+  display: none;
 }
 
 .reviewCard {
+  flex: 0 0 calc((100% - 1.55vw * 3) / 4);
+  scroll-snap-align: start;
   min-height: 12.55vw;
   padding: 1vw 1.05vw 1.35vw;
   background: #fff;
@@ -562,11 +572,11 @@
   }
 
   .reviewCards {
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
   .reviewCard {
+    flex: 0 0 calc((100% - 20px) / 2);
     min-height: 180px;
     padding: 18px;
   }
@@ -708,11 +718,15 @@
   }
 
   .reviewCards {
-    grid-template-columns: 1fr;
+    /* flex styling handles the layout */
+  }
+
+  .reviewCard {
+    flex: 0 0 100%;
   }
 
   .reviewCard:nth-child(n + 3) {
-    display: none;
+    display: block;
   }
 }
 

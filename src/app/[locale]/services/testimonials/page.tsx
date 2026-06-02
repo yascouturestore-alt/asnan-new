@@ -116,6 +116,26 @@ export default function TestimonialsPage() {
     ratingCount: isAr ? "٥،٧١٧ تقييم" : "5,717 reviews",
   };
 
+  const reviewsRef = React.useRef<HTMLDivElement>(null);
+
+  const slidePrev = () => {
+    if (reviewsRef.current) {
+      const card = reviewsRef.current.children[0] as HTMLElement;
+      const gap = parseFloat(window.getComputedStyle(reviewsRef.current).gap) || 0;
+      const scrollAmount = card ? card.offsetWidth + gap : 300;
+      reviewsRef.current.scrollBy({ left: isAr ? scrollAmount : -scrollAmount, behavior: "smooth" });
+    }
+  };
+
+  const slideNext = () => {
+    if (reviewsRef.current) {
+      const card = reviewsRef.current.children[0] as HTMLElement;
+      const gap = parseFloat(window.getComputedStyle(reviewsRef.current).gap) || 0;
+      const scrollAmount = card ? card.offsetWidth + gap : 300;
+      reviewsRef.current.scrollBy({ left: isAr ? -scrollAmount : scrollAmount, behavior: "smooth" });
+    }
+  };
+
   const activeCelebrity = celebrityItems[0];
 
   const renderStars = () =>
@@ -846,13 +866,13 @@ export default function TestimonialsPage() {
           </div>
 
           <div className={styles.reviewsWrap}>
-            <button className={`${styles.reviewArrow} ${styles.prevArrow}`} type="button" aria-label="Previous">
+            <button className={`${styles.reviewArrow} ${styles.prevArrow}`} type="button" aria-label="Previous" onClick={slidePrev}>
               <img src="/images/arrow-prev-yellow.svg" alt="" />
             </button>
 
-            <div className={styles.reviewCards}>
-              {reviews.map((review) => (
-                <article key={review.name} className={styles.reviewCard}>
+            <div className={styles.reviewCards} ref={reviewsRef}>
+              {[...reviews, ...reviews, ...reviews].map((review, i) => (
+                <article key={`${review.name}-${i}`} className={styles.reviewCard}>
                   <header>
                     <div>
                       <h3>{review.name}</h3>
@@ -869,7 +889,7 @@ export default function TestimonialsPage() {
               ))}
             </div>
 
-            <button className={`${styles.reviewArrow} ${styles.nextArrow}`} type="button" aria-label="Next">
+            <button className={`${styles.reviewArrow} ${styles.nextArrow}`} type="button" aria-label="Next" onClick={slideNext}>
               <img src="/images/arrow-next-yellow.svg" alt="" />
             </button>
           </div>
