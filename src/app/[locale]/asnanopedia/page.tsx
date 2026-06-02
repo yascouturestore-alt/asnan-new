@@ -1,12 +1,9 @@
 "use client";
-import React from "react";
-import Image from "next/image";
 import { useParams } from "next/navigation";
 import AppointmentSection from "@/components/home/AppointmentSection";
 import SelectedArticlesSection, { SelectedArticle } from "@/components/asnanopedia/SelectedArticlesSection";
 import PopularCategoriesSection, { PopularCategory } from "@/components/asnanopedia/PopularCategoriesSection";
 import FaqSection, { FaqItem } from "@/components/asnanopedia/FaqSection";
-import styles from "./page.module.css";
 import AsnanopediaHeroContent from "@/components/asnanopedia/AsnanopediaHeroContent";
 
 const copy = {
@@ -23,7 +20,6 @@ const copy = {
     categoriesSubtitle: "تصفح الفئات المختلفة المتاحة في قاعدة المعرفة.",
     faqTitle: "أسئلة وأجوبة",
     faqSubtitle: "إبحث عن إجابة سريعة لمشكلة أو سؤال عن كيفية القيام به.",
-    /* DOM order: index 0 = rightmost in RTL */
     cats: ["الوقاية", "طوارئ الأسنان", "مشاكل الأسنان", "صحة الفم والجسم", "الأسئلة الأكثر شيوعاً"],
   },
   en: {
@@ -42,23 +38,6 @@ const copy = {
     cats: ["Prevention", "Dental Emergencies", "Dental Problems", "Oral & Body Health", "Most Asked Questions"],
   },
 };
-
-/* Matches cats array order: Prevention, Emergencies, Problems, Oral&Body, FAQ */
-const categoryIcons = [
-  "/images/Prevention-icon.svg",
-  "/images/Dental-emergencies-icon.svg",
-  "/images/Dental-Problems-icon.svg",
-  "/images/Dental-icon.svg",
-  "/images/FAQ-icon.svg",
-];
-
-const categoryLinks = [
-  "prevention",
-  "dental-emergencies",
-  "dental-problems",
-  "oral-body-health",
-  "faq",
-];
 
 const selectedArticlesAr: SelectedArticle[] = [
   { title: "خيطك للمعركة، ومحاربة التسوس", category: "الوقاية", count: 20, image: "/images/asnanopedia/articles/mouth-thread.png" },
@@ -151,9 +130,9 @@ const categoriesEn: PopularCategory[] = [
     icon: "/images/Dental-icon.svg",
     sideItems: ["Oral & Body Health"],
     articles: [
-      { title: "How to Keep Your Teeth Healthy", count: 2, image: "/images/asnanopedia/popular-categories/articles/healthy-tooth.png" },
-      { title: "Regular Visits to Your Dentist", count: 0, image: "/images/asnanopedia/popular-categories/articles/dentist-visit.png" },
-      { title: "Deep Gum Cleaning", count: 9, image: "/images/asnanopedia/popular-categories/articles/deep-cleaning.png" },
+      { title: "How to Keep Your Teeth Healthy", count: 2, image: "/images/asnanopedia/articles/healthy-tooth.jpg" },
+      { title: "Regular Visits to Your Dentist", count: 0, image: "/images/asnanopedia/articles/dentist-visit.jpg" },
+      { title: "Deep Gum Cleaning", count: 9, image: "/images/asnanopedia/articles/deep-cleaning.jpg" },
     ],
   },
   {
@@ -162,9 +141,9 @@ const categoriesEn: PopularCategory[] = [
     icon: "/images/Dental-emergencies-icon.svg",
     sideItems: ["Dental Emergencies"],
     articles: [
-      { title: "Object Stuck Between Teeth", count: 0, image: "/images/asnanopedia/popular-categories/articles/tooth-particles.png" },
-      { title: "Permanent Tooth Knocked Out", count: 2, image: "/images/asnanopedia/popular-categories/articles/fallen-tooth.png" },
-      { title: "Tooth Pain", count: 2, image: "/images/asnanopedia/popular-categories/articles/toothache.png" },
+      { title: "Object Stuck Between Teeth", count: 0, image: "/images/asnanopedia/articles/tooth-particles.jpg" },
+      { title: "Permanent Tooth Knocked Out", count: 2, image: "/images/asnanopedia/articles/fallen-tooth.jpg" },
+      { title: "Tooth Pain", count: 2, image: "/images/asnanopedia/articles/toothache.jpg" },
     ],
   },
   {
@@ -173,9 +152,9 @@ const categoriesEn: PopularCategory[] = [
     icon: "/images/Dental-Problems-icon.svg",
     sideItems: ["Dental Problems"],
     articles: [
-      { title: "Gum Disease", count: 4, image: "/images/asnanopedia/popular-categories/articles/gum-disease.png" },
-      { title: "Habits That Harm Your Teeth", count: 1, image: "/images/asnanopedia/popular-categories/articles/dental-tools.png" },
-      { title: "Mouth Fungus", count: 31, image: "/images/asnanopedia/popular-categories/articles/mouth-ulcer.png" },
+      { title: "Gum Disease", count: 4, image: "/images/asnanopedia/articles/gum-disease.jpg" },
+      { title: "Habits That Harm Your Teeth", count: 1, image: "/images/asnanopedia/articles/habiits-that-treathen-yout-teeth.jpg" },
+      { title: "Mouth Fungus", count: 31, image: "/images/asnanopedia/articles/oral-fungus.jpg" },
     ],
   },
 ];
