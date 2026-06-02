@@ -14,19 +14,24 @@ export default function TechnologyPage() {
   const t = getDictionary(locale);
   const isAr = locale === "ar";
 
-  const usaGraduateFeature = {
-    title: isAr ? "جهاز الماسح الضوئي (iTero)" : "iTero Digital Scanner",
-    points: isAr
-      ? [
-          "بصمة رقمية دقيقة للأسنان واللثة",
-          "صور ثلاثية الأبعاد فائقة الدقة",
-          "تخطيط للعلاج بدقة عالية",
-        ]
-      : [
-          "Precise digital impressions of teeth and gums",
-          "High-resolution three-dimensional images",
-          "High-precision treatment planning",
-        ],
+  const videoSliderRef = React.useRef<HTMLDivElement>(null);
+
+  const slideVideoPrev = () => {
+    if (videoSliderRef.current) {
+      const card = videoSliderRef.current.children[0] as HTMLElement;
+      const gap = parseFloat(window.getComputedStyle(videoSliderRef.current).gap) || 0;
+      const scrollAmount = card ? card.offsetWidth + gap : 300;
+      videoSliderRef.current.scrollBy({ left: isAr ? scrollAmount : -scrollAmount, behavior: "smooth" });
+    }
+  };
+
+  const slideVideoNext = () => {
+    if (videoSliderRef.current) {
+      const card = videoSliderRef.current.children[0] as HTMLElement;
+      const gap = parseFloat(window.getComputedStyle(videoSliderRef.current).gap) || 0;
+      const scrollAmount = card ? card.offsetWidth + gap : 300;
+      videoSliderRef.current.scrollBy({ left: isAr ? -scrollAmount : scrollAmount, behavior: "smooth" });
+    }
   };
 
   const talentExperienceFeature = {
@@ -192,61 +197,66 @@ export default function TechnologyPage() {
           variant="image-right"
         />
 
-        {/* ── VIDEO SECTION - FIGMA EXACT WITH VIDEO PLAYER ── */}
+        {/* ── VIDEO SECTION ── */}
         <section className={styles.videoSection}>
           <div className={styles.videoOuter}>
             <button
               className={`${styles.videoArrow} ${styles.videoArrowPrev}`}
               type="button"
               aria-label={isAr ? "السابق" : "Previous"}
+              onClick={slideVideoPrev}
             >
               <img src="/images/arrow-prev-yellow.svg" alt="" />
             </button>
 
-            <div className={styles.videoWrapper} data-video-wrapper>
-              <video
-                className={styles.videoPlayer}
-                poster="/images/technology/thumbnail-video.png"
-                controls
-                preload="metadata"
-              >
-                <source
-                  src="/videos/technology/technology-video.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
+            <div className={styles.videoSlider} ref={videoSliderRef}>
+              {[1, 2, 3].map((item) => (
+                <div key={item} className={styles.videoWrapper} data-video-wrapper>
+                  <video
+                    className={styles.videoPlayer}
+                    poster="/images/technology/thumbnail-video.png"
+                    preload="metadata"
+                  >
+                    <source
+                      src="/videos/technology/technology-video.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
 
-              <div className={styles.videoOverlay}></div>
+                  <div className={styles.videoOverlay}></div>
 
-              <button
-                className={styles.playBtn}
-                type="button"
-                aria-label={isAr ? "تشغيل الفيديو" : "Play Video"}
-                onClick={(e) => {
-                  const wrapper = e.currentTarget.closest(
-                    "[data-video-wrapper]"
-                  );
-                  const video = wrapper?.querySelector("video");
+                  <button
+                    className={styles.playBtn}
+                    type="button"
+                    aria-label={isAr ? "تشغيل الفيديو" : "Play Video"}
+                    onClick={(e) => {
+                      const wrapper = e.currentTarget.closest(
+                        "[data-video-wrapper]"
+                      );
+                      const video = wrapper?.querySelector("video");
 
-                  if (video) {
-                    video.play();
-                    wrapper?.classList.add("video-is-playing");
-                  }
-                }}
-              >
-                <img src="/images/play.svg" alt="" />
-              </button>
+                      if (video) {
+                        video.play();
+                        wrapper?.classList.add("video-is-playing");
+                      }
+                    }}
+                  >
+                    <img src="/images/play.svg" alt="" />
+                  </button>
 
-              <div className={styles.videoLabel}>
-                {isAr ? "تشغيل الفيديو" : "Play Video"}
-              </div>
+                  <div className={styles.videoLabel}>
+                    {isAr ? "تشغيل الفيديو" : "Play Video"}
+                  </div>
+                </div>
+              ))}
             </div>
 
             <button
               className={`${styles.videoArrow} ${styles.videoArrowNext}`}
               type="button"
               aria-label={isAr ? "التالي" : "Next"}
+              onClick={slideVideoNext}
             >
               <img src="/images/arrow-next-yellow.svg" alt="" />
             </button>

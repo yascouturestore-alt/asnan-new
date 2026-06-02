@@ -154,14 +154,32 @@
   margin: 0 auto;
 }
 
-.videoWrapper {
+.videoSlider {
   position: relative;
   width: 82.917vw;
   max-width: 1592px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.videoSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.videoWrapper {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: center;
   height: 36.51vw;
   max-height: 701px;
   min-height: 360px;
-  margin: 0 auto;
   overflow: hidden;
   border-radius: 2.604vw;
   background: #000;
