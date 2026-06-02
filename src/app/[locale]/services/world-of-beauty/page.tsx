@@ -33,15 +33,8 @@ type SmileCase = {
 };
 
 const FIGMA_IMAGES = {
-  before1: "https://www.figma.com/api/mcp/asset/6e5dc2eb-45de-4790-bda5-91789fbc3f5b",
-  after1: "https://www.figma.com/api/mcp/asset/8aabc75f-849f-4ac7-84bc-a760a07f6df4",
-
-  drTareq: "https://www.figma.com/api/mcp/asset/f9e123d1-f32a-475b-8185-0bfa4857fe0b",
-  drMohammad: "https://www.figma.com/api/mcp/asset/ba55342b-fded-413a-aaed-f1b82cde9652",
-  drHashem: "https://www.figma.com/api/mcp/asset/9677ee7c-7198-467a-b21b-e7ef6b29f026",
-  drTalal: "https://www.figma.com/api/mcp/asset/11bc9d9d-27a7-4b43-b59a-298aedd84a96",
-  drRuwad: "https://www.figma.com/api/mcp/asset/d5a7fb05-3ae2-48a3-acac-78cb1c77d49d",
-  drIssa: "https://www.figma.com/api/mcp/asset/327296dc-997b-4f98-be25-397e6aa23575",
+  before1: "/images/teeth-img-before.png",
+  after1: "/images/teeth-img-after.png",
 };
 
 const smileImages = {
@@ -82,7 +75,7 @@ const wobCases: SmileCase[] = [
       en: "University of Pittsburgh / United States of America",
     },
     gender: "m",
-    doctorImage: FIGMA_IMAGES.drIssa,
+    doctorImage: "/images/worldofbeauty/drIssa.png",
     smiles: [smileImages.main, smileImages.local2],
   },
   {
@@ -145,7 +138,7 @@ const wobCases: SmileCase[] = [
       en: "Virginia University / United States of America",
     },
     gender: "m",
-    doctorImage: FIGMA_IMAGES.drHashem,
+    doctorImage: "/images/worldofbeauty/drHashem.png",
     smiles: [smileImages.main, smileImages.local2],
   },
   {
@@ -166,7 +159,7 @@ const wobCases: SmileCase[] = [
       en: "Virginia University / United States of America",
     },
     gender: "m",
-    doctorImage: "/images/dr-zainab.png",
+    doctorImage: "/images/worldofbeauty/drZainab.png",
     smiles: [smileImages.main, smileImages.local2],
   },
   {
@@ -187,7 +180,7 @@ const wobCases: SmileCase[] = [
       en: "University of Dundee / United Kingdom",
     },
     gender: "m",
-    doctorImage: FIGMA_IMAGES.drTalal,
+    doctorImage: "/images/worldofbeauty/drTalal.png",
     smiles: [smileImages.local1, smileImages.local3],
   },
   {
@@ -229,7 +222,7 @@ const wobCases: SmileCase[] = [
       en: "Saint Joseph University / Lebanon",
     },
     gender: "f",
-    doctorImage: FIGMA_IMAGES.drRuwad,
+    doctorImage: "/images/worldofbeauty/drRuwad.png",
     smiles: [smileImages.local2, smileImages.local3],
   },
 ];
@@ -253,7 +246,7 @@ const featuredSlides: SmileCase[] = [
       en: "Harvard University / United States of America",
     },
     gender: "m",
-    doctorImage: FIGMA_IMAGES.drTareq,
+    doctorImage: "/images/worldofbeauty/drTareq.png",
     smiles: [smileImages.main],
   },
   {
@@ -274,7 +267,7 @@ const featuredSlides: SmileCase[] = [
       en: "Columbia University / United States of America",
     },
     gender: "m",
-    doctorImage: FIGMA_IMAGES.drMohammad,
+    doctorImage: "/images/worldofbeauty/drMohammad.png",
     smiles: [smileImages.local2],
   },
 ];
@@ -398,12 +391,12 @@ export default function WorldOfBeautyPage() {
                         <div className="before-after-img">
                           <img
                             className="image-before"
-                            src={smile.before}
+                            src="/images/worldofbeauty/before_img_1686637958،Before3.jpg"
                             alt={isAr ? "قبل" : "Before"}
                           />
                           <img
                             className="image-after"
-                            src={smile.after}
+                            src="/images/worldofbeauty/after_img_1686637958،After3.jpg"
                             alt={isAr ? "بعد" : "After"}
                           />
                         </div>
