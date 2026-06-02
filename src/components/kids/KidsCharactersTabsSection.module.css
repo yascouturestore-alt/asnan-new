@@ -20,7 +20,7 @@
 .inner {
   position: relative;
   z-index: 1;
-  width: min(1580px, calc(90% - 80px));
+  width: min(1580px, calc(80% - 80px));
   margin: 0 auto;
 }
 
