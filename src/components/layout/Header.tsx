@@ -233,6 +233,9 @@ export default function Header() {
                           </Link>
                         </li>
                         <li className="service-item">
+                          <div className="service-img">
+                            <img src="/images/Technology.png" alt="" />
+                          </div>
                           <div className="service-info">
                             <div className="service-title">Technology</div>
                           </div>
@@ -244,6 +247,9 @@ export default function Header() {
                           </Link>
                         </li>
                         <li className="service-item">
+                          <div className="service-img">
+                            <img src="/images/Im-new.png" alt="" />
+                          </div>
                           <div className="service-info">
                             <div className="service-title">Im New</div>
                           </div>
@@ -327,6 +333,9 @@ export default function Header() {
                         </li>
 
                         <li className="service-item">
+                          <div className="service-img">
+                            <img src="/images/Technology.png" alt="" />
+                          </div>
                           <div className="service-info">
                             <div className="service-title">Technology</div>
                           </div>
@@ -339,6 +348,9 @@ export default function Header() {
                         </li>
 
                         <li className="service-item">
+                          <div className="service-img">
+                            <img src="/images/Im-new.png" alt="" />
+                          </div>
                           <div className="service-info">
                             <div className="service-title">Im New</div>
                           </div>
