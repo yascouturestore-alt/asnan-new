@@ -24,46 +24,45 @@ export default function Header() {
   const requestWords = t.header_request_appointment.split(" ");
   const requestFirst = requestWords[0] || "";
   const requestSecond = requestWords[1] || "";
-const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-useEffect(() => {
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 10);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+
+    // legacy/bootstrap/jquery classes cleanup
+    if (typeof document !== "undefined") {
+      document.body.classList.remove("menu-open", "overflow-hidden", "modal-open");
+
+      document.querySelector(".side-wrapper")?.classList.remove("active", "show", "open");
+      document.querySelector(".navbar-collapse")?.classList.remove("show");
+      document.querySelector(".toggle-menu")?.classList.remove("active");
+    }
   };
 
-  handleScroll();
-
-  window.addEventListener("scroll", handleScroll, { passive: true });
-
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-}, []);
-
-const closeMobileMenu = () => {
-  setIsMobileMenuOpen(false);
-
-  // legacy/bootstrap/jquery classes cleanup
-  if (typeof document !== "undefined") {
-    document.body.classList.remove("menu-open", "overflow-hidden", "modal-open");
-
-    document.querySelector(".side-wrapper")?.classList.remove("active", "show", "open");
-    document.querySelector(".navbar-collapse")?.classList.remove("show");
-    document.querySelector(".toggle-menu")?.classList.remove("active");
-  }
-};
-
-useEffect(() => {
-  setIsMobileMenuOpen(false);
-}, [pathname]);
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
     <header>
       <nav
-  className={`navbar navbar-expand-lg fixed-top ${
-    isScrolled ? "scrolled" : ""
-  } ${isMobileMenuOpen ? "menu-open" : ""}`}
->
+        className={`navbar navbar-expand-lg fixed-top ${isScrolled ? "scrolled" : ""
+          } ${isMobileMenuOpen ? "menu-open" : ""}`}
+      >
         <div className="container-fluid">
           <Link href={`/${locale}`} className="navbar-brand">
             <img
@@ -104,27 +103,26 @@ useEffect(() => {
           </a>
 
           <button
-  className={`toggle-menu ${isMobileMenuOpen ? "active" : ""}`}
-  type="button"
-  aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
-  aria-expanded={isMobileMenuOpen}
-  onClick={(e) => {
-  e.preventDefault();
-  e.stopPropagation();
-  setIsMobileMenuOpen((prev) => !prev);
-}}
->
-  {isMobileMenuOpen ? (
-    <RxCross2 className="close-icon" />
-  ) : (
-    <RiMenu2Line className="menu-icon" />
-  )}
-</button>
+            className={`toggle-menu ${isMobileMenuOpen ? "active" : ""}`}
+            type="button"
+            aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={isMobileMenuOpen}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsMobileMenuOpen((prev) => !prev);
+            }}
+          >
+            {isMobileMenuOpen ? (
+              <RxCross2 className="close-icon" />
+            ) : (
+              <RiMenu2Line className="menu-icon" />
+            )}
+          </button>
 
           <div
-            className={`collapse navbar-collapse ${
-              isMobileMenuOpen ? "show" : ""
-            }`}
+            className={`collapse navbar-collapse ${isMobileMenuOpen ? "show" : ""
+              }`}
             id="navbarSupportedContent"
           >
             <div className="top-content">
@@ -177,10 +175,88 @@ useEffect(() => {
                   </Link>
                 </li>
 
-                <li className="nav-item">
-                  <Link className="nav-link" href={`/${locale}/why-asnan`}>
+                <li className="nav-item dropdown dropdown-mega">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     {t.header_why_asnan}
-                  </Link>
+                  </a>
+                  <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div className="container-fluid">
+                      <div className="service-header">
+                        <div className="services-title">{t.header_why_asnan}</div>
+                        <p className="services-text">
+                          {t.header_discover_services}
+                        </p>
+                      </div>
+                      <ul className="services-menu">
+                        <li className="service-item">
+                          <div className="service-img">
+                            <img src="/images/Mask%20Group%2052.png" alt="" />
+                          </div>
+                          <div className="service-info">
+                            <div className="service-title">
+                              {t.header_world_of_beauty}
+                            </div>
+                            <div className="service-text">
+                              {t.header_smile_makeovers}
+                            </div>
+                          </div>
+                          <Link
+                            href={`/${locale}/services/world-of-beauty`}
+                            className="service-arrow"
+                          >
+                            <img src="/images/arrow-next2.svg" alt="" />
+                          </Link>
+                        </li>
+                        <li className="service-item">
+                          <div className="service-img">
+                            <img src="/images/Mask%20Group%2051.png" alt="" />
+                          </div>
+                          <div className="service-info">
+                            <div className="service-title">
+                              {t.header_testimonials}
+                            </div>
+                            <div className="service-text">
+                              {t.header_hear_from_patients}
+                            </div>
+                          </div>
+                          <Link
+                            href={`/${locale}/services/testimonials`}
+                            className="service-arrow"
+                          >
+                            <img src="/images/arrow-next1.svg" alt="" />
+                          </Link>
+                        </li>
+                        <li className="service-item">
+                          <div className="service-info">
+                            <div className="service-title">Technology</div>
+                          </div>
+                          <Link
+                            href={`/${locale}/services/technology`}
+                            className="service-arrow"
+                          >
+                            <img src="/images/arrow-next2.svg" alt="" />
+                          </Link>
+                        </li>
+                        <li className="service-item">
+                          <div className="service-info">
+                            <div className="service-title">Im New</div>
+                          </div>
+                          <Link
+                            href={`/${locale}/services/im-new`}
+                            className="service-arrow"
+                          >
+                            <img src="/images/arrow-next1.svg" alt="" />
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </li>
 
                 <li className="nav-item">
@@ -210,26 +286,6 @@ useEffect(() => {
                       </div>
 
                       <ul className="services-menu">
-                        <li className="service-item">
-                          <div className="service-img">
-                            <img src="/images/Asnan-megamenu-pic-6.png" alt="" />
-                          </div>
-                          <div className="service-info">
-                            <div className="service-title">
-                              {t.header_departments}
-                            </div>
-                            <div className="service-text">
-                              {t.header_view_all_departments}
-                            </div>
-                          </div>
-                          <Link
-                            href={`/${locale}/services/departments`}
-                            className="service-arrow"
-                          >
-                            <img src="/images/arrow-next1.svg" alt="" />
-                          </Link>
-                        </li>
-
                         <li className="service-item">
                           <div className="service-img">
                             <img src="/images/Mask%20Group%2052.png" alt="" />
@@ -311,12 +367,6 @@ useEffect(() => {
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" href={`/${locale}/asnan-boutique`}>
-                    {t.header_boutique}
-                  </Link>
-                </li>
-
-                <li className="nav-item">
                   <Link className="nav-link" href={`/${locale}/careers`}>
                     {t.header_careers}
                   </Link>
@@ -342,75 +392,69 @@ useEffect(() => {
         </div>
 
         <a
-  href="#requestAppointment"
-  className="btn btn-secondary desktop-request-appointment"
->
-  {requestFirst}
-</a>
+          href="#requestAppointment"
+          className="btn btn-secondary desktop-request-appointment"
+        >
+          {requestFirst}
+        </a>
       </nav>
 
       <aside className="side-wrapper d-lg-none">
         <div className="container-fluid">
           <ul className="side-menu">
-  <li>
-    <Link onClick={closeMobileMenu} href={`/${locale}`}>
-      {t.header_home}
-    </Link>
-  </li>
+            <li>
+              <Link onClick={closeMobileMenu} href={`/${locale}`}>
+                {t.header_home}
+              </Link>
+            </li>
 
-  <li>
-    <Link onClick={closeMobileMenu} href={`/${locale}/why-asnan`}>
-      {t.header_why_asnan}
-    </Link>
-  </li>
+            <li>
+              <Link onClick={closeMobileMenu} href={`/${locale}/why-asnan`}>
+                {t.header_why_asnan}
+              </Link>
+            </li>
 
-  <li>
-    <Link onClick={closeMobileMenu} href={`/${locale}/asnanopedia`}>
-      {t.header_asnanopedia}
-    </Link>
-  </li>
+            <li>
+              <Link onClick={closeMobileMenu} href={`/${locale}/asnanopedia`}>
+                {t.header_asnanopedia}
+              </Link>
+            </li>
 
-  <li>
-    <Link onClick={closeMobileMenu} href={`/${locale}/services/departments`}>
-      {t.header_departments}
-    </Link>
-  </li>
+            <li>
+              <Link onClick={closeMobileMenu} href={`/${locale}/services/departments`}>
+                {t.header_departments}
+              </Link>
+            </li>
 
-  <li>
-    <Link onClick={closeMobileMenu} href={`/${locale}/our-team`}>
-      {t.header_our_team}
-    </Link>
-  </li>
+            <li>
+              <Link onClick={closeMobileMenu} href={`/${locale}/our-team`}>
+                {t.header_our_team}
+              </Link>
+            </li>
 
-  <li>
-    <Link onClick={closeMobileMenu} href={`/${locale}/kids`}>
-      <img src="/images/kids.png" alt="" />
-    </Link>
-  </li>
+            <li>
+              <Link onClick={closeMobileMenu} href={`/${locale}/kids`}>
+                <img src="/images/kids.png" alt="" />
+              </Link>
+            </li>
+            
+            <li>
+              <Link onClick={closeMobileMenu} href={`/${locale}/careers`}>
+                {t.header_careers}
+              </Link>
+            </li>
 
-  <li>
-    <Link onClick={closeMobileMenu} href={`/${locale}/asnan-boutique`}>
-      {t.header_boutique}
-    </Link>
-  </li>
-
-  <li>
-    <Link onClick={closeMobileMenu} href={`/${locale}/careers`}>
-      {t.header_careers}
-    </Link>
-  </li>
-
-  <li className="switch-lang-menu">
-    <Link onClick={closeMobileMenu} href={`/${otherLocale}`}>
-      {langText}{" "}
-      <img
-        className="flag"
-        src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/${flagSrc}`}
-        alt="Language switch button"
-      />
-    </Link>
-  </li>
-</ul>
+            <li className="switch-lang-menu">
+              <Link onClick={closeMobileMenu} href={`/${otherLocale}`}>
+                {langText}{" "}
+                <img
+                  className="flag"
+                  src={`${process.env.NEXT_PUBLIC_CDN_URL}/header/${flagSrc}`}
+                  alt="Language switch button"
+                />
+              </Link>
+            </li>
+          </ul>
 
           <div className="position-relative d-inline-block">
             <div className="get-touch">{t.header_get_in_touch}</div>

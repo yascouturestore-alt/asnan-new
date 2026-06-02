@@ -38,6 +38,7 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  background: radial-gradient(circle at 30% 50%, #174291 0%, #051a53 100%);
 }
 
 .heroBg::before {
@@ -48,6 +49,7 @@
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% auto;
+  opacity: 0.9;
 }
 
 .heroInner {
@@ -66,14 +68,17 @@
 .heroDoctor {
   position: relative;
   align-self: end;
-  width: min(508px, 100%);
-  height: clamp(520px, 38.54vw, 740px);
-  margin-inline-start: clamp(40px, 7vw, 136px);
+  width: min(550px, 100%);
+  height: clamp(520px, 42vw, 840px);
+  margin-inline-start: clamp(20px, 5vw, 100px);
+  z-index: 1;
 }
 
-.heroDoctor img {
+.doctorPortrait {
   object-fit: contain;
-  object-position: bottom center;
+  object-position: bottom left;
+  mask-image: linear-gradient(to bottom, black 80%, rgba(0, 0, 0, 0.4) 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, rgba(0, 0, 0, 0.4) 92%, transparent 100%);
 }
 
 .heroCopy {
@@ -123,16 +128,30 @@
 .specialtyLine p {
   margin: 0;
   color: #fff;
-  font-size: clamp(14px, 0.94vw, 18px);
+  font-size: clamp(14px, 0.94vw, 20px);
   font-weight: 700;
-  line-height: 1.65;
+  line-height: 1.5;
+  opacity: 0.95;
 }
 
-.specialtyLine img {
-  width: 60px;
-  height: auto;
+.thumbWrapper {
   flex: 0 0 auto;
-  object-fit: contain;
+  width: 72px;
+  height: 64px;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.thumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .whiteButton,

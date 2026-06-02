@@ -38,7 +38,365 @@ type DoctorCopy = {
   lifeTitle: string;
 };
 
-const copy: Record<Locale, DoctorCopy> = {
+
+const DOCTOR_INFO_MAP: Record<string, Record<Locale, Partial<DoctorCopy>>> = {
+  "dr-essa-al-essa": {
+    ar: {
+      doctorName: "د. عيسى العيسى",
+      specialty: "استشاري طب اسنان شامل وتجميل الاسنان، جامعة بتسبرغ / الولايات المتحدة الامريكية",
+      smileMadeBy: "د. عيسى العيسى",
+    },
+    en: {
+      doctorName: "Dr. Essa Al Essa",
+      specialty: "Comprehensive & Cosmetic Dental Consultant, University of Pittsburgh / USA",
+      smileMadeBy: "Dr. Essa Al Essa",
+    },
+  },
+  "dr-mohammed-al-hajji": {
+    ar: {
+      doctorName: "د. محمد الحجي",
+      specialty: "اختصاصي تجميل و طب الأسنان الشامل جامعة كولومبيا / الولايات المتحدة الأمريكية",
+      smileMadeBy: "د. محمد الحجي",
+    },
+    en: {
+      doctorName: "Dr. Mohammed Al-Hajji",
+      specialty: "General & Cosmetic Dentist DDS ,MS, ABGD, Columbia University, New York / USA",
+      smileMadeBy: "Dr. Mohammed Al-Hajji",
+    },
+  },
+  "dr-amina-al-jassem": {
+    ar: {
+      doctorName: "د. أمينة الجاسم",
+      specialty: "اختصاصي طب الأسنان الشامل المتقدم وتجميل الأسنان، كلية الجراحيين الملكية في إيرلندا.",
+      smileMadeBy: "د. أمينة الجاسم",
+    },
+    en: {
+      doctorName: "Dr. Amina Al-Jassem",
+      specialty: "Comprehensive & Cosmetic Dentist, Royal college of surgeons / Ireland",
+      smileMadeBy: "Dr. Amina Al-Jassem",
+    },
+  },
+  "dr-tareq-burezq": {
+    ar: {
+      doctorName: "د. طارق بــورزق",
+      specialty: "استشـــاري تركيبات وتجميـل وزراعـة أسنـان، جامعة هارفارد / الولايات المتحـدة الأمريكية.",
+      smileMadeBy: "د. طارق بــورزق",
+    },
+    en: {
+      doctorName: "Dr. Tareq Burezq",
+      specialty: "Prosthodontist Consultant, Harvard University / USA",
+      smileMadeBy: "Dr. Tareq Burezq",
+    },
+  },
+  "dr-amna-al-mutawaa": {
+    ar: {
+      doctorName: "د. امنه المطوع",
+      specialty: "أخصائية تقويم الاسنان والفكين، كلية لندن الجامعية",
+      smileMadeBy: "د. امنه المطوع",
+    },
+    en: {
+      doctorName: "Dr. Amna Al Mutawaa",
+      specialty: "Orthodontist Consultant, Kings College / London",
+      smileMadeBy: "Dr. Amna Al Mutawaa",
+    },
+  },
+  "dr-talal-al-reyahi": {
+    ar: {
+      doctorName: "د. طلال الرياحي",
+      specialty: "طــب الاسنــــان التحفظي و تجميــل اسنــــان، جامعة دانـــــدي / المملكــــة المتحــــدة.",
+      smileMadeBy: "د. طلال الرياحي",
+    },
+    en: {
+      doctorName: "Dr. Talal Al-Reyahi",
+      specialty: "Comprehensive & Cosmetic Dentist, University of Dundee / UK",
+      smileMadeBy: "Dr. Talal Al-Reyahi",
+    },
+  },
+  "dr-hashem-ghadanfari": {
+    ar: {
+      doctorName: "د. هاشم غضنفري",
+      specialty: "اختصاصي طب أسنان شامل و تجميل أسنان، جامعة فيرجينيا / الولايات المتحدة الأمريكية.",
+      smileMadeBy: "د. هاشم غضنفري",
+    },
+    en: {
+      doctorName: "Dr. Hashem Ghadanfari",
+      specialty: "Comprehensive & Cosmetic Dentist, Virginia Commonwealth University / USA",
+      smileMadeBy: "Dr. Hashem Ghadanfari",
+    },
+  },
+  "dr-khaled-al-khayat": {
+    ar: {
+      doctorName: "د. خالد الخياط",
+      specialty: "استشـــــاري تقويم الاسنان، جامعة بافلو نيويـورك / الولايـات المتحـدة امريكية.",
+      smileMadeBy: "د. خالد الخياط",
+    },
+    en: {
+      doctorName: "Dr. Khaled Al-Khayat",
+      specialty: "Orthodontics Consultant, University of New York at Buffalo / USA",
+      smileMadeBy: "Dr. Khaled Al-Khayat",
+    },
+  },
+  "dr-moayad-al-omar": {
+    ar: {
+      doctorName: "د. مؤيد العمر",
+      specialty: "اختصاصي علاج عصب وأقنية، جامعة الينوي / الولايات المتحدة امريكية.",
+      smileMadeBy: "د. مؤيد العمر",
+    },
+    en: {
+      doctorName: "Dr. Moayad Al-Omar",
+      specialty: "Specialist Endodontist, University of Illinois / USA",
+      smileMadeBy: "Dr. Moayad Al-Omar",
+    },
+  },
+  "dr-yahya-al-yahya": {
+    ar: {
+      doctorName: "د. يحيى اليحيى",
+      specialty: "اخصائي جراحة الفم و الوجه والفكين، جامعة تكساس هيوستن / الولايات المتحدة الأمريكية.",
+      smileMadeBy: "د. يحيى اليحيى",
+    },
+    en: {
+      doctorName: "Dr. Yahya Al Yahya",
+      specialty: "Oral and Maxillofacial Surgeon Specialist, Virginia Commonwealth University / USA",
+      smileMadeBy: "Dr. Yahya Al Yahya",
+    },
+  },
+  "dr-bashar-rajab": {
+    ar: {
+      doctorName: "د. بشار رجب",
+      specialty: "استشاري جراحة الوجه والفكين، جامعة فرجينيا / الولايات المتحـدة امريكية.",
+      smileMadeBy: "د. بشار رجب",
+    },
+    en: {
+      doctorName: "Dr. Bashar Rajab",
+      specialty: "Oral and Maxillofacial Surgeon Consultant, Virginia Commonwealth University / USA",
+      smileMadeBy: "Dr. Bashar Rajab",
+    },
+  },
+  "dr-hamoud-al-farsi": {
+    ar: {
+      doctorName: "د. حمود الفارسي",
+      specialty: "اختصاصي تركيبات وتجميل وزراعة الأسنان، جامعة جنوب كاليفورنيا / الولايات المتحدة الامريكية.",
+      smileMadeBy: "د. حمود الفارسي",
+    },
+    en: {
+      doctorName: "Dr. Hamoud Al-Farsi",
+      specialty: "Prosthodontist Specialist, University of Southern California / USA",
+      smileMadeBy: "Dr. Hamoud Al-Farsi",
+    },
+  },
+  "dr-hadi-al-saffar": {
+    ar: {
+      doctorName: "د. هادي الصفار",
+      specialty: "استشاري لثة و زراعة أسنان تجميلية، جـامعة نيويورك / الولايات المتحدة امريكية.",
+      smileMadeBy: "د. هادي الصفار",
+    },
+    en: {
+      doctorName: "Dr. Hadi Al Saffar",
+      specialty: "Periodontist Cosmetic, Implantologist Consultant, University of New York at Buffalo / USA",
+      smileMadeBy: "Dr. Hadi Al Saffar",
+    },
+  },
+  "dr-ali-al-saffar": {
+    ar: {
+      doctorName: "د. علي الصفار",
+      specialty: "استشاري طـب أسنان أطفال، جامعة مينيسوتا / الولايات المتحدة امريكية.",
+      smileMadeBy: "د. علي الصفار",
+    },
+    en: {
+      doctorName: "Dr. Ali Al Saffar",
+      specialty: "Pediatric dentist, University of Minnesota / USA",
+      smileMadeBy: "Dr. Ali Al Saffar",
+    },
+  },
+  "dr-paul-nassar": {
+    ar: {
+      doctorName: "د. بول نصار",
+      specialty: "استشاري تقـويم أسنـان، جامعة باريس / فرنسا.",
+      smileMadeBy: "د. بول نصار",
+    },
+    en: {
+      doctorName: "Dr. Paul Nassar",
+      specialty: "Orthodontics Consultant, University of Paris / France",
+      smileMadeBy: "Dr. Paul Nassar",
+    },
+  },
+  "dr-essa-alrashid": {
+    ar: {
+      doctorName: "د. عيسى الراشد",
+      specialty: "أختصاصي طـب أسنان أطفال، جامعة القاهرة / مصر.",
+      smileMadeBy: "د. عيسى الراشد",
+    },
+    en: {
+      doctorName: "Dr. Essa AlRashid",
+      specialty: "Pediatric Dentist Specialist, Cairo University / Egypt",
+      smileMadeBy: "Dr. Essa AlRashid",
+    },
+  },
+  "dr-ahmad-albuzem": {
+    ar: {
+      doctorName: "د. احمد البزم",
+      specialty: "اخصائي جراحة الفم و الوجه والفكين، جامعة دمشق / سوريا.",
+      smileMadeBy: "د. احمد البزم",
+    },
+    en: {
+      doctorName: "Dr. Ahmad Albuzem",
+      specialty: "Oral and maxillofacial Surgeon, Damascus University / Syria",
+      smileMadeBy: "Dr. Ahmad Albuzem",
+    },
+  },
+  "dr-catherine-raffoul": {
+    ar: {
+      doctorName: "د. كاترين رافول",
+      specialty: "أخصائية صحة الفم والأسنان، جــامعة تورونتـو / كنـدا.",
+      smileMadeBy: "د. كاترين رافول",
+    },
+    en: {
+      doctorName: "Dr. Catherine Raffoul",
+      specialty: "Oral & Dental Hygienist, University of Toronto / Canada",
+      smileMadeBy: "Dr. Catherine Raffoul",
+    },
+  },
+  "dr-fawaz-al-foraih": {
+    ar: {
+      doctorName: "د. فواز الفريح",
+      specialty: "اختصاصي علاج عصب وأقنية، جامعة فرجينيا / الولايات المتحدة الأمريكية.",
+      smileMadeBy: "د. فواز الفريح",
+    },
+    en: {
+      doctorName: "Dr. Fawaz Al-Foraih",
+      specialty: "Specialist Endodontist, Virginia Commonwealth University / USA",
+      smileMadeBy: "Dr. Fawaz Al-Foraih",
+    },
+  },
+  "dr-abdullah-al-qaid": {
+    ar: {
+      doctorName: "د. عبدالله القائد",
+      specialty: "اختصاصي علاج عصب وأقنية جذور، جامعة كنيتكيت - الولايات المتحدة الامريكية.",
+      smileMadeBy: "د. عبدالله القائد",
+    },
+    en: {
+      doctorName: "Dr. Abdullah Al Qaid",
+      specialty: "Specialist Endodontist, University of Connecticut / USA",
+      smileMadeBy: "Dr. Abdullah Al Qaid",
+    },
+  },
+  "dr-abdulwahab-alkandari": {
+    ar: {
+      doctorName: "د. عبدالوهاب الكندري",
+      specialty: "أخصائي اللثة، جامعة أوكلاهوما / الولايات المتحـدة الأمريكية.",
+      smileMadeBy: "د. عبدالوهاب الكندري",
+    },
+    en: {
+      doctorName: "Dr. Abdulwahab AlKandari",
+      specialty: "Periodontist, The University of Oklahoma / USA",
+      smileMadeBy: "Dr. Abdulwahab AlKandari",
+    },
+  },
+  "dr-zaher-sabbagh": {
+    ar: {
+      doctorName: "د . زاهر الصباغ",
+      specialty: "أخصائي تركيبات وتجميل وازرعة الأسنان، جامعة بيروت العربية / لبنان.",
+      smileMadeBy: "د . زاهر الصباغ",
+    },
+    en: {
+      doctorName: "Dr. Zaher Sabbagh",
+      specialty: "Specialist In Cosmetic And Implant, Beirut Arab University / Lebanon",
+      smileMadeBy: "Dr. Zaher Sabbagh",
+    },
+  },
+  "dr-rawan-alomary": {
+    ar: {
+      doctorName: "د. روان العمري",
+      specialty: "اختصاصي تجميل و طب الأسنان الشامل، جامعة دمشق / سوريا.",
+      smileMadeBy: "د. روان العمري",
+    },
+    en: {
+      doctorName: "Dr. Rawan Alomary",
+      specialty: "Cosmetic Specialist, Damascus university / Syria",
+      smileMadeBy: "Dr. Rawan Alomary",
+    },
+  },
+  "dr-rawad-karam": {
+    ar: {
+      doctorName: "د. رواد كرم",
+      specialty: "طــب الاسنــــان التحفظي و تجميــل اسنــــان، جامعة سان جوزيف / لبنان.",
+      smileMadeBy: "د. رواد كرم",
+    },
+    en: {
+      doctorName: "Dr. Rawad Karam",
+      specialty: "Restorative and Esthetic Dentistry, St Joseph University / Lebanon",
+      smileMadeBy: "Dr. Rawad Karam",
+    },
+  },
+  "dr-abdullah-alfadhli": {
+    ar: {
+      doctorName: "د. عبدالله الفضلي",
+      specialty: "أختصاصي طـب أسنان أطفال، جامعة نيزني نوفقورد/ موسكو",
+      smileMadeBy: "د. عبدالله الفضلي",
+    },
+    en: {
+      doctorName: "Dr. Abdullah Alfadhli",
+      specialty: "Pediatric Dentist, Nizhny Novgorod State University / Moscow",
+      smileMadeBy: "Dr. Abdullah Alfadhli",
+    },
+  },
+  "dr-layal-saleh": {
+    ar: {
+      doctorName: "د. ليال صالح",
+      specialty: "اخصائية تقويم الأسنان والفكين، جامعة بيروت العربية / لبنان",
+      smileMadeBy: "د. ليال صالح",
+    },
+    en: {
+      doctorName: "Dr. Layal Saleh",
+      specialty: "Orthodontist and Jaw Specialist, Beirut Arab University / Lebanon",
+      smileMadeBy: "Dr. Layal Saleh",
+    },
+  },
+  "dr-meshaal-al-kanderi": {
+    ar: {
+      doctorName: "د. مشعل الكندري",
+      specialty: "استشـــاري تركيبات وتجميـل وزراعـة أسنـان، جامعة هارفارد / الولايات المتحـدة الأمريكية.",
+      smileMadeBy: "د. مشعل الكندري",
+    },
+    en: {
+      doctorName: "Dr. Meshaal Al-Kanderi",
+      specialty: "Prosthodontist Consultant, Harvard University / USA",
+      smileMadeBy: "Dr. Meshaal Al-Kanderi",
+    },
+  },
+  "dr-kamal-alkamal": {
+    ar: {
+      doctorName: "د. كمال الكمال",
+      specialty: "طب وجراحة أسنان شامل وتجميل اسنان، جامعة فرجينيا كومنولث / الولايات المتحدة الامريكية",
+      smileMadeBy: "د. كمال الكمال",
+    },
+    en: {
+      doctorName: "Dr. Kamal Alkamal",
+      specialty: "Comprehensive & Cosmetic Dentistry, Virginia Commonwealth University",
+      smileMadeBy: "Dr. Kamal Alkamal",
+    },
+  },
+  "dr-yousif-german": {
+    ar: {
+      doctorName: "د. يوسف جرمن",
+      specialty: "اختصاصي تجميل و طب الأسنان الشامل، جامعة فيرجينيا",
+      smileMadeBy: "د. يوسف جرمن",
+    },
+    en: {
+      doctorName: "Dr. Yousif German",
+      specialty: "General and Cosmetic Dentist, Virginia Commonwealth University",
+      smileMadeBy: "Dr. Yousif German",
+    },
+  },
+};
+
+function getDoctorCopy(slug: string, locale: Locale): DoctorCopy {
+  const baseCopy = commonCopy[locale];
+  const doctorOverride = DOCTOR_INFO_MAP[slug]?.[locale] || {};
+  return { ...baseCopy, ...doctorOverride } as DoctorCopy;
+}
+
+const commonCopy: Record<Locale, DoctorCopy> = {
   ar: {
     heroTitle: "الابتسامة الكريستالية",
     doctorName: "د. محمد الحجي",
@@ -115,21 +473,155 @@ const copy: Record<Locale, DoctorCopy> = {
 
 
 
-function Hero({ locale }: { locale: Locale }) {
-  const t = copy[locale];
+/** Per-slug assets for the hero section */
+const DOCTOR_HERO_ASSETS: Record<string, { heroImg: string; thumbImg: string }> = {
+  "dr-essa-al-essa": {
+    heroImg: "/images/Dr. Essa Al Essa-2.png",
+    thumbImg: "/images/dr-Essa-Al-Essa-2.png",
+  },
+  "dr-mohammed-al-hajji": {
+    heroImg: `/images/Dr Mohammed AlHajji.png`,
+    thumbImg: "/images/dr-img-teeth-show.png",
+  },
+  "dr-amina-al-jassem": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Amina%20Al-Jassem.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Amina%20Al-Jassem.png`,
+  },
+  "dr-tareq-burezq": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Tareq%20Burezq.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Tareq%20Burezq.png`,
+  },
+  "dr-amna-al-mutawaa": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Amna%20Al%20Mutawaa.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Amna%20Al%20Mutawaa.png`,
+  },
+  "dr-talal-al-reyahi": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Talal%20Al-Reyahi.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Talal%20Al-Reyahi.png`,
+  },
+  "dr-hashem-ghadanfari": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Hashem%20Ghadanfari.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Hashem%20Ghadanfari.png`,
+  },
+  "dr-khaled-al-khayat": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Khaled%20Al-Khayat.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Khaled%20Al-Khayat.png`,
+  },
+  "dr-moayad-al-omar": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Moayad%20Al-Omar.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Moayad%20Al-Omar.png`,
+  },
+  "dr-yahya-al-yahya": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Yahya%20Al%20Yahya.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Yahya%20Al%20Yahya.png`,
+  },
+  "dr-bashar-rajab": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Bashar%20Rajab.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Bashar%20Rajab.png`,
+  },
+  "dr-hamoud-al-farsi": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Hamoud%20Al-Farsi.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Hamoud%20Al-Farsi.png`,
+  },
+  "dr-hadi-al-saffar": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Hadi%20Al%20Saffar.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Hadi%20Al%20Saffar.png`,
+  },
+  "dr-ali-al-saffar": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Ali%20Al%20Saffar.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Ali%20Al%20Saffar.png`,
+  },
+  "dr-paul-nassar": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Paul%20Nassar.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Paul%20Nassar.png`,
+  },
+  "dr-essa-alrashid": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Essa%20AlRashid.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Essa%20AlRashid.png`,
+  },
+  "dr-ahmad-albuzem": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Ahmad%20Albuzem.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Ahmad%20Albuzem.png`,
+  },
+  "dr-catherine-raffoul": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Catherine%20Raffoul.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Catherine%20Raffoul.png`,
+  },
+  "dr-fawaz-al-foraih": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Fawaz%20Al-Foraih.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Fawaz%20Al-Foraih.png`,
+  },
+  "dr-abdullah-al-qaid": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Abdullah%20Al%20Qaid.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Abdullah%20Al%20Qaid.png`,
+  },
+  "dr-abdulwahab-alkandari": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Abdulwahab%20AlKandari.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Abdulwahab%20AlKandari.png`,
+  },
+  "dr-zaher-sabbagh": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Zaher%20Sabbagh.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Zaher%20Sabbagh.png`,
+  },
+  "dr-rawan-alomary": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Rawan%20Alomary.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Rawan%20Alomary.png`,
+  },
+  "dr-rawad-karam": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Rawad%20Karam.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Rawad%20Karam.png`,
+  },
+  "dr-abdullah-alfadhli": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Abdullah%20Alfadhli.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Abdullah%20Alfadhli.png`,
+  },
+  "dr-layal-saleh": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Layal%20Saleh.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Layal%20Saleh.png`,
+  },
+  "dr-meshaal-al-kanderi": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Meshaal%20Al-Kanderi.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Meshaal%20Al-Kanderi.png`,
+  },
+  "dr-kamal-alkamal": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Kamal%20Alkamal.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Kamal%20Alkamal.png`,
+  },
+  "dr-yousif-german": {
+    heroImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Yousif%20German.png`,
+    thumbImg: `${process.env.NEXT_PUBLIC_CDN_URL}/our-team/Dr.%20Yousif%20German.png`,
+  },
+};
+
+
+function Hero({ locale, slug }: { locale: Locale; slug: string }) {
+  const t = getDoctorCopy(slug, locale);
+  const assets = DOCTOR_HERO_ASSETS[slug] || {
+    heroImg: "/images/Backgrounds/Our_Team_Cover.jpg",
+    thumbImg: "/images/Icon-phone.svg"
+  };
   return (
     <section className={styles.hero} aria-labelledby="doctor-title">
       <div className={styles.heroBg} aria-hidden="true" />
       <div className={styles.heroInner}>
         <div className={styles.heroDoctor}>
-          <Image src="/images/Dr Mohammed AlHajji.png" alt={t.doctorName} fill sizes="(max-width: 900px) 50vw, 508px" priority />
+          <Image 
+            src={assets.heroImg} 
+            alt={t.doctorName} 
+            fill 
+            sizes="(max-width: 900px) 50vw, 508px" 
+            priority 
+            className={styles.doctorPortrait}
+          />
         </div>
         <div className={styles.heroCopy}>
           <h1 id="doctor-title">“{t.heroTitle}”</h1>
           <h2>{t.doctorName}</h2>
           <div className={styles.specialtyLine}>
             <p>{t.specialty}</p>
-            <Image src="/images/dr-img-teeth-show.png" alt="" width={60} height={54} />
+            <div className={styles.thumbWrapper}>
+              <Image src={assets.thumbImg} alt="" width={60} height={54} className={styles.thumbImg} />
+            </div>
           </div>
           <Link href="#about" className={styles.whiteButton}>{t.readMore}</Link>
         </div>
@@ -138,11 +630,12 @@ function Hero({ locale }: { locale: Locale }) {
   );
 }
 
-function Stats({ locale }: { locale: Locale }) {
+function Stats({ locale, slug }: { locale: Locale; slug: string }) {
+  const t = getDoctorCopy(slug, locale);
   return (
     <section className={styles.statsSection} aria-label="Doctor statistics">
       <div className={styles.statsGrid}>
-        {copy[locale].stats.map((stat) => (
+        {t.stats.map((stat) => (
           <article className={styles.statCard} key={stat.label}>
             <strong>{stat.value}</strong>
             <span>{stat.label}</span>
@@ -153,8 +646,8 @@ function Stats({ locale }: { locale: Locale }) {
   );
 }
 
-function AboutDoctor({ locale }: { locale: Locale }) {
-  const t = copy[locale];
+function AboutDoctor({ locale, slug }: { locale: Locale; slug: string }) {
+  const t = getDoctorCopy(slug, locale);
   return (
     <section id="about" className={styles.aboutSection} aria-labelledby="about-title">
       <div className={styles.aboutWave} aria-hidden="true" />
@@ -213,8 +706,8 @@ function SmileComparison({
   );
 }
 
-function BeautyWorld({ locale }: { locale: Locale }) {
-  const t = copy[locale];
+function BeautyWorld({ locale, slug }: { locale: Locale; slug: string }) {
+  const t = getDoctorCopy(slug, locale);
 
   useEffect(() => {
     const initWorldBeauty = () => {
@@ -416,8 +909,8 @@ function CredentialRow({ item, tickSrc }: { item: EducationLine; tickSrc: string
   );
 }
 
-function Education({ locale }: { locale: Locale }) {
-  const t = copy[locale];
+function Education({ locale, slug }: { locale: Locale; slug: string }) {
+  const t = getDoctorCopy(slug, locale);
 
   const accreditations: EducationLine[] =
     locale === "ar"
@@ -1016,15 +1509,16 @@ function HomeLivesGallery({ locale }: { locale: Locale }) {
 export default function DoctorDetailsPage() {
   const params = useParams();
   const locale = ((params?.locale as string) === "ar" ? "ar" : "en") as Locale;
+  const slug = (params?.slug as string) ?? "";
   const isAr = locale === "ar";
 
   return (
     <main className={`${styles.page} ${isAr ? styles.rtl : styles.ltr}`} dir={isAr ? "rtl" : "ltr"}>
-      <Hero locale={locale} />
-      <Stats locale={locale} />
-      <AboutDoctor locale={locale} />
-      <BeautyWorld locale={locale} />
-      <Education locale={locale} />
+      <Hero locale={locale} slug={slug} />
+      <Stats locale={locale} slug={slug} />
+      <AboutDoctor locale={locale} slug={slug} />
+      <BeautyWorld locale={locale} slug={slug} />
+      <Education locale={locale} slug={slug} />
       <HomeLivesGallery locale={locale} />
       <AppointmentSection locale={locale} />
     </main>
