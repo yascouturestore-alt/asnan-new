@@ -247,6 +247,38 @@
   transform: scaleX(-1);
 }
 
+/* RTL (Arabic) - Image on left */
+[dir="rtl"] .welcomeInner {
+  direction: rtl;
+}
+
+[dir="rtl"] .welcomeImage {
+  grid-column: 1;
+  order: 1;
+}
+
+[dir="rtl"] .welcomeContent {
+  grid-column: 2;
+  order: 2;
+}
+
+/* LTR (English) - Image on right */
+[dir="ltr"] .welcomeImage {
+  grid-column: 2;
+  order: 2;
+}
+
+[dir="ltr"] .welcomeContent {
+  grid-column: 1;
+  order: 1;
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .welcomeImage img {
+  transform: scaleX(1);
+}
+
 .welcomeContent {
   grid-column: 2;
   max-width: 805px;
