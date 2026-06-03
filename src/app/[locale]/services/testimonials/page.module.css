@@ -4,7 +4,7 @@
   overflow: hidden;
   background: #fff;
   color: #051a53;
-  font-family: Almarai, Tajawal, "Plus Jakarta Sans", Arial, sans-serif;
+  
   margin-top: 80px;
 }
 
@@ -509,7 +509,7 @@
 .reviewCard h3 {
   margin: 0;
   color: #50595c;
-  font-family: Gilroy, Almarai, Arial, sans-serif;
+  
   font-size: clamp(10px, 0.85vw, 16px);
   font-weight: 700;
   line-height: 2.45;
@@ -522,7 +522,7 @@
   justify-content: flex-start;
   gap: 0.8vw;
   color: #838e91;
-  font-family: Gilroy, Almarai, Arial, sans-serif;
+  
   font-size: clamp(9px, 0.62vw, 12px);
   line-height: 1.4;
 }

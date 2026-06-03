@@ -329,7 +329,7 @@ export default function TeamPage() {
           width: 100%;
           background: #ffffff;
           color: var(--asnan-navy);
-          font-family: "Almarai", "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+          
           overflow: hidden;
         }
 

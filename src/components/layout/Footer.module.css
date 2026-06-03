@@ -42,7 +42,7 @@
   justify-content: center;
   gap: 9px;
   color: #fff;
-  font-family: Tajawal, Almarai, Arial, sans-serif;
+  
   font-size: 13.2px;
   font-weight: 400;
   line-height: 20px;
@@ -130,7 +130,7 @@
 .linkGroup h3 {
   margin: 0 0 16px;
   color: #fff;
-  font-family: Tajawal, Almarai, Arial, sans-serif;
+  
   font-size: 16px;
   font-weight: 800;
   line-height: 20.47px;
@@ -148,7 +148,7 @@
 .linkGroup a {
   display: inline-block;
   color: #fff;
-  font-family: Tajawal, Almarai, Arial, sans-serif;
+  
   font-size: 16px;
   font-weight: 300;
   line-height: 20.47px;
@@ -175,7 +175,7 @@
   min-width: 100%;
   margin: 0;
   color: #2c8eff;
-  font-family: Spartan, "Plus Jakarta Sans", Arial, sans-serif;
+  
   font-size: 42.5px;
   font-weight: 800;
   line-height: 63.79px;
@@ -200,7 +200,7 @@
 .hours p {
   margin: 0;
   color: #fff;
-  font-family: Tajawal, Almarai, Arial, sans-serif;
+  
   font-size: 16.8px;
   font-weight: 400;
   line-height: 25.99px;
@@ -263,7 +263,7 @@
 .copyright {
   margin: 0;
   color: #fff;
-  font-family: "Plus Jakarta Sans", "Noto Sans Arabic", Tajawal, Arial, sans-serif;
+  
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2;

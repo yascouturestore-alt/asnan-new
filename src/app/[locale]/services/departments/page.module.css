@@ -8,7 +8,7 @@
   overflow: hidden;
   background: #fbfbfb;
   color: var(--asnan-blue);
-  font-family: Almarai, Tajawal, var(--font-geist-sans), Arial, sans-serif;
+  
 }
 
 .page :where(a) {

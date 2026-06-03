@@ -10,7 +10,7 @@
   overflow: hidden;
   background: #fff;
   color: var(--asnan-blue);
-  font-family: Almarai, Tajawal, Arial, sans-serif;
+  
 }
 
 .rtl {
@@ -200,7 +200,7 @@
   display: block;
   margin: clamp(2px, 0.2vw, 4px) 0 0;
   color: var(--asnan-text);
-  font-family: Gilroy, Arial, sans-serif;
+  
   font-size: clamp(42px, 3.23vw, 62px);
   font-weight: 800;
   line-height: 1;
@@ -471,7 +471,7 @@
   left: 20px;
   z-index: 2;
   color: var(--asnan-sky);
-  font-family: Gilroy, Arial, sans-serif;
+  
   font-size: clamp(34px, 2.4vw, 46px);
   font-weight: 800;
   line-height: 1;

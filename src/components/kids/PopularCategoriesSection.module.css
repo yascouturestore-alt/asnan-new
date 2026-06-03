@@ -55,7 +55,7 @@
 }
 
 .sectionTitle {
-  font-family: 'Almarai', 'Tajawal', sans-serif;
+  
   font-weight: 800;
   font-size: 46px;
   line-height: 1.2;
@@ -64,7 +64,7 @@
 }
 
 .sectionSubtitle {
-  font-family: 'Almarai', 'Tajawal', sans-serif;
+  
   font-weight: 400;
   font-size: 16px;
   line-height: 1;
@@ -141,7 +141,7 @@
 }
 
 .tabLabel {
-  font-family: 'Almarai', 'Tajawal', sans-serif;
+  
   font-size: clamp(18px, 2.4vw, 36px);
   font-weight: 700;
   color: currentColor;
@@ -195,7 +195,7 @@
 }
 
 .viewAllText {
-  font-family: 'Almarai', 'Tajawal', sans-serif;
+  
   font-weight: 700;
   font-size: 14px;
   writing-mode: vertical-rl;
@@ -249,7 +249,7 @@
 }
 
 .cardTitle {
-  font-family: 'Almarai', 'Tajawal', sans-serif;
+  
   font-weight: 400;
   font-size: 14px;
   line-height: 1.45;
@@ -274,7 +274,7 @@
   border: none;
   background: linear-gradient(90deg, #042970 0%, #197ad9 100%);
   color: #ffffff;
-  font-family: 'Almarai', 'Tajawal', sans-serif;
+  
   font-weight: 700;
   font-size: 13px;
   display: inline-flex;
@@ -318,7 +318,7 @@
 }
 
 .sideBoxItem {
-  font-family: 'Almarai', 'Tajawal', sans-serif;
+  
   font-weight: 400;
   font-size: 16px;
   line-height: 1.45;

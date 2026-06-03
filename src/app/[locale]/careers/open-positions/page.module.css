@@ -9,7 +9,7 @@
   overflow: hidden;
   background: #fff;
   color: var(--asnan-blue);
-  font-family: inherit;
+  
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
 }

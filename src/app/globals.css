@@ -332,3 +332,16 @@ html[dir="ltr"] .call-btn-container {
     align-items: flex-start !important;
   }
 }
+
+/* Match asnan.com global fonts */
+body, input, button, textarea, select {
+  font-family: Spartan, "Spartan MB", Arial, sans-serif !important;
+}
+
+html[dir="rtl"] body, 
+html[dir="rtl"] input, 
+html[dir="rtl"] button, 
+html[dir="rtl"] textarea, 
+html[dir="rtl"] select {
+  font-family: "URWGeometricArabic", Tajawal, "GE SS Two", Spartan, "Spartan MB", Arial, sans-serif !important;
+}

@@ -103,7 +103,7 @@
   cursor: pointer;
   margin-bottom: auto;
   flex-shrink: 0;
-  font-family: inherit;
+  
 }
 
 .button:hover {

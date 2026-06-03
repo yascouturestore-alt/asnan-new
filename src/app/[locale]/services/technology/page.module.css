@@ -238,7 +238,7 @@
   z-index: 4;
   transform: translateX(-50%);
   color: #ffffff;
-  font-family: Almarai, Tajawal, Arial, sans-serif;
+  
   font-size: clamp(16px, 1.25vw, 24px);
   font-weight: 700;
   line-height: 1.5;

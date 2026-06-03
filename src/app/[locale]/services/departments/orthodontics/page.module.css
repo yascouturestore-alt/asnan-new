@@ -10,7 +10,7 @@
   background: #fff;
   color: var(--blue-dark);
   overflow: hidden;
-  font-family: Almarai, Tajawal, Arial, sans-serif;
+  
 }
 
 .rtl {
@@ -472,7 +472,7 @@
   border: 3px solid rgba(255, 255, 255, 0.15);
   border-radius: 38px;
   color: #fff;
-  font-family: Tajawal, Almarai, sans-serif;
+  
   font-weight: 700;
   font-size: 26px;
   z-index: 2;

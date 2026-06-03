@@ -9,7 +9,7 @@
   overflow: hidden;
   background: #fff;
   color: var(--blue-dark);
-  font-family: Almarai, Tajawal, Arial, sans-serif;
+  
 }
 
 .hero {
@@ -495,7 +495,7 @@
   border: 3px solid rgba(255, 255, 255, 0.15);
   border-radius: 38px;
   color: #fff;
-  font-family: Tajawal, Almarai, Arial, sans-serif;
+  
   font-size: clamp(18px, 1.36vw, 26px);
   font-weight: 700;
   line-height: 1;
@@ -522,7 +522,7 @@
   background: transparent;
   color: var(--yellow);
   cursor: pointer;
-  font-family: Georgia, serif;
+  
   font-size: 62px;
   line-height: 1;
   transform: translateY(-50%);

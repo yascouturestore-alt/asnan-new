@@ -207,7 +207,7 @@
   display: inline-block;
   margin: 0 0 clamp(36px, 3vw, 56px);
   color: #2c8fff;
-  font-family: Spartan, "Plus Jakarta Sans", Arial, sans-serif;
+  
   font-size: clamp(42px, 2.7vw, 56px);
   font-weight: 800;
   line-height: 1;
