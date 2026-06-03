@@ -186,64 +186,12 @@ export default function AsnanopediaPage() {
   const locale = (params?.locale as string) || "ar";
   const isAr = locale === "ar";
   const t = isAr ? copy.ar : copy.en;
-  const dir = isAr ? "rtl" : "ltr";
 
   return (
     <>
       <div className="hero-wrapper hero-home asnanopedia-hero" style={{minHeight:"unset", paddingBottom: "70px"}}>
         <div className="container-fluid">
           <div className="row justify-content-center">
-            {/* <div className="col-12 col-lg-12 mb-2">
-              <h1 className="hero-title">
-                {t.asnanopedia_heading}
-              </h1>
-            </div>
-            <div className={styles.heroSearchBar}>
-            {isAr ? (
-              <>
-                <button className={styles.heroSearchBtn}>{t.searchBtn}</button>
-                <input
-                  type="text"
-                  className={styles.heroSearchInput}
-                  placeholder={t.searchPlaceholder}
-                  aria-label={t.searchPlaceholder}
-                />
-                <span className={styles.heroSearchIcon} aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <circle cx="11" cy="11" r="8" stroke="#aaa" strokeWidth="2" />
-                    <path d="M21 21l-4.35-4.35" stroke="#aaa" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                </span>
-              </>
-            ) : (
-              <>
-                <span className={styles.heroSearchIcon} aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <circle cx="11" cy="11" r="8" stroke="#aaa" strokeWidth="2" />
-                    <path d="M21 21l-4.35-4.35" stroke="#aaa" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                </span>
-                <input
-                  type="text"
-                  className={styles.heroSearchInput}
-                  placeholder={t.searchPlaceholder}
-                  aria-label={t.searchPlaceholder}
-                />
-                <button className={styles.heroSearchBtn}>{t.searchBtn}</button>
-              </>
-            )}
-          </div>
-            <div className="col-12 call-btn-container">
-              <a href="tel:+9651896666" target="_blank" rel="noreferrer" className="call-btn phone-btn" id="hero-phone-call-btn">
-                <div className="call-btn-icon">
-                  <img src="/images/Icon-phone.svg" alt="phone icon" id="phone-icon" height="50" />
-                </div>
-                <div className="call-btn-txt">
-                  <p className="call-desc">{t.direct_call}</p>
-                  <span className="phone-link">965-189<span>6666</span></span>
-                </div>
-              </a>
-            </div> */}
             <AsnanopediaHeroContent locale={locale} />
           </div>
         </div>

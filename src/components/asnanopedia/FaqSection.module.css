@@ -1,11 +1,11 @@
 /* ── SECTION ─────────────────────────────────────────────── */
 
 .section {
-        z-index: 1;
+    z-index: 1;
     isolation: isolate;
     background: none;
     margin-top: -640px;
-    padding: 550px 0 150px;
+    padding: 650px 0 150px;
     position: relative;
     overflow: visible;
 
