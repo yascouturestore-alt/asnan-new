@@ -25,16 +25,16 @@ const copy = {
   en: {
     heroTitle: "ASNANOPEDIA",
     heroCount: "47 articles by Asnan Tower",
-    searchPlaceholder: "Type here e.g: How to keep my teeth healthy?",
+    searchPlaceholder: "Type here example: How to keep my teeth healthy?",
     searchBtn: "Search",
-    articlesTitle: "Carefully Selected Articles",
-    articlesSubtitle: "Useful articles selected by Asnan Tower",
+    articlesTitle: "Handpicked articles",
+    articlesSubtitle: "Useful articles handpicked by Asnan Tower.",
     bookNow: "Book Now",
     learnMore: "Learn More",
     categoriesTitle: "Popular Categories",
-    categoriesSubtitle: "Browse the different categories available in the knowledge base.",
-    faqTitle: "Questions & Answers",
-    faqSubtitle: "Find a quick answer to a problem or question about how to do something.",
+    categoriesSubtitle: "Browse the different available categories in the knowledge base.",
+    faqTitle: "FAQs",
+    faqSubtitle: "Find a quick answer for an issue or a how-to-do question.",
     cats: ["Prevention", "Dental Emergencies", "Dental Problems", "Oral & Body Health", "Most Asked Questions"],
   },
 };
@@ -53,16 +53,16 @@ const selectedArticlesAr: SelectedArticle[] = [
 ];
 
 const selectedArticlesEn: SelectedArticle[] = [
-  { title: "Your Floss in the Fight Against Tooth Decay", category: "Prevention", count: 20, image: "/images/asnanopedia/articles/mouth-thread.png" },
-  { title: "Dental Health Tips for Cold and Flu Season", category: "Prevention", count: 6, image: "/images/asnanopedia/articles/flu-woman.png" },
-  { title: "Dental Injuries During Contact Sports", category: "Prevention", count: 0, image: "/images/asnanopedia/articles/sports-injury.png" },
+  { title: "Your Plan For Battle, Fight Against Decay", category: "Prevention", count: 20, image: "/images/asnanopedia/articles/mouth-thread.png" },
+  { title: "Dental Tips for Cold and Flu Season", category: "Prevention", count: 6, image: "/images/asnanopedia/articles/flu-woman.png" },
+  { title: "Avoid Dental Injuries During Summer Sports", category: "Prevention", count: 0, image: "/images/asnanopedia/articles/sports-injury.png" },
   { title: "Infants and Newborns", category: "Prevention", count: 1, image: "/images/asnanopedia/articles/newborn.png" },
   { title: "Children", category: "Prevention", count: 3, image: "/images/asnanopedia/articles/child.png" },
-  { title: "Teenagers", category: "Prevention", count: 219, image: "/images/asnanopedia/articles/students.png" },
-  { title: "Teenagers", category: "Prevention", count: 142, image: "/images/asnanopedia/articles/teenagers.png" },
-  { title: "Older Adults", category: "Prevention", count: 3, image: "/images/asnanopedia/articles/elderly.png" },
-  { title: "Pregnant Women", category: "Prevention", count: 0, image: "/images/asnanopedia/articles/pregnant.png" },
-  { title: "Breastfeeding Mothers", category: "Prevention", count: 15, image: "/images/asnanopedia/articles/breastfeeding.png" },
+  { title: "Adolescents", category: "Prevention", count: 219, image: "/images/asnanopedia/articles/students.png" },
+  { title: "Adults", category: "Prevention", count: 142, image: "/images/asnanopedia/articles/teenagers.png" },
+  { title: "Elders", category: "Prevention", count: 3, image: "/images/asnanopedia/articles/elderly.png" },
+  { title: "Pregnant", category: "Prevention", count: 0, image: "/images/asnanopedia/articles/pregnant.png" },
+  { title: "Nursing mothers", category: "Prevention", count: 15, image: "/images/asnanopedia/articles/breastfeeding.png" },
 ];
 
 const categoriesAr: PopularCategory[] = [
@@ -117,22 +117,22 @@ const categoriesEn: PopularCategory[] = [
     id: "prevention",
     label: "Prevention",
     icon: "/images/Prevention-icon.svg",
-    sideItems: ["Flossing and Fighting Tooth Decay", "Age and Teeth", "Habits and Behavior"],
+    sideItems: ["Your Plan for Battle Fight Against Decay", "Age and Teeth", "Behavior and Habits"],
     articles: [
-      { title: "Flossing and Fighting Tooth Decay", count: 20, image: "/images/asnanopedia/articles/mouth-thread.png" },
-      { title: "Dental Health Tips for Cold and Flu Season", count: 6, image: "/images/asnanopedia/articles/flu-woman.png" },
-      { title: "Dental Injuries During Summer Sports", count: 0, image: "/images/asnanopedia/articles/sports-injury.png" },
+      { title: "Your Plan For Battle, Fight Against Decay", count: 20, image: "/images/asnanopedia/articles/mouth-thread.png" },
+      { title: "Dental Tips for Cold and Flu Season", count: 6, image: "/images/asnanopedia/articles/flu-woman.png" },
+      { title: "Avoid Dental Injuries During Summer Sports", count: 0, image: "/images/asnanopedia/articles/sports-injury.png" },
     ],
   },
   {
     id: "oral-body-health",
-    label: "Oral & Body Health",
+    label: "Physical Health And Dentistry",
     icon: "/images/Dental-icon.svg",
-    sideItems: ["Oral & Body Health"],
+    sideItems: ["Oral and Physical Health"],
     articles: [
-      { title: "How to Keep Your Teeth Healthy", count: 2, image: "/images/asnanopedia/articles/healthy-tooth.jpg" },
-      { title: "Regular Visits to Your Dentist", count: 0, image: "/images/asnanopedia/articles/dentist-visit.jpg" },
-      { title: "Deep Gum Cleaning", count: 9, image: "/images/asnanopedia/articles/deep-cleaning.jpg" },
+      { title: "How to keep your teeth healthy?", count: 2, image: "/images/asnanopedia/articles/healthy-tooth.jpg" },
+      { title: "Regular visits to your dentist", count: 0, image: "/images/asnanopedia/articles/dentist-visit.jpg" },
+      { title: "Deep Dental Cleaning", count: 9, image: "/images/asnanopedia/articles/deep-cleaning.jpg" },
     ],
   },
   {
@@ -141,9 +141,9 @@ const categoriesEn: PopularCategory[] = [
     icon: "/images/Dental-emergencies-icon.svg",
     sideItems: ["Dental Emergencies"],
     articles: [
-      { title: "Object Stuck Between Teeth", count: 0, image: "/images/asnanopedia/articles/tooth-particles.jpg" },
-      { title: "Permanent Tooth Knocked Out", count: 2, image: "/images/asnanopedia/articles/fallen-tooth.jpg" },
-      { title: "Tooth Pain", count: 2, image: "/images/asnanopedia/articles/toothache.jpg" },
+      { title: "Interdental Material", count: 0, image: "/images/asnanopedia/articles/tooth-particles.jpg" },
+      { title: "Fall Off Permanent Teeth", count: 2, image: "/images/asnanopedia/articles/fallen-tooth.jpg" },
+      { title: "Toothache", count: 2, image: "/images/asnanopedia/articles/toothache.jpg" },
     ],
   },
   {
@@ -153,8 +153,8 @@ const categoriesEn: PopularCategory[] = [
     sideItems: ["Dental Problems"],
     articles: [
       { title: "Gum Disease", count: 4, image: "/images/asnanopedia/articles/gum-disease.jpg" },
-      { title: "Habits That Harm Your Teeth", count: 1, image: "/images/asnanopedia/articles/habiits-that-treathen-yout-teeth.jpg" },
-      { title: "Mouth Fungus", count: 31, image: "/images/asnanopedia/articles/oral-fungus.jpg" },
+      { title: "Habits That Threaten Your Mouth and Teeth", count: 1, image: "/images/asnanopedia/articles/habiits-that-treathen-yout-teeth.jpg" },
+      { title: "Oral Fungus", count: 31, image: "/images/asnanopedia/articles/oral-fungus.jpg" },
     ],
   },
 ];
@@ -171,14 +171,14 @@ const faqArticlesAr: FaqItem[] = [
 ];
 
 const faqArticlesEn: FaqItem[] = [
-  { id: 1, title: "What is the Right Time to Use Braces?", image: "/images/faq-1.png", count: 31 },
-  { id: 2, title: "Electric Toothbrush", image: "/images/faq-2.png", count: 31 },
-  { id: 3, title: "Do Cosmetic Teeth Last a Lifetime?", image: "/images/faq-3.png", count: 31 },
-  { id: 4, title: "Cost of Dental Treatment", image: "/images/faq-4.png", count: 31 },
-  { id: 5, title: "How Do I Use Dental Floss?", image: "/images/faq-5.png", count: 31 },
-  { id: 6, title: "What is Fluoride?", image: "/images/faq-6.png", count: 31 },
-  { id: 7, title: "What is the Best Type of Toothpaste?", image: "/images/faq-7.png", count: 31 },
-  { id: 8, title: "Pregnant Women and Visiting the Dentist", image: "/images/faq-8.png", count: 31 },
+  { id: 1, title: "Dental Treatment Cost", image: "/images/faq-1.png", count: 31 },
+  { id: 2, title: "Do Cosmetic Teeth Last a Lifetime", image: "/images/faq-2.png", count: 31 },
+  { id: 3, title: "Electric Toothbrush", image: "/images/faq-3.png", count: 31 },
+  { id: 4, title: "What is the appropriate time to have braces?", image: "/images/faq-4.png", count: 31 },
+  { id: 5, title: "Pregnant Woman & Dental Visit", image: "/images/faq-5.png", count: 31 },
+  { id: 6, title: "The Best Type of Toothpaste", image: "/images/faq-6.png", count: 31 },
+  { id: 7, title: "What is fluoride?", image: "/images/faq-7.png", count: 31 },
+  { id: 8, title: "How do I use dental floss?", image: "/images/faq-8.png", count: 31 },
 ];
 
 export default function AsnanopediaPage() {

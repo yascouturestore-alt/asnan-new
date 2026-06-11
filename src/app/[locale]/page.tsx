@@ -1,7 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import Script from "next/script";
+import React, { useEffect } from "react";
 import { useParams } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
 import FigmaOurTeam from "@/components/home/FigmaOurTeam";
@@ -21,11 +19,11 @@ export default function Home() {
     ctaSmall: isAr ? "حلمنا مو بس نغير اسنانك.." : "We don’t just change smiles ..",
     ctaMain: isAr ? "راح نغير حياتك" : "We Change Lives",
     names: {
-      yagoob: isAr ? "يعقوب بوشهري" : "Yagoob Boushehri",
+      yagoob: isAr ? "يعقوب بوشهري" : "Yaqoub Boshehri",
       huda: isAr ? "هدى حسين" : "Huda Hussain",
       ghadeer: isAr ? "غدير سلطان" : "Ghadeer Sultan",
-      zainab: isAr ? "زينب خفيف" : "Zainab Khaff",
-      salman: isAr ? "سلمان النجادي" : "Salman Alnajadi",
+      zainab: isAr ? "زينب خفيف" : "Zainab Khalaf",
+      salman: isAr ? "سلمان النجادي" : "Salman AL Najadi",
       maya: isAr ? "ميار مودل" : "Maya Model",
       halima: isAr ? "حليمة بولند" : "Halima Boland",
     },
@@ -772,9 +770,9 @@ $('.read-more').off('click').on('click', function (this: any, event: any) {
                         </div>
                       </div>
                       <div className="doctor-info">
-                        <div className="doctor-name">Dr. Amnah</div>
+                        <div className="doctor-name">{t.dr_amnah_name}</div>
                         <div className="doctor-title">{t.orthodontist}</div>
-                        <div className="doctor-title">{t.kuwait_university}</div>
+                        <div className="doctor-title">{t.dr_amnah_uni}</div>
                       </div>
                     </div>
                   </div>

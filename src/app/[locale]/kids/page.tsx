@@ -18,15 +18,11 @@ export default function KidsPage() {
       imageAlt: isAr ? "التخدير العام للأطفال" : "General anesthesia for children",
       paragraphs: isAr
         ? [
-            "غالبًا ما يخضع الأطفال ذوو الاحتياجات الخاصة للتخدير العام لعلاج الأسنان كوسيلة لتجنب مخاطر الإصابة والإجهاد المفرط.",
-            "للأسف يعاني العديد من ذوي الاحتياجات الخاصة من آلام الأسنان الحادة. اذا لم يتم معالجتها سوف يؤثر الم الاسنان سلباً على التعلم والتواصل والتغذية والأنشطة الأخرى اللازمة للنمو والتطور الطبيعي.",
-            "إعادة التأهيل الشامل للأسنان تحت التخدير العام هو إجراء ممتاز، يحتاج من ساعة-ساعتين كحد أقصى لإتمام العلاج كامل وليس لديه أثار جانبية.",
-          ]
+          "غالبًا ما يخضع الأطفال ذوو الاحتياجات الخاصة للتخدير العام لعلاج الأسنان كوسيلة لتجنب مخاطر الإصابة والإجهاد المفرط.",
+        ]
         : [
-            "Children with special needs often undergo dental treatment under general anesthesia to avoid the risk of injury and excessive stress.",
-            "Unfortunately, many children with special needs suffer from severe dental pain. If left untreated, tooth pain can negatively affect learning, communication, nutrition, and other activities needed for normal growth and development.",
-            "Comprehensive dental rehabilitation under general anesthesia is an excellent procedure. It usually takes one to two hours at most to complete the full treatment and has no side effects.",
-          ],
+          "Children with special needs often have general anesthesia for dental treatment as a way to avoid the risk of injury and excessive stress. Unfortunately, many people with special needs suffer from severe dental pain. If left untreated, toothache will negatively affect learning, communication, nutrition and other activities necessary for normal growth and development. Comprehensive dental rehabilitation under general anesthesia is an excellent procedure, it takes 1-2 hours maximum to complete the entire treatment and has no side effects.",
+        ],
     },
     {
       image: "/images/Kids/im2.png",
@@ -34,161 +30,141 @@ export default function KidsPage() {
       imageAlt: isAr ? "الغاز الضاحك للأطفال" : "Laughing gas for children",
       paragraphs: isAr
         ? [
-            "معروف علمياً بـ أكسيد النايتروس هو مزيج من غاز النايتروس مع الاوكسجين يساعد الأطفال الذين لديهم نسبة عالية من الخوف والتوتر أثناء العلاج، على الاسترخاء. فهو مهدئ للأعصاب يعطي احساساً لطيفاً بالراحة والسعادة، فينسى الطفل ما حدث خلال العلاج وكأنه يحلق من السعادة.",
-            "آمن تماماً وتأثيره على الطفل سريع الزوال، حيث يستطيع الذهاب للمنزل او المدرسة مباشرة بعد الانتهاء من العلاج.",
-          ]
+          "معروف علمياً بـ أكسيد النايتروس هو مزيج من غاز النايتروس مع الاوكسجين يساعد الأطفال الذين لديهم نسبة عالية من الخوف والتوتر أثناء العلاج، على الاسترخاء. فهو مهدئ للأعصاب يعطي احساساً لطيفاً بالراحة والسعادة، فينسى الطفل ما حدث خلال العلاج وكأنه يحلق من السعادة.",
+        ]
         : [
-            "Known scientifically as nitrous oxide, it is a mixture of nitrous gas and oxygen that helps children who feel high levels of fear and anxiety during treatment to relax. It calms the nerves and gives a pleasant feeling of comfort and happiness.",
-            "It is completely safe and its effect wears off quickly, so the child can go home or back to school immediately after the treatment is completed.",
-          ],
+          "Scientifically known as nitrous oxide, it is a mixture of nitrous gas with oxygen that helps children who have a high rate of fear and stress during treatment, to relax. It calms the nerves and gives a pleasant feeling of comfort and happiness, so the child forgets what happened during the treatment as if he is flying from happiness. It is completely safe and its effect on the child is fleeting, as he can go home or school immediately after completing the treatment.",
+        ],
     },
     {
       image: "/images/Kids/im3.png",
-      title: isAr ? "درهم وقاية خير من قنطار علاج" : "Prevention Is Better Than Cure",
+      title: isAr ? "درهم وقاية خير من قنطار علاج" : "The Importance of Preventative Treatments",
       imageAlt: isAr ? "وقاية أسنان الأطفال" : "Children dental prevention",
       paragraphs: isAr
-        ? [
-            "يتكون البلاك في الغالب من البكتيريا، التي تتغذى على السكر من الطعام والشراب. تنتج الأحماض التي تهاجم الأسنان مسببة تسوس وآلام الأسنان والتهابات وأمراض اللثة.",
-            "بالنسبة للأطفال الذين لديهم الكثير من التسوس، قد يوصي طبيب أسنان الأطفال بالفلورايد الإضافي. يمكن لطبيب أسنان الأطفال أيضًا إغلاق التسوس قبل حدوثه، عن طريق تطبيق مانعات تسرب على سطح الأسنان. المواد المانعة للتسرب هي مواد بلاستيكية صافية مطلية على سطح السن. تعمل كحاجز للطعام والبكتيريا، وبالتالي حماية المناطق المعرضة للتسوس. يوصى بزيارة طبيب أسنان الأطفال كل ستة أشهر من عيد ميلاد الطفل الأول. عادات الأكل الصحية تؤدي لأسنان صحية. تحتاج الأسنان والعظام والأنسجة الرخوة للفم، مثل باقي الجسم، إلى نظام غذائي متوازن.",
-            "انصح طفلك بعدم تناول الحلوى الصلبة وما إلى ذلك لأنها تبقى في الفم لفترة طويلة وغير مستقرة. علاوة على ذلك، يتم تدريب طبيب أسنان الأطفال في أسنان تاور على التعامل مع طفلك بطريقة مميزة وتحفيزية لجعله يحب الطبيب ويقوم بزيارته بشكل دوري.",
-          ]
-        : [
-            "Plaque is mostly made of bacteria that feed on sugar from food and drinks. These bacteria produce acids that attack the teeth, causing cavities, tooth pain, infections, and gum disease.",
-            "For children with frequent cavities, a pediatric dentist may recommend extra fluoride. A pediatric dentist can also help prevent cavities before they happen by applying sealants to the tooth surface. Sealants act as a barrier against food and bacteria, protecting areas that are more likely to decay. A pediatric dental visit is recommended every six months from the child’s first birthday.",
-            "Encourage your child to avoid hard candy and similar sweets because they stay in the mouth for a long time. At Asnan Tower, pediatric dentists are trained to deal with children in a special and motivating way that helps them love visiting the dentist regularly.",
-          ],
+        ?
+        [
+          "يتكون البلاك في الغالب من البكتيريا، التي تتغذى على السكر من الطعام والشراب. تنتج الأحماض التي تهاجم الأسنان مسببة تسوس وآلام الأسنان والتهابات وأمراض اللثة."
+        ] : [
+          "Plaque is mostly made up of bacteria, which feed on sugar from food and drink. They produce acids that attack the teeth causing cavities, tooth pain, infections, and gum disease. For children who have a lot of cavities, a pediatric dentist may recommend additional fluoride. A pediatric dentist can also seal the decay before it occurs, by applying sealants to the surface of the teeth. Sealants are clear plastic materials that are coated on the surface of the tooth. They act as a barrier for food and bacteria, thus protecting areas prone to cavities. It is recommended to visit a pediatric dentist every six months from the first birthday of the child. Healthy eating habits lead to healthy teeth. The teeth, bones and soft tissues of the mouth, like the rest of the body, need a balanced diet. Advise your child not to eat hard candy etc. because they remain in the mouth for a long time and are unstable. Moreover, the pediatric dentist at Asnan Tower is trained to deal with your child in a distinctive and motivating way to make him love the doctor and visit him periodically.",
+        ]
     },
     {
       image: "/images/Kids/blank.png",
-      title: isAr ? "الحشوات الوقائية" : "Preventive Fillings",
+      title: isAr ? "الحشوات الوقائية" : "Protective Fillings",
       imageAlt: isAr ? "الحشوات الوقائية للأطفال" : "Preventive dental fillings for children",
       paragraphs: isAr
-        ? [
-            "توضع على تجاويف الطواحن الدائمة عند اكتمال ظهورها بالفم وتقلل نسبة التسوس, انها الأفضل من حيث الوقاية ولا تتطلب برد الاسنان.",
-          ]
-        : [
-            "They are placed on the grooves of permanent molars once they fully appear in the mouth and help reduce the risk of decay. They are one of the best preventive options and do not require tooth drilling.",
-          ],
+        ?
+        [
+          "توضع على تجاويف الطواحن الدائمة عند اكتمال ظهورها بالفم وتقلل نسبة التسوس, انها الأفضل من حيث الوقاية ولا تتطلب برد الاسنان."
+        ] : [
+          "It is placed on the cavities of permanent molars when they have completed their appearance in the mouth and reduce the rate of caries, it is the best in terms of prevention and does not require tooth preparation."
+        ]
     },
     {
       image: "/images/Kids/im5.png",
       title: isAr ? "الحشوات التجميلية العلاجية" : "Therapeutic Cosmetic Fillings",
       imageAlt: isAr ? "الحشوات التجميلية العلاجية" : "Therapeutic cosmetic fillings",
       paragraphs: isAr
-        ? [
-            "توضع هذه الحشوات على الاسنان الدائمة لعلاج التسوس وسد التجويف الناتج عن التسوس والمحافظة على السن الطبيعي.",
-          ]
-        : [
-            "These fillings are placed on permanent teeth to treat decay, close the cavity caused by decay, and preserve the natural tooth.",
-          ],
+        ?
+        [
+          "توضع هذه الحشوات على الاسنان الدائمة لعلاج التسوس وسد التجويف الناتج عن التسوس والمحافظة على السن الطبيعي."
+        ] : [
+          "These fillings are placed on the permanent teeth to treat caries, block the cavity resulting from caries, and preserve the natural tooth."
+        ]
     },
     {
       image: "/images/Kids/im6.png",
-      title: isAr ? "علاج العصب والتلبيس" : "Pulp Treatment and Crowns",
+      title: isAr ? "علاج العصب والتلبيس" : "Root Canal and Crown Treatments",
       imageAlt: isAr ? "علاج العصب والتلبيس للأطفال" : "Pulp treatment and crowns for children",
       paragraphs: isAr
-        ? [
-            "عدم علاج التهاب عصب السن اللبني ممكن ان يؤثر سلباً على لون، شكل وبنية السن الدائم. الضرس اللبني له بنيته الخاصة وعصبة الخاص به ويفصله عن الضرس الدائم منطقة عظمية. المنطقة العظمية و جذور الضرس اللبني يبدآن بالتحلل مع بزوغ الضرس الدائم ويبدأ الضرس بالسقوط.",
-          ]
-        : [
-            "Not treating inflammation in the nerve of a baby tooth can negatively affect the color, shape, and structure of the permanent tooth. A baby molar has its own structure and nerve, and a bony area separates it from the permanent tooth. This bony area and the roots of the baby molar begin to dissolve as the permanent tooth erupts, and the baby tooth starts to fall out.",
-          ],
+        ?
+        [
+          "عدم علاج التهاب عصب السن اللبني ممكن ان يؤثر سلباً على لون، شكل وبنية السن الدائم. الضرس اللبني له بنيته الخاصة وعصبة الخاص به ويفصله عن الضرس الدائم منطقة عظمية. المنطقة العظمية و جذور الضرس اللبني يبدآن بالتحلل مع بزوغ الضرس الدائم ويبدأ الضرس بالسقوط."
+        ] : [
+          "Untreated neuritis of the milky tooth can adversely affect the color, shape and structure of the permanent tooth. The deciduous molar has its own structure, its own nerve, and is separated from the permanent molar by a bony area. The bony area and the roots of the milk molar begin to decompose with the eruption of the permanent molar and the molar begins to fall out.",
+        ]
     },
     {
       image: "/images/Kids/blank.png",
-      title: isAr ? "التاج للأسنان اللبنية الخلفية" : "Crowns for Back Baby Teeth",
+      title: isAr ? "التاج للأسنان اللبنية الخلفية" : "Premolar Crowns for Deciduous Teeth",
       imageAlt: isAr ? "التاج للأسنان اللبنية الخلفية" : "Crowns for back baby teeth",
       paragraphs: isAr
-        ? [
-            "يوضع التاج على السن اللبني بعد علاج العصب خاصةً إذا كان التسوس كبير.",
-            "وظيفة الاسنان اللبنية الخلفية هي ان تحافظ على المسافة لبزوغ الاسنان الدائمة وتحافظ على العظم وتسهل عملية المضغ عند طفلك. لذلك يعتبر التاج عاملاً أساسيا لممارسة طفلك للعادات اليومية كالأكل والنطق.",
-          ]
-        : [
-            "A crown is placed on a baby tooth after nerve treatment, especially when the decay is large.",
-            "Back baby teeth help maintain the space needed for permanent teeth to erupt, preserve the bone, and make chewing easier for your child. For this reason, crowns play an important role in daily functions such as eating and speaking.",
-          ],
+        ?
+        [
+          "يوضع التاج على السن اللبني بعد علاج العصب خاصةً إذا كان التسوس كبير."
+        ] : [
+          "The crown is placed on the tooth after nerve treatment, especially if the caries are large. The function of the premolar deciduous tooth is to maintain the distance until the growth of the perpetual premolars, to preserve the bone and facilitate the child’s chewing. The crown is therefore a key factor in your child's daily practices, such as eating and pronunciation."
+        ]
     },
     {
       image: "/images/Kids/im8.png",
-      title: isAr ? "خلع الاسنان اللبنية" : "Baby Tooth Extraction",
-      imageAlt: isAr ? "خلع الأسنان اللبنية" : "Baby tooth extraction",
+      title: isAr ? "خلع الاسنان اللبنية" : "Milk teeth extraction",
+      imageAlt: isAr ? "خلع الأسنان اللبنية" : "Milk teeth extraction",
       paragraphs: isAr
         ? [
-            "تشكّل صحة الفم والأسنان إحدى اهم الركائز الأساسية التي يركّز عليها الأهل، ويحاولون تعليم طفلهم كيفية الاعتناء بها. فمثلاً، يعلّمونه طريقة تنظيف أسنانه بالفرشاة، كما ويحرصون على تقديم له وجبات خفيفة صحية للأسنان، ويشجعونه على شرب الماء. ولكن على الرغم من كل ما يبذلونه من جهود، فإن طفلهم معرّض إلى أن يعاني من تسوس الأسنان اللبنية. ولكن، هل من الصحي خلع الاسنان اللبنية المتسوسة؟",
-            "خلع الاسنان اللبنية المتسوسة",
-            "من الناحية المثالية، لن يحتاج طفلكم أبداً إلى خلع الأسنان اللبنية. ومع ذلك، يعدّ هذا الإجراء ضرورياً في بعض الأحيان لتحسين صحة طفلكم بشكل عام. قد يتعين على طبيب الأسنان إجراء عملية الخلع لعدة أسباب، بما في ذلك تسوس الأسنان الشديد وكجزء من علاج تقويم الأسنان. أمّا بالنسبة للحالات الأخرى:",
-            "تسوس الأسنان الشامل بحيث لا يمكن علاجه بحشو مركب. التهاب شديد يصيب الأوعية الدموية، والأعصاب، والأنسجة الأخرى الموجودة في مركز السن، ولا يمكن إصلاحه عن طريق أي علاجٍ آخر.إنها أسنان إضافية غير ضرورية تمنع الاسنان الاخرى من النمو بشكل صحيح. الأنسجة من حوله مصابة، مما تسبب في أمراض اللثة. تعرّض السنّ لكسور بحيث لا يمكن ترميمه بمادة الترابط. وبغض النظر عن سبب وجوب خلع السن، فإن الطبيب يلجأ إلى الخلع عادةً فقط للحالات التي لا يوجد فيها خيار علاج آخر من شأنه أن يعالج العدوى أو يحل المشكلة. طرق علاج الأسنان اللبنية المتسوسة.",
-          ]
+          "تشكّل صحة الفم والأسنان إحدى اهم الركائز الأساسية التي يركّز عليها الأهل، ويحاولون تعليم طفلهم كيفية الاعتناء بها. فمثلاً، يعلّمونه طريقة تنظيف أسنانه بالفرشاة، كما ويحرصون على تقديم له وجبات خفيفة صحية للأسنان، ويشجعونه على شرب الماء. ولكن على الرغم من كل ما يبذلونه من جهود، فإن طفلهم معرّض إلى أن يعاني من تسوس الأسنان اللبنية. ولكن، هل من الصحي خلع الاسنان اللبنية المتسوسة؟",
+          "خلع الاسنان اللبنية المتسوسة",
+          "من الناحية المثالية، لن يحتاج طفلكم أبداً إلى خلع الأسنان اللبنية. ومع ذلك، يعدّ هذا الإجراء ضرورياً في بعض الأحيان لتحسين صحة طفلكم بشكل عام. قد يتعين على طبيب الأسنان إجراء عملية الخلع لعدة أسباب، بما في ذلك تسوس الأسنان الشديد وكجزء من علاج تقويم الأسنان. أمّا بالنسبة للحالات الأخرى:",
+          "تسوس الأسنان الشامل بحيث لا يمكن علاجه بحشو مركب. التهاب شديد يصيب الأوعية الدموية، والأعصاب، والأنسجة الأخرى الموجودة في مركز السن، ولا يمكن إصلاحه عن طريق أي علاجٍ آخر.إنها أسنان إضافية غير ضرورية تمنع الاسنان الاخرى من النمو بشكل صحيح. الأنسجة من حوله مصابة، مما تسبب في أمراض اللثة. تعرّض السنّ لكسور بحيث لا يمكن ترميمه بمادة الترابط. وبغض النظر عن سبب وجوب خلع السن، فإن الطبيب يلجأ إلى الخلع عادةً فقط للحالات التي لا يوجد فيها خيار علاج آخر من شأنه أن يعالج العدوى أو يحل المشكلة. طرق علاج الأسنان اللبنية المتسوسة.",
+        ]
         : [
-            "Oral and dental health is one of the key areas parents focus on when teaching their child how to care for their teeth. They teach brushing, offer tooth-friendly snacks, and encourage drinking water. Despite these efforts, children may still experience decay in baby teeth.",
-            "Extraction of decayed baby teeth",
-            "Ideally, your child will never need to have baby teeth extracted. However, this procedure is sometimes necessary to improve your child’s overall health. A dentist may need to extract a tooth for several reasons, including severe tooth decay or as part of orthodontic treatment.",
-            "Extraction may be needed when decay is too extensive to be treated with a composite filling, when there is severe infection in the blood vessels, nerves, or other tissues in the center of the tooth, when extra teeth prevent other teeth from growing properly, when surrounding tissues are infected and cause gum disease, or when a tooth is fractured and cannot be restored.",
-          ],
+          "Oral and dental health is one of the main pillars that parents focus on, and they try to teach their child how to take care of it. For example, they teach him how to brush his teeth, make sure to provide him with healthy snacks for his teeth, and encourage him to drink water. But despite all their best efforts, their child is at risk of suffering from primary caries. However, is it healthy to remove decayed milk teeth? Decayed milk tooth extraction your child will never need to have their milk teeth extracted. However, this procedure is sometimes necessary to improve your child's overall health. A dentist may have to perform an extraction for a number of reasons, including severe tooth decay and as part of orthodontic treatment. As for the other cases:",
+          "Extensive tooth decay that cannot be treated with a composite filling.",
+          "Severe inflammation of the blood vessels, nerves, and other tissues in the center of the tooth that cannot be repaired by any other treatment.",
+          "Unnecessary extra teeth that prevent other teeth from growing properly. The tissues around it are infected, causing gum disease.",
+          "The tooth has been fractured so that it cannot be repaired with bonding material.",
+          "Regardless of why the tooth must be extracted, the doctor usually only resorts to extraction for cases where there is no other treatment option that would cure the infection or solve the problem.",
+          "Methods of treating decayed milk teeth",
+        ],
     },
     {
       image: "/images/Kids/im9.png",
-      title: isAr ? "التقويم المبكر" : "Early Orthodontics",
+      title: isAr ? "التقويم المبكر" : "Early Braces",
       imageAlt: isAr ? "التقويم المبكر للأطفال" : "Early orthodontics for children",
       paragraphs: isAr
         ? [
-            "يستخدم هذا النوع من التقويم للأطفال الذين يعانون من بروز بالفك العلوي او السفلي او ضيق بالفك مما يسبب تزاحم الاسنان او البروز وبالتالي يبدأ التدخل الطبي لمساعدة الفك على النمو بطريقة صحيحة ويقلل من نسبة التدخل الجراحي في المستقبل في حال تم اللجوء الى الطبيب المختص في الوقت المناسب. ولأفضل النتائج يفضل مراجعة الطفل عند بلوغه عمر 8 سنوات.",
-            "وينقسم الى مرحلتين:",
-            "المرحلة الاولى",
-            "يعمل فيها الجهاز على تعديل مواقع العضلات بالتالي تعديل مشاكل الفك وضمان تناسقه بالمستقبل.",
-            "المرحلة الثانية",
-            "يعمل فيها الجهاز الثاني على تعديل مواقع الاسنان.",
-          ]
+          "يستخدم هذا النوع من التقويم للأطفال الذين يعانون من بروز بالفك العلوي او السفلي او ضيق بالفك مما يسبب تزاحم الاسنان او البروز وبالتالي يبدأ التدخل الطبي لمساعدة الفك على النمو بطريقة صحيحة ويقلل من نسبة التدخل الجراحي في المستقبل في حال تم اللجوء الى الطبيب المختص في الوقت المناسب. ولأفضل النتائج يفضل مراجعة الطفل عند بلوغه عمر 8 سنوات."
+        ]
         : [
-            "This type of orthodontic treatment is used for children who have protrusion in the upper or lower jaw or a narrow jaw that causes crowding or protrusion. Early intervention helps the jaw grow correctly and may reduce the need for surgery in the future when the specialist is consulted at the right time. For best results, the child should be examined around the age of eight.",
-            "It is divided into two stages:",
-            "First stage",
-            "The appliance adjusts muscle positions, helping correct jaw problems and support proper alignment in the future.",
-            "Second stage",
-            "The second appliance works on adjusting tooth positions.",
-          ],
+          "This type of orthodontic is used for children with upper or lower jaw protrusion, which causes teeth crowding or protrusion, thus medical intervention begins to help the jaw grow properly and reduces the rate of surgical intervention in the future if the orthodontist has called it at the right time. For the best results, it is preferable to see the child at the age of 8. It is divided into two phases: The first stage: the device works to modify the positions of the muscles thus modifying the problems of the jaw and ensure its consistency in the future. The second stage: The second device works to modify the teeth positions."
+        ],
     },
     {
       image: "/images/Kids/im10.png",
-      title: isAr ? "الأجهزة المتحركة لتقويم الأسنان" : "Removable Orthodontic Appliances",
-      imageAlt: isAr ? "الأجهزة المتحركة لتقويم الأسنان" : "Removable orthodontic appliances",
+      title: isAr ? "الأجهزة المتحركة لتقويم الأسنان" : "Retainers",
+      imageAlt: isAr ? "الأجهزة المتحركة لتقويم الأسنان" : "Retainers",
       paragraphs: isAr
         ? [
-            "تستعمل في حالات :",
-            "سوء اطباق الفكين",
-            "صعوبة المضغ أو العض",
-            "مص الابهام عند الرضيع والدفع اللساني.",
-            "فقد احد الاسنان المبكر ما ينتج عن تزاحم الاسنان فوق بعضها او ظهور مسافات سنية واسعة.",
-            "ضيق بسيط بالفك.",
-            "العضة المعكوسة لسن واحد او لعدد من الاسنان.",
-          ]
+          "تستعمل في حالات :",
+          "سوء اطباق الفكين",
+          "صعوبة المضغ أو العض",
+          "مص الابهام عند الرضيع والدفع اللساني.",
+          "فقد احد الاسنان المبكر ما ينتج عن تزاحم الاسنان فوق بعضها او ظهور مسافات سنية واسعة.",
+          "ضيق بسيط بالفك.",
+          "العضة المعكوسة لسن واحد او لعدد من الاسنان.",
+        ]
         : [
-            "Used in cases such as:",
-            "Jaw bite problems.",
-            "Difficulty chewing or biting.",
-            "Thumb sucking and tongue thrusting.",
-            "Early loss of a tooth, which can lead to crowding or wide spaces between teeth.",
-            "Mild jaw narrowing.",
-            "Crossbite affecting one tooth or several teeth.",
-          ],
+          "Used in cases of:",
+          "Poor jaw alignment",
+          "Difficulty in chewing or biting Infant’s",
+          "Thumb sucking or tongue pushing the teeth",
+          "The early loss of a tooth resulting in crowding of teeth on or the appearance of large gaps between the teeth.",
+          "Small jaw tightness",
+          "The inverted bite is for one or more teeth.",
+        ],
     },
     {
       image: "/images/Kids/im11.png",
-      title: isAr ? "حافظ المسافة" : "Space Maintainer",
+      title: isAr ? "حافظ المسافة" : "Space Maintenance",
       imageAlt: isAr ? "حافظ المسافة للأطفال" : "Space maintainer for children",
       paragraphs: isAr
         ? [
-            "في حال الخلع المبكر للاسنان اللبنية الخلفية لطفلك, حافظ المسافة يقوم بثبيت باقي الاسنان والمحافظة على المسافات الموجودة للأسنان التي ستظهر لاحقاً, إنه يحمي من تزاحم الاسنان بسبب الفراغ وبالتالي يقلل من حاجة الطفل بالمستقبل لتقويم الاسنان .",
-            "حافظ المسافة مع الأسنان التجميلية:",
-            "إذا فقد طفلك احد اسنانه الامامية (من سن واحد إلى أربعة أسنان)فإن هذا النوع من حافظ المسافة يعطي شكل جميل للأسنان مما يمنح الطفل ثقة أكبر بالنفس.",
-            "يستطيع تناول كافة الأطعمة بشكل طبيعي جدا من دون اية مشاكل وتساعد طفلك على المضغ بشكل صحي وجيد .",
-          ]
-        : [
-            "If your child loses a back baby tooth early, a space maintainer holds the remaining teeth in place and preserves the space for teeth that will appear later. It helps protect against crowding caused by empty spaces and may reduce the need for orthodontic treatment in the future.",
-            "Space maintainer with cosmetic teeth:",
-            "If your child loses one or more front teeth, this type of space maintainer gives the teeth a better appearance and helps improve the child’s confidence.",
-            "It allows your child to eat all foods normally without problems and supports healthy chewing.",
-          ],
+          "في حال الخلع المبكر للاسنان اللبنية الخلفية لطفلك, حافظ المسافة يقوم بثبيت باقي الاسنان والمحافظة على المسافات الموجودة للأسنان التي ستظهر لاحقاً, إنه يحمي من تزاحم الاسنان بسبب الفراغ وبالتالي يقلل من حاجة الطفل بالمستقبل لتقويم الاسنان ."
+        ]
+        :
+        [
+          "In the case of early extraction of the posterior primary teeth of your child, the distance keeper fixes the rest of the teeth and maintains the existing distances for the teeth that will appear later. It protects against crowding of the teeth due to the vacuum and thus reduces the child’s need in the future for orthodontics. If your child loses one of his front teeth (from one to four teeth), this type of distance keeper gives a beautiful shape to the teeth, which gives the child greater self-confidence. He can eat all foods very naturally without any problems and help your child to chew healthy and well."
+        ],
     },
   ];
 
@@ -247,15 +223,15 @@ export default function KidsPage() {
             <div className={styles.welcomeText}>
               {(isAr
                 ? [
-                    "تقدم عيادة أسنان تاور في الكويت رعاية أسنان عالية الجودة وشاملة للرضع والأطفال بما في ذلك ذوي الاحتياجات الخاصة برعاية استشاري أطباء أسنان الأطفال المعتمدون لدينا.",
-                    "تم تصميم أسنان كيدز بطريقة محببة لطفلك تجعله يقضي الوقت داخل العيادة في بيئة مريحة حيث نقدم له كل الرعاية الصحية للفم وذلك للوقاية الأولية من لحظة الولادة و حتى سن المراهقة.",
-                    "الجو الآمن والمريح يجعل زيارة طفلك ممتعة وتعليمية من البداية وحتى النهاية.",
-                  ]
+                  "تقدم عيادة أسنان تاور في الكويت رعاية أسنان عالية الجودة وشاملة للرضع والأطفال بما في ذلك ذوي الاحتياجات الخاصة برعاية استشاري أطباء أسنان الأطفال المعتمدون لدينا.",
+                  "تم تصميم أسنان كيدز بطريقة محببة لطفلك تجعله يقضي الوقت داخل العيادة في بيئة مريحة حيث نقدم له كل الرعاية الصحية للفم وذلك للوقاية الأولية من لحظة الولادة و حتى سن المراهقة.",
+                  "الجو الآمن والمريح يجعل زيارة طفلك ممتعة وتعليمية من البداية وحتى النهاية.",
+                ]
                 : [
-                    "Asnan Tower Clinic in Kuwait provides high-quality, comprehensive dental care for infants and children, including children with special needs, under the care of our certified pediatric dental consultants.",
-                    "Asnan Kids is designed in a child-friendly way, helping your child spend time in a comfortable clinic environment while receiving complete oral healthcare from early prevention through adolescence.",
-                    "The safe and comfortable atmosphere makes your child’s visit enjoyable and educational from beginning to end.",
-                  ]
+                  "Asnan Tower in Kuwait provides high-quality and comprehensive dental care for infants and children, including those with special needs.",
+                  "Asnan Kids is designed in a loving way; your children will spend their time in the clinic in a comfortable environment where we provide preventative oral health care from birth to adolescence and educate them through their dental journey.",
+                  "The safe and comfortable environment makes your child's visit enjoyable and educational from start to finish.",
+                ]
               ).map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -267,10 +243,10 @@ export default function KidsPage() {
 
       {/*KIDS CATEGORIES*/}
       <KidsCharactersTabsSection
-  locale={locale}
-  title={isAr ? "شخصياتنا" : "Our Characters"}
-  subtitle={isAr ? "تصفح الشخصيات المختلفة في قسم الأطفال." : "Browse the different characters in the kids section."}
-/>
+        locale={locale}
+        title={isAr ? "شخصياتنا" : "Characters"}
+        subtitle={isAr ? "تصفح الشخصيات المختلفة في قسم الأطفال." : "Browse the different characters in the kids section."}
+      />
 
       {/* Treatments */}
       <section className={styles.treatmentsHeader} dir={isAr ? "rtl" : "ltr"}>
@@ -282,7 +258,7 @@ export default function KidsPage() {
           <p>
             {isAr
               ? "دع خبراء طب الأسنان لدينا يستعيدون ابتسامتك بأحدث التقنيات للأسنان المفقودة أو المتضررة وأمراض اللثة وأي مشاكل تسبب لك الانزعاج أو القلق."
-              : "Let our dental experts restore your child’s smile with modern techniques for missing or damaged teeth, gum concerns, and any problems causing discomfort or anxiety."}
+              : "Let our dental experts restore your smile with the latest techniques for missing or damaged teeth, gum disease, and any issues that are causing you discomfort or anxiety."}
           </p>
         </div>
       </section>
@@ -316,7 +292,7 @@ export default function KidsPage() {
           />
         );
       })}
-              <AppointmentSection locale={locale} />
+      <AppointmentSection locale={locale} />
     </>
   );
 }

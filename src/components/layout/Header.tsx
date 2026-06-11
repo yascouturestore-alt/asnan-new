@@ -385,15 +385,9 @@ export default function Header() {
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" href={`/${locale}/csr`}>
-                    CSR
-                  </Link>
-                </li>
-
-                <li className="nav-item">
                   <Link
                     className="nav-link"
-                    href={`/${locale}/book-appointment`}
+                    href={`/${locale}/#book-appointment`}
                   >
                     {t.header_contact}
                   </Link>

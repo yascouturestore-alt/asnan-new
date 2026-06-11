@@ -64,13 +64,13 @@ const charactersEn: KidsCharacterTab[] = [
     image: "https://www.figma.com/api/mcp/asset/19bb336e-2eaf-43bc-aa9a-d9a44ecf4ede",
     imageAlt: "Mr. Tooth",
     description:
-      "Happy to see you here. I am Mr. Tooth. I help you chew your food so your body gets the nutrients it needs to stay healthy. When you take care of me, I promise to stay white and strong forever.",
+      "Nice to see you here! I'm Mr. Tooth. I help you chew your food so your body can get the nutrients it needs to stay healthy. When you take care of me, I promise to stay white and strong forever.",
   },
   {
     id: "farosha",
-    label: "Farosha",
+    label: "Brushy",
     description:
-      "I am Farosha, your daily brushing friend. I help remove food particles and keep your smile clean and healthy every day.",
+      "Hey there! I'm Brushy.I use my fine hair to help remove bacteria in hard-to-reach places, giving you a great smile. Don't forget to let me brush your teeth before bed and after meals.",
   },
   {
     id: "mrs-tooth",
@@ -78,21 +78,21 @@ const charactersEn: KidsCharacterTab[] = [
     image: "/images/kids/Mrs.Tooth.png",
     imageAlt: "Mrs. Tooth",
     description:
-      "I am Mrs. Tooth. I love healthy smiles and remind you to brush, floss, and visit the dentist regularly.",
+      "SMILE! I'm Mrs. Tooth. Do you know that smiling makes you happier and helps you spread happiness? Keep me white and shiny, and I'll help you dazzle others with your smile.",
   },
   {
     id: "super-paste",
-    label: "Super Paste",
+    label: "Superpaste",
     image: "https://www.figma.com/api/mcp/asset/b9790288-9969-4550-83b1-3bed07757486",
-    imageAlt: "Super Paste",
+    imageAlt: "Superpaste",
     description:
-      "I am Super Paste. I work with your toothbrush to protect teeth from cavities and help you keep a fresh, bright smile.",
+      "SMILE! I'm Mrs. Tooth. Do you know that smiling makes you happier and helps you spread happiness? Keep me white and shiny, and I'll help you dazzle others with your smile.",
   },
   {
     id: "flossy",
     label: "Flossy",
     description:
-      "I am Flossy. I reach the tiny spaces between teeth where the brush cannot reach and help protect your gums and teeth.",
+      "Hi! I'm Flossy. I remove the food between your teeth, even the ones that Miss Brushy can't reach! I help you make sure bacteria have no place to hide in your mouth",
   },
 ];
 
